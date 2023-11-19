@@ -26,6 +26,14 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
+	  <None Remove="Resources\defaultConfig.json" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\defaultConfig.json" />
+	</ItemGroup>
+	
+	<ItemGroup>
 		<Reference Include="Colossal.AssetPipeline">
 			<HintPath>$(Cities2_Location)\Cities2_Data\Managed\Colossal.AssetPipeline.dll</HintPath>
 			<Private>False</Private>
@@ -152,6 +160,10 @@
 		</Reference>
 		<Reference Include="Cinemachine">
 			<HintPath>$(Cities2_Location)\Cities2_Data\Managed\Cinemachine.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(Cities2_Location)\Cities2_Data\Managed\Newtonsoft.Json.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="UnityEngine">

@@ -1,0 +1,124 @@
+{
+  "Zones": [
+    {
+      "Name": "Commercial High",
+      "Colour": "#095d9e",
+      "Deuteranopia": "default",
+      "Protanopia": "default",
+      "Tritanopia": "#9e0909",
+      "Custom": "default"
+    },
+    {
+      "Name": "Commercial Low",
+      "Colour": "#28A3FF",
+      "Deuteranopia": "default",
+      "Protanopia": "default",
+      "Tritanopia": "#ff2828",
+      "Custom": "default"
+    },
+    {
+      "Name": "Industrial Agriculture",
+      "Colour": "#9e8a07",
+      "Deuteranopia": "#84069e",
+      "Protanopia": "#84069e",
+      "Tritanopia": "#84069e",
+      "Custom": "default"
+    },
+    {
+      "Name": "Industrial Forestry",
+      "Colour": "#8d7a06",
+      "Deuteranopia": "#75058c",
+      "Protanopia": "#75058c",
+      "Tritanopia": "#75058c",
+      "Custom": "default"
+    },
+    {
+      "Name": "Industrial Manufacturing",
+      "Colour": "#b29d08",
+      "Deuteranopia": "#9507b2",
+      "Protanopia": "#9507b2",
+      "Tritanopia": "#9507b2",
+      "Custom": "default"
+    },
+    {
+      "Name": "Industrial Oil",
+      "Colour": "#231f03",
+      "Deuteranopia": "#1e0323",
+      "Protanopia": "#1e0323",
+      "Tritanopia": "#1e0323",
+      "Custom": "#1e0323"
+    },
+    {
+      "Name": "Industrial Ore",
+      "Colour": "#7c6e05",
+      "Deuteranopia": "#68047c",
+      "Protanopia": "#68047c",
+      "Tritanopia": "#68047c",
+      "Custom": "default"
+    },
+    {
+      "Name": "Office High",
+      "Colour": "#044a4f",
+      "Deuteranopia": "default",
+      "Protanopia": "default",
+      "Tritanopia": "#4f2e03",
+      "Custom": "default"
+    },
+    {
+      "Name": "Office Low",
+      "Colour": "#08c1ce",
+      "Deuteranopia": "default",
+      "Protanopia": "default",
+      "Tritanopia": "#ce7808",
+      "Custom": "default"
+    },
+    {
+      "Name": "Residential Low",
+      "Colour": "#32EC32",
+      "Deuteranopia": "#3831ed",
+      "Protanopia": "#3831ed",
+      "Tritanopia": "default",
+      "Custom": "default"
+    },
+    {
+      "Name": "Residential Medium",
+      "Colour": "#28C028",
+      "Deuteranopia": "#2d28bf",
+      "Protanopia": "#2d28bf",
+      "Tritanopia": "default",
+      "Custom": "default"
+    },
+    {
+      "Name": "Residential Medium Row",
+      "Colour": "#1E941E",
+      "Deuteranopia": "#211d93",
+      "Protanopia": "#211d93",
+      "Tritanopia": "default",
+      "Custom": "default"
+    },
+    {
+      "Name": "Residential LowRent",
+      "Colour": "#146814",
+      "Deuteranopia": "#161368",
+      "Protanopia": "#161368",
+      "Tritanopia": "default",
+      "Custom": "default"
+    },
+    {
+      "Name": "Residential High",
+      "Colour": "#033003",
+      "Deuteranopia": "#040230",
+      "Protanopia": "#040230",
+      "Tritanopia": "default",
+      "Custom": "default"
+    },
+    {
+      "Name": "Residential Mixed",
+      "Colour": "#5ADFB3",
+      "Deuteranopia": "#5d58dd",
+      "Protanopia": "#5d58dd",
+      "Tritanopia": "default",
+      "Custom": "default"
+    }
+  ]
+}

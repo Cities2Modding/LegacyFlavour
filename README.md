@@ -10,6 +10,16 @@ LegacyFlavour currently includes the following features:
 
 2. **Transparent Zone Grid Cells**: We've made zone grid cells transparent for a cleaner, more visually appealing city layout, allowing for a more immersive city planning experience.
 
+3. **Re-worked color Zone colour scheme**: Changes the colour scheme of zones to better match Cities Skylines 1. (UI icons will be updated too in the near future).
+
+4. **Color-Blindness Modes**: This is WIP and currently in testing. Cycle zone colours to match a scheme for specific types of colour blindness.
+
+5. **Toggle Shortcuts**: ALT+Z to toggle the zone colours mod. SHIFT+Z to cycle through colour blindness modes.
+
+6. **Configure Zone colours via JSON**: Config file in mod directory to allow custom values.
+
+7. **Dynamic Zone Borders**: If it snows zone borders will switch colour to be more visible on snow.
+
 ## Installation
 
 ### Requirements

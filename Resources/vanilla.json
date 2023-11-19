@@ -1,0 +1,68 @@
+{
+  "Zones": [
+    // Commercial
+    {
+      "Name": "Commercial High",
+      "Colour": "#0973C3"
+    },
+    {
+      "Name": "Commercial Low",
+      "Colour": "#28A3FF"
+    },
+    // Industrial
+    {
+      "Name": "Industrial Agriculture",
+      "Colour": "#FFFF60"
+    },
+    {
+      "Name": "Industrial Forestry",
+      "Colour": "#FFFF60"
+    },
+    {
+      "Name": "Industrial Manufacturing",
+      "Colour": "#FCF46F"
+    },
+    {
+      "Name": "Industrial Oil",
+      "Colour": "#FFFF60"
+    },
+    {
+      "Name": "Industrial Ore",
+      "Colour": "#FFFF60"
+    },
+    // Office
+    {
+      "Name": "Office High",
+      "Colour": "#9000E9"
+    },
+    {
+      "Name": "Office Low",
+      "Colour": "#C45DFF"
+    },
+    // Residential
+    {
+      "Name": "Residential High",
+      "Colour": "#036C03"
+    },
+    {
+      "Name": "Residential Low",
+      "Colour": "#32EC32"
+    },
+    {
+      "Name": "Residential Medium",
+      "Colour": "#118411"
+    },
+    {
+      "Name": "Residential Medium Row",
+      "Colour": "#16AB16"
+    },
+    {
+      "Name": "Residential Mixed",
+      "Colour": "#e54e67"
+    },
+    {
+      "Name": "Residential LowRent",
+      "Colour": "#3b7f3b"
+    }
+  ]
+}
