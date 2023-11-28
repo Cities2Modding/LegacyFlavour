@@ -14,11 +14,22 @@ LegacyFlavour currently includes the following features:
 
 4. **Color-Blindness Modes**: This is WIP and currently in testing. Cycle zone colours to match a scheme for specific types of colour blindness.
 
-5. **Toggle Shortcuts**: ALT+Z to toggle the zone colours mod. SHIFT+Z to cycle through colour blindness modes.
+5. **Toggle Shortcuts**: 
+
+- ALT+Z to toggle the zone colours mod. 
+- SHIFT+Z to cycle through colour blindness modes.
+- ALT+S to toggle Sticky Infomode Whiteness. 
+- SHIFT+W to toggle Sticky Infomode Whiteness value override.
+- ALT+R to reload the config file
+- ALT+U to toggle Units display
 
 6. **Configure Zone colours via JSON**: Config file in mod directory to allow custom values.
 
-7. **Dynamic Zone Borders**: If it snows zone borders will switch colour to be more visible on snow.
+7. **Dynamic Zone Borders**: If it snows zone borders will switch colour to be more visible on snow. **UPDATE** this now calculates snow coverage so is more accurate. It may have a delay as updates occur periodically to prevent performance hits.
+
+8. **Dynamic UI Icons**: UI icons for zones now adapt to match the configured colours. These are dynamically generated from the games icons based on config settings.
+
+9. **Sticky Infomode Whiteness**: Shortcuts to override infomode 'whiteness' setting to stop it constantly popping up.
 
 ## Installation
 

@@ -1,0 +1,38 @@
+#pragma kernel CSMain
+
+RWTexture2D<float4> InputTexture;
+RWStructuredBuffer<uint> Result;
+
+// Define thresholds for different snow intensities
+float fullSnowThreshold = 0.5;
+float partialSnowThreshold = 0.05;
+
+[numthreads(8, 8, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    uint width, height;
+    InputTexture.GetDimensions(width, height);
+
+    // Initialize the buffer for the first thread
+    if (id.x == 0 && id.y == 0)
+    {
+        Result[0] = 0; // Reset the snow pixel count
+    }
+
+    if (id.x >= width || id.y >= height)
+        return;
+
+    float4 pixel = InputTexture[id.xy];
+
+    
+    // Full snow coverage
+    if (pixel.r > fullSnowThreshold || pixel.g > fullSnowThreshold)
+    {
+        InterlockedAdd(Result[0], 100); // Fully contributes to the count
+    }
+    // Partial snow coverage
+    else if (pixel.r > partialSnowThreshold || pixel.g > partialSnowThreshold)
+    {
+        InterlockedAdd(Result[0], 50); // Partially contributes to the count
+    }
+}

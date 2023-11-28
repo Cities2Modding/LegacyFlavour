@@ -1,4 +1,6 @@
 {
+  "CellOpacity": 0.9,
+  "EmptyCellOpacity": 0,
   "Zones": [
     {
       "Name": "Commercial High",

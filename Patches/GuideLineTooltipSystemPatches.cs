@@ -3,6 +3,7 @@ using Game.UI.Localization;
 using Game.UI.Tooltip;
 using Game.UI.Widgets;
 using HarmonyLib;
+using LegacyFlavour.Systems;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
@@ -23,6 +24,8 @@ namespace LegacyFlavour.Patches
     [HarmonyPatch( typeof( GuideLineTooltipSystem ), "OnUpdate" )]
     class GuideLineTooltipSystem_OnUpdatePatch
     {
+        static LegacyFlavourConfig _config = LegacyFlavourSystem.Config;
+
         static bool Prefix( GuideLineTooltipSystem __instance )
         {
             var m_TooltipUISystem = Traverse.Create( __instance ).Field( "m_TooltipUISystem" ).GetValue<TooltipUISystem>( );
@@ -74,9 +77,12 @@ namespace LegacyFlavour.Patches
                     // Modify the length field to show units instead
                     case GuideLinesSystem.TooltipType.Length:
                         child.icon = "Media/Glyphs/Length.svg";
-                        child.value = tooltipInfo.m_IntValue / 8f; // Convert to Cities 1 units
-                        child.unit = "floatTwoFractions"; // Change to a generic unit type to stop showing m/ft
-                        child.label = LocalizedString.Value( "U" ); // Adjust the label to say 'U'
+                        child.value = _config.UseUnits ? tooltipInfo.m_IntValue / 8f : tooltipInfo.m_IntValue; // Convert to Cities 1 units if enabled
+                        child.unit = _config.UseUnits ? "floatTwoFractions" : "length"; // Change to a generic unit type to stop showing m/ft
+                        if ( _config.UseUnits )
+                            child.label = LocalizedString.Value( "U" ); // Adjust the label to say 'U'
+                        else
+                            child.label = default;
                         break;
                 }
                 AddGroup( m_TooltipUISystem, group );

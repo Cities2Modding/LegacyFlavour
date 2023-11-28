@@ -8,6 +8,42 @@ namespace LegacyFlavour
 {
     public class LegacyFlavourConfig
     {
+        public bool UseStickyWhiteness
+        {
+            get;
+            set;
+        } = true;
+
+        public bool WhitenessToggle
+        {
+            get;
+            set;
+        }
+
+        public bool UseUnits
+        {
+            get;
+            set;
+        } = true;
+
+        public decimal CellOpacity
+        {
+            get;
+            set;
+        } = 0.9m;
+
+        public decimal EmptyCellOpacity
+        {
+            get;
+            set;
+        } = 0m;
+
+        public bool Enabled
+        {
+            get;
+            set;
+        }
+
         public ColourBlindness Mode
         {
             get;

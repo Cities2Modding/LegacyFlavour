@@ -1,8 +1,6 @@
 ﻿using Game.Prefabs;
-using Game.Simulation;
 using HarmonyLib;
 using LegacyFlavour.Systems;
-using UnityEngine;
 
 namespace LegacyFlavour.Patches
 {
@@ -19,36 +17,11 @@ namespace LegacyFlavour.Patches
     class ZoneSystem_UpdatePatch
     {
         static ZoneColourSystem _zoneColourSystem;
-        static ClimateSystem _climateSystem;
-        public static bool isSnowing = false;
-        static float lastCheckTime;
 
         static void Postfix( ZoneSystem __instance )
         {
             if ( _zoneColourSystem == null )
-                _zoneColourSystem = __instance.World.GetOrCreateSystemManaged<ZoneColourSystem>( );
-
-            if ( Time.time < lastCheckTime + 1f )
-                return;
-
-            if ( _climateSystem == null )
-                _climateSystem = __instance.World.GetOrCreateSystemManaged<ClimateSystem>( );
-
-            if ( _climateSystem == null )
-                return;
-
-            if ( _climateSystem.isSnowing && !isSnowing )
-            {
-                isSnowing = true;
-                _zoneColourSystem.ForceUpdate( );
-            }
-            else if ( !_climateSystem.isSnowing && isSnowing )
-            {
-                isSnowing = false;
-                _zoneColourSystem.ForceUpdate( );
-            }
-
-            lastCheckTime = Time.time;
+                _zoneColourSystem = __instance.World.GetOrCreateSystemManaged<ZoneColourSystem>( );            
         }
     }
 
