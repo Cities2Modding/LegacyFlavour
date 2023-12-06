@@ -2,6 +2,20 @@
 
 Welcome to the GitHub repository for LegacyFlavour, a Cities Skylines 2 mod designed to blend the best of Cities Skylines 1 with the advanced features of Cities Skylines 2. Our mod aims to enhance your city-building experience by introducing nostalgic elements and improved functionalities.
 
+## New Features in v0.0.4
+
+1. **UI System via HookUI**: Integrates with [HookUI](https://github.com/Captain-Of-Coit/hookui/releases) to offer an advanced UI system, elevating your control and customization options.
+
+2. **Configurable Zoning Configuration**: Customize zoning options like never before. Adjust colours, borders, and more, directly from the UI.
+
+3. **Enhanced Control over Weather and Time**: Control weather and time settings with new features, including saving these states between game reloads.
+
+4. **Easy UI Access**: Access the new UI menu conveniently through the HookUI button located in the top left corner.
+
+5. **Live UI Configurations**: Experience live changes in the game as you adjust settings. Utilize colour pickers and other interactive elements for an immersive configuration process.
+
+6. **Buttons, buttons!**: You can set colour blindness profile sets to the vanilla colours, reset them to Legacy Flavour's default.
+
 ## Features
 
 LegacyFlavour currently includes the following features:
@@ -10,9 +24,9 @@ LegacyFlavour currently includes the following features:
 
 2. **Transparent Zone Grid Cells**: We've made zone grid cells transparent for a cleaner, more visually appealing city layout, allowing for a more immersive city planning experience.
 
-3. **Re-worked color Zone colour scheme**: Changes the colour scheme of zones to better match Cities Skylines 1. (UI icons will be updated too in the near future).
+3. **Re-worked colour Zone colour scheme**: Changes the colour scheme of zones to better match Cities Skylines 1. (UI icons will be updated too in the near future).
 
-4. **Color-Blindness Modes**: This is WIP and currently in testing. Cycle zone colours to match a scheme for specific types of colour blindness.
+4. **Colour-Blindness Modes**: This is WIP and currently in testing. Cycle zone colours to match a scheme for specific types of colour blindness.
 
 5. **Toggle Shortcuts**: 
 
@@ -35,7 +49,7 @@ LegacyFlavour currently includes the following features:
 
 ### Requirements
 
-- **BepInEx v5**: LegacyFlavour requires BepInEx version 5 to be installed in your Cities Skylines 2 game. Ensure you have this version before proceeding with the installation.
+- **BepInEx v5**: LegacyFlavour requires BepInEx version 5 to be installed in your Cities Skylines 2 game. Ensure you have this version before proceeding with the installation. Also install HookUI as this mod now depends on it.
 
 ### Downloading
 
