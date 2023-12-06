@@ -1,6 +1,10 @@
 {
+  "UseUnits": true,
+  "UseDynamicCellBorders": true,
   "CellOpacity": 0.9,
+  "CellBorderOpacity": 0.9,
   "EmptyCellOpacity": 0,
+  "EmptyCellBorderOpacity": 0.2,
   "Zones": [
     {
       "Name": "Commercial High",

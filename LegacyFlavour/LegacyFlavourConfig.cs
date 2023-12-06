@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using LegacyFlavour.UI;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -6,13 +8,19 @@ using UnityEngine;
 
 namespace LegacyFlavour
 {
-    public class LegacyFlavourConfig
+    public class LegacyFlavourConfig : ModelWriter
     {
+        public bool Enabled
+        {
+            get;
+            set;
+        }
+
         public bool UseStickyWhiteness
         {
             get;
             set;
-        } = true;
+        } = false;
 
         public bool WhitenessToggle
         {
@@ -26,7 +34,19 @@ namespace LegacyFlavour
             set;
         } = true;
 
+        public bool UseDynamicCellBorders
+        {
+            get;
+            set;
+        } = true;
+
         public decimal CellOpacity
+        {
+            get;
+            set;
+        } = 0.9m;
+
+        public decimal CellBorderOpacity
         {
             get;
             set;
@@ -38,11 +58,11 @@ namespace LegacyFlavour
             set;
         } = 0m;
 
-        public bool Enabled
+        public decimal EmptyCellBorderOpacity
         {
             get;
             set;
-        }
+        } = 0.2m;
 
         public ColourBlindness Mode
         {
@@ -50,17 +70,39 @@ namespace LegacyFlavour
             set;
         } = ColourBlindness.None;
 
+        public TimeOfDayOverride TimeOfDay
+        {
+            get;
+            set;
+        } = TimeOfDayOverride.Off;
+
+        public bool FreezeVisualTime
+        {
+            get;
+            set;
+        }
+
+        public WeatherOverride Weather
+        {
+            get;
+            set;
+        } = WeatherOverride.Off;
+        
         public List<ZoneColourConfig> Zones
         { 
             get; 
             set; 
         }
 
+        public static Action OnUpdated;
+        public readonly static LegacyFlavourConfig Default = LoadDefault( );
+
         public static void Save( LegacyFlavourConfig config )
         {
             var json = JsonConvert.SerializeObject( config );
             var filePath = Path.Combine( GetAssemblyDirectory( ), "config.json" );
             File.WriteAllText( filePath, json );
+            OnUpdated?.Invoke( );
         }
 
         public static LegacyFlavourConfig Load( )
@@ -77,6 +119,27 @@ namespace LegacyFlavour
                 json = LoadDefaultAndSave( );
             }
             return JsonConvert.DeserializeObject<LegacyFlavourConfig>( json );
+        }
+
+        public static LegacyFlavourConfig LoadDefault( )
+        {
+            var assembly = Assembly.GetExecutingAssembly( );
+
+            using ( var stream = assembly.GetManifestResourceStream( "LegacyFlavour.Resources.defaultConfig.json" ) )
+            {
+                if ( stream == null )
+                {
+                    Debug.LogError( "Embedded default config not found." );
+                    return null;
+                }
+
+                using ( var reader = new StreamReader( stream ) )
+                {
+                    var json = reader.ReadToEnd( );
+
+                    return JsonConvert.DeserializeObject<LegacyFlavourConfig>( json );
+                }
+            }
         }
 
         private static string LoadDefaultAndSave( )

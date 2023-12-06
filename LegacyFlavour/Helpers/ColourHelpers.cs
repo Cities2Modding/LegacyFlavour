@@ -21,6 +21,16 @@ namespace LegacyFlavour.Helpers
         }
 
         /// <summary>
+        /// Convert a color to hex code
+        /// </summary>
+        /// <param name="Color"></param>
+        /// <returns></returns>
+        public static string ColorToHex( Color color )
+        {
+            return "#" + ColorUtility.ToHtmlStringRGB( color );
+        }
+
+        /// <summary>
         /// Darken a colour
         /// </summary>
         /// <param name="originalColor"></param>

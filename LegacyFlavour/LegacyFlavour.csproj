@@ -28,6 +28,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\calculatesnow" />
 	  <None Remove="Resources\defaultConfig.json" />
+	  <None Remove="Resources\ui.js" />
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -35,6 +36,7 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </EmbeddedResource>
 	  <EmbeddedResource Include="Resources\defaultConfig.json" />
+	  <EmbeddedResource Include="Resources\ui.js" />
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -156,6 +158,10 @@
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
 			<HintPath>$(Cities2_Location)\Cities2_Data\Managed\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="HookUILib">
+			<HintPath>$(Cities2_Location)\BepInEx\plugins\HookUI\HookUILib.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="Cohtml.RenderingBackend">
