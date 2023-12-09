@@ -1,6 +1,7 @@
 ﻿using cohtml.Net;
 using Colossal.Serialization.Entities;
 using Game.Prefabs;
+using Game.Rendering;
 using Game.SceneFlow;
 using Game.UI.InGame;
 using LegacyFlavour.Configuration;
@@ -93,16 +94,37 @@ namespace LegacyFlavour.Helpers
         {
             ReplacedIcons.Clear( );
 
-            var colours = _zoneColourSystem.Colours;
+            // Invalidate all of them
+            if ( invalidateCache )
+            {
+                foreach ( var colourSet in _zoneColourSystem.AllColours )
+                {
+                    ProcessColours( colourSet.Item1, colourSet.Item2 );
+                }
+            }
+            else
+            {
+                ProcessColours( _zoneColourSystem.colourBlindness, _zoneColourSystem.Colours );
+            }
+
+            UpdateReplacementIcons( );
+        }
+
+        /// <summary>
+        /// Process colours
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <param name="colours"></param>
+        /// <param name="invalidateCache"></param>
+        private void ProcessColours( ColourBlindness mode, Dictionary<string, Color> colours, bool invalidateCache = false  )
+        {
             var workingSVG = IconNames.ToDictionary( i => i, i => string.Empty );
 
             foreach ( var iconName in IconNames )
-                ProcessIcon( workingSVG, colours, iconName, invalidateCache );
+                ProcessIcon( mode, workingSVG, colours, iconName, invalidateCache );
 
             foreach ( var iconName in MANUAL_ICONS )
-                ProcessIcon( workingSVG, colours, iconName, invalidateCache, true );
-
-            UpdateReplacementIcons( );
+                ProcessIcon( mode, workingSVG, colours, iconName, invalidateCache, true );
         }
 
         /// <summary>
@@ -165,12 +187,13 @@ namespace LegacyFlavour.Helpers
         /// <summary>
         /// Process a matched icon, converting it and caching if necessary
         /// </summary>
+        /// <param name="mode"></param>
         /// <param name="workingSVG"></param>
         /// <param name="colours"></param>
         /// <param name="iconName"></param>
         /// <param name="invalidateCache"></param>
         /// <param name="isRootIcon"></param>
-        private void ProcessIcon( Dictionary<string, string> workingSVG, Dictionary<string, Color> colours, string iconName, bool invalidateCache = false, bool isRootIcon = false )
+        private void ProcessIcon( ColourBlindness mode, Dictionary<string, string> workingSVG, Dictionary<string, Color> colours, string iconName, bool invalidateCache = false, bool isRootIcon = false )
         {
             string matchingKey;
 
@@ -183,7 +206,7 @@ namespace LegacyFlavour.Helpers
                 return;
 
             var colourMatch = colours[matchingKey];
-            var copyPath = ModIconsPath + "\\" + iconName + "_" + _zoneColourSystem.colourBlindness.ToString( ) + ".svg";
+            var copyPath = ModIconsPath + "\\" + iconName + "_" + mode.ToString( ) + ".svg";
 
             if ( invalidateCache || !File.Exists( copyPath ) )
             {
@@ -227,7 +250,9 @@ namespace LegacyFlavour.Helpers
         {
             foreach ( var zoneColourGroup in ZoneColours )
             {
-                if ( !iconName.StartsWith( "Zone" + zoneColourGroup.Key ) )
+                if ( !iconName.StartsWith( "Zone" + zoneColourGroup.Key ) || 
+                    zoneColourGroup.Value == null ||
+                    zoneColourGroup.Value.Length == 0 )
                     continue;
 
                 foreach ( var colour in zoneColourGroup.Value )

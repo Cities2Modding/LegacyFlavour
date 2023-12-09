@@ -26,23 +26,30 @@ namespace LegacyFlavour.Systems
         static MethodInfo _updateAllZoneColors = typeof( ZoneSystem ).GetMethods( BindingFlags.Instance | BindingFlags.NonPublic )
             .FirstOrDefault( m => m.Name == "UpdateZoneColors" && m.GetParameters( ).Length == 0 );
 
+
+        /// <summary>
+        /// All colours
+        /// </summary>
+        public (ColourBlindness, Dictionary<string, Color>)[] AllColours
+        {
+            get
+            {
+                return new[]
+                {
+                    (ColourBlindness.None, GetColourSet( ColourBlindness.None )),
+                    (ColourBlindness.Deuteranopia, GetColourSet( ColourBlindness.Deuteranopia )),
+                    (ColourBlindness.Protanopia, GetColourSet( ColourBlindness.Protanopia )),
+                    (ColourBlindness.Tritanopia, GetColourSet( ColourBlindness.Tritanopia )),
+                    (ColourBlindness.Custom, GetColourSet( ColourBlindness.Custom )),
+                };
+            }
+        }
+
         public Dictionary<string, Color> Colours
         {
             get
             {
-                switch ( colourBlindness )
-                {
-                    case ColourBlindness.Deuteranopia:
-                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Deuteranopia == "default" ? v.Colour : v.Deuteranopia ) );
-                    case ColourBlindness.Protanopia:
-                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Protanopia == "default" ? v.Colour : v.Protanopia ) );
-                    case ColourBlindness.Tritanopia:
-                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Tritanopia == "default" ? v.Colour : v.Tritanopia ) );
-                    case ColourBlindness.Custom:
-                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Custom == "default" ? v.Colour : v.Custom ) );
-                    default:
-                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Colour ) );
-                }
+                return GetColourSet( colourBlindness );
             }
         }
 
@@ -88,6 +95,8 @@ namespace LegacyFlavour.Systems
             SetupSnowDetector( );
             Configure( );
             SetupKeybinds( );
+
+            _updateSystem.EnqueueColoursUpdate( invalidateCache: true );
         }
 
         /// <summary>
@@ -106,6 +115,28 @@ namespace LegacyFlavour.Systems
             enabled = Config.Enabled;
             _snowDetector.Disable = !enabled;
             colourBlindness = Config.Mode;
+        }
+
+        /// <summary>
+        /// Get a colour set
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <returns></returns>
+        private Dictionary<string, Color> GetColourSet( ColourBlindness mode )
+        {
+            switch ( mode )
+            {
+                case ColourBlindness.Deuteranopia:
+                    return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Deuteranopia == "default" ? v.Colour : v.Deuteranopia ) );
+                case ColourBlindness.Protanopia:
+                    return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Protanopia == "default" ? v.Colour : v.Protanopia ) );
+                case ColourBlindness.Tritanopia:
+                    return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Tritanopia == "default" ? v.Colour : v.Tritanopia ) );
+                case ColourBlindness.Custom:
+                    return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Custom == "default" ? v.Colour : v.Custom ) );
+                default:
+                    return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Colour ) );
+            }
         }
 
         /// <summary>

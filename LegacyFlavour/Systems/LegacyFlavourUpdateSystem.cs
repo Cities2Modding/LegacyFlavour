@@ -76,7 +76,9 @@ namespace LegacyFlavour.Systems
         {
             nextConfigUpdate = immediate ? 0f : UnityEngine.Time.time + 0.2f;
             hasZoneColourUpdatePending = true;
-            forceZoneInvalidateCache = invalidateCache;
+
+            if ( invalidateCache )
+                forceZoneInvalidateCache = true;
         }
 
         /// <summary>
