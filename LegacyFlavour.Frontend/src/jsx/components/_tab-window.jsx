@@ -1,10 +1,10 @@
 import React from 'react'
 
-const $TabWindow = ({ react, tabs, onClose }) => {
+const $TabWindow = ({ react, tabs, style, onClose }) => {
     const [activeTab, setActiveTab] = react.useState(tabs.length > 0 ? tabs[0].name : '');
 
     return (
-        <div style={{ position: 'fixed', width: '100vw', height: '100vh', pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ position: 'fixed', width: '100vw', height: '100vh', pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', ...style }}>
             <div className="panel_YqS economy-panel_e08" style={{ marginLeft: 'auto', marginRight: 'auto', width: '1000rem', height: '750rem' }}>
                 <div className="header_H_U header_Bpo child-opacity-transition_nkS">
                     <div className="title-bar_PF4">

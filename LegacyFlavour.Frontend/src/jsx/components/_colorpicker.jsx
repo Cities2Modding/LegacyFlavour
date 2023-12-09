@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $FancySlider from '../components/_fancy-slider';
+import $Button from '../components/_button';
 
-const $ColorPicker = ({ react, label, color, onChanged }) => {  
+const $ColorPicker = ({ react, label, color, onChanged, onDropdown }) => {  
     function hexToHsv(hex) {
         // Remove the hash at the start if it's there
         hex = hex.replace(/^#/, '');
@@ -110,6 +111,7 @@ const $ColorPicker = ({ react, label, color, onChanged }) => {
         if (pickerRef.current && !pickerRef.current.contains(event.target) &&
             dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setActive(false);
+            onDropdown(false);
         }
     };
 
@@ -156,6 +158,7 @@ const $ColorPicker = ({ react, label, color, onChanged }) => {
 
     const onToggle = () => {
         setActive(!active);
+        onDropdown(!active);
     };
 
     const onHueUpdated = (val) => {
@@ -193,6 +196,9 @@ const $ColorPicker = ({ react, label, color, onChanged }) => {
                             <$FancySlider react={react} value={valVal} fromColour={valFromColour} toColour={valToColour} onValueChanged={onValUpdated} style={{ marginTop: '5rem' }} />
                         </div>
                     </div>
+                </div>
+                <div style={{ width: '100%', marginTop: '10rem' }}>
+                    <$Button onClick={onToggle}>Done</$Button>                    
                 </div>
             </div>
         </div>

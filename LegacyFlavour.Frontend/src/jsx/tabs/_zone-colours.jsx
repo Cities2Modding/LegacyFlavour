@@ -3,8 +3,10 @@ import $IconPanel from '../components/_icon-panel';
 import $ColorPicker from '../components/_colorpicker';
 import $Button from '../components/_button';
 import $Select from '../components/_select';
+import $CheckBox from '../components/_checkbox';
+import $Label from '../components/_label';
 
-const $ZoneColours = ({ react, data, setData, triggerUpdate }) => {
+const $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
     const noneString = "Default Colours";
     const colourModes = [
         noneString,
@@ -50,6 +52,16 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate }) => {
         });
     }
 
+    const changeWindowOpacity = (visible) => {
+        if (!onChangeWindowOpacity)
+            return;
+        onChangeWindowOpacity(visible ? 1 : 0.55);
+    };
+
+    const onColourDropdown = (visible) => {
+        changeWindowOpacity(!visible);
+    };
+
     const getZoneColours = (zoneGroup) => {
         let icon = "coui://legacyflavourui/Icons/" + zoneGroup.icon + "_" + data.Mode + ".svg"; // Cache busting via querystring causes flickers so meh! We need a game restart for icon changes
 
@@ -74,7 +86,7 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate }) => {
                             triggerZoneColourUpdate(zone.Name, newColour);
                         };
 
-                        return (<$ColorPicker key={zone.Name} react={react} label={zone.Name} color={colour} onChanged={onChanged} />);
+                        return (<$ColorPicker key={zone.Name} react={react} label={zone.Name} color={colour} onChanged={onChanged} onDropdown={onColourDropdown} />);
                     })
                 }
             </div>
@@ -112,9 +124,13 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate }) => {
                 <$Button onClick={triggerRegenerateIcons}>Regenerate icons (Game restart required)</$Button>
                 <$Button style={{ marginTop: '5rem' }} onClick={triggerSetColoursToVanilla}>Set {modeString}&nbsp;to vanilla colours</$Button>
                 <$Button style={{ marginTop: '5rem' }} onClick={triggerResetColoursToDefault}>Reset {modeString}</$Button>
+                <div style={{ display: 'flex', width: '100%' }}>
+                    <$Label style={{ margin: '10rem' }}>Make window transparent</$Label>
+                    <$CheckBox react={react} style={{ margin: '10rem' }} checked={useTransparency} onToggle={onChangeUseTransparency} />
+                </div>
             </div>
         </div>
-        <div style={{ display: 'flex', width: '100%', flexDirection: 'row' }}>
+        <div style={{ display: 'flex', width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ flex: 1, width: '33.33333333333%' }}>
                 {renderZoneColours(0)}
             </div>

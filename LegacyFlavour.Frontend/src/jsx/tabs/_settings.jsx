@@ -74,17 +74,17 @@ const $Settings = ({ react, data, setData, triggerUpdate }) => {
                 <$IconPanel label="Use Sticky Whiteness"
                     description="Override the games white info-mode switch, using a custom setting. Toggle with ALT+S."
                     icon="Media/Game/Icons/Information.svg">
-                    <$CheckBox style={{ alignSelf: 'center', margin: '10rem' }} checked={data.UseStickyWhiteness} onToggle={(val) => updateData("UseStickyWhiteness", val)} />
+                    <$CheckBox react={react} style={{ alignSelf: 'center', margin: '10rem' }} checked={data.UseStickyWhiteness} onToggle={(val) => updateData("UseStickyWhiteness", val)} />
                 </$IconPanel>
                 <$IconPanel label="Whiteness Toggle"
                     description="If 'Use Sticky Whiteness' is enabled, the info-mode white setting will be set to this value when a tool with an info-mode is activated. Toggle with SHIFT+W."
                     icon="Media/Game/Icons/Orbit.svg">
-                    <$CheckBox style={{ alignSelf: 'center', margin: '10rem' }} checked={data.WhitenessToggle} onToggle={(val) => updateData("WhitenessToggle", val)} />
+                    <$CheckBox react={react} style={{ alignSelf: 'center', margin: '10rem' }} checked={data.WhitenessToggle} onToggle={(val) => updateData("WhitenessToggle", val)} />
                 </$IconPanel>
                 <$IconPanel label="Use Units"
                     description="When a tool system with a length measurement is selected, use 'units' instead. Toggle with ALT+U."
                     icon="Media/Game/Icons/Roads.svg">
-                    <$CheckBox style={{ alignSelf: 'center', margin: '10rem' }} checked={data.UseUnits} onToggle={(val) => updateData("UseUnits", val)} />
+                    <$CheckBox react={react} style={{ alignSelf: 'center', margin: '10rem' }} checked={data.UseUnits} onToggle={(val) => updateData("UseUnits", val)} />
                 </$IconPanel>
             </div>
         </div>
@@ -92,7 +92,7 @@ const $Settings = ({ react, data, setData, triggerUpdate }) => {
             <$IconPanel label="Freeze time visuals"
                 description="When enabled, freezes the visual time of day. 'Day/Night Visuals' must be on."
                 icon="Media/PhotoMode/Pause.svg">
-                <$CheckBox style={{ alignSelf: 'center', margin: '10rem' }} checked={data.FreezeVisualTime} onToggle={(val) => freezeTimeUpdate(val)} />
+                <$CheckBox react={react} style={{ alignSelf: 'center', margin: '10rem' }} checked={data.FreezeVisualTime} onToggle={(val) => freezeTimeUpdate(val)} />
             </$IconPanel>
             <$IconPanel label="Set visual time of day"
                 description="Override the visual time of day. 'Day/Night Visuals' must be on. If golden hour goes to midnight the map is missing settings."

@@ -46,8 +46,7 @@ const $Slider = ({ react, value, onValueChanged, style }) => {
                     ref={sliderRef}
                     onMouseDown={handleMouseDown}
                     onMouseMove={handleMouseMove}
-                    onMouseUp={handleMouseUp}
-                >
+                    onMouseUp={handleMouseUp}>
                     <div className="track-bounds_H8_">
                         <div className="range-bounds_lNt" style={{ width: valuePercent }}>
                             <div className="range_KXa range_iUN"></div>

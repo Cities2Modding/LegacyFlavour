@@ -23511,9 +23511,9 @@
 
   // src/jsx/components/_tab-window.jsx
   var import_react5 = __toESM(require_react());
-  var $TabWindow = ({ react, tabs, onClose }) => {
+  var $TabWindow = ({ react, tabs, style, onClose }) => {
     const [activeTab, setActiveTab] = react.useState(tabs.length > 0 ? tabs[0].name : "");
-    return /* @__PURE__ */ import_react5.default.createElement("div", { style: { position: "fixed", width: "100vw", height: "100vh", pointerEvents: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "panel_YqS economy-panel_e08", style: { marginLeft: "auto", marginRight: "auto", width: "1000rem", height: "750rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header_H_U header_Bpo child-opacity-transition_nkS" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "title-bar_PF4" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "icon-space_h_f" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "title_SVH title_zQN" }, "Legacy Flavour"), /* @__PURE__ */ import_react5.default.createElement("button", { className: "button_bvQ button_bvQ close-button_wKK", onClick: onClose }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "tinted-icon_iKo icon_PhD", style: { maskImage: "url(Media/Glyphs/Close.svg)" } }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
+    return /* @__PURE__ */ import_react5.default.createElement("div", { style: { position: "fixed", width: "100vw", height: "100vh", pointerEvents: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", ...style } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "panel_YqS economy-panel_e08", style: { marginLeft: "auto", marginRight: "auto", width: "1000rem", height: "750rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header_H_U header_Bpo child-opacity-transition_nkS" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "title-bar_PF4" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "icon-space_h_f" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "title_SVH title_zQN" }, "Legacy Flavour"), /* @__PURE__ */ import_react5.default.createElement("button", { className: "button_bvQ button_bvQ close-button_wKK", onClick: onClose }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "tinted-icon_iKo icon_PhD", style: { maskImage: "url(Media/Glyphs/Close.svg)" } }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
       "div",
       {
         key: tab.name,
@@ -23565,7 +23565,7 @@
   var import_react9 = __toESM(require_react());
   var $Label = ({ children, style, isBold }) => {
     var markup = isBold ? /* @__PURE__ */ import_react9.default.createElement("b", null, children) : children;
-    return /* @__PURE__ */ import_react9.default.createElement("div", { className: "label_VSW label_T__", styles: style }, markup);
+    return /* @__PURE__ */ import_react9.default.createElement("div", { className: "label_VSW label_T__", style }, markup);
   };
   var label_default = $Label;
 
@@ -23579,12 +23579,16 @@
 
   // src/jsx/components/_checkbox.jsx
   var import_react11 = __toESM(require_react());
-  var $CheckBox = ({ style, checked, onToggle }) => {
-    const checked_class = checked ? "checked" : "unchecked";
+  var $CheckBox = ({ react, style, checked, onToggle }) => {
+    const [isChecked, setIsChecked] = react.useState(checked);
     const handleClick = () => {
       onToggle(!checked);
       engine.trigger("audio.playSound", "select-toggle", 1);
     };
+    react.useEffect(() => {
+      setIsChecked(checked);
+    }, [checked]);
+    const checked_class = isChecked ? "checked" : "unchecked";
     const many2 = (...styles) => {
       return styles.join(" ");
     };
@@ -23700,7 +23704,7 @@
         description: "Override the games white info-mode switch, using a custom setting. Toggle with ALT+S.",
         icon: "Media/Game/Icons/Information.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseStickyWhiteness, onToggle: (val) => updateData("UseStickyWhiteness", val) })
+      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseStickyWhiteness, onToggle: (val) => updateData("UseStickyWhiteness", val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
@@ -23708,7 +23712,7 @@
         description: "If 'Use Sticky Whiteness' is enabled, the info-mode white setting will be set to this value when a tool with an info-mode is activated. Toggle with SHIFT+W.",
         icon: "Media/Game/Icons/Orbit.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.WhitenessToggle, onToggle: (val) => updateData("WhitenessToggle", val) })
+      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.WhitenessToggle, onToggle: (val) => updateData("WhitenessToggle", val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
@@ -23716,7 +23720,7 @@
         description: "When a tool system with a length measurement is selected, use 'units' instead. Toggle with ALT+U.",
         icon: "Media/Game/Icons/Roads.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseUnits, onToggle: (val) => updateData("UseUnits", val) })
+      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseUnits, onToggle: (val) => updateData("UseUnits", val) })
     ))), /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
@@ -23724,7 +23728,7 @@
         description: "When enabled, freezes the visual time of day. 'Day/Night Visuals' must be on.",
         icon: "Media/PhotoMode/Pause.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.FreezeVisualTime, onToggle: (val) => freezeTimeUpdate(val) })
+      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.FreezeVisualTime, onToggle: (val) => freezeTimeUpdate(val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
@@ -23751,7 +23755,7 @@
   var import_react19 = __toESM(require_react());
 
   // src/jsx/components/_colorpicker.jsx
-  var import_react16 = __toESM(require_react());
+  var import_react17 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // src/jsx/components/_fancy-slider.jsx
@@ -23810,8 +23814,17 @@
   };
   var fancy_slider_default = $FancySlider;
 
+  // src/jsx/components/_button.jsx
+  var import_react16 = __toESM(require_react());
+  var $Button = ({ children, style, onClick, isBlack }) => {
+    const className = isBlack ? "button_KVN" : "button_WWa";
+    const inlineStyle = isBlack ? { color: "var(--textColor)" } : {};
+    return /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("button", { className, style: { width: "100%", height: "auto", padding: "10rem", ...inlineStyle, ...style }, onClick }, children));
+  };
+  var button_default2 = $Button;
+
   // src/jsx/components/_colorpicker.jsx
-  var $ColorPicker = ({ react, label, color, onChanged }) => {
+  var $ColorPicker = ({ react, label, color, onChanged, onDropdown }) => {
     function hexToHsv(hex) {
       hex = hex.replace(/^#/, "");
       let r, g, b;
@@ -23909,6 +23922,7 @@
     const handleClickOutside = (event) => {
       if (pickerRef.current && !pickerRef.current.contains(event.target) && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setActive(false);
+        onDropdown(false);
       }
     };
     react.useEffect(() => {
@@ -23945,6 +23959,7 @@
     };
     const onToggle = () => {
       setActive(!active);
+      onDropdown(!active);
     };
     const onHueUpdated = (val) => {
       let newColor = hsvToHex(val / 100, saturation, value);
@@ -23961,24 +23976,15 @@
       updateInternalColor(newColor);
       onChanged(newColor);
     };
-    const dropdownContent = active ? /* @__PURE__ */ import_react16.default.createElement("div", { ref: dropdownRef, style: {
+    const dropdownContent = active ? /* @__PURE__ */ import_react17.default.createElement("div", { ref: dropdownRef, style: {
       display: "flex",
       position: "absolute",
       ...getDropdownPosition(),
       zIndex: 9999
-    } }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-picker-container_Sj5", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-picker_aNX" }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "sliders_sCL section_cwE" }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-component-input_WeK", style: { flexDirection: "column", alignItems: "stretch", justifyContent: "stretch" } }, /* @__PURE__ */ import_react16.default.createElement(fancy_slider_default, { react, value: hueVal, isColorSpectrum: "true", onValueChanged: onHueUpdated }), /* @__PURE__ */ import_react16.default.createElement(fancy_slider_default, { react, value: satVal, fromColour: satFromColour, toColour: satToColour, onValueChanged: onSatUpdated, style: { marginTop: "5rem" } }), /* @__PURE__ */ import_react16.default.createElement(fancy_slider_default, { react, value: valVal, fromColour: valFromColour, toColour: valToColour, onValueChanged: onValUpdated, style: { marginTop: "5rem" } })))))) : null;
-    return /* @__PURE__ */ import_react16.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react16.default.createElement("div", { ref: pickerRef, className: "field_amr field_cjf", style: { display: "flex", flexDirection: "row" }, onClick: onToggle }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { flex: 1 }, onClick: onToggle }, label), /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-field_jwA color-field_due", style: { marginLeft: "auto" } }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { backgroundColor: internalColor } }))), portalContainer && dropdownContent && import_react_dom.default.createPortal(dropdownContent, portalContainer));
+    } }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-picker-container_Sj5", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-picker_aNX" }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "sliders_sCL section_cwE" }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-component-input_WeK", style: { flexDirection: "column", alignItems: "stretch", justifyContent: "stretch" } }, /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: hueVal, isColorSpectrum: "true", onValueChanged: onHueUpdated }), /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: satVal, fromColour: satFromColour, toColour: satToColour, onValueChanged: onSatUpdated, style: { marginTop: "5rem" } }), /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: valVal, fromColour: valFromColour, toColour: valToColour, onValueChanged: onValUpdated, style: { marginTop: "5rem" } })))), /* @__PURE__ */ import_react17.default.createElement("div", { style: { width: "100%", marginTop: "10rem" } }, /* @__PURE__ */ import_react17.default.createElement(button_default2, { onClick: onToggle }, "Done")))) : null;
+    return /* @__PURE__ */ import_react17.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react17.default.createElement("div", { ref: pickerRef, className: "field_amr field_cjf", style: { display: "flex", flexDirection: "row" }, onClick: onToggle }, /* @__PURE__ */ import_react17.default.createElement("div", { style: { flex: 1 }, onClick: onToggle }, label), /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-field_jwA color-field_due", style: { marginLeft: "auto" } }, /* @__PURE__ */ import_react17.default.createElement("div", { style: { backgroundColor: internalColor } }))), portalContainer && dropdownContent && import_react_dom.default.createPortal(dropdownContent, portalContainer));
   };
   var colorpicker_default = $ColorPicker;
-
-  // src/jsx/components/_button.jsx
-  var import_react17 = __toESM(require_react());
-  var $Button = ({ children, style, onClick, isBlack }) => {
-    const className = isBlack ? "button_KVN" : "button_WWa";
-    const inlineStyle = isBlack ? { color: "var(--textColor)" } : {};
-    return /* @__PURE__ */ import_react17.default.createElement("div", null, /* @__PURE__ */ import_react17.default.createElement("button", { className, style: { width: "100%", height: "auto", padding: "10rem", ...inlineStyle, ...style }, onClick }, children));
-  };
-  var button_default2 = $Button;
 
   // src/jsx/components/_select.jsx
   var import_react18 = __toESM(require_react());
@@ -24049,7 +24055,7 @@
   var select_default = $Select;
 
   // src/jsx/tabs/_zone-colours.jsx
-  var $ZoneColours = ({ react, data, setData, triggerUpdate }) => {
+  var $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
     const noneString = "Default Colours";
     const colourModes = [
       noneString,
@@ -24088,6 +24094,14 @@
         }
       });
     }
+    const changeWindowOpacity = (visible) => {
+      if (!onChangeWindowOpacity)
+        return;
+      onChangeWindowOpacity(visible ? 1 : 0.55);
+    };
+    const onColourDropdown = (visible) => {
+      changeWindowOpacity(!visible);
+    };
     const getZoneColours = (zoneGroup) => {
       let icon = "coui://legacyflavourui/Icons/" + zoneGroup.icon + "_" + data.Mode + ".svg";
       return /* @__PURE__ */ import_react19.default.createElement(
@@ -24113,7 +24127,7 @@
           const onChanged = (newColour) => {
             triggerZoneColourUpdate(zone.Name, newColour);
           };
-          return /* @__PURE__ */ import_react19.default.createElement(colorpicker_default, { key: zone.Name, react, label: zone.Name, color: colour, onChanged });
+          return /* @__PURE__ */ import_react19.default.createElement(colorpicker_default, { key: zone.Name, react, label: zone.Name, color: colour, onChanged, onDropdown: onColourDropdown });
         }))
       );
     };
@@ -24139,7 +24153,7 @@
         fitChild: "true"
       },
       /* @__PURE__ */ import_react19.default.createElement(select_default, { react, selected: modeString, options: colourModes, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onModeChanged })
-    )), /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "33.33333333333%" } }, /* @__PURE__ */ import_react19.default.createElement(button_default2, { onClick: triggerRegenerateIcons }, "Regenerate icons (Game restart required)"), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerSetColoursToVanilla }, "Set ", modeString, "\xA0to vanilla colours"), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetColoursToDefault }, "Reset ", modeString))), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%" } }, renderZoneColours(0)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem", paddingRight: "5rem" } }, renderZoneColours(1), renderZoneColours(2)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem" } }, renderZoneColours(3))));
+    )), /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "33.33333333333%" } }, /* @__PURE__ */ import_react19.default.createElement(button_default2, { onClick: triggerRegenerateIcons }, "Regenerate icons (Game restart required)"), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerSetColoursToVanilla }, "Set ", modeString, "\xA0to vanilla colours"), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetColoursToDefault }, "Reset ", modeString), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react19.default.createElement(label_default, { style: { margin: "10rem" } }, "Make window transparent"), /* @__PURE__ */ import_react19.default.createElement(checkbox_default, { react, style: { margin: "10rem" }, checked: useTransparency, onToggle: onChangeUseTransparency })))), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%" } }, renderZoneColours(0)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem", paddingRight: "5rem" } }, renderZoneColours(1), renderZoneColours(2)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem" } }, renderZoneColours(3))));
   };
   var zone_colours_default = $ZoneColours;
 
@@ -24220,7 +24234,7 @@
         description: "Provides custom zone colour options that can be cycled with a key shortcut. Toggle with ALT+Z.",
         icon: "Media/Game/Icons/Zones.svg"
       },
-      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.Enabled, onToggle: (val) => updateData("Enabled", val) })
+      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.Enabled, onToggle: (val) => updateData("Enabled", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24228,7 +24242,7 @@
         description: "Zone cell borders will adjust to be more visible when there is snow coverage.",
         icon: "Media/Game/Climate/Snow.svg"
       },
-      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseDynamicCellBorders, onToggle: (val) => updateData("UseDynamicCellBorders", val) })
+      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseDynamicCellBorders, onToggle: (val) => updateData("UseDynamicCellBorders", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24324,6 +24338,8 @@
   // src/jsx/ui.jsx
   var $LegacyFlavour = ({ react }) => {
     const [data, setData] = react.useState({});
+    const [opacity, setOpacity] = react.useState(1);
+    const [useTransparency, setUseTransparency] = react.useState(false);
     use_data_update_default(react, "cities2modding_legacyflavour.config", setData);
     const triggerUpdate = (prop, val) => {
       engine.trigger("cities2modding_legacyflavour.updateProperty", JSON.stringify({ property: prop, value: val }));
@@ -24333,6 +24349,17 @@
       const event = new CustomEvent("hookui", { detail: visData });
       window.dispatchEvent(event);
       engine.trigger("audio.playSound", "close-panel", 1);
+    };
+    const onChangeOpacity = (val) => {
+      if (!useTransparency) {
+        setOpacity(1);
+        return;
+      }
+      setOpacity(val);
+    };
+    const onChangeUseTransparency = (val) => {
+      setUseTransparency(val);
+      onChangeOpacity();
     };
     const tabs = [
       {
@@ -24345,14 +24372,14 @@
       },
       {
         name: "Zone Colours",
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_colours_default, { react, data, setData, triggerUpdate }))
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_colours_default, { react, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity }))
       },
       {
         name: "About",
         content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(about_default, null))
       }
     ];
-    return /* @__PURE__ */ import_react23.default.createElement(tab_window_default, { react, tabs, onClose: toggleVisibility });
+    return /* @__PURE__ */ import_react23.default.createElement(tab_window_default, { react, tabs, onClose: toggleVisibility, style: { opacity } });
   };
   window._$hookui.registerPanel({
     id: "cities2modding.legacyflavour",

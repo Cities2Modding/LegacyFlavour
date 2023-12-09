@@ -1,12 +1,18 @@
 import React from 'react'
 
-const $CheckBox = ({ style, checked, onToggle }) => {
-    const checked_class = checked ? 'checked' : 'unchecked';
+const $CheckBox = ({ react, style, checked, onToggle }) => {
+    const [isChecked, setIsChecked] = react.useState(checked);
 
     const handleClick = () => {
         onToggle(!checked)
         engine.trigger("audio.playSound", "select-toggle", 1);
     }
+
+    react.useEffect(() => {
+        setIsChecked(checked);
+    }, [checked]);
+
+    const checked_class = isChecked ? 'checked' : 'unchecked';
 
     const many = (...styles) => {
         return styles.join(' ')

@@ -9,6 +9,8 @@ import $About from './tabs/_about';
 const $LegacyFlavour = ({ react }) => {
 
     const [data, setData] = react.useState({})
+    const [opacity, setOpacity] = react.useState(1)
+    const [useTransparency, setUseTransparency] = react.useState(false)
 
     useDataUpdate(react, "cities2modding_legacyflavour.config", setData)
 
@@ -23,6 +25,19 @@ const $LegacyFlavour = ({ react }) => {
 
         engine.trigger("audio.playSound", "close-panel", 1);
     }
+
+    const onChangeOpacity = (val) => {
+        if (!useTransparency) {
+            setOpacity(1);
+            return;
+        }
+        setOpacity(val);
+    };
+
+    const onChangeUseTransparency = ( val ) => {
+        setUseTransparency(val);
+        onChangeOpacity();
+    };
 
     const tabs = [
         {
@@ -40,7 +55,7 @@ const $LegacyFlavour = ({ react }) => {
         {
             name: 'Zone Colours',
             content: <div style={{ height: '100%', width: '100%' }}>
-                <$ZoneColours react={react} data={data} setData={setData} triggerUpdate={triggerUpdate} />
+                <$ZoneColours react={react} data={data} setData={setData} triggerUpdate={triggerUpdate} useTransparency={useTransparency} onChangeUseTransparency={onChangeUseTransparency} onChangeWindowOpacity={onChangeOpacity} />
             </div>
         },
         {
@@ -51,7 +66,7 @@ const $LegacyFlavour = ({ react }) => {
         }
     ];
 
-    return <$TabWindow react={react} tabs={tabs} onClose={toggleVisibility} />
+    return <$TabWindow react={react} tabs={tabs} onClose={toggleVisibility} style={{ opacity: opacity }} />
 };
 
 // Registering the panel with HookUI

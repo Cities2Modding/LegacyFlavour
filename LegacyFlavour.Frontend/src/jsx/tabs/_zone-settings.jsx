@@ -37,12 +37,12 @@ const $ZoneSettings = ({ react, data, setData, triggerUpdate }) => {
                 <$IconPanel label="Custom Zone Colouring"
                     description="Provides custom zone colour options that can be cycled with a key shortcut. Toggle with ALT+Z."
                     icon="Media/Game/Icons/Zones.svg">
-                    <$CheckBox style={{ alignSelf: 'center', margin: '10rem' }} checked={data.Enabled} onToggle={(val) => updateData("Enabled", val)} />
+                    <$CheckBox react={react} style={{ alignSelf: 'center', margin: '10rem' }} checked={data.Enabled} onToggle={(val) => updateData("Enabled", val)} />
                 </$IconPanel>
                 <$IconPanel label="Use Dynamic Cell Borders"
                     description="Zone cell borders will adjust to be more visible when there is snow coverage."
                     icon="Media/Game/Climate/Snow.svg">
-                    <$CheckBox style={{ alignSelf: 'center', margin: '10rem' }} checked={data.UseDynamicCellBorders} onToggle={(val) => updateData("UseDynamicCellBorders", val)} />
+                    <$CheckBox react={react} style={{ alignSelf: 'center', margin: '10rem' }} checked={data.UseDynamicCellBorders} onToggle={(val) => updateData("UseDynamicCellBorders", val)} />
                 </$IconPanel>
                 <$IconPanel label="Cell Opacity"
                     description="Change the transparency of non-empty zone cells."
