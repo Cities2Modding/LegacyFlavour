@@ -15,7 +15,7 @@ const $About = ({}) => {
         engine.trigger("cities2modding_legacyflavour.launchUrl", "https://discord.gg/KGRNBbm5Fh");
     };
     return <div>
-        <$IconPanel label="Legacy Flavour v0.0.5" style={{ flex: 1 }}
+        <$IconPanel label="Legacy Flavour v0.0.6" style={{ flex: 1 }}
             description="This mod was developed by the optimus-code and the Cities2Modding community."
             icon="Media/Editor/Object.svg" fitChild="true">
         </$IconPanel>
