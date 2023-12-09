@@ -2,19 +2,22 @@
 
 Welcome to the GitHub repository for LegacyFlavour, a Cities Skylines 2 mod designed to blend the best of Cities Skylines 1 with the advanced features of Cities Skylines 2. Our mod aims to enhance your city-building experience by introducing nostalgic elements and improved functionalities.
 
-## New Features in v0.0.4
+## New Features in v0.0.5
 
-1. **UI System via HookUI**: Integrates with [HookUI](https://github.com/Captain-Of-Coit/hookui/releases) to offer an advanced UI system, elevating your control and customization options.
+### Performance Enhancements and Configuration Saving
+- **Optimised Performance**: Significant improvements have been made to the overall performance, ensuring a smoother and more efficient user experience.
+- **Config Saving**: Enhanced the configuration saving feature, allowing users to easily save and retrieve their settings.
 
-2. **Configurable Zoning Configuration**: Customize zoning options like never before. Adjust colours, borders, and more, directly from the UI.
+### User Interface Improvements
+- **Responsive UI**: The user interface has been refined to be more responsive, providing a more fluid interaction.
+- **Enhanced Sliders and Colour Pickers**: The sliders and colour pickers have been upgraded for better responsiveness. They now react more quickly and accurately to user inputs.
+- **Sound Effects**: Added engaging sound effects to sliders and colour pickers, enriching the user interaction.
 
-3. **Enhanced Control over Weather and Time**: Control weather and time settings with new features, including saving these states between game reloads.
+### New Window Transparency Mode
+- **Transparent Window Option**: Introducing a new window transparency mode. When using colour pickers, you can now enable a mode that makes the window transparent, offering a more integrated and immersive experience.
 
-4. **Easy UI Access**: Access the new UI menu conveniently through the HookUI button located in the top left corner.
-
-5. **Live UI Configurations**: Experience live changes in the game as you adjust settings. Utilize colour pickers and other interactive elements for an immersive configuration process.
-
-6. **Buttons, buttons!**: You can set colour blindness profile sets to the vanilla colours, reset them to Legacy Flavour's default.
+### Bug Fixes
+- Various bug fixes have been implemented to ensure a more stable and reliable application.
 
 ## Features
 
@@ -44,6 +47,18 @@ LegacyFlavour currently includes the following features:
 8. **Dynamic UI Icons**: UI icons for zones now adapt to match the configured colours. These are dynamically generated from the games icons based on config settings.
 
 9. **Sticky Infomode Whiteness**: Shortcuts to override infomode 'whiteness' setting to stop it constantly popping up.
+
+10. **UI System via HookUI**: Integrates with [HookUI](https://github.com/Captain-Of-Coit/hookui/releases) to offer an advanced UI system, elevating your control and customization options.
+
+11. **Configurable Zoning Configuration**: Customize zoning options like never before. Adjust colours, borders, and more, directly from the UI.
+
+12. **Enhanced Control over Weather and Time**: Control weather and time settings with new features, including saving these states between game reloads.
+
+13. **Easy UI Access**: Access the new UI menu conveniently through the HookUI button located in the top left corner.
+
+14. **Live UI Configurations**: Experience live changes in the game as you adjust settings. Utilize colour pickers and other interactive elements for an immersive configuration process.
+
+15. **Buttons, buttons!**: You can set colour blindness profile sets to the vanilla colours, reset them to Legacy Flavour's default.
 
 ## Installation
 
