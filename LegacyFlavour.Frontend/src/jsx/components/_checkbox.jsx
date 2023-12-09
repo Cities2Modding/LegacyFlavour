@@ -5,17 +5,16 @@ const $CheckBox = ({ style, checked, onToggle }) => {
 
     const handleClick = () => {
         onToggle(!checked)
+        engine.trigger("audio.playSound", "select-toggle", 1);
     }
 
     const many = (...styles) => {
         return styles.join(' ')
     }
 
-
     return <div className={many('toggle_cca toggle_ATa', checked_class)} style={style} onClick={handleClick}>
         <div className={many('checkmark_NXV', checked_class)}></div>
     </div>
-
 }
 
 export default $CheckBox

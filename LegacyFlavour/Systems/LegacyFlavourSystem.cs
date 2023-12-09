@@ -4,6 +4,7 @@ using Game.Rendering;
 using Game.SceneFlow;
 using Game.Simulation;
 using Game.UI;
+using LegacyFlavour.Configuration;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -19,14 +20,6 @@ namespace LegacyFlavour.Systems
         private static string AssemblyPath = Path.GetDirectoryName( typeof( LegacyFlavourSystem ).Assembly.Location );
         public static string UIPath = AssemblyPath + "\\UI\\";
 
-        public static LegacyFlavourConfig Config
-        {
-            get
-            {
-                return _config;
-            }
-        }
-
         public static void EnsureModUIFolder( )
         {
             var resourceHandler = ( GameUIResourceHandler ) GameManager.instance.userInterface.view.uiSystem.resourceHandler;
@@ -37,13 +30,18 @@ namespace LegacyFlavour.Systems
             resourceHandler.HostLocationsMap.Add( "legacyflavourui", new List<string> { UIPath } );
         }
 
-        private static LegacyFlavourConfig _config = LegacyFlavourConfig.Load( );
+        private LegacyFlavourConfig Config
+        {
+            get
+            {
+                return _updateSystem.Config;
+            }
+        }
 
         private bool isInitialised;
-        private ZoneColourSystem _zoneColourSystem;
+        private LegacyFlavourUpdateSystem _updateSystem;
         private PlanetarySystem _planetarySystem;
         private ClimateSystem _climateSystem;
-        private TimeSystem _timeSystem;
         private LightingSystem _lightingSystem;
         private Game.Tools.ToolSystem _toolSystem;
         private float targetVisualTime;
@@ -52,6 +50,9 @@ namespace LegacyFlavour.Systems
         protected override void OnCreate( )
         {
             base.OnCreate( );
+
+            _updateSystem = World.GetExistingSystemManaged<LegacyFlavourUpdateSystem>( );
+
             SetupKeybinds( );
         }
 
@@ -65,10 +66,8 @@ namespace LegacyFlavour.Systems
             if ( _lightingSystem == null )
             {
                 _lightingSystem = World.GetExistingSystemManaged<LightingSystem>( );
-                _zoneColourSystem = World.GetOrCreateSystemManaged<ZoneColourSystem>( );
                 _toolSystem = World.GetExistingSystemManaged<Game.Tools.ToolSystem>( );
                 _climateSystem = World.GetExistingSystemManaged<ClimateSystem>( );
-                _timeSystem = World.GetExistingSystemManaged<TimeSystem>( );
                 _planetarySystem = World.GetExistingSystemManaged<PlanetarySystem>( );
             }
             UpdateTimeOfDay( );
@@ -85,13 +84,15 @@ namespace LegacyFlavour.Systems
             switch ( property )
             {
                 case "UseStickyWhiteness":
-                    if ( _config.UseStickyWhiteness )
-                        Shader.SetGlobalInt( "colossal_InfoviewOn", _toolSystem.activeInfoview?.active == true && _config.WhitenessToggle ? 1 : 0 );
+                    if ( Config.UseStickyWhiteness )
+                        Shader.SetGlobalInt( "colossal_InfoviewOn", _toolSystem.activeInfoview?.active == true &&
+                            Config.WhitenessToggle ? 1 : 0 );
                     break;
 
                 case "WhitenessToggle":
-                    if ( _config.UseStickyWhiteness )
-                        Shader.SetGlobalInt( "colossal_InfoviewOn", _toolSystem.activeInfoview?.active == true && _config.WhitenessToggle ? 1 : 0 );
+                    if ( Config.UseStickyWhiteness )
+                        Shader.SetGlobalInt( "colossal_InfoviewOn", _toolSystem.activeInfoview?.active == true &&
+                            Config.WhitenessToggle ? 1 : 0 );
                     break;
 
                 case "FreezeVisualTime":
@@ -111,17 +112,17 @@ namespace LegacyFlavour.Systems
         private void UpdateTimeOfDay( )
         {
             // When we're sync'ing visual and actual time these options will conflict
-            if ( _config.FreezeVisualTime && _config.TimeOfDay == TimeOfDayOverride.Off )
+            if ( Config.FreezeVisualTime && Config.TimeOfDay == TimeOfDayOverride.Off )
             {
                 _planetarySystem.overrideTime = true;
             }
             else
             {
-                switch ( _config.TimeOfDay )
+                switch ( Config.TimeOfDay )
                 {
                     default:
                     case TimeOfDayOverride.Off:
-                        if ( !_config.FreezeVisualTime )
+                        if ( !Config.FreezeVisualTime )
                             _planetarySystem.overrideTime = false;
                         targetVisualTime = 0f;
                         break;
@@ -161,7 +162,7 @@ namespace LegacyFlavour.Systems
         /// </summary>
         private void UpdateWeather( )
         {
-            switch ( _config.Weather )
+            switch ( Config.Weather )
             {
                 case WeatherOverride.Off:
                     _climateSystem.temperature.overrideState = false;
@@ -218,8 +219,8 @@ namespace LegacyFlavour.Systems
                 .With( "Button", "<Keyboard>/u" );
             inputAction.performed += ( a ) =>
             {
-                _config.UseUnits = !_config.UseUnits;
-                LegacyFlavourConfig.Save( _config );
+                Config.UseUnits = !Config.UseUnits;
+                _updateSystem.EnqueueConfigUpdate( );
             };
             inputAction.Enable( );
 
@@ -229,9 +230,9 @@ namespace LegacyFlavour.Systems
                 .With( "Button", "<Keyboard>/s" );
             inputAction.performed += ( a ) =>
             {
-                _config.UseStickyWhiteness = !_config.UseStickyWhiteness;
+                Config.UseStickyWhiteness = !Config.UseStickyWhiteness;
 
-                LegacyFlavourConfig.Save( _config );
+                _updateSystem.EnqueueConfigUpdate( );
 
                 TriggerUpdate( "UseStickyWhiteness" );
                
@@ -244,10 +245,10 @@ namespace LegacyFlavour.Systems
                 .With( "Button", "<Keyboard>/w" );
             inputAction.performed += ( a ) =>
             {
-                if ( _config.UseStickyWhiteness )
+                if ( Config.UseStickyWhiteness )
                 {
-                    _config.WhitenessToggle = !_config.WhitenessToggle;
-                    LegacyFlavourConfig.Save( _config );                    
+                    Config.WhitenessToggle = !Config.WhitenessToggle;
+                    _updateSystem.EnqueueConfigUpdate( );
                     TriggerUpdate( "WhitenessToggle" );
                 }
             };
@@ -260,18 +261,18 @@ namespace LegacyFlavour.Systems
             inputAction.performed += ( a ) =>
             {
                 Debug.Log( "LegacyFlavour Config file reloaded!" );
-                _config = LegacyFlavourConfig.Load( );
-                _zoneColourSystem.ForceUpdate( true );
+                _updateSystem.Reload( );
+                _updateSystem.EnqueueColoursUpdate( invalidateCache: true );
             };
             inputAction.Enable( );
         }
 
         protected override void OnUpdate( )
         {
-            if ( !isInitialised || !_config.FreezeVisualTime || _planetarySystem == null )
+            if ( !isInitialised || !Config.FreezeVisualTime || _planetarySystem == null )
                 return;
 
-            if ( seekGoldenHour && ( _config.TimeOfDay != TimeOfDayOverride.GoldenHour || IsSunriseOrSunset( ) ))
+            if ( seekGoldenHour && ( Config.TimeOfDay != TimeOfDayOverride.GoldenHour || IsSunriseOrSunset( ) ))
             {
                 seekGoldenHour = false;
                 targetVisualTime = _planetarySystem.time;

@@ -3,6 +3,7 @@ using Colossal.Serialization.Entities;
 using Game.Prefabs;
 using Game.SceneFlow;
 using Game.UI.InGame;
+using LegacyFlavour.Configuration;
 using LegacyFlavour.Systems;
 using System.Collections.Generic;
 using System.IO;
@@ -51,12 +52,13 @@ namespace LegacyFlavour.Helpers
         private readonly static string[] MANUAL_ICONS = new[] { "ZoneResidential", "ZoneCommercial", "ZoneOffice", "ZoneIndustrial" };        
 
         private readonly ZoneColourSystem _zoneColourSystem;
-        private readonly LegacyFlavourConfig _config = LegacyFlavourSystem.Config;
+        private readonly LegacyFlavourConfig _config;
 
         public DynamicZoneIcons( )
         {
             var world = World.DefaultGameObjectInjectionWorld;
             _zoneColourSystem = world.GetExistingSystemManaged<ZoneColourSystem>( );
+            _config = world.GetExistingSystemManaged<LegacyFlavourUpdateSystem>( ).Config;
             ScanDirectory( );
         }
 

@@ -4,7 +4,7 @@ import $ColorPicker from '../components/_colorpicker';
 import $Button from '../components/_button';
 import $Select from '../components/_select';
 
-const $ZoneColours = ({ react, data, triggerUpdate }) => {
+const $ZoneColours = ({ react, data, setData, triggerUpdate }) => {
     const noneString = "Default Colours";
     const colourModes = [
         noneString,
@@ -13,8 +13,16 @@ const $ZoneColours = ({ react, data, triggerUpdate }) => {
         "Tritanopia",
         "Custom"
     ];
+
+    const updateData = (field, val) => {
+        if (field === "Mode") {
+            setData({ ...data, Mode: val });
+        }
+        triggerUpdate(field, val);
+    };
+
     const onModeChanged = (selected) => {
-        triggerUpdate("Mode", selected == noneString ? "None" : selected);
+        updateData("Mode", selected == noneString ? "None" : selected);
     };
 
     const triggerZoneColourUpdate = (zoneName, colour) => {

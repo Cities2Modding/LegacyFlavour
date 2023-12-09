@@ -2,28 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $FancySlider from '../components/_fancy-slider';
 
-const $ColorPicker = ({ react, label, color, onChanged }) => {
-    function hsvToColor(h, s, v, alpha = 1) {
-        let r, g, b;
-
-        let i = Math.floor(h * 6);
-        let f = h * 6 - i;
-        let p = v * (1 - s);
-        let q = v * (1 - f * s);
-        let t = v * (1 - (1 - f) * s);
-
-        switch (i % 6) {
-            case 0: r = v, g = t, b = p; break;
-            case 1: r = q, g = v, b = p; break;
-            case 2: r = p, g = v, b = t; break;
-            case 3: r = p, g = q, b = v; break;
-            case 4: r = t, g = p, b = v; break;
-            case 5: r = v, g = p, b = q; break;
-        }
-
-        return `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${alpha})`;
-    }
-
+const $ColorPicker = ({ react, label, color, onChanged }) => {  
     function hexToHsv(hex) {
         // Remove the hash at the start if it's there
         hex = hex.replace(/^#/, '');
@@ -92,15 +71,34 @@ const $ColorPicker = ({ react, label, color, onChanged }) => {
         };
 
         return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-    }
+    }    
 
+    const [internalColor, setInternalColor] = react.useState(color);
 
-    const hsv = hexToHsv(color);
+    const hsv = hexToHsv(internalColor);
     const hue = hsv.h;
     const saturation = hsv.s;
     const value = hsv.v;
 
-    const curColour = hsvToColor(hue, saturation, value);
+    const hueVal = parseInt(hue * 100, 10);
+    const satVal = parseInt(saturation * 100, 10);
+    const valVal = parseInt(value * 100, 10);
+
+    // For the Saturation slider, create a gradient from white to the full saturation of the current hue
+    const satFromColour = hsvToHex(hue, 0, 1); // White
+    const satToColour = hsvToHex(hue, 1, 1);   // Full saturation
+
+    // For the Value slider, create a gradient from black to the current hue at full brightness
+    const valFromColour = hsvToHex(hue, saturation, 0); // Black
+    const valToColour = hsvToHex(hue, saturation, 1);   // Full brightness
+
+    const updateInternalColor = (c) => {
+        setInternalColor(c);
+    };
+
+    react.useEffect(() => {
+        updateInternalColor(color);
+    }, [color]);
 
     const [active, setActive] = react.useState(false);
     const [portalContainer, setPortalContainer] = react.useState(null);
@@ -160,31 +158,21 @@ const $ColorPicker = ({ react, label, color, onChanged }) => {
         setActive(!active);
     };
 
-    const hueVal = parseInt(hue * 100, 10);
-    const satVal = parseInt(saturation * 100, 10);
-    const valVal = parseInt(value * 100, 10);
-
-    // For the Saturation slider, create a gradient from white to the full saturation of the current hue
-    const satFromColour = hsvToColor(hue, 0, 1); // White
-    const satToColour = hsvToColor(hue, 1, 1);   // Full saturation
-
-    // For the Value slider, create a gradient from black to the current hue at full brightness
-    const valFromColour = hsvToColor(hue, saturation, 0); // Black
-    const valToColour = hsvToColor(hue, saturation, 1);   // Full brightness
-
-
     const onHueUpdated = (val) => {
         let newColor = hsvToHex(val / 100.0, saturation, value);
+        updateInternalColor(newColor);
         onChanged(newColor);
     };
 
     const onSatUpdated = (val) => {
         let newColor = hsvToHex(hue, val / 100.0, value);
+        updateInternalColor(newColor);
         onChanged(newColor);
-
     };
+
     const onValUpdated = (val) => {
         let newColor = hsvToHex(hue, saturation, val / 100.0);
+        updateInternalColor(newColor);
         onChanged(newColor);
     };
 
@@ -217,7 +205,7 @@ const $ColorPicker = ({ react, label, color, onChanged }) => {
                     {label}
                 </div>
                 <div className="color-field_jwA color-field_due" style={{ marginLeft: 'auto' }}>
-                    <div style={{ backgroundColor: curColour }}>
+                    <div style={{ backgroundColor: internalColor }}>
                     </div> 
                 </div>
             </div>

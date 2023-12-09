@@ -1,6 +1,7 @@
 ﻿using Game;
 using Game.Prefabs;
 using Game.Zones;
+using LegacyFlavour.Configuration;
 using LegacyFlavour.Helpers;
 using LegacyFlavour.MonoBehaviours;
 using System.Collections.Generic;
@@ -8,8 +9,6 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static ATL.AudioData.FileStructureHelper;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace LegacyFlavour.Systems
 {
@@ -27,8 +26,6 @@ namespace LegacyFlavour.Systems
         static MethodInfo _updateAllZoneColors = typeof( ZoneSystem ).GetMethods( BindingFlags.Instance | BindingFlags.NonPublic )
             .FirstOrDefault( m => m.Name == "UpdateZoneColors" && m.GetParameters( ).Length == 0 );
 
-        private static LegacyFlavourConfig _config = LegacyFlavourSystem.Config;
-
         public Dictionary<string, Color> Colours
         {
             get
@@ -36,15 +33,15 @@ namespace LegacyFlavour.Systems
                 switch ( colourBlindness )
                 {
                     case ColourBlindness.Deuteranopia:
-                        return _config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Deuteranopia == "default" ? v.Colour : v.Deuteranopia ) );
+                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Deuteranopia == "default" ? v.Colour : v.Deuteranopia ) );
                     case ColourBlindness.Protanopia:
-                        return _config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Protanopia == "default" ? v.Colour : v.Protanopia ) );
+                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Protanopia == "default" ? v.Colour : v.Protanopia ) );
                     case ColourBlindness.Tritanopia:
-                        return _config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Tritanopia == "default" ? v.Colour : v.Tritanopia ) );
+                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Tritanopia == "default" ? v.Colour : v.Tritanopia ) );
                     case ColourBlindness.Custom:
-                        return _config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Custom == "default" ? v.Colour : v.Custom ) );
+                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Custom == "default" ? v.Colour : v.Custom ) );
                     default:
-                        return _config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Colour ) );
+                        return Config.Zones.ToDictionary( k => k.Name, v => ColourHelpers.HexToColor( v.Colour ) );
                 }
             }
         }
@@ -62,10 +59,19 @@ namespace LegacyFlavour.Systems
 
         private static Dictionary<string, string> _vanillaColours = new Dictionary<string, string>( );
 
+        private LegacyFlavourConfig Config
+        {
+            get
+            {
+                return _updateSystem.Config;
+            }
+        }
+
         public bool enabled = true;
-        public ColourBlindness colourBlindness = _config.Mode;
+        public ColourBlindness colourBlindness;
 
         private bool hasSnow;
+        private LegacyFlavourUpdateSystem _updateSystem;
         private ZoneSystem _zoneSystem;
         private SnowDetector _snowDetector;
         private DynamicZoneIcons _dynamicZoneIcons;
@@ -73,6 +79,8 @@ namespace LegacyFlavour.Systems
         protected override void OnCreate( )
         {
             base.OnCreate( );
+
+            _updateSystem = World.GetOrCreateSystemManaged<LegacyFlavourUpdateSystem>( );
 
             _dynamicZoneIcons = new DynamicZoneIcons( );
             _zoneSystem = World.GetExistingSystemManaged<ZoneSystem>( );
@@ -94,9 +102,10 @@ namespace LegacyFlavour.Systems
         /// </summary>
         private void Configure( )
         {
-            enabled = _config.Enabled;
+            colourBlindness = Config.Mode;
+            enabled = Config.Enabled;
             _snowDetector.Disable = !enabled;
-            colourBlindness = _config.Mode;
+            colourBlindness = Config.Mode;
         }
 
         /// <summary>
@@ -112,28 +121,28 @@ namespace LegacyFlavour.Systems
                     break;
 
                 case "Mode":
-                    colourBlindness = _config.Mode;
-                    ForceUpdate( );
+                    colourBlindness = Config.Mode;
+                    _updateSystem.EnqueueColoursUpdate( );
                     break;
 
                 case "CellOpacity":
                 case "EmptyCellOpacity":
                 case "CellBorderOpacity":
                 case "EmptyCellBorderOpacity":
-                    ForceUpdate( );
+                    _updateSystem.EnqueueColoursUpdate( );
                     break;
 
                 case "UseDynamicCellBorders":
-                    _snowDetector.Disable = !_config.UseDynamicCellBorders;
+                    _snowDetector.Disable = !Config.UseDynamicCellBorders;
                     break;
             }
         }
 
         private void UpdateEnabledStatus( bool invalidateIcons = false )
         {
-            enabled = _config.Enabled;
+            enabled = Config.Enabled;
             _snowDetector.Disable = !enabled;
-            ForceUpdate( invalidateIcons );
+            _updateSystem.EnqueueColoursUpdate( invalidateCache: invalidateIcons );
         }
 
         /// <summary>
@@ -149,10 +158,10 @@ namespace LegacyFlavour.Systems
             inputAction.performed += ( a ) =>
             {
                 enabled = !enabled;
-                _config.Enabled = enabled;
+                Config.Enabled = enabled;
                 _snowDetector.Disable = !enabled;
-                LegacyFlavourConfig.Save( _config );
-                ForceUpdate( );
+                _updateSystem.EnqueueConfigUpdate( );
+                _updateSystem.EnqueueColoursUpdate( );
             };
 
             inputAction.Enable( );
@@ -169,9 +178,9 @@ namespace LegacyFlavour.Systems
                     next = 0;
 
                 colourBlindness = ( ColourBlindness ) next;
-                _config.Mode = colourBlindness;
-                LegacyFlavourConfig.Save( _config );
-                ForceUpdate( );
+                Config.Mode = colourBlindness;
+                _updateSystem.EnqueueConfigUpdate( );
+                _updateSystem.EnqueueColoursUpdate( );
             };
 
             inputAction.Enable( );
@@ -190,7 +199,7 @@ namespace LegacyFlavour.Systems
                 else
                     hasSnow = false;
 
-                ForceUpdate( );
+                _updateSystem.EnqueueColoursUpdate( );
             };
         }
 
@@ -209,14 +218,14 @@ namespace LegacyFlavour.Systems
         /// </summary>
         public void SetCurrentToVanilla( )
         {
-            foreach ( var zone in _config.Zones )
+            foreach ( var zone in Config.Zones )
             {
                 if ( !_vanillaColours.ContainsKey( zone.Name ) )
                     continue;
 
                 var vanilla = _vanillaColours[zone.Name];
 
-                switch ( _config.Mode )
+                switch ( Config.Mode )
                 {
                     case ColourBlindness.Deuteranopia:
                         zone.Deuteranopia = vanilla;
@@ -240,9 +249,8 @@ namespace LegacyFlavour.Systems
                 }
             }
 
-            LegacyFlavourConfig.Save( _config );
-
-            ForceUpdate( true );
+            _updateSystem.EnqueueConfigUpdate( );
+            _updateSystem.EnqueueColoursUpdate( invalidateCache: true );
         }
 
         /// <summary>
@@ -251,16 +259,15 @@ namespace LegacyFlavour.Systems
         public void ResetSettingsToDefault( )
         {
             var defaultConfig = LegacyFlavourConfig.Default;
-            _config.Enabled = defaultConfig.Enabled;
-            _config.UseDynamicCellBorders = defaultConfig.UseDynamicCellBorders;
-            _config.CellOpacity = defaultConfig.CellOpacity;
-            _config.CellBorderOpacity = defaultConfig.CellBorderOpacity;
-            _config.EmptyCellOpacity = defaultConfig.EmptyCellOpacity;
-            _config.EmptyCellBorderOpacity = defaultConfig.EmptyCellBorderOpacity;
+            Config.Enabled = defaultConfig.Enabled;
+            Config.UseDynamicCellBorders = defaultConfig.UseDynamicCellBorders;
+            Config.CellOpacity = defaultConfig.CellOpacity;
+            Config.CellBorderOpacity = defaultConfig.CellBorderOpacity;
+            Config.EmptyCellOpacity = defaultConfig.EmptyCellOpacity;
+            Config.EmptyCellBorderOpacity = defaultConfig.EmptyCellBorderOpacity;
 
-            LegacyFlavourConfig.Save( _config );
-
-            ForceUpdate( );
+            _updateSystem.EnqueueConfigUpdate( );
+            _updateSystem.EnqueueColoursUpdate( );
         }
 
         /// <summary>
@@ -268,7 +275,7 @@ namespace LegacyFlavour.Systems
         /// </summary>
         public void ResetColoursToDefault( )
         {
-            foreach ( var zone in _config.Zones )
+            foreach ( var zone in Config.Zones )
             {
                 var defaultZone = LegacyFlavourConfig.Default.Zones
                     .FirstOrDefault( z => z.Name == zone.Name );
@@ -283,9 +290,8 @@ namespace LegacyFlavour.Systems
                 zone.Colour = defaultZone.Colour;
             }
 
-            LegacyFlavourConfig.Save( _config );
-
-            ForceUpdate( true );
+            _updateSystem.EnqueueConfigUpdate( );
+            _updateSystem.EnqueueColoursUpdate( invalidateCache: true );
         }
 
         /// <summary>
@@ -295,12 +301,12 @@ namespace LegacyFlavour.Systems
         /// <param name="colour"></param>
         public void UpdateZoneColour( string name, string colour )
         {
-            var zone = _config.Zones.FirstOrDefault( z => z.Name == name );
+            var zone = Config.Zones.FirstOrDefault( z => z.Name == name );
 
             if ( zone == null )
                 return;
 
-            switch ( _config.Mode )
+            switch ( Config.Mode )
             {
                 case ColourBlindness.Deuteranopia:
                     zone.Deuteranopia = colour;
@@ -323,9 +329,8 @@ namespace LegacyFlavour.Systems
                     break;
             }
 
-            LegacyFlavourConfig.Save( _config );
-
-            ForceUpdate( true );
+            _updateSystem.EnqueueConfigUpdate( );
+            _updateSystem.EnqueueColoursUpdate( invalidateCache: true );
         }
 
         /// <summary>
@@ -366,15 +371,15 @@ namespace LegacyFlavour.Systems
 
                 var fillColorArray = ( Vector4[] ) m_FillColorArray.GetValue( _zoneSystem );
                 var edgeColorArray = ( Vector4[] ) m_EdgeColorArray.GetValue( _zoneSystem );
-                var transparent = new Color( 0f, 0f, 0f, ( float )_config.EmptyCellOpacity );
+                var transparent = new Color( 0f, 0f, 0f, ( float ) Config.EmptyCellOpacity );
 
                 if ( isEmpty && hasSnow )
                     borderColor = new Color( 0f, 0f, 0f, 0.75f );
 
-                var fillOpacity = ( float ) _config.CellOpacity;
+                var fillOpacity = ( float ) Config.CellOpacity;
                 var fillOpacity2 = Mathf.Clamp01( fillOpacity - 0.1f );
-                var borderOpacity = ( float ) _config.CellBorderOpacity;
-                var emptyBorderOpacity = ( float ) _config.EmptyCellBorderOpacity;
+                var borderOpacity = ( float ) Config.CellBorderOpacity;
+                var emptyBorderOpacity = ( float ) Config.EmptyCellBorderOpacity;
 
                 fillColorArray[colourIndex1] = ( Vector4 ) ( isEmpty ? transparent : ColourHelpers.SetAlpha( overrideColor, fillOpacity2 ) );
                 edgeColorArray[colourIndex1] = ( Vector4 ) ( isEmpty ? hasSnow ? borderColor : ColourHelpers.SetAlpha( borderColor, emptyBorderOpacity ) : ColourHelpers.SetAlpha( borderColor, borderOpacity ) );

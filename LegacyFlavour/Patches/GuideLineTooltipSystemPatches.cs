@@ -3,9 +3,11 @@ using Game.UI.Localization;
 using Game.UI.Tooltip;
 using Game.UI.Widgets;
 using HarmonyLib;
+using LegacyFlavour.Configuration;
 using LegacyFlavour.Systems;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -24,10 +26,13 @@ namespace LegacyFlavour.Patches
     [HarmonyPatch( typeof( GuideLineTooltipSystem ), "OnUpdate" )]
     class GuideLineTooltipSystem_OnUpdatePatch
     {
-        static LegacyFlavourConfig _config = LegacyFlavourSystem.Config;
+        static LegacyFlavourUpdateSystem _updateSystem;
 
         static bool Prefix( GuideLineTooltipSystem __instance )
         {
+            if ( _updateSystem == null )
+                _updateSystem = World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<LegacyFlavourUpdateSystem>();
+
             var m_TooltipUISystem = Traverse.Create( __instance ).Field( "m_TooltipUISystem" ).GetValue<TooltipUISystem>( );
             var m_Groups = Traverse.Create( __instance ).Field( "m_Groups" ).GetValue<List<TooltipGroup>>( );
             var m_GuideLinesSystem = Traverse.Create( __instance ).Field( "m_GuideLinesSystem" ).GetValue<GuideLinesSystem>( );
@@ -77,9 +82,9 @@ namespace LegacyFlavour.Patches
                     // Modify the length field to show units instead
                     case GuideLinesSystem.TooltipType.Length:
                         child.icon = "Media/Glyphs/Length.svg";
-                        child.value = _config.UseUnits ? tooltipInfo.m_IntValue / 8f : tooltipInfo.m_IntValue; // Convert to Cities 1 units if enabled
-                        child.unit = _config.UseUnits ? "floatTwoFractions" : "length"; // Change to a generic unit type to stop showing m/ft
-                        if ( _config.UseUnits )
+                        child.value = _updateSystem.Config.UseUnits ? tooltipInfo.m_IntValue / 8f : tooltipInfo.m_IntValue; // Convert to Cities 1 units if enabled
+                        child.unit = _updateSystem.Config.UseUnits ? "floatTwoFractions" : "length"; // Change to a generic unit type to stop showing m/ft
+                        if ( _updateSystem.Config.UseUnits )
                             child.label = LocalizedString.Value( "U" ); // Adjust the label to say 'U'
                         else
                             child.label = default;

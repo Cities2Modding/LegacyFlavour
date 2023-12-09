@@ -23583,6 +23583,7 @@
     const checked_class = checked ? "checked" : "unchecked";
     const handleClick = () => {
       onToggle(!checked);
+      engine.trigger("audio.playSound", "select-toggle", 1);
     };
     const many2 = (...styles) => {
       return styles.join(" ");
@@ -23644,7 +23645,7 @@
   var toggle_group_default = $ToggleGroup;
 
   // src/jsx/tabs/_settings.jsx
-  var $Settings = ({ react, data, triggerUpdate }) => {
+  var $Settings = ({ react, data, setData, triggerUpdate }) => {
     const timeOfDayOptions = [
       "Off",
       "Day",
@@ -23659,19 +23660,37 @@
       "Snow"
     ];
     const timeOfDayUpdate = (val) => {
+      let parsedVal = val;
       if (val === "Golden Hour")
-        triggerUpdate("TimeOfDay", "GoldenHour");
-      else
-        triggerUpdate("TimeOfDay", val);
+        parsedVal = "GoldenHour";
+      triggerUpdate("TimeOfDay", parsedVal);
       if (val == "Off")
         triggerUpdate("FreezeVisualTime", false);
       else
         triggerUpdate("FreezeVisualTime", true);
+      setData({ ...data, TimeOfDay: parsedVal, FreezeVisualTime: val != "Off" });
     };
     const freezeTimeUpdate = (val) => {
-      if (!val)
+      if (!val) {
         triggerUpdate("TimeOfDay", "Off");
-      triggerUpdate("FreezeVisualTime", val);
+        triggerUpdate("FreezeVisualTime", val);
+        setData({ ...data, TimeOfDay: "Off", FreezeVisualTime: val });
+      } else {
+        triggerUpdate("FreezeVisualTime", val);
+        setData({ ...data, FreezeVisualTime: val });
+      }
+    };
+    const updateData = (field, val) => {
+      if (field === "UseStickyWhiteness") {
+        setData({ ...data, UseStickyWhiteness: val });
+      } else if (field === "WhitenessToggle") {
+        setData({ ...data, WhitenessToggle: val });
+      } else if (field === "UseUnits") {
+        setData({ ...data, UseUnits: val });
+      } else if (field === "Weather") {
+        setData({ ...data, Weather: val });
+      }
+      triggerUpdate(field, val);
     };
     const checkedTimeItem = data.TimeOfDay == "GoldenHour" ? "Golden Hour" : data.TimeOfDay;
     return /* @__PURE__ */ import_react14.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react14.default.createElement(
@@ -23681,7 +23700,7 @@
         description: "Override the games white info-mode switch, using a custom setting. Toggle with ALT+S.",
         icon: "Media/Game/Icons/Information.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseStickyWhiteness, onToggle: (val) => triggerUpdate("UseStickyWhiteness", val) })
+      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseStickyWhiteness, onToggle: (val) => updateData("UseStickyWhiteness", val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
@@ -23689,7 +23708,7 @@
         description: "If 'Use Sticky Whiteness' is enabled, the info-mode white setting will be set to this value when a tool with an info-mode is activated. Toggle with SHIFT+W.",
         icon: "Media/Game/Icons/Orbit.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.WhitenessToggle, onToggle: (val) => triggerUpdate("WhitenessToggle", val) })
+      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.WhitenessToggle, onToggle: (val) => updateData("WhitenessToggle", val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
@@ -23697,7 +23716,7 @@
         description: "When a tool system with a length measurement is selected, use 'units' instead. Toggle with ALT+U.",
         icon: "Media/Game/Icons/Roads.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseUnits, onToggle: (val) => triggerUpdate("UseUnits", val) })
+      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseUnits, onToggle: (val) => updateData("UseUnits", val) })
     ))), /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
@@ -23723,7 +23742,7 @@
         icon: "Media/Game/Climate/Overcast.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react14.default.createElement(toggle_group_default, { react, checked: data.Weather, options: weatherOptions, isHorizontal: "true", onChecked: (val) => triggerUpdate("Weather", val) })
+      /* @__PURE__ */ import_react14.default.createElement(toggle_group_default, { react, checked: data.Weather, options: weatherOptions, isHorizontal: "true", onChecked: (val) => updateData("Weather", val) })
     )));
   };
   var settings_default = $Settings;
@@ -23739,22 +23758,30 @@
   var import_react15 = __toESM(require_react());
   var $FancySlider = ({ react, value, fromColour, toColour, onValueChanged, isColorSpectrum, style }) => {
     const sliderRef = react.useRef(null);
-    const step = 1;
-    const handleSliderClick = (e) => {
+    const [isMouseDown, setIsMouseDown] = react.useState(false);
+    const updateValue = (e) => {
       const slider = sliderRef.current;
       if (!slider)
         return;
       const rect = slider.getBoundingClientRect();
-      const clickedPosition = e.clientX - rect.left;
-      let newValue = clickedPosition / rect.width * 100;
-      newValue = Math.round(newValue / step) * step;
-      newValue = parseInt(newValue, 10);
-      if (newValue < 0)
-        newValue = 0;
-      else if (newValue > 100)
-        newValue = 100;
+      const position = e.clientX - rect.left;
+      let newValue = position / rect.width * 100;
+      newValue = Math.max(0, Math.min(100, Math.round(newValue)));
       if (onValueChanged)
-        onValueChanged(parseInt(newValue, 10));
+        onValueChanged(newValue);
+      engine.trigger("audio.playSound", "drag-slider", 1);
+    };
+    const handleMouseDown = (e) => {
+      setIsMouseDown(true);
+      updateValue(e);
+    };
+    const handleMouseMove = (e) => {
+      if (isMouseDown) {
+        updateValue(e);
+      }
+    };
+    const handleMouseUp = () => {
+      setIsMouseDown(false);
     };
     const sliderColours = isColorSpectrum ? {
       "--endColor": "rgba(255,0,0,1)",
@@ -23772,7 +23799,9 @@
         className: "slider_fer slider_pUS horizontal",
         style: sliderColours,
         ref: sliderRef,
-        onClick: handleSliderClick
+        onMouseDown: handleMouseDown,
+        onMouseMove: handleMouseMove,
+        onMouseUp: handleMouseUp
       },
       /* @__PURE__ */ import_react15.default.createElement("div", { className: "start-edge_nii edge_xBb" }),
       /* @__PURE__ */ import_react15.default.createElement("div", { className: "end-edge_egi edge_xBb" }),
@@ -23783,35 +23812,6 @@
 
   // src/jsx/components/_colorpicker.jsx
   var $ColorPicker = ({ react, label, color, onChanged }) => {
-    function hsvToColor(h, s, v, alpha = 1) {
-      let r, g, b;
-      let i = Math.floor(h * 6);
-      let f = h * 6 - i;
-      let p = v * (1 - s);
-      let q = v * (1 - f * s);
-      let t = v * (1 - (1 - f) * s);
-      switch (i % 6) {
-        case 0:
-          r = v, g = t, b = p;
-          break;
-        case 1:
-          r = q, g = v, b = p;
-          break;
-        case 2:
-          r = p, g = v, b = t;
-          break;
-        case 3:
-          r = p, g = q, b = v;
-          break;
-        case 4:
-          r = t, g = p, b = v;
-          break;
-        case 5:
-          r = v, g = p, b = q;
-          break;
-      }
-      return `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${alpha})`;
-    }
     function hexToHsv(hex) {
       hex = hex.replace(/^#/, "");
       let r, g, b;
@@ -23884,11 +23884,24 @@
       };
       return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
     }
-    const hsv = hexToHsv(color);
+    const [internalColor, setInternalColor] = react.useState(color);
+    const hsv = hexToHsv(internalColor);
     const hue = hsv.h;
     const saturation = hsv.s;
     const value = hsv.v;
-    const curColour = hsvToColor(hue, saturation, value);
+    const hueVal = parseInt(hue * 100, 10);
+    const satVal = parseInt(saturation * 100, 10);
+    const valVal = parseInt(value * 100, 10);
+    const satFromColour = hsvToHex(hue, 0, 1);
+    const satToColour = hsvToHex(hue, 1, 1);
+    const valFromColour = hsvToHex(hue, saturation, 0);
+    const valToColour = hsvToHex(hue, saturation, 1);
+    const updateInternalColor = (c) => {
+      setInternalColor(c);
+    };
+    react.useEffect(() => {
+      updateInternalColor(color);
+    }, [color]);
     const [active, setActive] = react.useState(false);
     const [portalContainer, setPortalContainer] = react.useState(null);
     const pickerRef = react.useRef(null);
@@ -23933,23 +23946,19 @@
     const onToggle = () => {
       setActive(!active);
     };
-    const hueVal = parseInt(hue * 100, 10);
-    const satVal = parseInt(saturation * 100, 10);
-    const valVal = parseInt(value * 100, 10);
-    const satFromColour = hsvToColor(hue, 0, 1);
-    const satToColour = hsvToColor(hue, 1, 1);
-    const valFromColour = hsvToColor(hue, saturation, 0);
-    const valToColour = hsvToColor(hue, saturation, 1);
     const onHueUpdated = (val) => {
       let newColor = hsvToHex(val / 100, saturation, value);
+      updateInternalColor(newColor);
       onChanged(newColor);
     };
     const onSatUpdated = (val) => {
       let newColor = hsvToHex(hue, val / 100, value);
+      updateInternalColor(newColor);
       onChanged(newColor);
     };
     const onValUpdated = (val) => {
       let newColor = hsvToHex(hue, saturation, val / 100);
+      updateInternalColor(newColor);
       onChanged(newColor);
     };
     const dropdownContent = active ? /* @__PURE__ */ import_react16.default.createElement("div", { ref: dropdownRef, style: {
@@ -23958,7 +23967,7 @@
       ...getDropdownPosition(),
       zIndex: 9999
     } }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-picker-container_Sj5", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-picker_aNX" }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "sliders_sCL section_cwE" }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-component-input_WeK", style: { flexDirection: "column", alignItems: "stretch", justifyContent: "stretch" } }, /* @__PURE__ */ import_react16.default.createElement(fancy_slider_default, { react, value: hueVal, isColorSpectrum: "true", onValueChanged: onHueUpdated }), /* @__PURE__ */ import_react16.default.createElement(fancy_slider_default, { react, value: satVal, fromColour: satFromColour, toColour: satToColour, onValueChanged: onSatUpdated, style: { marginTop: "5rem" } }), /* @__PURE__ */ import_react16.default.createElement(fancy_slider_default, { react, value: valVal, fromColour: valFromColour, toColour: valToColour, onValueChanged: onValUpdated, style: { marginTop: "5rem" } })))))) : null;
-    return /* @__PURE__ */ import_react16.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react16.default.createElement("div", { ref: pickerRef, className: "field_amr field_cjf", style: { display: "flex", flexDirection: "row" }, onClick: onToggle }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { flex: 1 }, onClick: onToggle }, label), /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-field_jwA color-field_due", style: { marginLeft: "auto" } }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { backgroundColor: curColour } }))), portalContainer && dropdownContent && import_react_dom.default.createPortal(dropdownContent, portalContainer));
+    return /* @__PURE__ */ import_react16.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react16.default.createElement("div", { ref: pickerRef, className: "field_amr field_cjf", style: { display: "flex", flexDirection: "row" }, onClick: onToggle }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { flex: 1 }, onClick: onToggle }, label), /* @__PURE__ */ import_react16.default.createElement("div", { className: "color-field_jwA color-field_due", style: { marginLeft: "auto" } }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { backgroundColor: internalColor } }))), portalContainer && dropdownContent && import_react_dom.default.createPortal(dropdownContent, portalContainer));
   };
   var colorpicker_default = $ColorPicker;
 
@@ -23976,6 +23985,7 @@
   var import_react_dom2 = __toESM(require_react_dom());
   var $Select = ({ react, style, onSelectionChanged, selected, options }) => {
     const [active, setActive] = react.useState(false);
+    const [internalValue, setInternalValue] = react.useState(selected);
     const [portalContainer, setPortalContainer] = react.useState(null);
     const pickerRef = react.useRef(null);
     const dropdownRef = react.useRef(null);
@@ -23999,6 +24009,9 @@
       };
     }, []);
     react.useEffect(() => {
+      setInternalValue(selected);
+    }, [selected]);
+    react.useEffect(() => {
       if (active) {
         document.addEventListener("click", handleClickOutside, true);
       } else {
@@ -24018,20 +24031,25 @@
     };
     const onToggle = () => {
       setActive(!active);
+      engine.trigger("audio.playSound", "select-dropdown", 1);
     };
-    const selectedIndex = options.indexOf(selected);
+    const changeSelection = (value) => {
+      setInternalValue(value);
+      onSelectionChanged(value);
+    };
+    const selectedIndex = options.indexOf(internalValue);
     const dropdownContent = active ? /* @__PURE__ */ import_react18.default.createElement("div", { ref: dropdownRef, style: {
       display: "flex",
       position: "absolute",
       ...getDropdownPosition(),
       zIndex: 9999
-    } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-popup_mMv", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-menu_jf2 dropdown-menu_Swd" }, options.map((option) => /* @__PURE__ */ import_react18.default.createElement("button", { key: option, className: "dropdown-item_sZT selected", style: { padding: "5rem", height: "auto" }, onClick: () => onSelectionChanged(option) }, option))))) : null;
+    } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-popup_mMv", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-menu_jf2 dropdown-menu_Swd" }, options.map((option) => /* @__PURE__ */ import_react18.default.createElement("button", { key: option, className: "dropdown-item_sZT selected", style: { padding: "5rem", height: "auto" }, onClick: () => changeSelection(option) }, option))))) : null;
     return /* @__PURE__ */ import_react18.default.createElement("div", { style: { width: "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { ref: pickerRef, className: "dropdown-toggle_V9z dropdown-toggle_prl value-field_yJi value_PW_ dropdown_pJu item-states_QjV", onClick: onToggle, style: { padding: "5rem", height: "auto", ...style } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "label_l_4" }, options[selectedIndex]), /* @__PURE__ */ import_react18.default.createElement("div", { className: "tinted-icon_iKo indicator_Xmj", style: { maskImage: "url(Media/Glyphs/StrokeArrowDown.svg)" } }), portalContainer && dropdownContent && import_react_dom2.default.createPortal(dropdownContent, portalContainer)));
   };
   var select_default = $Select;
 
   // src/jsx/tabs/_zone-colours.jsx
-  var $ZoneColours = ({ react, data, triggerUpdate }) => {
+  var $ZoneColours = ({ react, data, setData, triggerUpdate }) => {
     const noneString = "Default Colours";
     const colourModes = [
       noneString,
@@ -24040,8 +24058,14 @@
       "Tritanopia",
       "Custom"
     ];
+    const updateData = (field, val) => {
+      if (field === "Mode") {
+        setData({ ...data, Mode: val });
+      }
+      triggerUpdate(field, val);
+    };
     const onModeChanged = (selected) => {
-      triggerUpdate("Mode", selected == noneString ? "None" : selected);
+      updateData("Mode", selected == noneString ? "None" : selected);
     };
     const triggerZoneColourUpdate = (zoneName, colour) => {
       engine.trigger("cities2modding_legacyflavour.updateZoneColour", zoneName, colour);
@@ -24126,33 +24150,42 @@
   var import_react20 = __toESM(require_react());
   var $Slider = ({ react, value, onValueChanged, style }) => {
     const sliderRef = react.useRef(null);
-    const handleSliderClick = (e) => {
+    const [isMouseDown, setIsMouseDown] = react.useState(false);
+    const updateValue = (e) => {
       const slider = sliderRef.current;
       if (!slider)
         return;
       const rect = slider.getBoundingClientRect();
-      const clickedPosition = e.clientX - rect.left;
-      let newValue = clickedPosition / rect.width * 100;
-      newValue = Math.round(newValue / 5) * 5;
-      newValue = parseInt(newValue, 10);
-      if (newValue < 0)
-        newValue = 0;
-      else if (newValue > 100)
-        newValue = 100;
+      const position = e.clientX - rect.left;
+      let newValue = position / rect.width * 100;
+      newValue = Math.max(0, Math.min(100, Math.round(newValue)));
       if (onValueChanged)
-        onValueChanged(parseInt(newValue, 10));
+        onValueChanged(newValue);
+      engine.trigger("audio.playSound", "drag-slider", 1);
+    };
+    const handleMouseDown = (e) => {
+      setIsMouseDown(true);
+      updateValue(e);
+      engine.trigger("audio.playSound", "grabSlider", 1);
+    };
+    const handleMouseMove = (e) => {
+      if (isMouseDown) {
+        updateValue(e);
+      }
+    };
+    const handleMouseUp = () => {
+      setIsMouseDown(false);
     };
     const valuePercent = value + "%";
     return /* @__PURE__ */ import_react20.default.createElement("div", { style: { width: "100%", ...style } }, /* @__PURE__ */ import_react20.default.createElement("div", { style: { display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", margin: "10rem", marginTop: "0" } }, /* @__PURE__ */ import_react20.default.createElement("div", { className: "value_jjh", style: { display: "flex", width: "45rem", alignItems: "center", justifyContent: "center" } }, valuePercent), /* @__PURE__ */ import_react20.default.createElement(
       "div",
       {
         className: "slider_fKm slider_pUS horizontal slider_KjX",
-        style: {
-          flex: 1,
-          margin: "10rem"
-        },
+        style: { flex: 1, margin: "10rem" },
         ref: sliderRef,
-        onClick: handleSliderClick
+        onMouseDown: handleMouseDown,
+        onMouseMove: handleMouseMove,
+        onMouseUp: handleMouseUp
       },
       /* @__PURE__ */ import_react20.default.createElement("div", { className: "track-bounds_H8_" }, /* @__PURE__ */ import_react20.default.createElement("div", { className: "range-bounds_lNt", style: { width: valuePercent } }, /* @__PURE__ */ import_react20.default.createElement("div", { className: "range_KXa range_iUN" })))
     )));
@@ -24160,9 +24193,25 @@
   var slider_default = $Slider;
 
   // src/jsx/tabs/_zone-settings.jsx
-  var $ZoneSettings = ({ react, data, triggerUpdate }) => {
+  var $ZoneSettings = ({ react, data, setData, triggerUpdate }) => {
     const triggerResetZoneSettingsToDefault = () => {
       engine.trigger("cities2modding_legacyflavour.resetZoneSettingsToDefault");
+    };
+    const updateData = (field, val) => {
+      if (field === "Enabled") {
+        setData({ ...data, Enabled: val });
+      } else if (field === "UseDynamicCellBorders") {
+        setData({ ...data, UseDynamicCellBorders: val });
+      } else if (field === "CellOpacity") {
+        setData({ ...data, CellOpacity: val });
+      } else if (field === "CellBorderOpacity") {
+        setData({ ...data, CellBorderOpacity: val });
+      } else if (field === "EmptyCellOpacity") {
+        setData({ ...data, EmptyCellOpacity: val });
+      } else if (field === "EmptyCellBorderOpacity") {
+        setData({ ...data, EmptyCellBorderOpacity: val });
+      }
+      triggerUpdate(field, val);
     };
     return /* @__PURE__ */ import_react21.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
@@ -24171,7 +24220,7 @@
         description: "Provides custom zone colour options that can be cycled with a key shortcut. Toggle with ALT+Z.",
         icon: "Media/Game/Icons/Zones.svg"
       },
-      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.Enabled, onToggle: (val) => triggerUpdate("Enabled", val) })
+      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.Enabled, onToggle: (val) => updateData("Enabled", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24179,7 +24228,7 @@
         description: "Zone cell borders will adjust to be more visible when there is snow coverage.",
         icon: "Media/Game/Climate/Snow.svg"
       },
-      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseDynamicCellBorders, onToggle: (val) => triggerUpdate("UseDynamicCellBorders", val) })
+      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseDynamicCellBorders, onToggle: (val) => updateData("UseDynamicCellBorders", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24188,7 +24237,7 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.CellOpacity, onValueChanged: (val) => triggerUpdate("CellOpacity", val) })
+      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.CellOpacity, onValueChanged: (val) => updateData("CellOpacity", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24197,7 +24246,7 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.CellBorderOpacity, onValueChanged: (val) => triggerUpdate("CellBorderOpacity", val) })
+      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.CellBorderOpacity, onValueChanged: (val) => updateData("CellBorderOpacity", val) })
     ))), /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24206,7 +24255,7 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.EmptyCellOpacity, onValueChanged: (val) => triggerUpdate("EmptyCellOpacity", val) })
+      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.EmptyCellOpacity, onValueChanged: (val) => updateData("EmptyCellOpacity", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24215,7 +24264,7 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.EmptyCellBorderOpacity, onValueChanged: (val) => triggerUpdate("EmptyCellBorderOpacity", val) })
+      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.EmptyCellBorderOpacity, onValueChanged: (val) => updateData("EmptyCellBorderOpacity", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetZoneSettingsToDefault }, "Reset to default")));
   };
   var zone_settings_default = $ZoneSettings;
@@ -24280,22 +24329,23 @@
       engine.trigger("cities2modding_legacyflavour.updateProperty", JSON.stringify({ property: prop, value: val }));
     };
     const toggleVisibility = () => {
-      const data2 = { type: "toggle_visibility", id: "cities2modding.legacyflavour" };
-      const event = new CustomEvent("hookui", { detail: data2 });
+      const visData = { type: "toggle_visibility", id: "cities2modding.legacyflavour" };
+      const event = new CustomEvent("hookui", { detail: visData });
       window.dispatchEvent(event);
+      engine.trigger("audio.playSound", "close-panel", 1);
     };
     const tabs = [
       {
         name: "Settings",
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(settings_default, { react, data, triggerUpdate }))
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(settings_default, { react, data, setData, triggerUpdate }))
       },
       {
         name: "Zone Settings",
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_settings_default, { react, data, triggerUpdate }))
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_settings_default, { react, data, setData, triggerUpdate }))
       },
       {
         name: "Zone Colours",
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_colours_default, { react, data, triggerUpdate }))
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_colours_default, { react, data, setData, triggerUpdate }))
       },
       {
         name: "About",

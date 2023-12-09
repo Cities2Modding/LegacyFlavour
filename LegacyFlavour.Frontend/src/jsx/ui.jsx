@@ -17,28 +17,30 @@ const $LegacyFlavour = ({ react }) => {
     };
 
     const toggleVisibility = () => {        
-        const data = { type: "toggle_visibility", id: "cities2modding.legacyflavour" };
-        const event = new CustomEvent('hookui', { detail: data });
+        const visData = { type: "toggle_visibility", id: "cities2modding.legacyflavour" };
+        const event = new CustomEvent('hookui', { detail: visData });
         window.dispatchEvent(event);
+
+        engine.trigger("audio.playSound", "close-panel", 1);
     }
 
     const tabs = [
         {
             name: 'Settings',
             content: <div style={{ display: 'flex', width: '100%' }}>
-                <$Settings react={react} data={data} triggerUpdate={triggerUpdate} />
+                <$Settings react={react} data={data} setData={setData} triggerUpdate={triggerUpdate} />
             </div>
         },
         {
             name: 'Zone Settings',
             content: <div style={{ height: '100%', width: '100%' }}>
-                <$ZoneSettings react={react} data={data} triggerUpdate={triggerUpdate} />
+                <$ZoneSettings react={react} data={data} setData={setData} triggerUpdate={triggerUpdate} />
             </div>
         },
         {
             name: 'Zone Colours',
             content: <div style={{ height: '100%', width: '100%' }}>
-                <$ZoneColours react={react} data={data} triggerUpdate={triggerUpdate} />
+                <$ZoneColours react={react} data={data} setData={setData} triggerUpdate={triggerUpdate} />
             </div>
         },
         {

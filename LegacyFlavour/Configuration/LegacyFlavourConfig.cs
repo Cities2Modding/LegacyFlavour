@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 
-namespace LegacyFlavour
+namespace LegacyFlavour.Configuration
 {
     public class LegacyFlavourConfig : ModelWriter
     {
@@ -87,11 +87,11 @@ namespace LegacyFlavour
             get;
             set;
         } = WeatherOverride.Off;
-        
+
         public List<ZoneColourConfig> Zones
-        { 
-            get; 
-            set; 
+        {
+            get;
+            set;
         }
 
         public static Action OnUpdated;
@@ -173,9 +173,9 @@ namespace LegacyFlavour
 
     public class ZoneColourConfig
     {
-        public string Name 
+        public string Name
         {
-            get; 
+            get;
             set;
         }
 

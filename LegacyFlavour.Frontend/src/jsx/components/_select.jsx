@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
     const [active, setActive] = react.useState(false);
+    const [internalValue, setInternalValue] = react.useState(selected);
     const [portalContainer, setPortalContainer] = react.useState(null);
     const pickerRef = react.useRef(null); // Ref to attach to the select field
     const dropdownRef = react.useRef(null); // Ref for the dropdown content
@@ -36,6 +37,10 @@ const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
     }, []);
 
     react.useEffect(() => {
+        setInternalValue(selected);
+    }, [selected]);
+
+    react.useEffect(() => {
         // Toggle the click listener based on dropdown state
         if (active) {
             document.addEventListener('click', handleClickOutside, true);
@@ -58,9 +63,15 @@ const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
 
     const onToggle = () => {
         setActive(!active);
+        engine.trigger("audio.playSound", "select-dropdown", 1);
     };
 
-    const selectedIndex = options.indexOf(selected);
+    const changeSelection = (value) => {
+        setInternalValue(value);
+        onSelectionChanged(value);
+    };
+
+    const selectedIndex = options.indexOf(internalValue);
 
     // Define the dropdown content
     const dropdownContent = active ? (
@@ -74,7 +85,7 @@ const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
                 <div className="dropdown-menu_jf2 dropdown-menu_Swd">
                     {
                         options.map((option) => (
-                            <button key={option} className="dropdown-item_sZT selected" style={{ padding: '5rem', height: 'auto' }} onClick={() => onSelectionChanged(option)}>{option}</button>
+                            <button key={option} className="dropdown-item_sZT selected" style={{ padding: '5rem', height: 'auto' }} onClick={() => changeSelection(option)}>{option}</button>
                         ))
                     }
                 </div>

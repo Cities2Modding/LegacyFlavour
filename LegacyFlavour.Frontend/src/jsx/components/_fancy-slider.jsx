@@ -2,32 +2,36 @@ import React from 'react';
 
 const $FancySlider = ({ react, value, fromColour, toColour, onValueChanged, isColorSpectrum, style }) => {
     const sliderRef = react.useRef(null); // Reference to the slider element
+    const [isMouseDown, setIsMouseDown] = react.useState(false);
 
-    const step = 1.0;
-    const handleSliderClick = (e) => {
+    const updateValue = (e) => {
         const slider = sliderRef.current;
+        if (!slider) return;
 
-        if (!slider)
-            return;
-
-        // Get the click position relative to the slider
         const rect = slider.getBoundingClientRect();
-        const clickedPosition = e.clientX - rect.left;
-
-        // Calculate the new value based on click position
-        let newValue = (clickedPosition / rect.width) * 100;
-
-        // Round to the nearest multiple of step
-        newValue = Math.round(newValue / step) * step;
-        newValue = parseInt(newValue, 10);
-
-        if (newValue < 0)
-            newValue = 0;
-        else if (newValue > 100)
-            newValue = 100;
+        const position = e.clientX - rect.left;
+        let newValue = (position / rect.width) * 100;
+        newValue = Math.max(0, Math.min(100, Math.round(newValue)));
 
         if (onValueChanged)
-            onValueChanged(parseInt(newValue, 10));
+            onValueChanged(newValue);
+
+        engine.trigger("audio.playSound", "drag-slider", 1);
+    };
+
+    const handleMouseDown = (e) => {
+        setIsMouseDown(true);
+        updateValue(e);
+    };
+
+    const handleMouseMove = (e) => {
+        if (isMouseDown) {
+            updateValue(e);
+        }
+    };
+
+    const handleMouseUp = () => {
+        setIsMouseDown(false);
     };
 
     const sliderColours = isColorSpectrum ? {
@@ -45,8 +49,10 @@ const $FancySlider = ({ react, value, fromColour, toColour, onValueChanged, isCo
         <div className="slider_xgT" style={style}>
             <div className="slider-container_NuQ">
                 <div className="slider_fer slider_pUS horizontal" style={sliderColours}                
-                 ref={sliderRef}
-                 onClick={handleSliderClick}>
+                    ref={sliderRef}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}>
                     <div className="start-edge_nii edge_xBb"></div>
                     <div className="end-edge_egi edge_xBb"></div>
                     <div className="track-bounds_hs9 track-bounds_H8_">
