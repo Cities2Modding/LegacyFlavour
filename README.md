@@ -2,7 +2,7 @@
 
 Welcome to the GitHub repository for LegacyFlavour, a Cities Skylines 2 mod designed to blend the best of Cities Skylines 1 with the advanced features of Cities Skylines 2. Our mod aims to enhance your city-building experience by introducing nostalgic elements and improved functionalities.
 
-## New Features in v0.0.5
+## New Features in v0.0.6
 
 ### Performance Enhancements and Configuration Saving
 - **Optimised Performance**: Significant improvements have been made to the overall performance, ensuring a smoother and more efficient user experience.
