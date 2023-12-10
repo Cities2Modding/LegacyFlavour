@@ -74,7 +74,7 @@ namespace LegacyFlavour.Systems
         /// <param name="invalidateCache"></param>
         public void EnqueueColoursUpdate( bool immediate = false, bool invalidateCache = false )
         {
-            nextConfigUpdate = immediate ? 0f : UnityEngine.Time.time + 0.2f;
+            nextZoneColourUpdate = immediate ? 0f : UnityEngine.Time.time + 0.2f;
             hasZoneColourUpdatePending = true;
 
             if ( invalidateCache )
