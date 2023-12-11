@@ -5,7 +5,7 @@ const $TabWindow = ({ react, tabs, style, onClose }) => {
 
     return (
         <div style={{ position: 'fixed', width: '100vw', height: '100vh', pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', ...style }}>
-            <div className="panel_YqS economy-panel_e08" style={{ marginLeft: 'auto', marginRight: 'auto', width: '1000rem', height: '755rem' }}>
+            <div className="panel_YqS economy-panel_e08" style={{ marginLeft: 'auto', marginRight: 'auto', width: '1000rem', height: '775rem' }}>
                 <div className="header_H_U header_Bpo child-opacity-transition_nkS">
                     <div className="title-bar_PF4">
                         <div className="icon-space_h_f"></div>

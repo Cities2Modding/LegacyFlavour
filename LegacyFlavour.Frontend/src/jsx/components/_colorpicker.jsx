@@ -3,7 +3,42 @@ import ReactDOM from 'react-dom';
 import $FancySlider from '../components/_fancy-slider';
 import $Button from '../components/_button';
 
-const $ColorPicker = ({ react, label, color, onChanged, onDropdown }) => {  
+const $ColorPicker = ({ react, label, color, onChanged, onDropdown, style }) => {  
+    // Check if the color is in RGBA format
+    const isRgba = !color ? false : color.startsWith('rgba');
+    const [internalColor, setInternalColor] = react.useState('#000000');
+    const [alpha, setAlpha] = react.useState('');
+
+    const [hue, setHue] = react.useState(0);
+    const [saturation, setSaturation] = react.useState(0);
+    const [value, setValue] = react.useState(0);
+
+    function rgbaToHex(rgba) {
+        const match = rgba.match(/rgba?\((\d+), (\d+), (\d+)(?:, (.*))?\)/);
+        if (!match) {
+            throw new Error('Invalid RGBA color: ' + rgba);
+        }
+
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const alpha = match[4] || '1'; // Keep the alpha as a string
+
+        return {
+            hex: `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`,
+            alpha: alpha === '1' ? undefined : alpha // Only store alpha if it's not 1
+        };
+    }
+
+    function hexToRgba(hex, alpha) {
+        const hexValue = hex.replace(/^#/, '');
+        const r = parseInt(hexValue.substring(0, 2), 16);
+        const g = parseInt(hexValue.substring(2, 4), 16);
+        const b = parseInt(hexValue.substring(4, 6), 16);
+
+        return `rgba(${r}, ${g}, ${b}, ${alpha ?? 1})`;
+    }
+
     function hexToHsv(hex) {
         // Remove the hash at the start if it's there
         hex = hex.replace(/^#/, '');
@@ -72,33 +107,35 @@ const $ColorPicker = ({ react, label, color, onChanged, onDropdown }) => {
         };
 
         return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-    }    
-
-    const [internalColor, setInternalColor] = react.useState(color);
-
-    const hsv = hexToHsv(internalColor);
-    const hue = hsv.h;
-    const saturation = hsv.s;
-    const value = hsv.v;
-
-    const hueVal = parseInt(hue * 100, 10);
-    const satVal = parseInt(saturation * 100, 10);
-    const valVal = parseInt(value * 100, 10);
-
-    // For the Saturation slider, create a gradient from white to the full saturation of the current hue
-    const satFromColour = hsvToHex(hue, 0, 1); // White
-    const satToColour = hsvToHex(hue, 1, 1);   // Full saturation
-
-    // For the Value slider, create a gradient from black to the current hue at full brightness
-    const valFromColour = hsvToHex(hue, saturation, 0); // Black
-    const valToColour = hsvToHex(hue, saturation, 1);   // Full brightness
+    }
 
     const updateInternalColor = (c) => {
-        setInternalColor(c);
+        // Ensure c is always in hex format before using it
+        const newColor = c.startsWith("rgba") ? rgbaToHex(c).hex : c;
+        setInternalColor(newColor);
+        const outputColor = isRgba ? hexToRgba(newColor, alpha) : newColor;
+        onChanged(outputColor);
     };
 
     react.useEffect(() => {
-        updateInternalColor(color);
+        const updateColor = (color) => {
+            const newColor = color.startsWith('rgba') ? rgbaToHex(color).hex : color;
+            if (color.startsWith('rgba')) {
+                const alphaValue = rgbaToHex(color).alpha;
+                setAlpha(alphaValue);
+            } else {
+                setAlpha('');
+            }
+            setInternalColor(newColor);
+
+            // Convert and set HSV values directly using the new color
+            const hsv = hexToHsv(newColor);
+            setHue(hsv.h);
+            setSaturation(hsv.s);
+            setValue(hsv.v);
+        };
+
+        updateColor(color);
     }, [color]);
 
     const [active, setActive] = react.useState(false);
@@ -111,7 +148,9 @@ const $ColorPicker = ({ react, label, color, onChanged, onDropdown }) => {
         if (pickerRef.current && !pickerRef.current.contains(event.target) &&
             dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setActive(false);
-            onDropdown(false);
+
+            if (onDropdown)
+                onDropdown(false);
         }
     };
 
@@ -158,25 +197,49 @@ const $ColorPicker = ({ react, label, color, onChanged, onDropdown }) => {
 
     const onToggle = () => {
         setActive(!active);
-        onDropdown(!active);
+        if (onDropdown)
+            onDropdown(!active);
     };
 
+    const hueVal = parseInt(hue * 100, 10);
+    const satVal = parseInt(saturation * 100, 10);
+    const valVal = parseInt(value * 100, 10);
+
+    // For the Saturation slider, create a gradient from white to the full saturation of the current hue
+    const satFromColour = hsvToHex(hue, 0, 1); // White
+    const satToColour = hsvToHex(hue, 1, 1);   // Full saturation
+
+    // For the Value slider, create a gradient from black to the current hue at full brightness
+    const valFromColour = hsvToHex(hue, saturation, 0); // Black
+    const valToColour = hsvToHex(hue, saturation, 1);   // Full brightness
+
     const onHueUpdated = (val) => {
-        let newColor = hsvToHex(val / 100.0, saturation, value);
+        const newHue = val / 100.0;
+        let newColor = hsvToHex(newHue, saturation, value);
+        setHue(newHue);
         updateInternalColor(newColor);
-        onChanged(newColor);
+        onColorUpdated(newColor);
     };
 
     const onSatUpdated = (val) => {
-        let newColor = hsvToHex(hue, val / 100.0, value);
+        const newSaturation = val / 100.0;
+        let newColor = hsvToHex(hue, newSaturation, value);
+        setSaturation(newSaturation);
         updateInternalColor(newColor);
-        onChanged(newColor);
+        onColorUpdated(newColor);
     };
 
     const onValUpdated = (val) => {
-        let newColor = hsvToHex(hue, saturation, val / 100.0);
+        const newValue = val / 100.0;
+        let newColor = hsvToHex(hue, saturation, newValue);
+        setValue(newValue);
         updateInternalColor(newColor);
-        onChanged(newColor);
+        onColorUpdated(newColor);
+    };
+
+    const onColorUpdated = (newHex) => {
+        const outputColor = !color ? '#FFFFFF' : color.startsWith('rgba') ? hexToRgba(newHex, alpha) : newHex;
+        onChanged(outputColor);
     };
 
     // Define the dropdown content
@@ -205,7 +268,7 @@ const $ColorPicker = ({ react, label, color, onChanged, onDropdown }) => {
     ) : null;
 
     return (
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: 'relative', ...style }}>
             <div ref={pickerRef} className="field_amr field_cjf" style={{ display: 'flex', flexDirection: 'row' }} onClick={onToggle}>
                 <div style={{ flex: 1 }} onClick={onToggle}>
                     {label}

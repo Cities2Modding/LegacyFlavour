@@ -2,22 +2,21 @@
 
 Welcome to the GitHub repository for LegacyFlavour, a Cities Skylines 2 mod designed to blend the best of Cities Skylines 1 with the advanced features of Cities Skylines 2. Our mod aims to enhance your city-building experience by introducing nostalgic elements and improved functionalities.
 
-## New Features in v0.0.6
+## New Features in v0.0.7
 
-### Performance Enhancements and Configuration Saving
-- **Optimised Performance**: Significant improvements have been made to the overall performance, ensuring a smoother and more efficient user experience.
-- **Config Saving**: Enhanced the configuration saving feature, allowing users to easily save and retrieve their settings.
+### Performance Improvements and UI Customization
+- **UI Theme Editor**: Introducing a new UI theme editor with a variety of built-in themes. Customize your game's look with ease.
+- **Custom Theme Creation**: Now you can create and save your own custom themes using our advanced color pickers.
+- **Accent and Background Accent Customization**: Enhance your game's UI with personalized accent and background colors that change dynamically.
+- **Integrated Themes in UI Options**: Newly created themes will be available for preview and selection directly in the UI options screen.
 
-### User Interface Improvements
-- **Responsive UI**: The user interface has been refined to be more responsive, providing a more fluid interaction.
-- **Enhanced Sliders and Colour Pickers**: The sliders and colour pickers have been upgraded for better responsiveness. They now react more quickly and accurately to user inputs.
-- **Sound Effects**: Added engaging sound effects to sliders and colour pickers, enriching the user interaction.
+### Enhanced Game Performance
+- **Optimised Performance**: Major improvements in game performance, ensuring smoother and more stable gameplay.
+- **Bug Fixes**: Addressed and resolved a range of bugs, enhancing game reliability and user experience.
 
-### New Window Transparency Mode
-- **Transparent Window Option**: Introducing a new window transparency mode. When using colour pickers, you can now enable a mode that makes the window transparent, offering a more integrated and immersive experience.
-
-### Bug Fixes
-- Various bug fixes have been implemented to ensure a more stable and reliable application.
+### User Interface Features
+- **Seamless Theme Integration**: Effortlessly apply and switch between themes within the game’s UI, with immediate visual feedback.
+- **Enhanced UI Responsiveness**: Enjoy a more responsive and fluid user interface, tailored for an immersive gaming experience.
 
 ## Features
 

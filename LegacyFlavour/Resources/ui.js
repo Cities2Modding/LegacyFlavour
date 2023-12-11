@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React24 = require_react();
+          var React26 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React24.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React26.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React24.Children.forEach(props.children, function(child) {
+                  React26.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React24.Component().refs;
+          var emptyRefsObject = new React26.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23477,7 +23477,7 @@
   });
 
   // src/jsx/ui.jsx
-  var import_react23 = __toESM(require_react());
+  var import_react25 = __toESM(require_react());
 
   // node_modules/hookui-framework/src/components/panel.jsx
   var import_react = __toESM(require_react());
@@ -23513,7 +23513,7 @@
   var import_react5 = __toESM(require_react());
   var $TabWindow = ({ react, tabs, style, onClose }) => {
     const [activeTab, setActiveTab] = react.useState(tabs.length > 0 ? tabs[0].name : "");
-    return /* @__PURE__ */ import_react5.default.createElement("div", { style: { position: "fixed", width: "100vw", height: "100vh", pointerEvents: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", ...style } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "panel_YqS economy-panel_e08", style: { marginLeft: "auto", marginRight: "auto", width: "1000rem", height: "755rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header_H_U header_Bpo child-opacity-transition_nkS" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "title-bar_PF4" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "icon-space_h_f" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "title_SVH title_zQN" }, "Legacy Flavour"), /* @__PURE__ */ import_react5.default.createElement("button", { className: "button_bvQ button_bvQ close-button_wKK", onClick: onClose }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "tinted-icon_iKo icon_PhD", style: { maskImage: "url(Media/Glyphs/Close.svg)" } }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
+    return /* @__PURE__ */ import_react5.default.createElement("div", { style: { position: "fixed", width: "100vw", height: "100vh", pointerEvents: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", ...style } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "panel_YqS economy-panel_e08", style: { marginLeft: "auto", marginRight: "auto", width: "1000rem", height: "775rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header_H_U header_Bpo child-opacity-transition_nkS" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "title-bar_PF4" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "icon-space_h_f" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "title_SVH title_zQN" }, "Legacy Flavour"), /* @__PURE__ */ import_react5.default.createElement("button", { className: "button_bvQ button_bvQ close-button_wKK", onClick: onClose }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "tinted-icon_iKo icon_PhD", style: { maskImage: "url(Media/Glyphs/Close.svg)" } }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
       "div",
       {
         key: tab.name,
@@ -23605,7 +23605,7 @@
     const baseClassNames = "item_JFN button_ECf item_It6 item-mouse-states_Fmi item-selected_tAM item-focused_FuT";
     const checkedClassNames = checked ? " selected" : "";
     const classNames = baseClassNames + checkedClassNames;
-    const checkedTextStyle = checked ? { color: "var(--normalTextColor)" } : {};
+    const checkedTextStyle = checked ? { color: "var(--textColor)" } : {};
     const iconMarkup = icon ? /* @__PURE__ */ import_react12.default.createElement("img", { className: "icon_HoD icon_soN icon_Iwk", src: icon }) : "";
     const body = iconOnly ? "" : /* @__PURE__ */ import_react12.default.createElement("div", { className: "title_sB9", style: { ...checkedTextStyle, ...labelStyle } }, label);
     return /* @__PURE__ */ import_react12.default.createElement("div", { className: classNames, style, onClick: onToggle }, iconMarkup, body, children);
@@ -23824,7 +23824,35 @@
   var button_default2 = $Button;
 
   // src/jsx/components/_colorpicker.jsx
-  var $ColorPicker = ({ react, label, color, onChanged, onDropdown }) => {
+  var $ColorPicker = ({ react, label, color, onChanged, onDropdown, style }) => {
+    const isRgba = !color ? false : color.startsWith("rgba");
+    const [internalColor, setInternalColor] = react.useState("#000000");
+    const [alpha, setAlpha] = react.useState("");
+    const [hue, setHue] = react.useState(0);
+    const [saturation, setSaturation] = react.useState(0);
+    const [value, setValue] = react.useState(0);
+    function rgbaToHex(rgba) {
+      const match = rgba.match(/rgba?\((\d+), (\d+), (\d+)(?:, (.*))?\)/);
+      if (!match) {
+        throw new Error("Invalid RGBA color: " + rgba);
+      }
+      const r = parseInt(match[1]);
+      const g = parseInt(match[2]);
+      const b = parseInt(match[3]);
+      const alpha2 = match[4] || "1";
+      return {
+        hex: `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`,
+        alpha: alpha2 === "1" ? void 0 : alpha2
+        // Only store alpha if it's not 1
+      };
+    }
+    function hexToRgba(hex, alpha2) {
+      const hexValue = hex.replace(/^#/, "");
+      const r = parseInt(hexValue.substring(0, 2), 16);
+      const g = parseInt(hexValue.substring(2, 4), 16);
+      const b = parseInt(hexValue.substring(4, 6), 16);
+      return `rgba(${r}, ${g}, ${b}, ${alpha2 ?? 1})`;
+    }
     function hexToHsv(hex) {
       hex = hex.replace(/^#/, "");
       let r, g, b;
@@ -23897,23 +23925,28 @@
       };
       return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
     }
-    const [internalColor, setInternalColor] = react.useState(color);
-    const hsv = hexToHsv(internalColor);
-    const hue = hsv.h;
-    const saturation = hsv.s;
-    const value = hsv.v;
-    const hueVal = parseInt(hue * 100, 10);
-    const satVal = parseInt(saturation * 100, 10);
-    const valVal = parseInt(value * 100, 10);
-    const satFromColour = hsvToHex(hue, 0, 1);
-    const satToColour = hsvToHex(hue, 1, 1);
-    const valFromColour = hsvToHex(hue, saturation, 0);
-    const valToColour = hsvToHex(hue, saturation, 1);
     const updateInternalColor = (c) => {
-      setInternalColor(c);
+      const newColor = c.startsWith("rgba") ? rgbaToHex(c).hex : c;
+      setInternalColor(newColor);
+      const outputColor = isRgba ? hexToRgba(newColor, alpha) : newColor;
+      onChanged(outputColor);
     };
     react.useEffect(() => {
-      updateInternalColor(color);
+      const updateColor = (color2) => {
+        const newColor = color2.startsWith("rgba") ? rgbaToHex(color2).hex : color2;
+        if (color2.startsWith("rgba")) {
+          const alphaValue = rgbaToHex(color2).alpha;
+          setAlpha(alphaValue);
+        } else {
+          setAlpha("");
+        }
+        setInternalColor(newColor);
+        const hsv = hexToHsv(newColor);
+        setHue(hsv.h);
+        setSaturation(hsv.s);
+        setValue(hsv.v);
+      };
+      updateColor(color);
     }, [color]);
     const [active, setActive] = react.useState(false);
     const [portalContainer, setPortalContainer] = react.useState(null);
@@ -23922,7 +23955,8 @@
     const handleClickOutside = (event) => {
       if (pickerRef.current && !pickerRef.current.contains(event.target) && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setActive(false);
-        onDropdown(false);
+        if (onDropdown)
+          onDropdown(false);
       }
     };
     react.useEffect(() => {
@@ -23959,22 +23993,40 @@
     };
     const onToggle = () => {
       setActive(!active);
-      onDropdown(!active);
+      if (onDropdown)
+        onDropdown(!active);
     };
+    const hueVal = parseInt(hue * 100, 10);
+    const satVal = parseInt(saturation * 100, 10);
+    const valVal = parseInt(value * 100, 10);
+    const satFromColour = hsvToHex(hue, 0, 1);
+    const satToColour = hsvToHex(hue, 1, 1);
+    const valFromColour = hsvToHex(hue, saturation, 0);
+    const valToColour = hsvToHex(hue, saturation, 1);
     const onHueUpdated = (val) => {
-      let newColor = hsvToHex(val / 100, saturation, value);
+      const newHue = val / 100;
+      let newColor = hsvToHex(newHue, saturation, value);
+      setHue(newHue);
       updateInternalColor(newColor);
-      onChanged(newColor);
+      onColorUpdated(newColor);
     };
     const onSatUpdated = (val) => {
-      let newColor = hsvToHex(hue, val / 100, value);
+      const newSaturation = val / 100;
+      let newColor = hsvToHex(hue, newSaturation, value);
+      setSaturation(newSaturation);
       updateInternalColor(newColor);
-      onChanged(newColor);
+      onColorUpdated(newColor);
     };
     const onValUpdated = (val) => {
-      let newColor = hsvToHex(hue, saturation, val / 100);
+      const newValue = val / 100;
+      let newColor = hsvToHex(hue, saturation, newValue);
+      setValue(newValue);
       updateInternalColor(newColor);
-      onChanged(newColor);
+      onColorUpdated(newColor);
+    };
+    const onColorUpdated = (newHex) => {
+      const outputColor = !color ? "#FFFFFF" : color.startsWith("rgba") ? hexToRgba(newHex, alpha) : newHex;
+      onChanged(outputColor);
     };
     const dropdownContent = active ? /* @__PURE__ */ import_react17.default.createElement("div", { ref: dropdownRef, style: {
       display: "flex",
@@ -23982,7 +24034,7 @@
       ...getDropdownPosition(),
       zIndex: 9999
     } }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-picker-container_Sj5", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-picker_aNX" }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "sliders_sCL section_cwE" }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-component-input_WeK", style: { flexDirection: "column", alignItems: "stretch", justifyContent: "stretch" } }, /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: hueVal, isColorSpectrum: "true", onValueChanged: onHueUpdated }), /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: satVal, fromColour: satFromColour, toColour: satToColour, onValueChanged: onSatUpdated, style: { marginTop: "5rem" } }), /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: valVal, fromColour: valFromColour, toColour: valToColour, onValueChanged: onValUpdated, style: { marginTop: "5rem" } })))), /* @__PURE__ */ import_react17.default.createElement("div", { style: { width: "100%", marginTop: "10rem" } }, /* @__PURE__ */ import_react17.default.createElement(button_default2, { onClick: onToggle }, "Done")))) : null;
-    return /* @__PURE__ */ import_react17.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react17.default.createElement("div", { ref: pickerRef, className: "field_amr field_cjf", style: { display: "flex", flexDirection: "row" }, onClick: onToggle }, /* @__PURE__ */ import_react17.default.createElement("div", { style: { flex: 1 }, onClick: onToggle }, label), /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-field_jwA color-field_due", style: { marginLeft: "auto" } }, /* @__PURE__ */ import_react17.default.createElement("div", { style: { backgroundColor: internalColor } }))), portalContainer && dropdownContent && import_react_dom.default.createPortal(dropdownContent, portalContainer));
+    return /* @__PURE__ */ import_react17.default.createElement("div", { style: { position: "relative", ...style } }, /* @__PURE__ */ import_react17.default.createElement("div", { ref: pickerRef, className: "field_amr field_cjf", style: { display: "flex", flexDirection: "row" }, onClick: onToggle }, /* @__PURE__ */ import_react17.default.createElement("div", { style: { flex: 1 }, onClick: onToggle }, label), /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-field_jwA color-field_due", style: { marginLeft: "auto" } }, /* @__PURE__ */ import_react17.default.createElement("div", { style: { backgroundColor: internalColor } }))), portalContainer && dropdownContent && import_react_dom.default.createPortal(dropdownContent, portalContainer));
   };
   var colorpicker_default = $ColorPicker;
 
@@ -24283,8 +24335,286 @@
   };
   var zone_settings_default = $ZoneSettings;
 
-  // src/jsx/tabs/_about.jsx
+  // src/jsx/tabs/_ui-themes.jsx
+  var import_react23 = __toESM(require_react());
+
+  // src/jsx/components/_tab-control.jsx
   var import_react22 = __toESM(require_react());
+  var $TabControl = ({ react, tabs, style }) => {
+    const [activeTab, setActiveTab] = react.useState(tabs.length > 0 ? tabs[0].name : "");
+    return /* @__PURE__ */ import_react22.default.createElement("div", { style }, /* @__PURE__ */ import_react22.default.createElement("div", { className: "panel_YqS", style: { marginLeft: "auto", marginRight: "auto", width: "100%" } }, /* @__PURE__ */ import_react22.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react22.default.createElement(
+      "div",
+      {
+        key: tab.name,
+        className: `tab_Hrb ${activeTab === tab.name ? "selected" : ""}`,
+        onClick: () => setActiveTab(tab.name),
+        style: { marginLeft: "2.5rem", marginRight: "2.5rem" }
+      },
+      tab.name
+    ))), /* @__PURE__ */ import_react22.default.createElement("div", null, tabs.map((tab) => /* @__PURE__ */ import_react22.default.createElement(
+      "div",
+      {
+        key: tab.name,
+        style: { display: activeTab === tab.name ? "flex" : "none", flexDirection: "row", paddingTop: "10rem" }
+      },
+      tab.content
+    )))));
+  };
+  var tab_control_default = $TabControl;
+
+  // src/jsx/tabs/_ui-themes.jsx
+  var $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
+    const [selectedDefaultTheme, setSelectedDefaultTheme] = react.useState("Default");
+    const [selectedTheme, setSelectedTheme] = react.useState("Custom");
+    const [accentColour, setAccentColour] = react.useState("#ff0000");
+    const [backgroundAccentColour, setBackgroundAccentColour] = react.useState("#000000");
+    const [usingSelectedTheme, setUsingSelectedTheme] = react.useState(false);
+    let defaultThemeList = [];
+    let themeList = [];
+    if (themeData.Themes) {
+      for (var i = 0; i < themeData.Themes.length; i++) {
+        themeList.push(themeData.Themes[i].Name);
+      }
+    }
+    if (defaultThemeData.Themes) {
+      for (var i = 0; i < defaultThemeData.Themes.length; i++) {
+        defaultThemeList.push(defaultThemeData.Themes[i].Name);
+      }
+    }
+    let selectedIndex = themeList.indexOf(selectedTheme);
+    const onSelectedThemeChanged = (selected) => {
+      setSelectedTheme(selected);
+      selectedIndex = themeList.indexOf(selected);
+      engine.trigger("cities2modding_legacyflavour.useSelectedTheme", selected);
+    };
+    const onDefaultSelectedThemeChanged = (selected) => {
+      setSelectedDefaultTheme(selected);
+    };
+    const chunkArray = (array, size) => {
+      const result = [];
+      for (let i2 = 0; i2 < array.length; i2 += size) {
+        result.push(array.slice(i2, i2 + size));
+      }
+      return result;
+    };
+    const formatString = (str) => {
+      let formattedStr = str.replace(/^[-]+/, "");
+      formattedStr = formattedStr.replace(/-/g, " ");
+      formattedStr = formattedStr.replace(/([A-Z])/g, " $1").trim();
+      formattedStr = formattedStr.split(" ").map(
+        (word) => word.charAt(0).toUpperCase() + word.slice(1)
+      ).join(" ");
+      return formattedStr;
+    };
+    const accentGroups = [
+      {
+        name: "Accent",
+        keys: [
+          "--accentColorNormal",
+          "--accentColorNormal-hover",
+          "--accentColorNormal-pressed",
+          "--accentColorDark",
+          "--accentColorDark-hover",
+          "--accentColorDark-pressed",
+          "--accentColorDark-focused",
+          "--accentColorLight",
+          "--accentColorLighter",
+          "--focusedColor",
+          "--focusedColorDark"
+        ]
+      },
+      {
+        name: "Panel",
+        keys: [
+          "--panelColorNormal",
+          "--panelColorDark",
+          "--panelColorDark-hover",
+          "--panelColorDark-active",
+          "--pausePanelColorDark",
+          "--customPanelTextColor"
+        ]
+      },
+      {
+        name: "Section",
+        keys: [
+          "--sectionHeaderColor",
+          "--sectionHeaderColorLight",
+          "--sectionHeaderLockedColor",
+          "--sectionBackgroundColor",
+          "--sectionBackgroundColorLight",
+          "--sectionBorderColor",
+          "--sectionBackgroundLockedColor"
+        ]
+      },
+      {
+        name: "Selected",
+        keys: [
+          "--selectedTextColor",
+          "--selectedTextColorDim",
+          "--selectedTextColorDimmer",
+          "--selectedTextColorDimmest",
+          "--selectedColor",
+          "--selectedColorDark",
+          "--selectedColor-hover",
+          "--selectedColor-active"
+        ]
+      },
+      {
+        name: "Text",
+        keys: [
+          "--normalTextColor",
+          "--normalTextColorDim",
+          "--normalTextColorDimmer",
+          "--normalTextColorDimmest",
+          "--normalTextColorDark",
+          "--normalTextColorDarkDim",
+          "--normalTextColorDarkDimmer",
+          "--normalTextColorDarkDimmest",
+          "--normalTextColorHighlight",
+          "--normalTextColorHighlightDim",
+          "--normalTextColorHighlightDimmer",
+          "--normalTextColorHighlightDimmest"
+        ]
+      },
+      {
+        name: "Menu ",
+        keys: [
+          "--menuText1Inverted",
+          "--menuText2Inverted",
+          "--menuPanel1",
+          "--menuPanel2",
+          "--menuTitleNormal",
+          "--menuText1Normal",
+          "--menuText2Normal",
+          "--menuText1Disabled",
+          "--menuControlBorder"
+        ]
+      },
+      {
+        name: "Other",
+        keys: [
+          "--positiveColor",
+          "--warningColor",
+          "--negativeColor",
+          "--customTabTextColor",
+          "--customTabSelectedTextColor",
+          "--customChirperPanelTextColor",
+          "--customChirperPanelColor",
+          "--customChirperItemTextColor",
+          "--customChirperItemColor"
+        ]
+      }
+    ];
+    const filterSettings = (settings, accentGroup) => {
+      var filteredSettings = [];
+      for (var i2 = 0; i2 < settings.length; i2++) {
+        if (accentGroup.keys.includes(settings[i2].Key))
+          filteredSettings.push(settings[i2]);
+      }
+      return filteredSettings;
+    };
+    const getTheme = (theme, accentGroup) => {
+      const filteredSettings = filterSettings(theme.Settings, accentGroup);
+      const settingChunks = chunkArray(filteredSettings, 6);
+      const filteredChunks = settingChunks.filter(
+        (chunk) => chunk.some((setting) => setting.Value.indexOf("#") !== -1 || setting.Value.indexOf("rgba(") !== -1)
+      );
+      return /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row", width: "100%" } }, filteredChunks.map((chunk, chunkIndex) => /* @__PURE__ */ import_react23.default.createElement("div", { key: chunk.name + "-container", style: { flex: 1, width: "33.33333333333%", maxWidth: "50%", paddingLeft: chunkIndex > 0 ? "5rem" : "0", paddingRight: chunkIndex < filteredChunks.length - 1 ? "5rem" : "0" } }, /* @__PURE__ */ import_react23.default.createElement(section_default, { contentStyle: { display: "flex", flexDirection: "column", width: "100%" } }, chunk.map((setting) => (setting.Value.indexOf("#") !== -1 || setting.Value.indexOf("rgba(") !== -1) && /* @__PURE__ */ import_react23.default.createElement("div", { key: chunk.name + "-" + setting.Key + "-cp-container" }, /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { key: chunk.name + "-" + setting.Key + "-cp", react, label: formatString(setting.Key), color: setting.Value, onChanged: (newColour) => {
+        doUpdateThemeValue(setting.Key, newColour);
+      } })))))));
+    };
+    const updateAccent = (colour) => {
+      setAccentColour(colour);
+    };
+    const updateBackgroundAccent = (colour) => {
+      setBackgroundAccentColour(colour);
+    };
+    const doUpdateThemeValue = (key, colour) => {
+      let json = JSON.stringify({
+        key,
+        value: colour
+      });
+      engine.trigger("cities2modding_legacyflavour.updateThemeValue", selectedTheme, json);
+    };
+    const generateAccent = (visible) => {
+      if (!visible) {
+        let json = JSON.stringify({
+          accent: accentColour,
+          backgroundAccent: backgroundAccentColour,
+          defaultTheme: selectedDefaultTheme
+        });
+        engine.trigger("cities2modding_legacyflavour.generateThemeAccent", selectedTheme, json);
+        if (usingSelectedTheme) {
+          setTimeout(function() {
+            engine.trigger("cities2modding_legacyflavour.useSelectedTheme", selectedTheme);
+          }, 250);
+        }
+      }
+    };
+    const useSelectedTheme = () => {
+      setUsingSelectedTheme(true);
+      setTimeout(function() {
+        engine.trigger("cities2modding_legacyflavour.useSelectedTheme", selectedTheme);
+      }, 150);
+    };
+    const tabs = [
+      {
+        name: "Accent",
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[0]))
+      },
+      {
+        name: "Panel",
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[1]))
+      },
+      {
+        name: "Section",
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[2]))
+      },
+      {
+        name: "Selected",
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[3]))
+      },
+      {
+        name: "Text",
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[4]))
+      },
+      {
+        name: "Menu",
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[5]))
+      },
+      {
+        name: "Other",
+        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[6]))
+      }
+    ];
+    return /* @__PURE__ */ import_react23.default.createElement("div", null, /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react23.default.createElement("div", { style: { width: "50%", paddingRight: "5rem" } }, /* @__PURE__ */ import_react23.default.createElement(
+      icon_panel_default,
+      {
+        label: "Theme",
+        description: "Select a theme to edit",
+        icon: "Media/Editor/Edit.svg",
+        fitChild: "true"
+      },
+      /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(select_default, { react, selected: selectedTheme, options: themeList, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onSelectedThemeChanged }), /* @__PURE__ */ import_react23.default.createElement(button_default2, { onClick: useSelectedTheme }, "Use selected theme"))
+    )), /* @__PURE__ */ import_react23.default.createElement("div", { style: { width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react23.default.createElement(
+      icon_panel_default,
+      {
+        label: "Generate from colour",
+        description: "Select a base theme, main accent colour and generate a theme.",
+        icon: "Media/Editor/Edit.svg",
+        fitChild: "true"
+      },
+      /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(select_default, { react, selected: selectedDefaultTheme, options: defaultThemeList, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onDefaultSelectedThemeChanged }), /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { style: { width: "50%" }, key: "lf-accent", react, label: "Primary Accent", color: accentColour, onChanged: (newColour) => {
+        updateAccent(newColour);
+      }, onDropdown: generateAccent }), /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { style: { width: "50%" }, key: "lf-bg-accent", react, label: "Background Accent", color: backgroundAccentColour, onChanged: (newColour) => {
+        updateBackgroundAccent(newColour);
+      }, onDropdown: generateAccent })))
+    ))), /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react23.default.createElement(tab_control_default, { react, tabs })));
+  };
+  var ui_themes_default = $UIThemes;
+
+  // src/jsx/tabs/_about.jsx
+  var import_react24 = __toESM(require_react());
   var $About = ({}) => {
     const launchReddit = (url) => {
       engine.trigger("cities2modding_legacyflavour.launchUrl", "https://www.reddit.com/r/cities2modding");
@@ -24295,7 +24625,7 @@
     const launchDiscord = (url) => {
       engine.trigger("cities2modding_legacyflavour.launchUrl", "https://discord.gg/KGRNBbm5Fh");
     };
-    return /* @__PURE__ */ import_react22.default.createElement("div", null, /* @__PURE__ */ import_react22.default.createElement(
+    return /* @__PURE__ */ import_react24.default.createElement("div", null, /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {
         label: "Legacy Flavour v0.0.6",
@@ -24304,7 +24634,7 @@
         icon: "Media/Editor/Object.svg",
         fitChild: "true"
       }
-    ), /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react22.default.createElement(description_default, { style: { paddingTop: "0" } }, /* @__PURE__ */ import_react22.default.createElement(paragraph_default, null, 'Our mods, including "Legacy Flavour," are part of a vibrant creative effort, officially distributed via ', /* @__PURE__ */ import_react22.default.createElement("b", null, "Thunderstore.io"), "\xA0and our GitHub repository. They represent not just our work but the spirit of collaboration and innovation within the Cities Skylines modding community."), /* @__PURE__ */ import_react22.default.createElement(paragraph_default, null, "Special thanks to ", /* @__PURE__ */ import_react22.default.createElement("b", null, "Captain_Of_Coit"), ", ", /* @__PURE__ */ import_react22.default.createElement("b", null, "89pleasure"), ", and ", /* @__PURE__ */ import_react22.default.createElement("b", null, "Rebecca"), ", as well as the extensive ", /* @__PURE__ */ import_react22.default.createElement("b", null, "Cities2Modding"), "\xA0community."), /* @__PURE__ */ import_react22.default.createElement(paragraph_default, null, "If modding interests you, whether you're a seasoned creator or a newcomer, our community doors are always open. We thrive on shared knowledge and fresh ideas, and we believe that everyone has something unique to contribute to our growing and dynamic community."))), /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "row", flex: 1 } }, /* @__PURE__ */ import_react22.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react22.default.createElement(
+    ), /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react24.default.createElement(description_default, { style: { paddingTop: "0" } }, /* @__PURE__ */ import_react24.default.createElement(paragraph_default, null, 'Our mods, including "Legacy Flavour," are part of a vibrant creative effort, officially distributed via ', /* @__PURE__ */ import_react24.default.createElement("b", null, "Thunderstore.io"), "\xA0and our GitHub repository. They represent not just our work but the spirit of collaboration and innovation within the Cities Skylines modding community."), /* @__PURE__ */ import_react24.default.createElement(paragraph_default, null, "Special thanks to ", /* @__PURE__ */ import_react24.default.createElement("b", null, "Captain_Of_Coit"), ", ", /* @__PURE__ */ import_react24.default.createElement("b", null, "89pleasure"), ", and ", /* @__PURE__ */ import_react24.default.createElement("b", null, "Rebecca"), ", as well as the extensive ", /* @__PURE__ */ import_react24.default.createElement("b", null, "Cities2Modding"), "\xA0community."), /* @__PURE__ */ import_react24.default.createElement(paragraph_default, null, "If modding interests you, whether you're a seasoned creator or a newcomer, our community doors are always open. We thrive on shared knowledge and fresh ideas, and we believe that everyone has something unique to contribute to our growing and dynamic community."))), /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "row", flex: 1 } }, /* @__PURE__ */ import_react24.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {
         label: "GitHub",
@@ -24312,8 +24642,8 @@
         icon: "https://raw.githubusercontent.com/prplx/svg-logos/master/svg/github-icon.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchGitHub }, "https://github.com/Cities2Modding"))
-    ), /* @__PURE__ */ import_react22.default.createElement(
+      /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react24.default.createElement(button_default2, { isBlack: "true", onClick: launchGitHub }, "https://github.com/Cities2Modding"))
+    ), /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {
         label: "Reddit",
@@ -24321,8 +24651,8 @@
         icon: "https://www.svgrepo.com/download/14413/reddit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchReddit }, "https://www.reddit.com/r/cities2modding"))
-    )), /* @__PURE__ */ import_react22.default.createElement("div", { style: { flex: 1, marginLeft: "5rem" } }, /* @__PURE__ */ import_react22.default.createElement(
+      /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react24.default.createElement(button_default2, { isBlack: "true", onClick: launchReddit }, "https://www.reddit.com/r/cities2modding"))
+    )), /* @__PURE__ */ import_react24.default.createElement("div", { style: { flex: 1, marginLeft: "5rem" } }, /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {
         label: "Discord",
@@ -24330,7 +24660,7 @@
         icon: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/653714c1f22aef3b6921d63d_636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchDiscord }, "https://discord.gg/KGRNBbm5Fh"))
+      /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react24.default.createElement(button_default2, { isBlack: "true", onClick: launchDiscord }, "https://discord.gg/KGRNBbm5Fh"))
     ))));
   };
   var about_default = $About;
@@ -24338,9 +24668,13 @@
   // src/jsx/ui.jsx
   var $LegacyFlavour = ({ react }) => {
     const [data, setData] = react.useState({});
+    const [defaultThemeData, setDefaultThemeData] = react.useState({});
+    const [themeData, setThemeData] = react.useState({});
     const [opacity, setOpacity] = react.useState(1);
     const [useTransparency, setUseTransparency] = react.useState(false);
     use_data_update_default(react, "cities2modding_legacyflavour.config", setData);
+    use_data_update_default(react, "cities2modding_legacyflavour.themeConfig", setThemeData);
+    use_data_update_default(react, "cities2modding_legacyflavour.defaultThemeData", setDefaultThemeData);
     const triggerUpdate = (prop, val) => {
       engine.trigger("cities2modding_legacyflavour.updateProperty", JSON.stringify({ property: prop, value: val }));
     };
@@ -24364,22 +24698,26 @@
     const tabs = [
       {
         name: "Settings",
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(settings_default, { react, data, setData, triggerUpdate }))
+        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(settings_default, { react, data, setData, triggerUpdate }))
       },
       {
         name: "Zone Settings",
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_settings_default, { react, data, setData, triggerUpdate }))
+        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(zone_settings_default, { react, data, setData, triggerUpdate }))
       },
       {
         name: "Zone Colours",
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_colours_default, { react, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity }))
+        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(zone_colours_default, { react, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity }))
+      },
+      {
+        name: "UI Themes",
+        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(ui_themes_default, { react, themeData, setThemeData, defaultThemeData }))
       },
       {
         name: "About",
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(about_default, null))
+        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(about_default, null))
       }
     ];
-    return /* @__PURE__ */ import_react23.default.createElement(tab_window_default, { react, tabs, onClose: toggleVisibility, style: { opacity } });
+    return /* @__PURE__ */ import_react25.default.createElement(tab_window_default, { react, tabs, onClose: toggleVisibility, style: { opacity } });
   };
   window._$hookui.registerPanel({
     id: "cities2modding.legacyflavour",

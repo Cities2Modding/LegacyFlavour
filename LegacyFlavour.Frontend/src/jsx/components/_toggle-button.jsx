@@ -4,7 +4,7 @@ const $ToggleButton = ({ label, icon, children, style, labelStyle, checked, onTo
     const baseClassNames = "item_JFN button_ECf item_It6 item-mouse-states_Fmi item-selected_tAM item-focused_FuT";
     const checkedClassNames = checked ? " selected" : "";
     const classNames = baseClassNames + checkedClassNames;
-    const checkedTextStyle = checked ? { color: 'var(--normalTextColor)' } : {};
+    const checkedTextStyle = checked ? { color: 'var(--textColor)' } : {};
     const iconMarkup = icon ? <img className="icon_HoD icon_soN icon_Iwk" src={icon} /> : "";
 
     const body = iconOnly ? "" : <div className="title_sB9" style={{ ...checkedTextStyle, ...labelStyle }}>{label}</div>;

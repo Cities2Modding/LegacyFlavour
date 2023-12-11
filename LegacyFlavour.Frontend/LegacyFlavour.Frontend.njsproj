@@ -34,6 +34,7 @@
     <Content Include="src\jsx\components\_icon-panel.jsx" />
     <Content Include="src\jsx\components\_button.jsx" />
     <Content Include="src\jsx\components\_fancy-slider.jsx" />
+    <Content Include="src\jsx\components\_tab-control.jsx" />
     <Content Include="src\jsx\components\_toggle-icon-group.jsx" />
     <Content Include="src\jsx\components\_toggle-group.jsx" />
     <Content Include="src\jsx\components\_toggle-button.jsx" />
@@ -47,17 +48,20 @@
     <Content Include="src\jsx\components\_header.jsx" />
     <Content Include="src\jsx\components\_colorpicker.jsx" />
     <Content Include="src\jsx\components\_slider.jsx" />
+    <Content Include="src\jsx\tabs\_ui-themes.jsx" />
     <Content Include="src\jsx\tabs\_zone-settings.jsx" />
     <Content Include="src\jsx\tabs\_settings.jsx" />
     <Content Include="src\jsx\tabs\_about.jsx" />
     <Content Include="src\jsx\tabs\_zone-colours.jsx" />
     <Content Include="src\jsx\ui.jsx" />
+    <Content Include="src\scss\_legacy-flavour.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="src\jsx\" />
     <Folder Include="src\jsx\components\" />
     <Folder Include="src\jsx\tabs\" />
+    <Folder Include="src\scss\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
 </Project>

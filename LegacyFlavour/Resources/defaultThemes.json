@@ -1,0 +1,3328 @@
+{
+  "Themes": [
+    {
+      "Name": "Default",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#d9d9d9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#b3b3b3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9a9a9a"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--normalTextColorHighlight",
+          "Value": "var(--accentColorNormal)"
+        },
+        {
+          "Key": "--normalTextColorHighlightDim",
+          "Value": "var(--accentColorLight)"
+        },
+        {
+          "Key": "--normalTextColorHighlightDimmer",
+          "Value": "var(--accentColorLighter)"
+        },
+        {
+          "Key": "--normalTextColorHighlightDimmest",
+          "Value": "var(--accentColorLightest)"
+        },
+        {
+          "Key": "--normalTextColorDisabled",
+          "Value": "#bfbfbf"
+        },
+        {
+          "Key": "--normalTextColorLocked",
+          "Value": "#b4b4b4cc"
+        },
+        {
+          "Key": "--textColor",
+          "Value": "var(--normalTextColor)"
+        },
+        {
+          "Key": "--textColorDim",
+          "Value": "var(--normalTextColorDim)"
+        },
+        {
+          "Key": "--textColorDimmer",
+          "Value": "var(--normalTextColorDimmer)"
+        },
+        {
+          "Key": "--textColorDimmest",
+          "Value": "var(--normalTextColorDimmest)"
+        },
+        {
+          "Key": "--textColorDark",
+          "Value": "var(--normalTextColorDark)"
+        },
+        {
+          "Key": "--textColorDarkDim",
+          "Value": "var(--normalTextColorDarkDim)"
+        },
+        {
+          "Key": "--textColorDarkDimmer",
+          "Value": "var(--normalTextColorDarkDimmer)"
+        },
+        {
+          "Key": "--textColorDarkDimmest",
+          "Value": "var(--normalTextColorDarkDimmest)"
+        },
+        {
+          "Key": "--textColorHighlight",
+          "Value": "var(--normalTextColorHighlight)"
+        },
+        {
+          "Key": "--textColorHighlightDim",
+          "Value": "var(--normalTextColorHighlightDim)"
+        },
+        {
+          "Key": "--textColorHighlightDimmer",
+          "Value": "var(--normalTextColorHighlightDimmer)"
+        },
+        {
+          "Key": "--textColorHighlightDimmest",
+          "Value": "var(--normalTextColorHighlightDimmest)"
+        },
+        {
+          "Key": "--textColorDisabled",
+          "Value": "var(--normalTextColorDisabled)"
+        },
+        {
+          "Key": "--textColorLocked",
+          "Value": "var(--normalTextColorLocked)"
+        },
+        {
+          "Key": "--focusedTextColor",
+          "Value": "rgba(0, 0, 0, 0.7)"
+        },
+        {
+          "Key": "--focusedTextColorDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--focusedTextColorDimmer",
+          "Value": "rgba(0, 0, 0, 0.5)"
+        },
+        {
+          "Key": "--focusedTextColorDimmest",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--focusedTextColorDark",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--focusedTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.9)"
+        },
+        {
+          "Key": "--focusedTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--focusedTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.7)"
+        },
+        {
+          "Key": "--focusedTextColorHighlight",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--focusedTextColorHighlightDim",
+          "Value": "rgba(255, 255, 255, 0.9)"
+        },
+        {
+          "Key": "--focusedTextColorHighlightDimmer",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--focusedTextColorHighlightDimmest",
+          "Value": "rgba(255, 255, 255, 0.7)"
+        },
+        {
+          "Key": "--focusedTextColorLocked",
+          "Value": "rgb(100, 100, 100)"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(0, 0, 0, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(0, 0, 0, 0.3)"
+        },
+        {
+          "Key": "--selectedTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.9)"
+        },
+        {
+          "Key": "--selectedTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--selectedTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.7)"
+        },
+        {
+          "Key": "--selectedTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorHighlight",
+          "Value": "rgba(255, 255, 255, 0.9)"
+        },
+        {
+          "Key": "--selectedTextColorHighlightDim",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--selectedTextColorHighlightDimmer",
+          "Value": "rgba(255, 255, 255, 0.7)"
+        },
+        {
+          "Key": "--selectedTextColorHighlightDimmest",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorLocked",
+          "Value": "rgb(150, 150, 150)"
+        },
+        {
+          "Key": "--panelOpacityNormal",
+          "Value": "0.55"
+        },
+        {
+          "Key": "--panelOpacityDark",
+          "Value": "0.71335"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(42, 55, 83, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(24, 33, 51, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(27, 36, 54, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(30, 39, 57, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(67, 25, 30, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--scrollbarColor",
+          "Value": "255, 255, 255"
+        },
+        {
+          "Key": "--dialogButtonYesColor",
+          "Value": "#63b900"
+        },
+        {
+          "Key": "--dialogButtonYesColor-hover",
+          "Value": "#71d300"
+        },
+        {
+          "Key": "--dialogButtonYesColor-active",
+          "Value": "#7eec00"
+        },
+        {
+          "Key": "--dialogButtonYesColor-focused",
+          "Value": "#71d300"
+        },
+        {
+          "Key": "--dialogButtonNoColor",
+          "Value": "#be6c00"
+        },
+        {
+          "Key": "--dialogButtonNoColor-hover",
+          "Value": "#d87a00"
+        },
+        {
+          "Key": "--dialogButtonNoColor-active",
+          "Value": "#f18900"
+        },
+        {
+          "Key": "--dialogButtonNoColor-focused",
+          "Value": "#d87a00"
+        },
+        {
+          "Key": "--normalColor",
+          "Value": "transparent"
+        },
+        {
+          "Key": "--hoverColor",
+          "Value": "rgba(255, 255, 255, 0.1)"
+        },
+        {
+          "Key": "--hoverColorNormal",
+          "Value": "var(--hoverColor)"
+        },
+        {
+          "Key": "--hoverColorBright",
+          "Value": "rgba(255, 255, 255, 0.15)"
+        },
+        {
+          "Key": "--hoverColorDark",
+          "Value": "rgba(255, 255, 255, 0.05)"
+        },
+        {
+          "Key": "--activeColor",
+          "Value": "rgba(255, 255, 255, 0.2)"
+        },
+        {
+          "Key": "--activeColorNormal",
+          "Value": "var(--activeColor)"
+        },
+        {
+          "Key": "--activeColorBright",
+          "Value": "rgba(255, 255, 255, 0.3)"
+        },
+        {
+          "Key": "--activeColorDark",
+          "Value": "rgba(255, 255, 255, 0.3)"
+        },
+        {
+          "Key": "--disabledColor",
+          "Value": "rgba(95, 95, 95, 0.6)"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#4bc3f1"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#20b5ee"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#1e83aa"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#176583"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#2398c5"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#25a1d1"
+        },
+        {
+          "Key": "--buttonSelectAnimation",
+          "Value": "blinkOnSelect"
+        },
+        {
+          "Key": "--editorFocusedColor",
+          "Value": "#c7ff65"
+        },
+        {
+          "Key": "--editorFocusedColorDark",
+          "Value": "#3c5714"
+        },
+        {
+          "Key": "--progressColor",
+          "Value": "var(--accentColorNormal)"
+        },
+        {
+          "Key": "--progressTextColor",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--centerPanelWidth",
+          "Value": "1350rem"
+        },
+        {
+          "Key": "--centerPanelHeight",
+          "Value": "820rem"
+        },
+        {
+          "Key": "--centerPanelSidebarWidth",
+          "Value": "30%"
+        },
+        {
+          "Key": "--rightPanelWidth",
+          "Value": "400rem"
+        },
+        {
+          "Key": "--leftPanelWidth",
+          "Value": "380rem"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(21, 25, 43, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(29, 35, 60, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(40, 40, 40, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(38, 49, 71, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(47, 60, 88, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(49, 49, 49, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(56, 72, 104, 0.7)"
+        },
+        {
+          "Key": "--dividerColor",
+          "Value": "rgba(255, 255, 255, 0.1)"
+        },
+        {
+          "Key": "--dividerColorInverted",
+          "Value": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "Key": "--chartBorderColor",
+          "Value": "#8ea5d3"
+        },
+        {
+          "Key": "--lockedColor",
+          "Value": "#d38f07"
+        },
+        {
+          "Key": "--unlockedColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--requirementsTitleColor",
+          "Value": "#1e1e1e"
+        },
+        {
+          "Key": "--requirementFieldColor",
+          "Value": "var(--accentColorDarker)"
+        },
+        {
+          "Key": "--requirementFieldProgressColor",
+          "Value": "var(--accentColorDark)"
+        },
+        {
+          "Key": "--toolbarFieldColor",
+          "Value": "rgba(6, 10, 16, 0.45)"
+        },
+        {
+          "Key": "--toolbarFieldColor-hover",
+          "Value": "rgba(40, 40, 40, 0.45)"
+        },
+        {
+          "Key": "--toolbarFieldColor-active",
+          "Value": "rgba(70, 70, 70, 0.45)"
+        },
+        {
+          "Key": "--toolbarFieldBorderColor",
+          "Value": "rgba(255, 255, 255, 0.08)"
+        },
+        {
+          "Key": "--toolbarFieldBorderWidth",
+          "Value": "var(--stroke2)"
+        },
+        {
+          "Key": "--toolbarFieldRadius",
+          "Value": "8rem"
+        },
+        {
+          "Key": "--toolbarFieldInnerRadius",
+          "Value": "calc(var(--toolbarFieldRadius) - var(--toolbarFieldBorderWidth) + 1px)"
+        },
+        {
+          "Key": "--accentColorDarker",
+          "Value": "#2e3c5b"
+        },
+        {
+          "Key": "--accentColorDarker-hover",
+          "Value": "#3f527d"
+        },
+        {
+          "Key": "--accentColorDarker-pressed",
+          "Value": "#5c75ad"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#1e83aa"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#26a4d5"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#64c0e4"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#00c2ff"
+        },
+        {
+          "Key": "--policyIconSize",
+          "Value": "32rem"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#4bc3f1"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#7ad3f5"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#c1eafa"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#9ee2fc"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#e9f6ff"
+        },
+        {
+          "Key": "--accentColorLightest",
+          "Value": "#ffffff"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--iconColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--sliderRangeColor",
+          "Value": "var(--accentColorDark)"
+        },
+        {
+          "Key": "--sliderRangeColorFocused",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--sliderRangeColorDisabled",
+          "Value": "#666"
+        },
+        {
+          "Key": "--sliderThumbColor",
+          "Value": "#ddd"
+        },
+        {
+          "Key": "--sliderThumbColorDisabled",
+          "Value": "#999"
+        },
+        {
+          "Key": "--sliderThumbColorFocused",
+          "Value": "var(--accentColorNormal)"
+        },
+        {
+          "Key": "--menuHoverColor",
+          "Value": "rgba(255, 255, 255, 0.1)"
+        },
+        {
+          "Key": "--menuHoverColorBright",
+          "Value": "rgba(255, 255, 255, 0.15)"
+        },
+        {
+          "Key": "--menuActiveColor",
+          "Value": "rgba(255, 255, 255, 0.2)"
+        },
+        {
+          "Key": "--menuActiveColorInverted",
+          "Value": "rgba(12, 26, 37, 0.2)"
+        },
+        {
+          "Key": "--menuActiveColorBright",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuFocusedColor",
+          "Value": "rgba(255, 255, 255, 0.75)"
+        },
+        {
+          "Key": "--menuSelectedColor",
+          "Value": "rgba(255, 255, 255, 0.9)"
+        },
+        {
+          "Key": "--menuSelectedColorSubtle",
+          "Value": "rgba(255, 255, 255, 0.3)"
+        },
+        {
+          "Key": "--menuDisabledColor",
+          "Value": "rgba(34, 34, 34, 0.75)"
+        },
+        {
+          "Key": "--menuBorderColor1",
+          "Value": "rgba(255, 255, 255, 0.1)"
+        },
+        {
+          "Key": "--menuBorderColor1Inverted",
+          "Value": "rgba(12, 26, 37, 0.1)"
+        },
+        {
+          "Key": "--menuBorderColor2",
+          "Value": "rgba(255, 255, 255, 0.5)"
+        },
+        {
+          "Key": "--menuBorderColor2Inverted",
+          "Value": "rgba(12, 26, 37, 0.5)"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(16, 19, 29, 0.3)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(17, 17, 17, 0.3)"
+        },
+        {
+          "Key": "--menuBlur",
+          "Value": "brightness(60%) contrast(90%) blur(7px)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(12, 26, 37, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(102, 102, 102, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(12, 26, 37, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#1a1a1a"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#333333"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#545454"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#61a0b9"
+        },
+        {
+          "Key": "--linkColor",
+          "Value": "#63b900"
+        },
+        {
+          "Key": "--panelBlur",
+          "Value": "blur(5px)"
+        },
+        {
+          "Key": "--backdropBlur",
+          "Value": "blur(5px)"
+        },
+        {
+          "Key": "--tooltipColor",
+          "Value": "#232528"
+        },
+        {
+          "Key": "--tooltipFilter",
+          "Value": "drop-shadow(0 0 1px rgba(255, 255, 255, 0.3))"
+        },
+        {
+          "Key": "--keyboardHintColor",
+          "Value": "rgba(0, 109, 179, 0.2)"
+        }
+      ]
+    },
+    {
+      "Name": "Bright Blue",
+      "Settings": [
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(205, 223, 240, 0.486)"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(35, 43, 61, 0.8)"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "14rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "12rem"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#2391db"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#4ea7e3"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#90c8ed"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#008bdc"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#3d89eb"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#def2ff"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#4099ff"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#9ecafc"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#cde6fe"
+        },
+        {
+          "Key": "--textColorDimmer",
+          "Value": "rgba(255, 255, 255, 0.7)"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(200, 240, 255, 0.75)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(181, 225, 255, 0.65)"
+        },
+        {
+          "Key": "--menuDisabledColor",
+          "Value": "rgba(181, 225, 255, 0.4)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(0, 41, 59, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(0, 18, 51, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(78, 78, 78, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(8, 61, 92, 0.8)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(214, 214, 214, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "rgb(145, 172, 190)"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#83a2b6"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#ffffff"
+        }
+      ]
+    },
+    {
+      "Name": "Dark Grey Orange",
+      "Settings": [
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(23, 25, 32, 0.76)"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#db9123"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#e3a74e"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#edc890"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#dc8400"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#eba53d"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#fff2de"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#ffb340"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#fcda9e"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#feeccd"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(17, 17, 17, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#1a1a1a"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#333333"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#545454"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#ffb222"
+        }
+      ]
+    },
+    {
+      "Name": "LF - Default",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#d9d9d9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#b3b3b3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9a9a9a"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--normalTextColorHighlight",
+          "Value": "#3FD0FF"
+        },
+        {
+          "Key": "--normalTextColorHighlightDim",
+          "Value": "#A0EBFF"
+        },
+        {
+          "Key": "--normalTextColorHighlightDimmer",
+          "Value": "#C0F4FF"
+        },
+        {
+          "Key": "--normalTextColorHighlightDimmest",
+          "Value": "#C0F4FF"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(21, 25, 43, 0.5)" // Desaturated from rgba(21, 25, 43, 0.5)
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(29, 35, 60, 0.5)" // Desaturated from rgba(29, 35, 60, 0.5)
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(40, 40, 40, 0.5)" // Already desaturated
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(38, 49, 71, 0.5)" // Desaturated from rgba(38, 49, 71, 0.5)
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(47, 60, 88, 0.5)" // Desaturated from rgba(47, 60, 88, 0.5)
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(49, 49, 49, 0.5)" // Already desaturated
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(56, 72, 104, 0.7)" // Desaturated from rgba(56, 72, 104, 0.7)
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#3FD0FF" // Adjusted to match the hue of #3FD0FF
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#5FD9FF" // Lighter variant of #3FD0FF
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#7FE2FF" // Much lighter variant of #3FD0FF
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#2FBCE6" // Darker variant of #3FD0FF
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#3FC4E8" // Adjusted hover variant of #3FD0FF
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#BFEAFF" // Very light variant of #3FD0FF
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#4FD4F0" // Focused variant of #3FD0FF
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#A0EBFF" // Lighter variant of #3FD0FF
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#C0F4FF" // Lightest variant of #3FD0FF
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#26bbe3" // Adjusted variant of #3FD0FF
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#3FD0FF" // Adjusted to match the hue of #3FD0FF
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#2FBCE6" // Darker variant of #3FD0FF
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#2AA9D1" // Darker and more saturated variant of #3FD0FF
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#237F9B" // Darker and more subdued variant of #3FD0FF
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#31C3E9" // Hover variant of #3FD0FF
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#36CCEE" // Active state variant of #3FD0FF
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(42, 55, 83, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(24, 33, 51, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(27, 36, 54, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(30, 39, 57, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(67, 25, 30, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(17, 17, 17, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#1a1a1a"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#333333"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#545454"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(255, 255, 255, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(255, 255, 255, 0.4)"
+        }
+      ]
+    },
+    {
+      "Name": "LF - High Contrast",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(35, 35, 35, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(20, 20, 20, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#7efc00"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#fc8f00"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#ff2200"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#D9D9D9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#B3B3B3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9A9A9A"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(43, 43, 43, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(60, 60, 60, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(40, 40, 40, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(18, 18, 18, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(94, 94, 94, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(49, 44, 0, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(255, 255, 255, 0.7)"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#8f8100"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#FFE600"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#FFE600"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#E6CF00"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#E8D100"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#FFE600"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#F0D900"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#FFE600"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#FFE600"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#8f8100"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#FFE600"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#E6CF00"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#D1BD00"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#9B8C00"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#E9D200"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#EED700"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(5, 5, 5, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(3, 3, 3, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(5, 5, 5, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(8, 8, 8, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(3, 3, 3, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(17, 15, 0, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#1A1700"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#332E00"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#544C00"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(3, 3, 3, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(38, 38, 38, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(66, 66, 66, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(138, 138, 138, 0.4)"
+        }
+      ]
+    },
+    {
+      "Name": "LF - Hot Pink",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#D9D9D9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#B3B3B3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9A9A9A"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(43, 43, 43, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(60, 60, 60, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(40, 40, 40, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(71, 71, 71, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(88, 88, 88, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(49, 0, 0, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(104, 104, 104, 0.7)"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#ff005c"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#fc0303"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#ff004d"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#bd0022"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#e80000"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#ff003d"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#f0003a"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#f75266"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#ff7d8d"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#ff004d"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#ff004d"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#E60000"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#d10032"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#9b001c"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#e90000"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#ee0000"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(33, 33, 33, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(20, 20, 20, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(33, 33, 33, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(57, 57, 57, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(43, 43, 43, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(17, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#1A0000"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#330000"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#540000"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(255, 255, 255, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(255, 255, 255, 0.4)"
+        }
+      ]
+    },
+    {
+      "Name": "LF - Toxic Green",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#080808"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#D9D9D9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#B3B3B3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9A9A9A"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(43, 43, 43, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(60, 60, 60, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(40, 40, 40, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(30, 30, 46, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(88, 88, 88, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(13, 49, 0, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(104, 104, 104, 0.7)"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#248701"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#44FF02"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#44FF02"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#3ae000"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#3EE802"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#44FF02"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#40F002"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#8eff66"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#aaff8c"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#248701"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#44FF02"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#3DE602"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#38D102"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#299B01"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#3EE902"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#3FEE02"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(15, 19, 56, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(8, 9, 33, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(13, 13, 41, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(6, 6, 23, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(10, 9, 31, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(5, 17, 0, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#071A00"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#0E3300"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#165401"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(5, 5, 5, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(51, 51, 51, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(71, 71, 71, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(128, 128, 128, 0.4)"
+        }
+      ]
+    },
+    {
+      "Name": "LF - Mocha",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#fafafa"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#D9D9D9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#B3B3B3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9A9A9A"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(38, 38, 38, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(60, 60, 60, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(40, 40, 40, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(71, 71, 71, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(88, 88, 88, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(49, 37, 28, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(99, 89, 77, 0.7)"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#cfa88c"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#997458"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#bd906d"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#806a59"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#705641"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#85654c"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#8a694f"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#FFC293"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#FFC293"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#735e4e"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#FFC293"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#E6AF85"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#c79873"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#695242"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#f7bd8e"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#d6a47b"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(18, 15, 12, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(15, 15, 15, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(54, 54, 54, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(57, 57, 57, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(67, 67, 67, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(17, 13, 10, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#1A140F"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#33271D"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#544030"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(5, 5, 5, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(33, 33, 33, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(56, 56, 56, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(66, 66, 66, 0.4)"
+        }
+      ]
+    },
+    {
+      "Name": "LF - Peachy Ocean",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#D9D9D9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#B3B3B3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9A9A9A"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(43, 43, 43, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(60, 60, 60, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(40, 40, 40, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(46, 65, 66, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(88, 88, 88, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(49, 23, 17, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(104, 104, 104, 0.7)"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#ff7659"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#FF7659"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#FF7659"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#E66A50"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#E86B51"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#FF7659"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#F06F54"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#cc6550"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#ff8970"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#ff7659"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#FF7659"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#E66A50"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#D16149"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#9B4836"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#E96C51"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#EE6E53"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(22, 46, 54, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(22, 40, 46, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(27, 36, 38, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(29, 40, 41, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(10, 15, 15, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(17, 8, 6, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#1A0C09"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#331812"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#54271D"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(255, 255, 255, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(255, 255, 255, 0.4)"
+        }
+      ]
+    },
+    {
+      "Name": "LF - Dark Red",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#D9D9D9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#B3B3B3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9A9A9A"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(43, 43, 43, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(60, 60, 60, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(40, 40, 40, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(71, 71, 71, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(88, 88, 88, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(49, 0, 0, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(104, 104, 104, 0.7)"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#cc2727"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#FF0000"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#FF0000"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#8c0000"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#E80000"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#FF0000"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#F00000"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#ff8080"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#ffcfcf"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#871f1f"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#FF0000"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#800000"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#D10000"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#b80000"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#e91010"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#EE0000"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(18, 18, 18, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(5, 5, 5, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(5, 5, 5, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(15, 15, 15, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(5, 5, 5, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(17, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#1A0000"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#330000"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#540000"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(255, 255, 255, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(255, 255, 255, 0.4)"
+        }
+      ]
+    },
+    {
+      "Name": "LF - Cool Blue",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#D9D9D9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#B3B3B3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9A9A9A"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(32, 44, 61, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(47, 59, 77, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(32, 41, 66, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(23, 37, 54, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(34, 48, 74, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(7, 36, 49, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(41, 58, 74, 0.7)"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#1678a3"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#22BCFF"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#22BCFF"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#1FAAE6"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#1FABE8"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#22BCFF"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#20B1F0"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#22BCFF"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#22BCFF"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#1884b3"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#22BCFF"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#1FAAE6"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#1C9AD1"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#15729B"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#1FACE9"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#20B0EE"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(38, 53, 83, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(20, 31, 48, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(37, 49, 71, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(34, 48, 74, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(27, 39, 56, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(2, 13, 17, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(29, 29, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(29, 29, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#03131A"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#072633"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#0B3E54"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(255, 255, 255, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(255, 255, 255, 0.4)"
+        }
+      ]
+    },
+    {
+      "Name": "LF - Dark Teal",
+      "Settings": [
+        {
+          "Key": "--customChirperPanelTextColor",
+          "Value": "rgba(80, 76, 83, 1)"
+        },
+        {
+          "Key": "--customChirperPanelColor",
+          "Value": "rgba(236, 236, 236, 1)"
+        },
+        {
+          "Key": "--customChirperItemTextColor",
+          "Value": "rgba(86, 97, 110, 1)"
+        },
+        {
+          "Key": "--customChirperItemColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--customPanelTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--customTabSelectedTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--positiveColor",
+          "Value": "#8bdb46"
+        },
+        {
+          "Key": "--warningColor",
+          "Value": "#ffa42d"
+        },
+        {
+          "Key": "--negativeColor",
+          "Value": "#e95f4a"
+        },
+        {
+          "Key": "--normalTextColor",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--normalTextColorDim",
+          "Value": "#D9D9D9"
+        },
+        {
+          "Key": "--normalTextColorDimmer",
+          "Value": "#B3B3B3"
+        },
+        {
+          "Key": "--normalTextColorDimmest",
+          "Value": "#9A9A9A"
+        },
+        {
+          "Key": "--normalTextColorDark",
+          "Value": "rgba(0, 0, 0, 0.8)"
+        },
+        {
+          "Key": "--normalTextColorDarkDim",
+          "Value": "rgba(0, 0, 0, 0.6)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmer",
+          "Value": "rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "Key": "--normalTextColorDarkDimmest",
+          "Value": "rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "Key": "--sectionHeaderColor",
+          "Value": "rgba(21, 42, 43, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderColorLight",
+          "Value": "rgba(30, 60, 60, 0.5)"
+        },
+        {
+          "Key": "--sectionHeaderLockedColor",
+          "Value": "rgba(20, 39, 40, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColor",
+          "Value": "rgba(29, 54, 61, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundColorLight",
+          "Value": "rgba(43, 88, 88, 0.5)"
+        },
+        {
+          "Key": "--sectionBackgroundLockedColor",
+          "Value": "rgba(0, 46, 49, 0.5)"
+        },
+        {
+          "Key": "--sectionBorderColor",
+          "Value": "rgba(33, 64, 64, 0.7)"
+        },
+        {
+          "Key": "--accentColorNormal",
+          "Value": "#58c0c7"
+        },
+        {
+          "Key": "--accentColorNormal-hover",
+          "Value": "#32c8d1"
+        },
+        {
+          "Key": "--accentColorNormal-pressed",
+          "Value": "#28c7d1"
+        },
+        {
+          "Key": "--accentColorDark",
+          "Value": "#00818a"
+        },
+        {
+          "Key": "--accentColorDark-hover",
+          "Value": "#00DAE8"
+        },
+        {
+          "Key": "--accentColorDark-pressed",
+          "Value": "#34c5cf"
+        },
+        {
+          "Key": "--accentColorDark-focused",
+          "Value": "#00E2F0"
+        },
+        {
+          "Key": "--accentColorLight",
+          "Value": "#68cdd4"
+        },
+        {
+          "Key": "--accentColorLighter",
+          "Value": "#369da3"
+        },
+        {
+          "Key": "--menuControlBorder",
+          "Value": "#00f0ff"
+        },
+        {
+          "Key": "--focusedColor",
+          "Value": "#41a5ab"
+        },
+        {
+          "Key": "--focusedColorDark",
+          "Value": "#00D8E6"
+        },
+        {
+          "Key": "--selectedColor",
+          "Value": "#00C5D1"
+        },
+        {
+          "Key": "--selectedColorDark",
+          "Value": "#00929B"
+        },
+        {
+          "Key": "--selectedColor-hover",
+          "Value": "#00DBE9"
+        },
+        {
+          "Key": "--selectedColor-active",
+          "Value": "#00E0EE"
+        },
+        {
+          "Key": "--panelColorNormal",
+          "Value": "rgba(26, 42, 43, var(--panelOpacityNormal))"
+        },
+        {
+          "Key": "--panelColorDark",
+          "Value": "rgba(15, 31, 31, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-hover",
+          "Value": "rgba(31, 54, 54, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelColorDark-active",
+          "Value": "rgba(30, 57, 57, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--pausePanelColorDark",
+          "Value": "rgba(29, 54, 56, var(--panelOpacityDark))"
+        },
+        {
+          "Key": "--panelRadius",
+          "Value": "6rem"
+        },
+        {
+          "Key": "--panelRadiusInner",
+          "Value": "5rem"
+        },
+        {
+          "Key": "--menuPanel1",
+          "Value": "rgba(0, 0, 0, 0.25)"
+        },
+        {
+          "Key": "--menuPanel2",
+          "Value": "rgba(0, 16, 17, 0.25)"
+        },
+        {
+          "Key": "--menuTitleNormal",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Key": "--menuText1Normal",
+          "Value": "rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "Key": "--menuText1Inverted",
+          "Value": "rgba(15, 28, 29, 0.8)"
+        },
+        {
+          "Key": "--menuText1Disabled",
+          "Value": "rgba(187, 187, 187, 0.8)"
+        },
+        {
+          "Key": "--menuText2Normal",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--menuText2Inverted",
+          "Value": "rgba(16, 28, 29, 0.6)"
+        },
+        {
+          "Key": "--menuControl1",
+          "Value": "#000000"
+        },
+        {
+          "Key": "--menuControl1--hover",
+          "Value": "#00181A"
+        },
+        {
+          "Key": "--menuControl1--pressed",
+          "Value": "#003033"
+        },
+        {
+          "Key": "--menuControl2",
+          "Value": "#004F54"
+        },
+        {
+          "Key": "--selectedTextColor",
+          "Value": "rgba(255, 255, 255, 1)"
+        },
+        {
+          "Key": "--selectedTextColorDim",
+          "Value": "rgba(255, 255, 255, 0.6)"
+        },
+        {
+          "Key": "--selectedTextColorDimmer",
+          "Value": "rgba(255, 255, 255, 0.5)"
+        },
+        {
+          "Key": "--selectedTextColorDimmest",
+          "Value": "rgba(255, 255, 255, 0.4)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+﻿$theme:;
+$mainAccent:;
+
+.style--#{$theme} 
+{
+    $settings:;
+}
+
+/* Polyfills */
+.style--#{$theme} .tab_Hrb 
+{
+    color: var(--customTabTextColor);
+}
+
+.style--#{$theme} .tab_Hrb.selected 
+{
+    color: var(--customTabSelectedTextColor);
+}
+
+.style--#{$theme} .label_VSW 
+{
+    color: var(--normalTextColor);
+}
+
+.style--#{$theme} .progress-bar_RG2 
+{
+    color: var(--normalTextColor);
+}
+
+.style--#{$theme} .budget-title_Qqo 
+{
+    color: $mainAccent;
+}
+
+.style--#{$theme} .content_XD5, .style--#{$theme} content_owQ, .style--#{$theme} .limit_ZPi 
+{
+    color: var(--customPanelTextColor);
+}
+
+.style--#{$theme} .content__Ej 
+{
+    color: var(--customChirperPanelTextColor);
+    background-color: var(--customChirperPanelColor);
+}
+
+.style--#{$theme} .container_Z2a, .style--#{$theme} .event-journal-entry_swm,
+.style--#{$theme} .status_JZS, .style--#{$theme} .activity_QvV 
+{
+    background-color: var(--customChirperItemColor);
+}
+
+.style--#{$theme} .chirp-layout_IRk, .style--#{$theme} .event-journal-entry_swm 
+{
+    color: var(--customChirperItemTextColor);
+}

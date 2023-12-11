@@ -28,6 +28,9 @@
 	<ItemGroup>
 	  <None Remove="Resources\calculatesnow" />
 	  <None Remove="Resources\defaultConfig.json" />
+	  <None Remove="Resources\defaultThemes.json" />
+	  <None Remove="Resources\theme-inject.js" />
+	  <None Remove="Resources\theme-template.scss" />
 	  <None Remove="Resources\ui.js" />
 	</ItemGroup>
 	
@@ -35,7 +38,10 @@
 	  <EmbeddedResource Include="Resources\calculatesnow">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\defaultThemes.json" />
 	  <EmbeddedResource Include="Resources\defaultConfig.json" />
+	  <EmbeddedResource Include="Resources\theme-inject.js" />
+	  <EmbeddedResource Include="Resources\theme-template.scss" />
 	  <EmbeddedResource Include="Resources\ui.js" />
 	</ItemGroup>
 	

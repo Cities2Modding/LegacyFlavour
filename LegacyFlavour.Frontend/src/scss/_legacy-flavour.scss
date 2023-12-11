@@ -1,0 +1,144 @@
+.style--dark-grey-orange {
+    --menuControl1--pressed: #333333;
+    --accentColorDark: #dc8400;
+    --panelRadius: 6rem;
+    --panelColorNormal: rgba(23,25,32,0.76);
+    --accentColorLight: #fcda9e;
+    --menuPanel2: rgba(17,17,17,0.25);
+    --accentColorNormal-pressed: #edc890;
+    --accentColorLighter: #feeccd;
+    --accentColorDark-focused: #ffb340;
+    --menuText1Inverted: rgba(29,29,29,0.8);
+    --menuPanel1: rgba(0,0,0,0.25);
+    --accentColorNormal-hover: #e3a74e;
+    --menuText1Normal: rgba(255,255,255,0.8);
+    --menuText1Disabled: rgba(187,187,187,0.8);
+    --menuText2Inverted: rgba(29,29,29,0.6);
+    --accentColorDark-pressed: #fff2de;
+    --panelRadiusInner: 5rem;
+    --menuTitleNormal: white;
+    --accentColorNormal: #db9123;
+    --menuText2Normal: rgba(255,255,255,0.6);
+    --menuControl1: black;
+    --menuControl2: #545454;
+    --menuControl1--hover: #1a1a1a;
+    --menuControlBorder: #ffb222;
+    --panelColorDark: rgba(0,0,0,0.8);
+    --accentColorDark-hover: #eba53d;
+}
+
+.style--bright-blue {
+    --textColorDimmer: rgba(255,255,255,0.7);
+    --menuControl1--pressed: white;
+    --accentColorDark: #008bdc;
+    --panelRadius: 14rem;
+    --panelColorNormal: rgba(205,223,240,0.486);
+    --accentColorLight: #9ecafc;
+    --menuPanel2: rgba(181,225,255,0.65);
+    --accentColorNormal-pressed: #90c8ed;
+    --accentColorLighter: #cde6fe;
+    --accentColorDark-focused: #4099ff;
+    --menuText1Inverted: rgba(0,18,51,0.8);
+    --menuDisabledColor: rgba(181,225,255,0.4);
+    --menuPanel1: rgba(200,240,255,0.75);
+    --accentColorNormal-hover: #4ea7e3;
+    --menuText1Normal: rgba(0,41,59,0.8);
+    --menuText1Disabled: rgba(78,78,78,0.8);
+    --menuText2Inverted: rgba(214,214,214,0.6);
+    --accentColorDark-pressed: #def2ff;
+    --panelRadiusInner: 12rem;
+    --menuTitleNormal: white;
+    --accentColorNormal: #2391db;
+    --menuText2Normal: rgba(8,61,92,0.8);
+    --menuControl1: rgb(145,172,190);
+    --menuControl2: #83a2b6;
+    --menuControl1--hover: white;
+    --menuControlBorder: #ffffff;
+    --panelColorDark: rgba(35,43,61,0.8);
+    --accentColorDark-hover: #3d89eb;
+}
+
+$dark-grey-orange: (
+    --menuControl1--pressed: #333333,
+    --accentColorDark: #dc8400,
+    --panelRadius: 6rem,
+    --panelColorNormal: rgba(23,25,32,0.76),
+    --accentColorLight: #fcda9e,
+    --menuPanel2: rgba(17,17,17,0.25),
+    --accentColorNormal-pressed: #edc890,
+    --accentColorLighter: #feeccd,
+    --accentColorDark-focused: #ffb340,
+    --menuText1Inverted: rgba(29,29,29,0.8),
+    --menuPanel1: rgba(0,0,0,0.25),
+    --accentColorNormal-hover: #e3a74e,
+    --menuText1Normal: rgba(255,255,255,0.8),
+    --menuText1Disabled: rgba(187,187,187,0.8),
+    --menuText2Inverted: rgba(29,29,29,0.6),
+    --accentColorDark-pressed: #fff2de,
+    --panelRadiusInner: 5rem,
+    --menuTitleNormal: white,
+    --accentColorNormal: #db9123,
+    --menuText2Normal: rgba(255,255,255,0.6),
+    --menuControl1: black,
+    --menuControl2: #545454,
+    --menuControl1--hover: #1a1a1a,
+    --menuControlBorder: #ffb222,
+    --panelColorDark: rgba(0,0,0,0.8),
+    --accentColorDark-hover: #eba53d
+);
+
+$bright-blue: (    
+    --textColorDimmer: rgba(255,255,255,0.7),
+    --menuControl1--pressed: white,
+    --accentColorDark: #008bdc,
+    --panelRadius: 14rem,
+    --panelColorNormal: rgba(205,223,240,0.486),
+    --accentColorLight: #9ecafc,
+    --menuPanel2: rgba(181,225,255,0.65),
+    --accentColorNormal-pressed: #90c8ed,
+    --accentColorLighter: #cde6fe,
+    --accentColorDark-focused: #4099ff,
+    --menuText1Inverted: rgba(0,18,51,0.8),
+    --menuDisabledColor: rgba(181,225,255,0.4),
+    --menuPanel1: rgba(200,240,255,0.75),
+    --accentColorNormal-hover: #4ea7e3,
+    --menuText1Normal: rgba(0,41,59,0.8),
+    --menuText1Disabled: rgba(78,78,78,0.8),
+    --menuText2Inverted: rgba(214,214,214,0.6),
+    --accentColorDark-pressed: #def2ff,
+    --panelRadiusInner: 12rem,
+    --menuTitleNormal: white,
+    --accentColorNormal: #2391db,
+    --menuText2Normal: rgba(8,61,92,0.8),
+    --menuControl1: rgb(145,172,190),
+    --menuControl2: #83a2b6,
+    --menuControl1--hover: white,
+    --menuControlBorder: #ffffff,
+    --panelColorDark: rgba(35,43,61,0.8),
+    --accentColorDark-hover: #3d89eb
+);
+
+@mixin apply-style($style-map) 
+{
+    @each $property, $value in $style-map 
+    {
+        #{$property}: $value;
+    }
+}
+
+$styles-list: (
+    'dark-grey-orange': $dark-grey-orange,
+    'bright-blue': $bright-blue
+);
+
+@mixin apply-style($style-map) {
+    @each $property, $value in $style-map {
+        #{$property}: $value;
+    }
+}
+
+@each $style-name, $style-map in $styles-list {
+    .style--#{$style-name} {
+        @include apply-style($style-map);
+    }
+}

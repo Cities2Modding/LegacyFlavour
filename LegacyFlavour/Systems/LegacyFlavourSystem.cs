@@ -5,6 +5,7 @@ using Game.SceneFlow;
 using Game.Simulation;
 using Game.UI;
 using LegacyFlavour.Configuration;
+using LegacyFlavour.Configuration.Themes;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -59,6 +60,11 @@ namespace LegacyFlavour.Systems
         protected override void OnGameLoadingComplete( Purpose purpose, GameMode mode )
         {
             base.OnGameLoadingComplete( purpose, mode );
+
+            if ( mode == GameMode.MainMenu )
+            {
+                _updateSystem.EnqueueThemeConfigUpdate( true );
+            }
 
             if ( !mode.IsGameOrEditor( ) )
                 return;
