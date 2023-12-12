@@ -3,7 +3,6 @@ using LegacyFlavour.Configuration;
 using LegacyFlavour.Configuration.Themes;
 using System;
 using LegacyFlavour.Helpers;
-using Game.UI;
 
 namespace LegacyFlavour.Systems
 {
@@ -71,7 +70,7 @@ namespace LegacyFlavour.Systems
                 }
                 catch ( Exception ex )
                 {
-                    // Do error logging
+                    UnityEngine.Debug.LogError( "Error writing config files!\n" + ex );
                 }
             }
 
@@ -88,7 +87,7 @@ namespace LegacyFlavour.Systems
                 }
                 catch ( Exception ex )
                 {
-                    // Do error logging
+                    UnityEngine.Debug.LogError( "Error writing theme files!\n" + ex );
                 }
             }
 

@@ -24628,7 +24628,7 @@
     return /* @__PURE__ */ import_react24.default.createElement("div", null, /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {
-        label: "Legacy Flavour v0.0.6",
+        label: "Legacy Flavour v0.0.8",
         style: { flex: 1 },
         description: "This mod was developed by the optimus-code and the Cities2Modding community.",
         icon: "Media/Editor/Object.svg",

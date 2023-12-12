@@ -96,7 +96,7 @@ namespace LegacyFlavour.Configuration
         /// <returns>The assembly directory path.</returns>
         protected static string GetAssemblyDirectory( )
         {
-            return Path.GetDirectoryName( typeof( ConfigBase ).Assembly.Location );
+            return Path.GetDirectoryName( Assembly.GetExecutingAssembly().Location );
         }
 
         /// <summary>

@@ -1,6 +1,7 @@
-﻿using LegacyFlavour.Helpers;
+﻿using LegacyFlavour.Systems;
 using System.Collections.Generic;
-using static UnityEngine.InputSystem.Layouts.InputControlLayout;
+using System.IO;
+using Unity.Entities;
 
 namespace LegacyFlavour.Configuration.Themes
 {
@@ -24,7 +25,19 @@ namespace LegacyFlavour.Configuration.Themes
         /// <returns></returns>
         public static ThemeConfig Load( )
         {
-            return Load<ThemeConfig>( useDefaultAsTemplate: false );
+            var config = Load<ThemeConfig>( useDefaultAsTemplate: false );
+
+            // We're creating a new instance!
+            if ( !Exists( ) )
+            {
+                UnityEngine.Debug.Log( "Current themes.json does not exist. Force generating!" );
+
+                var updateSystem = World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<LegacyFlavourUpdateSystem>( );
+
+                updateSystem?.EnqueueThemeConfigUpdate( true );
+            }
+
+            return config;
         }
 
         /// <summary>
@@ -33,6 +46,17 @@ namespace LegacyFlavour.Configuration.Themes
         public override void Save( )
         {
             base.Save( );
+        }
+
+        /// <summary>
+        /// Check if the config exists
+        /// </summary>
+        /// <returns></returns>
+        public static bool Exists( )
+        {
+            var filePath = Path.Combine( GetAssemblyDirectory( ), "themes.json" );
+
+            return File.Exists( filePath );
         }
     }
 }
