@@ -2,24 +2,8 @@
 
 Welcome to the GitHub repository for LegacyFlavour, a Cities Skylines 2 mod designed to blend the best of Cities Skylines 1 with the advanced features of Cities Skylines 2. Our mod aims to enhance your city-building experience by introducing nostalgic elements and improved functionalities.
 
-## Updates for v0.0.8
-- **Critical bug fix**: Fix bug where some environments were not able to generate the theme files, causing an abrupt crash when loading the UI.
-
-## New Features in v0.0.7
-
-### Performance Improvements and UI Customization
-- **UI Theme Editor**: Introducing a new UI theme editor with a variety of built-in themes. Customize your game's look with ease.
-- **Custom Theme Creation**: Now you can create and save your own custom themes using our advanced color pickers.
-- **Accent and Background Accent Customization**: Enhance your game's UI with personalized accent and background colors that change dynamically.
-- **Integrated Themes in UI Options**: Newly created themes will be available for preview and selection directly in the UI options screen.
-
-### Enhanced Game Performance
-- **Optimised Performance**: Major improvements in game performance, ensuring smoother and more stable gameplay.
-- **Bug Fixes**: Addressed and resolved a range of bugs, enhancing game reliability and user experience.
-
-### User Interface Features
-- **Seamless Theme Integration**: Effortlessly apply and switch between themes within the game’s UI, with immediate visual feedback.
-- **Enhanced UI Responsiveness**: Enjoy a more responsive and fluid user interface, tailored for an immersive gaming experience.
+## Updates for v0.0.9
+- **Language support**: Introduced localisation support for: de-DE (German), es-ES (Spanish), fr-FR (French), it-IT (Italian), ja-JP (Japanese), ko-KR (Korean), pl-PL (Polish), pt-BR (Portuguese - Brazil), ru-RU (Russian), zh-HANS (Chinese - Simplified), zh-HANT (Chinese - Traditional).
 
 ## Features
 
@@ -56,11 +40,13 @@ LegacyFlavour currently includes the following features:
 
 12. **Enhanced Control over Weather and Time**: Control weather and time settings with new features, including saving these states between game reloads.
 
-13. **Easy UI Access**: Access the new UI menu conveniently through the HookUI button located in the top left corner.
+13. **UI Theme Editor**: Introducing a new UI theme editor with a variety of built-in themes. Customize your game's look with ease.
 
-14. **Live UI Configurations**: Experience live changes in the game as you adjust settings. Utilize colour pickers and other interactive elements for an immersive configuration process.
+14. **Custom Theme Creation**: Now you can create and save your own custom themes using our advanced color pickers.
 
-15. **Buttons, buttons!**: You can set colour blindness profile sets to the vanilla colours, reset them to Legacy Flavour's default.
+15. **Accent and Background Accent Customization**: Enhance your game's UI with personalized accent and background colors that change dynamically.
+
+12. **Integrated Themes in UI Options**: Newly created themes will be available for preview and selection directly in the UI options screen.
 
 ## Installation
 
