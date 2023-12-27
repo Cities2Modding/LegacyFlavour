@@ -1,4 +1,5 @@
-﻿using Colossal.Serialization.Entities;
+﻿using Colossal.Localization;
+using Colossal.Serialization.Entities;
 using Game;
 using Game.Rendering;
 using Game.SceneFlow;

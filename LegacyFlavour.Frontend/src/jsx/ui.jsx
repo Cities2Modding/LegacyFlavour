@@ -9,15 +9,18 @@ import $About from './tabs/_about';
 
 const $LegacyFlavour = ({ react }) => {
 
-    const [data, setData] = react.useState({})
-    const [defaultThemeData, setDefaultThemeData] = react.useState({})
-    const [themeData, setThemeData] = react.useState({})
-    const [opacity, setOpacity] = react.useState(1)
-    const [useTransparency, setUseTransparency] = react.useState(false)
+    const [data, setData] = react.useState({});
+    const [defaultThemeData, setDefaultThemeData] = react.useState({});
+    const [themeData, setThemeData] = react.useState({});
+    const [localeData, setLocaleData] = react.useState({});
+    const [opacity, setOpacity] = react.useState(1);
+    const [useTransparency, setUseTransparency] = react.useState(false);
+    const [tabs, setTabs] = react.useState([]);
 
-    useDataUpdate(react, "cities2modding_legacyflavour.config", setData)
-    useDataUpdate(react, "cities2modding_legacyflavour.themeConfig", setThemeData)
-    useDataUpdate(react, "cities2modding_legacyflavour.defaultThemeData", setDefaultThemeData)
+    useDataUpdate(react, "cities2modding_legacyflavour.config", setData);
+    useDataUpdate(react, "cities2modding_legacyflavour.themeConfig", setThemeData);
+    useDataUpdate(react, "cities2modding_legacyflavour.currentLocale", setLocaleData);
+    useDataUpdate(react, "cities2modding_legacyflavour.defaultThemeData", setDefaultThemeData);
 
     //defaultThemes
     const triggerUpdate = (prop, val) => {
@@ -45,40 +48,50 @@ const $LegacyFlavour = ({ react }) => {
         onChangeOpacity();
     };
 
-    const tabs = [
-        {
-            name: 'Settings',
-            content: <div style={{ display: 'flex', width: '100%' }}>
-                <$Settings react={react} data={data} setData={setData} triggerUpdate={triggerUpdate} />
-            </div>
-        },
-        {
-            name: 'Zone Settings',
-            content: <div style={{ height: '100%', width: '100%' }}>
-                <$ZoneSettings react={react} data={data} setData={setData} triggerUpdate={triggerUpdate} />
-            </div>
-        },
-        {
-            name: 'Zone Colours',
-            content: <div style={{ height: '100%', width: '100%' }}>
-                <$ZoneColours react={react} data={data} setData={setData} triggerUpdate={triggerUpdate} useTransparency={useTransparency} onChangeUseTransparency={onChangeUseTransparency} onChangeWindowOpacity={onChangeOpacity} />
-            </div>
-        },
-        {
-            name: 'UI Themes',
-            content: <div style={{ height: '100%', width: '100%' }}>
-                <$UIThemes react={react} themeData={themeData} setThemeData={setThemeData} defaultThemeData={defaultThemeData} />
-            </div>
-        },
-        {
-            name: 'About',
-            content: <div style={{ height: '100%', width: '100%' }}>
-                <$About />
-            </div>
+    react.useEffect(() => {
+        if (typeof localeData.Entries !== "undefined") {
+            setTabs([
+                {
+                    name: "SETTINGS",
+                    label: localeData.Entries["SETTINGS"],
+                    content: <div style={{ display: 'flex', width: '100%' }}>
+                        <$Settings react={react} locale={localeData.Entries} data={data} setData={setData} triggerUpdate={triggerUpdate} />
+                    </div>
+                },
+                {
+                    name: "ZONE_SETTINGS",
+                    label: localeData.Entries["ZONE_SETTINGS"],
+                    content: <div style={{ height: '100%', width: '100%' }}>
+                        <$ZoneSettings react={react} locale={localeData.Entries} data={data} setData={setData} triggerUpdate={triggerUpdate} />
+                    </div>
+                },
+                {
+                    name: "ZONE_COLOURS",
+                    label: localeData.Entries["ZONE_COLOURS"],
+                    content: <div style={{ height: '100%', width: '100%' }}>
+                        <$ZoneColours react={react} locale={localeData.Entries} data={data} setData={setData} triggerUpdate={triggerUpdate} useTransparency={useTransparency} onChangeUseTransparency={onChangeUseTransparency} onChangeWindowOpacity={onChangeOpacity} />
+                    </div>
+                },
+                {
+                    name: "UI_THEMES",
+                    label: localeData.Entries["UI_THEMES"],
+                    content: <div style={{ height: '100%', width: '100%' }}>
+                        <$UIThemes react={react} locale={localeData.Entries} themeData={themeData} setThemeData={setThemeData} defaultThemeData={defaultThemeData} />
+                    </div>
+                },
+                {
+                    name: "ABOUT",
+                    label: localeData.Entries["ABOUT"],
+                    content: <div style={{ height: '100%', width: '100%' }}>
+                        <$About react={react} locale={localeData.Entries} />
+                    </div>
+                }
+            ]);
         }
-    ];
+    }, [localeData]);
 
-    return <$TabWindow react={react} tabs={tabs} onClose={toggleVisibility} style={{ opacity: opacity }} />
+    const title = localeData.Entries ? `Legacy Flavour (${localeData.Entries["LEGACY_FLAVOUR"]})` : "Legacy Flavour";
+    return <$TabWindow react={react} title={title} tabs={tabs} onClose={toggleVisibility} style={{ opacity: opacity }} />
 };
 
 // Registering the panel with HookUI

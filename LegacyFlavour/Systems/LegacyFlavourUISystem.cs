@@ -1,7 +1,9 @@
-﻿using Colossal.UI.Binding;
+﻿using Colossal.Localization;
+using Colossal.UI.Binding;
 using Game;
 using Game.Audio;
 using Game.Prefabs;
+using Game.SceneFlow;
 using Game.Settings;
 using Game.UI;
 using LegacyFlavour.Configuration;
@@ -25,6 +27,7 @@ namespace LegacyFlavour.Systems
         static GetterValueBinding<LegacyFlavourConfig> _binding;
         static GetterValueBinding<ThemeConfig> _themeBinding;
         static GetterValueBinding<ThemeConfig> _defaultThemesBinding;
+        static GetterValueBinding<LocaleGroup> _currentLocaleBinding;
         static FieldInfo _dirtyField = typeof( GetterValueBinding<LegacyFlavourConfig> ).GetField( "m_ValueDirty", BindingFlags.Instance | BindingFlags.NonPublic );
         static FieldInfo _themeDirtyField = typeof( GetterValueBinding<ThemeConfig> ).GetField( "m_ValueDirty", BindingFlags.Instance | BindingFlags.NonPublic );
 
@@ -89,6 +92,22 @@ namespace LegacyFlavour.Systems
                 return ThemeConfig.Default;
             } );
 
+            _currentLocaleBinding = new GetterValueBinding<LocaleGroup>( kGroup, "currentLocale", ( ) =>
+            {
+                var localeManager = GameManager.instance.localizationManager;
+                
+                if ( localeManager == null )
+                    return LocaleConfig.Default.Locales[0];
+
+                var localConfig = LocaleConfig.Default.Locales
+                    .FirstOrDefault( l => l.IDs.Contains( localeManager.activeLocaleId ) );
+
+                if ( localConfig == null )
+                    return LocaleConfig.Default.Locales[0];
+
+                return localConfig;
+            } );
+
             ConfigBase.OnUpdated += ( ) =>
             {
                 _dirtyField.SetValue( _binding, true );
@@ -98,6 +117,7 @@ namespace LegacyFlavour.Systems
             AddUpdateBinding( _binding );
             AddUpdateBinding( _themeBinding );
             AddBinding( _defaultThemesBinding );
+            AddUpdateBinding( _currentLocaleBinding );
 
             AddBinding( new TriggerBinding<string>( kGroup, "updateProperty", UpdateProperty ) );
             AddBinding( new TriggerBinding( kGroup, "regenerateIcons", ( ) =>

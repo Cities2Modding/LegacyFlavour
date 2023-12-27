@@ -71,7 +71,7 @@ const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
         onSelectionChanged(value);
     };
 
-    const selectedIndex = options.indexOf(internalValue);
+    const selectedIndex = options.findIndex(o => o.value === internalValue);
 
     // Define the dropdown content
     const dropdownContent = active ? (
@@ -85,7 +85,7 @@ const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
                 <div className="dropdown-menu_jf2 dropdown-menu_Swd">
                     {
                         options.map((option) => (
-                            <button key={option} className="dropdown-item_sZT selected" style={{ padding: '5rem', height: 'auto' }} onClick={() => changeSelection(option)}>{option}</button>
+                            <button key={option.value} className="dropdown-item_sZT selected" style={{ padding: '5rem', height: 'auto' }} onClick={() => changeSelection(option.value)}>{option.label}</button>
                         ))
                     }
                 </div>
@@ -95,7 +95,7 @@ const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
 
     return (<div style={{ width: '100%' }}>
         <div ref={pickerRef} className="dropdown-toggle_V9z dropdown-toggle_prl value-field_yJi value_PW_ dropdown_pJu item-states_QjV" onClick={onToggle} style={{ padding: '5rem', height: 'auto', ...style }}>
-            <div className="label_l_4">{options[selectedIndex]}</div>
+            <div className="label_l_4">{options[selectedIndex].label}</div>
             <div className="tinted-icon_iKo indicator_Xmj" style={{ maskImage: 'url(Media/Glyphs/StrokeArrowDown.svg)' }}></div>
             {portalContainer && dropdownContent && ReactDOM.createPortal(dropdownContent, portalContainer)}
         </div>

@@ -8,7 +8,7 @@ import $TabControl from '../components/_tab-control';
 import $CheckBox from '../components/_checkbox';
 import $Slider from '../components/_slider';
 
-const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
+const $UIThemes = ({ react, locale, themeData, setThemeData, defaultThemeData }) => {
     const [selectedDefaultTheme, setSelectedDefaultTheme] = react.useState('Default');
     const [selectedTheme, setSelectedTheme] = react.useState('Custom');
     const [accentColour, setAccentColour] = react.useState('#ff0000');
@@ -20,21 +20,25 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
 
     if (themeData.Themes) {
         for (var i = 0; i < themeData.Themes.length; i++) {
-            themeList.push(themeData.Themes[i].Name);
+            const themeName = themeData.Themes[i].Name;
+            const localeName = themeName.toUpperCase().replace("LF - ", "LF_").replace(/ /g, "_");
+            themeList.push({ label: locale[localeName], value: themeName });
         }
     }
 
     if (defaultThemeData.Themes) {
         for (var i = 0; i < defaultThemeData.Themes.length; i++) {
-            defaultThemeList.push(defaultThemeData.Themes[i].Name);
+            const themeName = defaultThemeData.Themes[i].Name;
+            const localeName = themeName.toUpperCase().replace("LF - ", "LF_").replace(/ /g, "_");
+            defaultThemeList.push({ label: locale[localeName], value: themeName });
         }
     }
 
-    let selectedIndex = themeList.indexOf(selectedTheme);
+    let selectedIndex = themeList.findIndex(o => o.value === selectedTheme);
 
     const onSelectedThemeChanged = (selected) => {
         setSelectedTheme(selected);
-        selectedIndex = themeList.indexOf(selected);
+        selectedIndex = themeList.findIndex(o => o.value === selected);
 
         engine.trigger("cities2modding_legacyflavour.useSelectedTheme", selected);
     };
@@ -66,8 +70,8 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
 
         // Capitalize the first letter of each word
         formattedStr = formattedStr.split(' ').map(word =>
-            word.charAt(0).toUpperCase() + word.slice(1)
-        ).join(' ');
+            locale[word.toUpperCase()] ? locale[word.toUpperCase()] : word.toUpperCase()
+        ).join(' ').trim();
 
         return formattedStr;
     };
@@ -75,6 +79,7 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
     const accentGroups = [
         {
             name: "Accent",
+            label: locale["ACCENT"],
             keys: [
                 "--accentColorNormal",
                 "--accentColorNormal-hover",
@@ -91,6 +96,7 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
         },
         {
             name: "Panel",
+            label: locale["PANEL"],
             keys: [                
                 "--panelColorNormal",
                 "--panelColorDark",
@@ -103,6 +109,7 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
         },
         {
             name: "Section",
+            label: locale["SECTION"],
             keys: [
                 "--sectionHeaderColor",
                 "--sectionHeaderColorLight",
@@ -115,6 +122,7 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
         },
         {
             name: "Selected",
+            label: locale["SELECTED"],
             keys: [
                 "--selectedTextColor",
                 "--selectedTextColorDim",
@@ -128,6 +136,7 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
         },
         {
             name: "Text",
+            label: locale["TEXT"],
             keys: [
                 "--normalTextColor",
                 "--normalTextColorDim",
@@ -146,7 +155,8 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
             ]
         },
         {
-            name: "Menu ",
+            name: "Menu",
+            label: locale["MENU"],
             keys: [                
                 "--menuText1Inverted",
                 "--menuText2Inverted",
@@ -164,6 +174,7 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
         },
         {
             name: "Other",
+            label: locale["OTHER"],
             keys: [
                 "--positiveColor",
                 "--warningColor",
@@ -265,42 +276,49 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
     const tabs = [
         {
             name: 'Accent',
+            label: locale["ACCENT"],
             content: <div style={{ display: 'flex', width: '100%' }}>
                 {selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[0])}
             </div>
         },
         {
             name: 'Panel',
+            label: locale["PANEL"],
             content: <div style={{ display: 'flex', width: '100%' }}>
                 {selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[1])}
             </div>
         },
         {
             name: 'Section',
+            label: locale["SECTION"],
             content: <div style={{ display: 'flex', width: '100%' }}>
                 {selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[2])}
             </div>
         },
         {
             name: 'Selected',
+            label: locale["SELECTED"],
             content: <div style={{ display: 'flex', width: '100%' }}>
                 {selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[3])}
             </div>
         },
         {
             name: 'Text',
+            label: locale["TEXT"],
             content: <div style={{ display: 'flex', width: '100%' }}>
                 {selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[4])}
             </div>
         },
         {
             name: 'Menu',
+            label: locale["MENU"],
             content: <div style={{ display: 'flex', width: '100%' }}>
                 {selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[5])}
             </div>
         },
         {
             name: 'Other',
+            label: locale["OTHER"],
             content: <div style={{ display: 'flex', width: '100%' }}>
                 {selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[6])}
             </div>
@@ -310,25 +328,25 @@ const $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
     return <div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
             <div style={{ width: '50%', paddingRight: '5rem' }}>
-                <$IconPanel label="Theme"
-                    description="Select a theme to edit"
+                <$IconPanel label={locale["THEME"]}
+                    description={locale["THEME_DESC"]}
                     icon="Media/Editor/Edit.svg" fitChild="true">
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         <$Select react={react} selected={selectedTheme} options={themeList} style={{ margin: '10rem', flex: '1' }} onSelectionChanged={onSelectedThemeChanged}></$Select>
-                        <$Button onClick={useSelectedTheme}>Use selected theme</$Button>
+                        <$Button onClick={useSelectedTheme}>{locale["USE_SELECTED_THEME"]}</$Button>
                     </div>
                 </$IconPanel>
             </div>
             <div style={{ width: '50%', paddingLeft: '5rem' }}>
-                <$IconPanel label="Generate from colour"
-                    description="Select a base theme, main accent colour and generate a theme."
+                <$IconPanel label={locale["GENERATE_FROM_COLOUR"]}
+                    description={locale["GENERATE_FROM_COLOUR_DESC"]}
                     icon="Media/Editor/Edit.svg" fitChild="true">
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         <$Select react={react} selected={selectedDefaultTheme} options={defaultThemeList} style={{ margin: '10rem', flex: '1' }} onSelectionChanged={onDefaultSelectedThemeChanged}></$Select>
 
                         <div style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-                            <$ColorPicker style={{ width: '50%' }} key="lf-accent" react={react} label="Primary Accent" color={accentColour} onChanged={(newColour) => { updateAccent(newColour); }} onDropdown={generateAccent} />
-                            <$ColorPicker style={{ width: '50%' }} key="lf-bg-accent" react={react} label="Background Accent" color={backgroundAccentColour} onChanged={(newColour) => { updateBackgroundAccent(newColour); }} onDropdown={generateAccent} />
+                            <$ColorPicker style={{ width: '50%' }} key="lf-accent" react={react} label={locale["PRIMARY_ACCENT"]} color={accentColour} onChanged={(newColour) => { updateAccent(newColour); }} onDropdown={generateAccent} />
+                            <$ColorPicker style={{ width: '50%' }} key="lf-bg-accent" react={react} label={locale["BACKGROUND_ACCENT"]} color={backgroundAccentColour} onChanged={(newColour) => { updateBackgroundAccent(newColour); }} onDropdown={generateAccent} />
                         </div>
                     </div>
                 </$IconPanel>

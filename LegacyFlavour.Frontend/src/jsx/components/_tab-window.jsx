@@ -1,7 +1,12 @@
 import React from 'react'
 
-const $TabWindow = ({ react, tabs, style, onClose }) => {
+const $TabWindow = ({ react, tabs, style, onClose, title }) => {
     const [activeTab, setActiveTab] = react.useState(tabs.length > 0 ? tabs[0].name : '');
+
+    react.useEffect(() => {
+        if (activeTab === '')
+            setActiveTab(tabs.length > 0 ? tabs[0].name : '');
+    }, [tabs]);
 
     return (
         <div style={{ position: 'fixed', width: '100vw', height: '100vh', pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', ...style }}>
@@ -9,7 +14,7 @@ const $TabWindow = ({ react, tabs, style, onClose }) => {
                 <div className="header_H_U header_Bpo child-opacity-transition_nkS">
                     <div className="title-bar_PF4">
                         <div className="icon-space_h_f"></div>
-                        <div className="title_SVH title_zQN">Legacy Flavour</div>
+                        <div className="title_SVH title_zQN">{title}</div>
                         <button className="button_bvQ button_bvQ close-button_wKK" onClick={onClose}>
                             <div className="tinted-icon_iKo icon_PhD" style={{ maskImage: 'url(Media/Glyphs/Close.svg)' }}></div>
                         </button>
@@ -21,7 +26,7 @@ const $TabWindow = ({ react, tabs, style, onClose }) => {
                                 className={`tab_Hrb ${activeTab === tab.name ? 'selected' : ''}`}
                                 onClick={() => setActiveTab(tab.name)} style={{ marginLeft: '2.5rem', marginRight: '2.5rem'}}
                             >
-                                {tab.name}
+                                {tab.label}
                             </div>
                         ))}
                     </div>

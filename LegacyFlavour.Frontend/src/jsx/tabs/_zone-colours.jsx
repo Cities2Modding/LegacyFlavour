@@ -6,14 +6,13 @@ import $Select from '../components/_select';
 import $CheckBox from '../components/_checkbox';
 import $Label from '../components/_label';
 
-const $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
-    const noneString = "Default Colours";
+const $ZoneColours = ({ react, locale, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
     const colourModes = [
-        noneString,
-        "Deuteranopia",
-        "Protanopia",
-        "Tritanopia",
-        "Custom"
+        { label: locale["DEFAULT_COLOURS"], value: "None" },
+        { label: locale["DEUTERANOPIA"], value: "Deuteranopia" },
+        { label: locale["PROTANOPIA"], value: "Protanopia" },
+        { label: locale["TRITANOPIA"], value: "Tritanopia" },
+        { label: locale["CUSTOM"], value: "Custom" }
     ];
 
     const updateData = (field, val) => {
@@ -24,7 +23,7 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, on
     };
 
     const onModeChanged = (selected) => {
-        updateData("Mode", selected == noneString ? "None" : selected);
+        updateData("Mode", selected);
     };
 
     const triggerZoneColourUpdate = (zoneName, colour) => {
@@ -32,10 +31,10 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, on
     };
 
     let zoneGroups = [
-        { name: "Residential", icon: "ZoneResidential", desc: "Modify Residential zone colours", items: [] },
-        { name: "Commercial", icon: "ZoneCommercial", desc: "Modify Commercial zone colours", items: [] },
-        { name: "Office", icon: "ZoneOffice", desc: "Modify Office zone colours", items: [] },
-        { name: "Industrial", icon: "ZoneIndustrial", desc: "Modify Industrial zone colours", items: [] }
+        { name: "Residential", label: locale["RESIDENTIAL"], icon: "ZoneResidential", desc: locale["RESIDENTIAL_DESC"], items: [] },
+        { name: "Commercial", label: locale["COMMERCIAL"], icon: "ZoneCommercial", desc: locale["COMMERCIAL_DESC"], items: [] },
+        { name: "Office", label: locale["OFFICE"], icon: "ZoneOffice", desc: locale["OFFICE_DESC"], items: [] },
+        { name: "Industrial", label: locale["INDUSTRIAL"], icon: "ZoneIndustrial", desc: locale["INDUSTRIAL_DESC"], items: [] }
     ];
 
     if (data.Zones) {
@@ -44,7 +43,6 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, on
 
             for (var i = 0; i < zoneGroups.length; i++) {
                 if (name.startsWith(zoneGroups[i].name)) {
-                    console.log(zoneGroups[i].name);
                     zoneGroups[i].items.push(zone);
                     break;
                 }
@@ -65,7 +63,7 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, on
     const getZoneColours = (zoneGroup) => {
         let icon = "coui://legacyflavourui/Icons/" + zoneGroup.icon + "_" + data.Mode + ".svg"; // Cache busting via querystring causes flickers so meh! We need a game restart for icon changes
 
-        return (<$IconPanel key={zoneGroup.name} label={zoneGroup.name} style={{ flex: 1 }}
+        return (<$IconPanel key={zoneGroup.name} label={zoneGroup.label} style={{ flex: 1 }}
             description={zoneGroup.desc}
             icon={icon} fitChild="true">
             <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
@@ -86,7 +84,8 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, on
                             triggerZoneColourUpdate(zone.Name, newColour);
                         };
 
-                        return (<$ColorPicker key={zone.Name} react={react} label={zone.Name} color={colour} onChanged={onChanged} onDropdown={onColourDropdown} />);
+                        const zoneLabel = locale[zone.Name.replace(/ /g, "_").toUpperCase()];
+                        return (<$ColorPicker key={zone.Name} react={react} label={zoneLabel} color={colour} onChanged={onChanged} onDropdown={onColourDropdown} />);
                     })
                 }
             </div>
@@ -109,23 +108,23 @@ const $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, on
         engine.trigger("cities2modding_legacyflavour.resetColoursToDefault");
     };
 
-    const modeString = data.Mode == "None" ? noneString : data.Mode;
+    const modeString = data.Mode;
 
     return <div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
             <div style={{ width: '66.666666666%', paddingRight: '5rem' }}>
-                <$IconPanel label="Colour Blindness Mode"
-                    description="Select a different colour mode, you can cycle these with the keys SHIFT+Z."
+                <$IconPanel label={locale["COLOUR_BLINDNESS_MODE"]}
+                    description={locale["COLOUR_BLINDNESS_MODE_DESC"]}
                     icon="Media/Editor/Edit.svg" fitChild="true">
                     <$Select react={react} selected={modeString} options={colourModes} style={{ margin: '10rem', flex: '1' }} onSelectionChanged={onModeChanged}></$Select>
                 </$IconPanel>
             </div>
             <div style={{ width: '33.33333333333%' }}>
-                <$Button onClick={triggerRegenerateIcons}>Regenerate icons (Game restart required)</$Button>
-                <$Button style={{ marginTop: '5rem' }} onClick={triggerSetColoursToVanilla}>Set {modeString}&nbsp;to vanilla colours</$Button>
-                <$Button style={{ marginTop: '5rem' }} onClick={triggerResetColoursToDefault}>Reset {modeString}</$Button>
+                <$Button onClick={triggerRegenerateIcons}>{locale["REGENERATE_ICONS"]} ({locale["GAME_RESTART_REQUIRED"]})</$Button>
+                <$Button style={{ marginTop: '5rem' }} onClick={triggerSetColoursToVanilla}>{locale["SET_TO_VANILLA_COLOURS"]}</$Button>
+                <$Button style={{ marginTop: '5rem' }} onClick={triggerResetColoursToDefault}>{locale["RESET"]} {modeString}</$Button>
                 <div style={{ display: 'flex', width: '100%' }}>
-                    <$Label style={{ margin: '10rem' }}>Make window transparent</$Label>
+                    <$Label style={{ margin: '10rem' }}>{locale["MAKE_WINDOW_TRANSPARENT"]}</$Label>
                     <$CheckBox react={react} style={{ margin: '10rem' }} checked={useTransparency} onToggle={onChangeUseTransparency} />
                 </div>
             </div>

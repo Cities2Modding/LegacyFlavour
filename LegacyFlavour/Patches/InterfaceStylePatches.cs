@@ -1,8 +1,12 @@
-﻿using Game.UI.Localization;
+﻿using Colossal.Localization;
+using Game.SceneFlow;
+using Game.UI.Localization;
 using Game.UI.Widgets;
 using HarmonyLib;
+using LegacyFlavour.Configuration;
 using LegacyFlavour.Systems;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Entities;
 
 namespace LegacyFlavour.Patches
@@ -13,7 +17,8 @@ namespace LegacyFlavour.Patches
         static LegacyFlavourUpdateSystem _updateSystem;
         static List<DropdownItem<string>> _dropdownItems = new List<DropdownItem<string>>( );
         public static HashSet<string> DEFAULT_THEMES = new HashSet<string>{ "default", "bright-blue", "dark-grey-orange" };
-        
+        private static string _lastLocale;
+
         static void Postfix( ref DropdownItem<string>[] __result )
         {
             _updateSystem ??= World.DefaultGameObjectInjectionWorld
@@ -26,17 +31,32 @@ namespace LegacyFlavour.Patches
 
             if ( themes?.Count > 0 )
             {
-                // Only reintialise it if the count changes
-                if ( _dropdownItems.Count != __result.Length + themes.Count )
+                var localeManager = GameManager.instance.localizationManager;
+
+                if ( localeManager == null )
+                    return;
+
+                // Only reintialise it if the count or localisation changes
+                if ( ( _dropdownItems.Count != __result.Length + themes.Count ) ||
+                    ( localeManager.activeLocaleId != _lastLocale ) )
                 {
+                    _lastLocale = localeManager.activeLocaleId;
+
                     if ( _dropdownItems.Count > 0 ) // Ensures previous list is cleared
                         _dropdownItems.Clear( );
 
                     _dropdownItems = new List<DropdownItem<string>>( __result );
 
+                    var localConfig = LocaleConfig.Default.Locales
+                        .FirstOrDefault( l => l.IDs.Contains( localeManager.activeLocaleId ) );
+
+                     if ( localConfig == null )
+                        localConfig = LocaleConfig.Default.Locales[0];
+
                     foreach ( var theme in themes )
                     {
                         var styleKey = theme.ToLower( ).Replace( ' ', '-' );
+                        var localeKey = theme.ToUpper( ).Replace( "LF - ", "LF_" ).Replace( ' ', '_' );
 
                         if ( DEFAULT_THEMES.Contains( styleKey ) )
                             continue;
@@ -44,7 +64,7 @@ namespace LegacyFlavour.Patches
                         _dropdownItems.Add( new DropdownItem<string>
                         {
                             value = styleKey,
-                            displayName = LocalizedString.Value( theme )
+                            displayName = LocalizedString.Value( localConfig.Entries[localeKey] )
                         } );
                     }
                 }

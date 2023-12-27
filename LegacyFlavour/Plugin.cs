@@ -4,6 +4,9 @@ using System.Reflection;
 using System.Linq;
 using LegacyFlavour.Patches;
 using HookUILib.Core;
+using Colossal.Localization;
+using Game.SceneFlow;
+using UnityEngine;
 
 #if BEPINEX_V6
     using BepInEx.Unity.Mono;

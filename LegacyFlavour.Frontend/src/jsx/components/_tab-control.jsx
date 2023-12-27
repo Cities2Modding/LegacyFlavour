@@ -13,7 +13,7 @@ const $TabControl = ({ react, tabs, style }) => {
                             className={`tab_Hrb ${activeTab === tab.name ? 'selected' : ''}`}
                             onClick={() => setActiveTab(tab.name)} style={{ marginLeft: '2.5rem', marginRight: '2.5rem' }}
                         >
-                            {tab.name}
+                            {tab.label}
                         </div>
                     ))}
                 </div>

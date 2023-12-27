@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using static Game.Rendering.Debug.RenderPrefabRenderer;
 
 namespace LegacyFlavour.UI
 {
@@ -97,6 +98,10 @@ namespace LegacyFlavour.UI
             {
                 HandleList( writer, value, valueType );
             }
+            else if ( valueType == typeof( Dictionary<string, string> ) )
+            {
+                HandleDictionary( writer, value );
+            }
             else
             {
                 // Handle other complex types if needed
@@ -105,21 +110,82 @@ namespace LegacyFlavour.UI
 
         private void HandleList( IJsonWriter writer, object value, Type valueType )
         {
-            var innerValueType = valueType.GenericTypeArguments[0];
-
             var list = value as IList;
             if ( list != null )
             {
                 var size = list.Count;
-                var innerValueProperties = innerValueType.GetProperties( BindingFlags.Instance | BindingFlags.Public );
                 writer.ArrayBegin( size );
 
                 foreach ( var item in list )
                 {
-                    ParseType( writer, item, innerValueProperties );
+                    switch ( item )
+                    {
+                        case string stringValue:
+                            writer.Write( stringValue );
+                            break;
+                        case float singleValue:
+                            writer.Write( singleValue );
+                            break;
+                        case double doubleValue:
+                            writer.Write( doubleValue );
+                            break;
+                        case short int16Value:
+                            writer.Write( int16Value );
+                            break;
+                        case uint uint32Value:
+                            writer.Write( uint32Value );
+                            break;
+                        case int int32Value:
+                            writer.Write( int32Value );
+                            break;
+                        case long int64Value:
+                            writer.Write( int64Value );
+                            break;
+                        case bool boolValue:
+                            writer.Write( boolValue );
+                            break;
+                        case decimal decimalValue:
+                            writer.Write( ( int ) ( decimalValue * 100 ) ); // Writing decimal as INT up two decimal places
+                            break;
+                        case Enum enumValue:
+                            writer.Write( enumValue.ToString( ) ); // Writing enum as string
+                            break;
+                        default:
+                            var innerValueType = valueType.GenericTypeArguments[0];
+                            var innerValueProperties = innerValueType.GetProperties( BindingFlags.Instance | BindingFlags.Public );
+
+                            ParseType( writer, item, innerValueProperties );
+                            break;
+                    }
                 }
 
                 writer.ArrayEnd( );
+            }
+        }
+
+        private void HandleDictionary( IJsonWriter writer, object value)
+        {
+            var dictionary = value as IDictionary<string, string>;
+            if ( dictionary != null )
+            {
+                var size = dictionary.Count;
+
+                if ( size == 0 )
+                {
+                    writer.WriteEmptyMap( );
+                }
+                else
+                {
+                    writer.MapBegin( size );
+
+                    foreach ( var kvp in dictionary )
+                    {
+                        writer.Write( kvp.Key );
+                        writer.Write( kvp.Value );
+                    }
+
+                    writer.MapEnd( );
+                }
             }
         }
     }

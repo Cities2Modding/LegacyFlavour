@@ -23511,9 +23511,13 @@
 
   // src/jsx/components/_tab-window.jsx
   var import_react5 = __toESM(require_react());
-  var $TabWindow = ({ react, tabs, style, onClose }) => {
+  var $TabWindow = ({ react, tabs, style, onClose, title }) => {
     const [activeTab, setActiveTab] = react.useState(tabs.length > 0 ? tabs[0].name : "");
-    return /* @__PURE__ */ import_react5.default.createElement("div", { style: { position: "fixed", width: "100vw", height: "100vh", pointerEvents: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", ...style } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "panel_YqS economy-panel_e08", style: { marginLeft: "auto", marginRight: "auto", width: "1000rem", height: "775rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header_H_U header_Bpo child-opacity-transition_nkS" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "title-bar_PF4" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "icon-space_h_f" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "title_SVH title_zQN" }, "Legacy Flavour"), /* @__PURE__ */ import_react5.default.createElement("button", { className: "button_bvQ button_bvQ close-button_wKK", onClick: onClose }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "tinted-icon_iKo icon_PhD", style: { maskImage: "url(Media/Glyphs/Close.svg)" } }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
+    react.useEffect(() => {
+      if (activeTab === "")
+        setActiveTab(tabs.length > 0 ? tabs[0].name : "");
+    }, [tabs]);
+    return /* @__PURE__ */ import_react5.default.createElement("div", { style: { position: "fixed", width: "100vw", height: "100vh", pointerEvents: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", ...style } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "panel_YqS economy-panel_e08", style: { marginLeft: "auto", marginRight: "auto", width: "1000rem", height: "775rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header_H_U header_Bpo child-opacity-transition_nkS" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "title-bar_PF4" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "icon-space_h_f" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "title_SVH title_zQN" }, title), /* @__PURE__ */ import_react5.default.createElement("button", { className: "button_bvQ button_bvQ close-button_wKK", onClick: onClose }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "tinted-icon_iKo icon_PhD", style: { maskImage: "url(Media/Glyphs/Close.svg)" } }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
       "div",
       {
         key: tab.name,
@@ -23521,7 +23525,7 @@
         onClick: () => setActiveTab(tab.name),
         style: { marginLeft: "2.5rem", marginRight: "2.5rem" }
       },
-      tab.name
+      tab.label
     )))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "content_XD5 content_AD7 child-opacity-transition_nkS" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
       "div",
       {
@@ -23614,12 +23618,15 @@
 
   // src/jsx/components/_toggle-group.jsx
   var $ToggleGroup = ({ react, style, options, isHorizontal, checked, onChecked }) => {
+    const [checkedItem, setCheckedItem] = react.useState(checked);
     let groupStyle = isHorizontal ? { flexDirection: "row" } : { flexDirection: "column" };
     const onToggle = (option) => {
+      if (checkedItem === option)
+        return;
       if (onChecked)
         onChecked(option);
+      setCheckedItem(option);
     };
-    const selectedIndex = options.indexOf(checked);
     return /* @__PURE__ */ import_react13.default.createElement("div", { style: { display: "flex", width: "100%", ...groupStyle, ...style } }, options.map((option, index) => {
       let optionStyle = {
         flex: 1,
@@ -23636,12 +23643,12 @@
       return /* @__PURE__ */ import_react13.default.createElement(
         toggle_button_default,
         {
-          key: option,
-          label: option,
-          checked: index === selectedIndex,
+          key: option.value,
+          label: option.label,
+          checked: option.value === checkedItem,
           style: { ...optionStyle, ...optionExtraStyle },
           labelStyle: optionLabelStyle,
-          onToggle: () => onToggle(option)
+          onToggle: () => onToggle(option.value)
         }
       );
     }));
@@ -23649,24 +23656,22 @@
   var toggle_group_default = $ToggleGroup;
 
   // src/jsx/tabs/_settings.jsx
-  var $Settings = ({ react, data, setData, triggerUpdate }) => {
+  var $Settings = ({ react, data, setData, locale, triggerUpdate }) => {
     const timeOfDayOptions = [
-      "Off",
-      "Day",
-      "Golden Hour",
-      "Night"
+      { label: locale["OFF"], value: "Off" },
+      { label: locale["DAY"], value: "Day" },
+      { label: locale["GOLDEN_HOUR"], value: "GoldenHour" },
+      { label: locale["NIGHT"], value: "Night" }
     ];
     const weatherOptions = [
-      "Off",
-      "Sun",
-      "Overcast",
-      "Rain",
-      "Snow"
+      { label: locale["OFF"], value: "Off" },
+      { label: locale["SUN"], value: "Sun" },
+      { label: locale["OVERCAST"], value: "Overcast" },
+      { label: locale["RAIN"], value: "Rain" },
+      { label: locale["SNOW"], value: "Snow" }
     ];
     const timeOfDayUpdate = (val) => {
       let parsedVal = val;
-      if (val === "Golden Hour")
-        parsedVal = "GoldenHour";
       triggerUpdate("TimeOfDay", parsedVal);
       if (val == "Off")
         triggerUpdate("FreezeVisualTime", false);
@@ -23696,53 +23701,52 @@
       }
       triggerUpdate(field, val);
     };
-    const checkedTimeItem = data.TimeOfDay == "GoldenHour" ? "Golden Hour" : data.TimeOfDay;
     return /* @__PURE__ */ import_react14.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
-        label: "Use Sticky Whiteness",
-        description: "Override the games white info-mode switch, using a custom setting. Toggle with ALT+S.",
+        label: locale["USE_STICKY_WHITENESS"],
+        description: locale["USE_STICKY_WHITENESS_DESC"],
         icon: "Media/Game/Icons/Information.svg"
       },
       /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseStickyWhiteness, onToggle: (val) => updateData("UseStickyWhiteness", val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
-        label: "Whiteness Toggle",
-        description: "If 'Use Sticky Whiteness' is enabled, the info-mode white setting will be set to this value when a tool with an info-mode is activated. Toggle with SHIFT+W.",
+        label: locale["WHITENESS_TOGGLE"],
+        description: locale["WHITENESS_TOGGLE_DESC"],
         icon: "Media/Game/Icons/Orbit.svg"
       },
       /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.WhitenessToggle, onToggle: (val) => updateData("WhitenessToggle", val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
-        label: "Use Units",
-        description: "When a tool system with a length measurement is selected, use 'units' instead. Toggle with ALT+U.",
+        label: locale["USE_UNITS"],
+        description: locale["USE_UNITS_DESC"],
         icon: "Media/Game/Icons/Roads.svg"
       },
       /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseUnits, onToggle: (val) => updateData("UseUnits", val) })
     ))), /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
-        label: "Freeze time visuals",
-        description: "When enabled, freezes the visual time of day. 'Day/Night Visuals' must be on.",
+        label: locale["FREEZE_TIME_VISUALS"],
+        description: locale["FREEZE_TIME_VISUALS_DESC"],
         icon: "Media/PhotoMode/Pause.svg"
       },
       /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.FreezeVisualTime, onToggle: (val) => freezeTimeUpdate(val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
-        label: "Set visual time of day",
-        description: "Override the visual time of day. 'Day/Night Visuals' must be on. If golden hour goes to midnight the map is missing settings.",
+        label: locale["SET_VISUAL_TIME_OF_DAY"],
+        description: locale["SET_VISUAL_TIME_OF_DAY_DESC"],
         icon: "Media/Editor/Time.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react14.default.createElement(toggle_group_default, { react, checked: checkedTimeItem, options: timeOfDayOptions, isHorizontal: "true", onChecked: (val) => timeOfDayUpdate(val) })
+      /* @__PURE__ */ import_react14.default.createElement(toggle_group_default, { react, checked: data.TimeOfDay, options: timeOfDayOptions, isHorizontal: "true", onChecked: (val) => timeOfDayUpdate(val) })
     ), /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
-        label: "Weather",
-        description: "Override the weather",
+        label: locale["WEATHER"],
+        description: locale["WEATHER_DESC"],
         icon: "Media/Game/Climate/Overcast.svg",
         fitChild: "true"
       },
@@ -24095,26 +24099,25 @@
       setInternalValue(value);
       onSelectionChanged(value);
     };
-    const selectedIndex = options.indexOf(internalValue);
+    const selectedIndex = options.findIndex((o) => o.value === internalValue);
     const dropdownContent = active ? /* @__PURE__ */ import_react18.default.createElement("div", { ref: dropdownRef, style: {
       display: "flex",
       position: "absolute",
       ...getDropdownPosition(),
       zIndex: 9999
-    } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-popup_mMv", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-menu_jf2 dropdown-menu_Swd" }, options.map((option) => /* @__PURE__ */ import_react18.default.createElement("button", { key: option, className: "dropdown-item_sZT selected", style: { padding: "5rem", height: "auto" }, onClick: () => changeSelection(option) }, option))))) : null;
-    return /* @__PURE__ */ import_react18.default.createElement("div", { style: { width: "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { ref: pickerRef, className: "dropdown-toggle_V9z dropdown-toggle_prl value-field_yJi value_PW_ dropdown_pJu item-states_QjV", onClick: onToggle, style: { padding: "5rem", height: "auto", ...style } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "label_l_4" }, options[selectedIndex]), /* @__PURE__ */ import_react18.default.createElement("div", { className: "tinted-icon_iKo indicator_Xmj", style: { maskImage: "url(Media/Glyphs/StrokeArrowDown.svg)" } }), portalContainer && dropdownContent && import_react_dom2.default.createPortal(dropdownContent, portalContainer)));
+    } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-popup_mMv", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-menu_jf2 dropdown-menu_Swd" }, options.map((option) => /* @__PURE__ */ import_react18.default.createElement("button", { key: option.value, className: "dropdown-item_sZT selected", style: { padding: "5rem", height: "auto" }, onClick: () => changeSelection(option.value) }, option.label))))) : null;
+    return /* @__PURE__ */ import_react18.default.createElement("div", { style: { width: "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { ref: pickerRef, className: "dropdown-toggle_V9z dropdown-toggle_prl value-field_yJi value_PW_ dropdown_pJu item-states_QjV", onClick: onToggle, style: { padding: "5rem", height: "auto", ...style } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "label_l_4" }, options[selectedIndex].label), /* @__PURE__ */ import_react18.default.createElement("div", { className: "tinted-icon_iKo indicator_Xmj", style: { maskImage: "url(Media/Glyphs/StrokeArrowDown.svg)" } }), portalContainer && dropdownContent && import_react_dom2.default.createPortal(dropdownContent, portalContainer)));
   };
   var select_default = $Select;
 
   // src/jsx/tabs/_zone-colours.jsx
-  var $ZoneColours = ({ react, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
-    const noneString = "Default Colours";
+  var $ZoneColours = ({ react, locale, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
     const colourModes = [
-      noneString,
-      "Deuteranopia",
-      "Protanopia",
-      "Tritanopia",
-      "Custom"
+      { label: locale["DEFAULT_COLOURS"], value: "None" },
+      { label: locale["DEUTERANOPIA"], value: "Deuteranopia" },
+      { label: locale["PROTANOPIA"], value: "Protanopia" },
+      { label: locale["TRITANOPIA"], value: "Tritanopia" },
+      { label: locale["CUSTOM"], value: "Custom" }
     ];
     const updateData = (field, val) => {
       if (field === "Mode") {
@@ -24123,23 +24126,22 @@
       triggerUpdate(field, val);
     };
     const onModeChanged = (selected) => {
-      updateData("Mode", selected == noneString ? "None" : selected);
+      updateData("Mode", selected);
     };
     const triggerZoneColourUpdate = (zoneName, colour) => {
       engine.trigger("cities2modding_legacyflavour.updateZoneColour", zoneName, colour);
     };
     let zoneGroups = [
-      { name: "Residential", icon: "ZoneResidential", desc: "Modify Residential zone colours", items: [] },
-      { name: "Commercial", icon: "ZoneCommercial", desc: "Modify Commercial zone colours", items: [] },
-      { name: "Office", icon: "ZoneOffice", desc: "Modify Office zone colours", items: [] },
-      { name: "Industrial", icon: "ZoneIndustrial", desc: "Modify Industrial zone colours", items: [] }
+      { name: "Residential", label: locale["RESIDENTIAL"], icon: "ZoneResidential", desc: locale["RESIDENTIAL_DESC"], items: [] },
+      { name: "Commercial", label: locale["COMMERCIAL"], icon: "ZoneCommercial", desc: locale["COMMERCIAL_DESC"], items: [] },
+      { name: "Office", label: locale["OFFICE"], icon: "ZoneOffice", desc: locale["OFFICE_DESC"], items: [] },
+      { name: "Industrial", label: locale["INDUSTRIAL"], icon: "ZoneIndustrial", desc: locale["INDUSTRIAL_DESC"], items: [] }
     ];
     if (data.Zones) {
       data.Zones.map((zone, index) => {
         var name = zone.Name;
         for (var i = 0; i < zoneGroups.length; i++) {
           if (name.startsWith(zoneGroups[i].name)) {
-            console.log(zoneGroups[i].name);
             zoneGroups[i].items.push(zone);
             break;
           }
@@ -24160,7 +24162,7 @@
         icon_panel_default,
         {
           key: zoneGroup.name,
-          label: zoneGroup.name,
+          label: zoneGroup.label,
           style: { flex: 1 },
           description: zoneGroup.desc,
           icon,
@@ -24179,7 +24181,8 @@
           const onChanged = (newColour) => {
             triggerZoneColourUpdate(zone.Name, newColour);
           };
-          return /* @__PURE__ */ import_react19.default.createElement(colorpicker_default, { key: zone.Name, react, label: zone.Name, color: colour, onChanged, onDropdown: onColourDropdown });
+          const zoneLabel = locale[zone.Name.replace(/ /g, "_").toUpperCase()];
+          return /* @__PURE__ */ import_react19.default.createElement(colorpicker_default, { key: zone.Name, react, label: zoneLabel, color: colour, onChanged, onDropdown: onColourDropdown });
         }))
       );
     };
@@ -24195,17 +24198,17 @@
     const triggerResetColoursToDefault = () => {
       engine.trigger("cities2modding_legacyflavour.resetColoursToDefault");
     };
-    const modeString = data.Mode == "None" ? noneString : data.Mode;
+    const modeString = data.Mode;
     return /* @__PURE__ */ import_react19.default.createElement("div", null, /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "66.666666666%", paddingRight: "5rem" } }, /* @__PURE__ */ import_react19.default.createElement(
       icon_panel_default,
       {
-        label: "Colour Blindness Mode",
-        description: "Select a different colour mode, you can cycle these with the keys SHIFT+Z.",
+        label: locale["COLOUR_BLINDNESS_MODE"],
+        description: locale["COLOUR_BLINDNESS_MODE_DESC"],
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
       /* @__PURE__ */ import_react19.default.createElement(select_default, { react, selected: modeString, options: colourModes, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onModeChanged })
-    )), /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "33.33333333333%" } }, /* @__PURE__ */ import_react19.default.createElement(button_default2, { onClick: triggerRegenerateIcons }, "Regenerate icons (Game restart required)"), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerSetColoursToVanilla }, "Set ", modeString, "\xA0to vanilla colours"), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetColoursToDefault }, "Reset ", modeString), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react19.default.createElement(label_default, { style: { margin: "10rem" } }, "Make window transparent"), /* @__PURE__ */ import_react19.default.createElement(checkbox_default, { react, style: { margin: "10rem" }, checked: useTransparency, onToggle: onChangeUseTransparency })))), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%" } }, renderZoneColours(0)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem", paddingRight: "5rem" } }, renderZoneColours(1), renderZoneColours(2)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem" } }, renderZoneColours(3))));
+    )), /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "33.33333333333%" } }, /* @__PURE__ */ import_react19.default.createElement(button_default2, { onClick: triggerRegenerateIcons }, locale["REGENERATE_ICONS"], " (", locale["GAME_RESTART_REQUIRED"], ")"), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerSetColoursToVanilla }, locale["SET_TO_VANILLA_COLOURS"]), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetColoursToDefault }, locale["RESET"], " ", modeString), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react19.default.createElement(label_default, { style: { margin: "10rem" } }, locale["MAKE_WINDOW_TRANSPARENT"]), /* @__PURE__ */ import_react19.default.createElement(checkbox_default, { react, style: { margin: "10rem" }, checked: useTransparency, onToggle: onChangeUseTransparency })))), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%" } }, renderZoneColours(0)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem", paddingRight: "5rem" } }, renderZoneColours(1), renderZoneColours(2)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem" } }, renderZoneColours(3))));
   };
   var zone_colours_default = $ZoneColours;
 
@@ -24259,7 +24262,7 @@
   var slider_default = $Slider;
 
   // src/jsx/tabs/_zone-settings.jsx
-  var $ZoneSettings = ({ react, data, setData, triggerUpdate }) => {
+  var $ZoneSettings = ({ react, locale, data, setData, triggerUpdate }) => {
     const triggerResetZoneSettingsToDefault = () => {
       engine.trigger("cities2modding_legacyflavour.resetZoneSettingsToDefault");
     };
@@ -24282,24 +24285,24 @@
     return /* @__PURE__ */ import_react21.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
-        label: "Custom Zone Colouring",
-        description: "Provides custom zone colour options that can be cycled with a key shortcut. Toggle with ALT+Z.",
+        label: locale["CUSTOM_ZONE_COLOURING"],
+        description: locale["CUSTOM_ZONE_COLOURING_DESC"],
         icon: "Media/Game/Icons/Zones.svg"
       },
       /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.Enabled, onToggle: (val) => updateData("Enabled", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
-        label: "Use Dynamic Cell Borders",
-        description: "Zone cell borders will adjust to be more visible when there is snow coverage.",
+        label: locale["USE_DYNAMIC_CELL_BORDERS"],
+        description: locale["USE_DYNAMIC_CELL_BORDERS_DESC"],
         icon: "Media/Game/Climate/Snow.svg"
       },
       /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseDynamicCellBorders, onToggle: (val) => updateData("UseDynamicCellBorders", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
-        label: "Cell Opacity",
-        description: "Change the transparency of non-empty zone cells.",
+        label: locale["CELL_OPACITY"],
+        description: locale["CELL_OPACITY_DESC"],
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
@@ -24307,8 +24310,8 @@
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
-        label: "Cell Border Opacity",
-        description: "Change the border transparency of non-empty zone cells.",
+        label: locale["CELL_BORDER_OPACITY"],
+        description: locale["CELL_BORDER_OPACITY_DESC"],
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
@@ -24316,8 +24319,8 @@
     ))), /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
-        label: "Empty Cell Opacity",
-        description: "Change the transparency of empty zone cells.",
+        label: locale["EMPTY_CELL_OPACITY"],
+        description: locale["EMPTY_CELL_OPACITY_DESC"],
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
@@ -24325,13 +24328,13 @@
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
-        label: "Empty Cell Border Opacity",
-        description: "Change the border transparency of empty zone cells.",
+        label: locale["EMPTY_CELL_BORDER_OPACITY"],
+        description: locale["EMPTY_CELL_BORDER_OPACITY_DESC"],
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
       /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.EmptyCellBorderOpacity, onValueChanged: (val) => updateData("EmptyCellBorderOpacity", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetZoneSettingsToDefault }, "Reset to default")));
+    ), /* @__PURE__ */ import_react21.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetZoneSettingsToDefault }, locale["RESET_TO_DEFAULT"])));
   };
   var zone_settings_default = $ZoneSettings;
 
@@ -24350,7 +24353,7 @@
         onClick: () => setActiveTab(tab.name),
         style: { marginLeft: "2.5rem", marginRight: "2.5rem" }
       },
-      tab.name
+      tab.label
     ))), /* @__PURE__ */ import_react22.default.createElement("div", null, tabs.map((tab) => /* @__PURE__ */ import_react22.default.createElement(
       "div",
       {
@@ -24363,7 +24366,7 @@
   var tab_control_default = $TabControl;
 
   // src/jsx/tabs/_ui-themes.jsx
-  var $UIThemes = ({ react, themeData, setThemeData, defaultThemeData }) => {
+  var $UIThemes = ({ react, locale, themeData, setThemeData, defaultThemeData }) => {
     const [selectedDefaultTheme, setSelectedDefaultTheme] = react.useState("Default");
     const [selectedTheme, setSelectedTheme] = react.useState("Custom");
     const [accentColour, setAccentColour] = react.useState("#ff0000");
@@ -24373,18 +24376,22 @@
     let themeList = [];
     if (themeData.Themes) {
       for (var i = 0; i < themeData.Themes.length; i++) {
-        themeList.push(themeData.Themes[i].Name);
+        const themeName = themeData.Themes[i].Name;
+        const localeName = themeName.toUpperCase().replace("LF - ", "LF_").replace(/ /g, "_");
+        themeList.push({ label: locale[localeName], value: themeName });
       }
     }
     if (defaultThemeData.Themes) {
       for (var i = 0; i < defaultThemeData.Themes.length; i++) {
-        defaultThemeList.push(defaultThemeData.Themes[i].Name);
+        const themeName = defaultThemeData.Themes[i].Name;
+        const localeName = themeName.toUpperCase().replace("LF - ", "LF_").replace(/ /g, "_");
+        defaultThemeList.push({ label: locale[localeName], value: themeName });
       }
     }
-    let selectedIndex = themeList.indexOf(selectedTheme);
+    let selectedIndex = themeList.findIndex((o) => o.value === selectedTheme);
     const onSelectedThemeChanged = (selected) => {
       setSelectedTheme(selected);
-      selectedIndex = themeList.indexOf(selected);
+      selectedIndex = themeList.findIndex((o) => o.value === selected);
       engine.trigger("cities2modding_legacyflavour.useSelectedTheme", selected);
     };
     const onDefaultSelectedThemeChanged = (selected) => {
@@ -24402,13 +24409,14 @@
       formattedStr = formattedStr.replace(/-/g, " ");
       formattedStr = formattedStr.replace(/([A-Z])/g, " $1").trim();
       formattedStr = formattedStr.split(" ").map(
-        (word) => word.charAt(0).toUpperCase() + word.slice(1)
-      ).join(" ");
+        (word) => locale[word.toUpperCase()] ? locale[word.toUpperCase()] : word.toUpperCase()
+      ).join(" ").trim();
       return formattedStr;
     };
     const accentGroups = [
       {
         name: "Accent",
+        label: locale["ACCENT"],
         keys: [
           "--accentColorNormal",
           "--accentColorNormal-hover",
@@ -24425,6 +24433,7 @@
       },
       {
         name: "Panel",
+        label: locale["PANEL"],
         keys: [
           "--panelColorNormal",
           "--panelColorDark",
@@ -24436,6 +24445,7 @@
       },
       {
         name: "Section",
+        label: locale["SECTION"],
         keys: [
           "--sectionHeaderColor",
           "--sectionHeaderColorLight",
@@ -24448,6 +24458,7 @@
       },
       {
         name: "Selected",
+        label: locale["SELECTED"],
         keys: [
           "--selectedTextColor",
           "--selectedTextColorDim",
@@ -24461,6 +24472,7 @@
       },
       {
         name: "Text",
+        label: locale["TEXT"],
         keys: [
           "--normalTextColor",
           "--normalTextColorDim",
@@ -24477,7 +24489,8 @@
         ]
       },
       {
-        name: "Menu ",
+        name: "Menu",
+        label: locale["MENU"],
         keys: [
           "--menuText1Inverted",
           "--menuText2Inverted",
@@ -24492,6 +24505,7 @@
       },
       {
         name: "Other",
+        label: locale["OTHER"],
         keys: [
           "--positiveColor",
           "--warningColor",
@@ -24560,53 +24574,60 @@
     const tabs = [
       {
         name: "Accent",
+        label: locale["ACCENT"],
         content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[0]))
       },
       {
         name: "Panel",
+        label: locale["PANEL"],
         content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[1]))
       },
       {
         name: "Section",
+        label: locale["SECTION"],
         content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[2]))
       },
       {
         name: "Selected",
+        label: locale["SELECTED"],
         content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[3]))
       },
       {
         name: "Text",
+        label: locale["TEXT"],
         content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[4]))
       },
       {
         name: "Menu",
+        label: locale["MENU"],
         content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[5]))
       },
       {
         name: "Other",
+        label: locale["OTHER"],
         content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[6]))
       }
     ];
     return /* @__PURE__ */ import_react23.default.createElement("div", null, /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react23.default.createElement("div", { style: { width: "50%", paddingRight: "5rem" } }, /* @__PURE__ */ import_react23.default.createElement(
       icon_panel_default,
       {
-        label: "Theme",
-        description: "Select a theme to edit",
+        label: locale["THEME"],
+        description: locale["THEME_DESC"],
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(select_default, { react, selected: selectedTheme, options: themeList, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onSelectedThemeChanged }), /* @__PURE__ */ import_react23.default.createElement(button_default2, { onClick: useSelectedTheme }, "Use selected theme"))
+      /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(select_default, { react, selected: selectedTheme, options: themeList, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onSelectedThemeChanged }), /* @__PURE__ */ import_react23.default.createElement(button_default2, { onClick: useSelectedTheme }, locale["USE_SELECTED_THEME"]))
     )), /* @__PURE__ */ import_react23.default.createElement("div", { style: { width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react23.default.createElement(
       icon_panel_default,
       {
-        label: "Generate from colour",
-        description: "Select a base theme, main accent colour and generate a theme.",
+        label: locale["GENERATE_FROM_COLOUR"],
+        description: locale["GENERATE_FROM_COLOUR_DESC"],
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(select_default, { react, selected: selectedDefaultTheme, options: defaultThemeList, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onDefaultSelectedThemeChanged }), /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { style: { width: "50%" }, key: "lf-accent", react, label: "Primary Accent", color: accentColour, onChanged: (newColour) => {
+      /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(select_default, { react, selected: selectedDefaultTheme, options: defaultThemeList, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onDefaultSelectedThemeChanged }), /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { style: { width: "50%" }, key: "lf-accent", react, label: locale["PRIMARY_ACCENT"], color: accentColour, onChanged: (newColour) => {
         updateAccent(newColour);
-      }, onDropdown: generateAccent }), /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { style: { width: "50%" }, key: "lf-bg-accent", react, label: "Background Accent", color: backgroundAccentColour, onChanged: (newColour) => {
+      }, onDropdown: generateAccent }), /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { style: { width: "50%" }, key: "lf-bg-accent", react, label: locale["BACKGROUND_ACCENT"], color: backgroundAccentColour, onChanged: (newColour) => {
         updateBackgroundAccent(newColour);
       }, onDropdown: generateAccent })))
     ))), /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react23.default.createElement(tab_control_default, { react, tabs })));
@@ -24615,7 +24636,7 @@
 
   // src/jsx/tabs/_about.jsx
   var import_react24 = __toESM(require_react());
-  var $About = ({}) => {
+  var $About = ({ react, locale }) => {
     const launchReddit = (url) => {
       engine.trigger("cities2modding_legacyflavour.launchUrl", "https://www.reddit.com/r/cities2modding");
     };
@@ -24625,20 +24646,24 @@
     const launchDiscord = (url) => {
       engine.trigger("cities2modding_legacyflavour.launchUrl", "https://discord.gg/KGRNBbm5Fh");
     };
+    function toParagraph(str) {
+      return /* @__PURE__ */ import_react24.default.createElement("p", { cohinline: "cohinline", dangerouslySetInnerHTML: { __html: str } });
+    }
+    const title = `${locale["LEGACY_FLAVOUR"]} v0.0.9`;
     return /* @__PURE__ */ import_react24.default.createElement("div", null, /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {
-        label: "Legacy Flavour v0.0.8",
+        label: title,
         style: { flex: 1 },
-        description: "This mod was developed by the optimus-code and the Cities2Modding community.",
+        description: locale["DEVELOPED_BY"],
         icon: "Media/Editor/Object.svg",
         fitChild: "true"
       }
-    ), /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react24.default.createElement(description_default, { style: { paddingTop: "0" } }, /* @__PURE__ */ import_react24.default.createElement(paragraph_default, null, 'Our mods, including "Legacy Flavour," are part of a vibrant creative effort, officially distributed via ', /* @__PURE__ */ import_react24.default.createElement("b", null, "Thunderstore.io"), "\xA0and our GitHub repository. They represent not just our work but the spirit of collaboration and innovation within the Cities Skylines modding community."), /* @__PURE__ */ import_react24.default.createElement(paragraph_default, null, "Special thanks to ", /* @__PURE__ */ import_react24.default.createElement("b", null, "Captain_Of_Coit"), ", ", /* @__PURE__ */ import_react24.default.createElement("b", null, "89pleasure"), ", and ", /* @__PURE__ */ import_react24.default.createElement("b", null, "Rebecca"), ", as well as the extensive ", /* @__PURE__ */ import_react24.default.createElement("b", null, "Cities2Modding"), "\xA0community."), /* @__PURE__ */ import_react24.default.createElement(paragraph_default, null, "If modding interests you, whether you're a seasoned creator or a newcomer, our community doors are always open. We thrive on shared knowledge and fresh ideas, and we believe that everyone has something unique to contribute to our growing and dynamic community."))), /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "row", flex: 1 } }, /* @__PURE__ */ import_react24.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react24.default.createElement(
+    ), /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react24.default.createElement(description_default, { style: { paddingTop: "0" } }, toParagraph(locale["ABOUT_1"]), toParagraph(locale["ABOUT_2"]), toParagraph(locale["ABOUT_3"]))), /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "row", flex: 1 } }, /* @__PURE__ */ import_react24.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {
         label: "GitHub",
-        description: "You can download our mods on GitHub, or even get involved if you desire!",
+        description: locale["GITHUB_DESC"],
         icon: "https://raw.githubusercontent.com/prplx/svg-logos/master/svg/github-icon.svg",
         fitChild: "true"
       },
@@ -24647,7 +24672,7 @@
       icon_panel_default,
       {
         label: "Reddit",
-        description: "We have a sub-reddit if you would like to join or visit.",
+        description: locale["REDDIT_DESC"],
         icon: "https://www.svgrepo.com/download/14413/reddit.svg",
         fitChild: "true"
       },
@@ -24656,7 +24681,7 @@
       icon_panel_default,
       {
         label: "Discord",
-        description: "If you would like to get involved in our community or need help or support, you can find us on Discord.",
+        description: locale["DISCORD_DESC"],
         icon: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/653714c1f22aef3b6921d63d_636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg",
         fitChild: "true"
       },
@@ -24670,10 +24695,13 @@
     const [data, setData] = react.useState({});
     const [defaultThemeData, setDefaultThemeData] = react.useState({});
     const [themeData, setThemeData] = react.useState({});
+    const [localeData, setLocaleData] = react.useState({});
     const [opacity, setOpacity] = react.useState(1);
     const [useTransparency, setUseTransparency] = react.useState(false);
+    const [tabs, setTabs] = react.useState([]);
     use_data_update_default(react, "cities2modding_legacyflavour.config", setData);
     use_data_update_default(react, "cities2modding_legacyflavour.themeConfig", setThemeData);
+    use_data_update_default(react, "cities2modding_legacyflavour.currentLocale", setLocaleData);
     use_data_update_default(react, "cities2modding_legacyflavour.defaultThemeData", setDefaultThemeData);
     const triggerUpdate = (prop, val) => {
       engine.trigger("cities2modding_legacyflavour.updateProperty", JSON.stringify({ property: prop, value: val }));
@@ -24695,29 +24723,39 @@
       setUseTransparency(val);
       onChangeOpacity();
     };
-    const tabs = [
-      {
-        name: "Settings",
-        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(settings_default, { react, data, setData, triggerUpdate }))
-      },
-      {
-        name: "Zone Settings",
-        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(zone_settings_default, { react, data, setData, triggerUpdate }))
-      },
-      {
-        name: "Zone Colours",
-        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(zone_colours_default, { react, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity }))
-      },
-      {
-        name: "UI Themes",
-        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(ui_themes_default, { react, themeData, setThemeData, defaultThemeData }))
-      },
-      {
-        name: "About",
-        content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(about_default, null))
+    react.useEffect(() => {
+      if (typeof localeData.Entries !== "undefined") {
+        setTabs([
+          {
+            name: "SETTINGS",
+            label: localeData.Entries["SETTINGS"],
+            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(settings_default, { react, locale: localeData.Entries, data, setData, triggerUpdate }))
+          },
+          {
+            name: "ZONE_SETTINGS",
+            label: localeData.Entries["ZONE_SETTINGS"],
+            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(zone_settings_default, { react, locale: localeData.Entries, data, setData, triggerUpdate }))
+          },
+          {
+            name: "ZONE_COLOURS",
+            label: localeData.Entries["ZONE_COLOURS"],
+            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(zone_colours_default, { react, locale: localeData.Entries, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity }))
+          },
+          {
+            name: "UI_THEMES",
+            label: localeData.Entries["UI_THEMES"],
+            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(ui_themes_default, { react, locale: localeData.Entries, themeData, setThemeData, defaultThemeData }))
+          },
+          {
+            name: "ABOUT",
+            label: localeData.Entries["ABOUT"],
+            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(about_default, { react, locale: localeData.Entries }))
+          }
+        ]);
       }
-    ];
-    return /* @__PURE__ */ import_react25.default.createElement(tab_window_default, { react, tabs, onClose: toggleVisibility, style: { opacity } });
+    }, [localeData]);
+    const title = localeData.Entries ? `Legacy Flavour (${localeData.Entries["LEGACY_FLAVOUR"]})` : "Legacy Flavour";
+    return /* @__PURE__ */ import_react25.default.createElement(tab_window_default, { react, title, tabs, onClose: toggleVisibility, style: { opacity } });
   };
   window._$hookui.registerPanel({
     id: "cities2modding.legacyflavour",

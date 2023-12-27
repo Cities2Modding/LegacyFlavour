@@ -1,0 +1,1949 @@
+{
+  "Locales": [
+    {
+      "IDs": [ "en-US" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "Legacy Flavour",
+        "SETTINGS": "Settings",
+        "ZONE_SETTINGS": "Zone Settings",
+        "ZONE_COLOURS": "Zone Colours",
+        "UI_THEMES": "UI Themes",
+        "ABOUT": "About",
+        "ACCENT": "Accent",
+        "PANEL": "Panel",
+        "SECTION": "Section",
+        "SELECTED": "Selected",
+        "TEXT": "Text",
+        "MENU": "Menu",
+        "OTHER": "Other",
+
+        "USE_STICKY_WHITENESS": "Use Sticky Whiteness",
+        "USE_STICKY_WHITENESS_DESC": "Override the games white info-mode switch, using a custom setting. Toggle with ALT+S.",
+
+        "WHITENESS_TOGGLE": "Whiteness Toggle",
+        "WHITENESS_TOGGLE_DESC": "If 'Use Sticky Whiteness' is enabled, the info-mode white setting will be set to this value when a tool with an info-mode is activated. Toggle with SHIFT+W.",
+
+        "USE_UNITS": "Use Units",
+        "USE_UNITS_DESC": "When a tool system with a length measurement is selected, use 'units' instead. Toggle with ALT+U.",
+
+        "FREEZE_TIME_VISUALS": "Freeze Time Visuals",
+        "FREEZE_TIME_VISUALS_DESC": "When enabled, freezes the visual time of day. 'Day/Night Visuals' must be on.",
+
+        "SET_VISUAL_TIME_OF_DAY": "Set visual time of day",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Override the visual time of day. 'Day/Night Visuals' must be on. If golden hour goes to midnight the map is missing settings.",
+
+        "WEATHER": "Weather",
+        "WEATHER_DESC": "Override the weather",
+
+        "CUSTOM_ZONE_COLOURING": "Custom Zone Colouring",
+        "CUSTOM_ZONE_COLOURING_DESC": "Provides custom zone colour options that can be cycled with a key shortcut. Toggle with ALT+Z.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "Use Dynamic Cell Borders",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "Zone cell borders will adjust to be more visible when there is snow coverage.",
+
+        "EMPTY_CELL_OPACITY": "Empty Cell Opacity",
+        "EMPTY_CELL_OPACITY_DESC": "Change the transparency of empty zone cells.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "Empty Cell Border Opacity",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "Change the border transparency of empty zone cells.",
+
+        "CELL_OPACITY": "Cell Opacity",
+        "CELL_OPACITY_DESC": "Change the transparency of non-empty zone cells.",
+
+        "CELL_BORDER_OPACITY": "Cell Border Opacity",
+        "CELL_BORDER_OPACITY_DESC": "Change the border transparency of non-empty zone cells.",
+
+        "COLOUR_BLINDNESS_MODE": "Colour Blindness Mode",
+        "COLOUR_BLINDNESS_MODE_DESC": "Select a different colour mode, you can cycle these with the keys SHIFT+Z.",
+
+        "RESIDENTIAL": "Residential",
+        "RESIDENTIAL_DESC": "Modify Residential zone colours",
+
+        "COMMERCIAL": "Commercial",
+        "COMMERCIAL_DESC": "Modify Commercial zone colours",
+
+        "OFFICE": "Office",
+        "OFFICE_DESC": "Modify Office zone colours",
+
+        "INDUSTRIAL": "Industrial",
+        "INDUSTRIAL_DESC": "Modify Industrial zone colours",
+
+        "THEME": "Theme",
+        "THEME_DESC": "Select a theme to edit",
+
+        "GENERATE_FROM_COLOUR": "Generate from colour",
+        "GENERATE_FROM_COLOUR_DESC": "Select a base theme, main accent colour and generate a theme.",
+
+        "MAKE_WINDOW_TRANSPARENT": "Make window transparent",
+
+        "DEVELOPED_BY": "This mod was developed by the optimus-code and the Cities2Modding community.",
+        "ABOUT_1": "Our mods, including \"Legacy Flavour,\" are part of a vibrant creative effort, officially distributed via <b>Thunderstore.io</b>&nbsp;and our GitHub repository. They represent not just our work but the spirit of collaboration and innovation within the Cities Skylines modding community.",
+        "ABOUT_2": "Special thanks to <b>Captain_Of_Coit</b>, <b>89pleasure</b>, and&nbsp;<b>Rebecca</b>, as well as the extensive <b>Cities2Modding</b>&nbsp;community.",
+        "ABOUT_3": "If modding interests you, whether you're a seasoned creator or a newcomer, our community doors are always open. We thrive on shared knowledge and fresh ideas, and we believe that everyone has something unique to contribute to our growing and dynamic community. Although English is our main language, we welcome all!",
+
+        "GITHUB_DESC": "You can download our mods on GitHub, or even get involved if you desire!",
+        "REDDIT_DESC": "We have a sub-reddit if you would like to join or visit.",
+        "DISCORD_DESC": "If you would like to get involved in our community or need help or support, you can find us on Discord.",
+
+        "OFF": "Off",
+        "DAY": "Day",
+        "GOLDEN_HOUR": "Golden Hour",
+        "NIGHT": "Night",
+        "SUN": "Sun",
+        "OVERCAST": "Overcast",
+        "RAIN": "Rain",
+        "SNOW": "Snow",
+
+        "RESET_TO_DEFAULT": "Reset to default",
+
+        "SET_TO_VANILLA_COLOURS": "Set to vanilla colours",
+        "REGENERATE_ICONS": "Regenerate icons",
+        "GAME_RESTART_REQUIRED": "Game restart required",
+        "RESET": "Reset",
+
+        "DEFAULT_COLOURS": "Default Colours",
+        "DEUTERANOPIA": "Deuteranopia",
+        "PROTANOPIA": "Protanopia",
+        "TRITANOPIA": "Tritanopia",
+
+        "USE_SELECTED_THEME": "Use selected theme",
+
+        "DEFAULT": "Default",
+        "BRIGHT_BLUE": "Bright Blue",
+        "DARK_GREY_ORANGE": "Dark Grey Orange",
+        "LF_DEFAULT": "LF - Default",
+        "LF_HIGH_CONTRAST": "LF - High Contrast",
+        "LF_HOT_PINK": "LF - Hot Pink",
+        "LF_TOXIC_GREEN": "LF - Toxic Green",
+        "LF_MOCHA": "LF - Mocha",
+        "LF_PEACHY_OCEAN": "LF - Peachy Ocean",
+        "LF_DARK_RED": "LF - Dark Red",
+        "LF_COOL_BLUE": "LF - Cool Blue",
+        "LF_DARK_TEAL": "LF - Dark Teal",
+
+        "RESIDENTIAL_LOW": "Residential Low",
+        "RESIDENTIAL_HIGH": "Residential High",
+        "RESIDENTIAL_MEDIUM": "Residential Medium",
+        "RESIDENTIAL_MEDIUM_ROW": "Residential Medium Row",
+        "RESIDENTIAL_LOWRENT": "Residential LowRent",
+        "RESIDENTIAL_MIXED": "Residential Mixed",
+        "COMMERCIAL_LOW": "Commercial Low",
+        "COMMERCIAL_HIGH": "Commercial High",
+        "OFFICE_LOW": "Office Low",
+        "OFFICE_HIGH": "Office High",
+        "INDUSTRIAL_AGRICULTURE": "Industrial Agriculture",
+        "INDUSTRIAL_FORESTRY": "Industrial Forestry",
+        "INDUSTRIAL_MANUFACTURING": "Industrial Manufacturing",
+        "INDUSTRIAL_OIL": "Industrial Oil",
+        "INDUSTRIAL_ORE": "Industrial Ore",
+
+        "PRIMARY_ACCENT": "Primary Accent",
+        "BACKGROUND_ACCENT": "Background Accent",
+        "FOCUSED_COLOR_DARK": "Focused Color Dark",
+        "FOCUSED_COLOR": "Focused Color",
+
+        "HOVER": "Hover",
+        "PRESSED": "Pressed",
+        "FOCUSED": "Focused",
+
+        "BACKGROUND": "Background",
+        "CUSTOM": "Custom",
+        "COLOR": "Color",
+        "DARK": "Dark",
+        "NORMAL": "Normal",
+        "LIGHT": "Light",
+        "LIGHTER": "Lighter",
+        "DIM": "Dim",
+        "DIMMER": "Dimmer",
+        "DIMMEST": "Dimmest",
+        "HEADER": "Header",
+        "BORDER": "Border",
+        "LOCKED": "Locked",
+        "ACTIVE": "Active",
+        "CONTROL": "Control",
+        "TITLE": "Title",
+        "INVERTED": "Inverted",
+        "DISABLED": "Disabled",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "Positive",
+        "WARNING": "Warning",
+        "NEGATIVE": "Negative",
+        "TAB": "Tab",
+        "ITEM": "Item",
+        "PAUSE": "Pause",
+        "PANEL1": "Panel1",
+        "PANEL2": "Panel2",
+        "TEXT1": "Text1",
+        "TEXT2": "Text2"
+      }
+    },
+    {
+      "IDS": [ "de-DE" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "Legacy-Geschmack",
+        "SETTINGS": "Einstellungen",
+        "ZONE_SETTINGS": "Zonen-Einstellungen",
+        "ZONE_COLOURS": "Zonen-Farben",
+        "UI_THEMES": "UI-Themen",
+        "ABOUT": "Über",
+        "ACCENT": "Akzent",
+        "PANEL": "Panel",
+        "SECTION": "Abschnitt",
+        "SELECTED": "Ausgewählt",
+        "TEXT": "Text",
+        "MENU": "Menü",
+        "OTHER": "Andere",
+
+        "USE_STICKY_WHITENESS": "Klebrige Weißheit verwenden",
+        "USE_STICKY_WHITENESS_DESC": "Überschreibt den Weiß-Info-Modus-Schalter des Spiels mit einer benutzerdefinierten Einstellung. Umschalten mit ALT+S.",
+
+        "WHITENESS_TOGGLE": "Weißheit umschalten",
+        "WHITENESS_TOGGLE_DESC": "Wenn 'Klebrige Weißheit verwenden' aktiviert ist, wird die weiße Info-Modus-Einstellung auf diesen Wert gesetzt, wenn ein Werkzeug mit Info-Modus aktiviert wird. Umschalten mit SHIFT+W.",
+
+        "USE_UNITS": "Einheiten verwenden",
+        "USE_UNITS_DESC": "Wenn ein Werkzeugsystem mit Längenmessung ausgewählt ist, 'Einheiten' stattdessen verwenden. Umschalten mit ALT+U.",
+
+        "FREEZE_TIME_VISUALS": "Visuelle Zeit einfrieren",
+        "FREEZE_TIME_VISUALS_DESC": "Friert die visuelle Tageszeit ein, wenn aktiviert. 'Tag/Nacht-Visuals' müssen aktiviert sein.",
+
+        "SET_VISUAL_TIME_OF_DAY": "Visuelle Tageszeit einstellen",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Überschreibt die visuelle Tageszeit. 'Tag/Nacht-Visuals' müssen aktiviert sein. Wenn die goldene Stunde bis Mitternacht geht, fehlen Karten-Einstellungen.",
+
+        "WEATHER": "Wetter",
+        "WEATHER_DESC": "Das Wetter überschreiben",
+
+        "CUSTOM_ZONE_COLOURING": "Benutzerdefinierte Zonen-Färbung",
+        "CUSTOM_ZONE_COLOURING_DESC": "Bietet benutzerdefinierte Zonenfarboptionen, die mit einer Tastenkombination durchlaufen werden können. Umschalten mit ALT+Z.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "Dynamische Zellgrenzen verwenden",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "Zellgrenzen der Zone passen sich an, um bei Schneebedeckung sichtbarer zu sein.",
+
+        "EMPTY_CELL_OPACITY": "Leerzellen-Transparenz",
+        "EMPTY_CELL_OPACITY_DESC": "Ändert die Transparenz leerer Zellenzonen.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "Leerzellen-Grenztransparenz",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "Ändert die Grenztransparenz leerer Zellenzonen.",
+
+        "CELL_OPACITY": "Zellen-Transparenz",
+        "CELL_OPACITY_DESC": "Ändert die Transparenz von nicht leeren Zellenzonen.",
+
+        "CELL_BORDER_OPACITY": "Zellengrenz-Transparenz",
+        "CELL_BORDER_OPACITY_DESC": "Ändert die Grenztransparenz von nicht leeren Zellenzonen.",
+
+        "COLOUR_BLINDNESS_MODE": "Farbenblindheitsmodus",
+        "COLOUR_BLINDNESS_MODE_DESC": "Wählen Sie einen anderen Farbmodus, den Sie mit den Tasten SHIFT+Z durchlaufen können.",
+
+        "RESIDENTIAL": "Wohngebiet",
+        "RESIDENTIAL_DESC": "Wohnzonenfarben ändern",
+
+        "COMMERCIAL": "Gewerbegebiet",
+        "COMMERCIAL_DESC": "Gewerbezonenfarben ändern",
+
+        "OFFICE": "Büro",
+        "OFFICE_DESC": "Bürozonenfarben ändern",
+
+        "INDUSTRIAL": "Industriegebiet",
+        "INDUSTRIAL_DESC": "Industriezonenfarben ändern",
+
+        "THEME": "Thema",
+        "THEME_DESC": "Ein Thema zur Bearbeitung auswählen",
+
+        "GENERATE_FROM_COLOUR": "Aus Farbe generieren",
+        "GENERATE_FROM_COLOUR_DESC": "Wählen Sie ein Basisthema, Hauptakzentfarbe und generieren Sie ein Thema.",
+
+        "MAKE_WINDOW_TRANSPARENT": "Fenster transparent machen",
+
+        "DEVELOPED_BY": "Dieses Mod wurde von optimus-code und der Cities2Modding-Community entwickelt.",
+        "ABOUT_1": "Unsere Mods, einschließlich \"Legacy Flavour\", sind Teil einer lebendigen kreativen Bemühung, offiziell verteilt über <b>Thunderstore.io</b>&nbsp;und unser GitHub-Repository. Sie repräsentieren nicht nur unsere Arbeit, sondern auch den Geist der Zusammenarbeit und Innovation innerhalb der Cities Skylines Modding-Community.",
+        "ABOUT_2": "Besonderer Dank gilt <b>Captain_Of_Coit</b>, <b>89pleasure</b>&nbsp;und&nbsp;<b>Rebecca</b>, sowie der umfangreichen <b>Cities2Modding</b>&nbsp;Community.",
+        "ABOUT_3": "Wenn du dich für Modding interessierst, egal ob du ein erfahrener Schöpfer oder ein Neuling bist, unsere Community-Türen stehen immer offen. Wir gedeihen durch geteiltes Wissen und frische Ideen, und wir glauben, dass jeder etwas Einzigartiges zu unserer wachsenden und dynamischen Community beitragen kann. Obwohl Englisch unsere Hauptsprache ist, heißen wir alle willkommen!",
+
+        "GITHUB_DESC": "Sie können unsere Mods auf GitHub herunterladen oder sogar mitmachen, wenn Sie möchten!",
+        "REDDIT_DESC": "Wir haben einen Sub-Reddit, wenn Sie beitreten oder besuchen möchten.",
+        "DISCORD_DESC": "Wenn Sie sich in unserer Community engagieren möchten oder Hilfe oder Unterstützung benötigen, finden Sie uns auf Discord.",
+
+        "OFF": "Aus",
+        "DAY": "Tag",
+        "GOLDEN_HOUR": "Goldene Stunde",
+        "NIGHT": "Nacht",
+        "SUN": "Sonne",
+        "OVERCAST": "Bewölkt",
+        "RAIN": "Regen",
+        "SNOW": "Schnee",
+
+        "RESET_TO_DEFAULT": "Auf Standard zurücksetzen",
+
+        "SET_TO_VANILLA_COLOURS": "Auf Vanillefarben setzen",
+        "REGENERATE_ICONS": "Symbole regenerieren",
+        "GAME_RESTART_REQUIRED": "Spielneustart erforderlich",
+        "RESET": "Zurücksetzen",
+
+        "DEFAULT_COLOURS": "Standardfarben",
+        "DEUTERANOPIA": "Deuteranopie",
+        "PROTANOPIA": "Protanopie",
+        "TRITANOPIA": "Tritanopie",
+
+        "USE_SELECTED_THEME": "Ausgewähltes Thema verwenden",
+
+        "DEFAULT": "Standard",
+        "BRIGHT_BLUE": "Helles Blau",
+        "DARK_GREY_ORANGE": "Dunkelgrau Orange",
+        "LF_DEFAULT": "LF - Standard",
+        "LF_HIGH_CONTRAST": "LF - Hoher Kontrast",
+        "LF_HOT_PINK": "LF - Knallpink",
+        "LF_TOXIC_GREEN": "LF - Giftgrün",
+        "LF_MOCHA": "LF - Mokka",
+        "LF_PEACHY_OCEAN": "LF - Pfirsichfarbener Ozean",
+        "LF_DARK_RED": "LF - Dunkelrot",
+        "LF_COOL_BLUE": "LF - Kühles Blau",
+        "LF_DARK_TEAL": "LF - Dunkles Petrol",
+
+        "RESIDENTIAL_LOW": "Wohngebiet Niedrig",
+        "RESIDENTIAL_HIGH": "Wohngebiet Hoch",
+        "RESIDENTIAL_MEDIUM": "Wohngebiet Mittel",
+        "RESIDENTIAL_MEDIUM_ROW": "Wohngebiet Mittlere Reihe",
+        "RESIDENTIAL_LOWRENT": "Wohngebiet Niedrige Miete",
+        "RESIDENTIAL_MIXED": "Gemischtes Wohngebiet",
+        "COMMERCIAL_LOW": "Gewerbegebiet Niedrig",
+        "COMMERCIAL_HIGH": "Gewerbegebiet Hoch",
+        "OFFICE_LOW": "Bürogebiet Niedrig",
+        "OFFICE_HIGH": "Bürogebiet Hoch",
+        "INDUSTRIAL_AGRICULTURE": "Industrie Landwirtschaft",
+        "INDUSTRIAL_FORESTRY": "Industrie Forstwirtschaft",
+        "INDUSTRIAL_MANUFACTURING": "Industrie Herstellung",
+        "INDUSTRIAL_OIL": "Industrie Öl",
+        "INDUSTRIAL_ORE": "Industrie Erz",
+
+        "PRIMARY_ACCENT": "Primärer Akzent",
+        "BACKGROUND_ACCENT": "Hintergrund Akzent",
+        "FOCUSED_COLOR_DARK": "Fokussierte Farbe Dunkel",
+        "FOCUSED_COLOR": "Fokussierte Farbe",
+
+        "HOVER": "Hover",
+        "PRESSED": "Gedrückt",
+        "FOCUSED": "Fokussiert",
+
+        "BACKGROUND": "Hintergrund",
+        "CUSTOM": "Brauch",
+        "COLOR": "Farbe",
+        "DARK": "Dunkel",
+        "NORMAL": "Normale",
+        "LIGHT": "Hell",
+        "LIGHTER": "Heller",
+        "DIM": "Gedämpft",
+        "DIMMER": "Gedämpfter",
+        "DIMMEST": "am gedämpftsten",
+        "HEADER": "Überschrift",
+        "BORDER": "Grenze",
+        "LOCKED": "Gesperrt",
+        "ACTIVE": "Aktiv",
+        "CONTROL": "Kontrolle",
+        "TITLE": "Titel",
+        "INVERTED": "Invertiert",
+        "DISABLED": "Deaktiviert",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "Positiv",
+        "WARNING": "Warnung",
+        "NEGATIVE": "Negativ",
+        "TAB": "Tab",
+        "ITEM": "Artikel",
+        "PAUSE": "Pause",
+        "PANEL1": "Panel1",
+        "PANEL2": "Panel2",
+        "TEXT1": "Text1",
+        "TEXT2": "Text2"
+      }
+    },
+    {
+      "IDS": [ "fr-FR" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "Saveur Héritée",
+        "SETTINGS": "Paramètres",
+        "ZONE_SETTINGS": "Paramètres de Zone",
+        "ZONE_COLOURS": "Couleurs de Zone",
+        "UI_THEMES": "Thèmes IU",
+        "ABOUT": "À propos",
+        "ACCENT": "Accent",
+        "PANEL": "Panneau",
+        "SECTION": "Section",
+        "SELECTED": "Sélectionné",
+        "TEXT": "Texte",
+        "MENU": "Menu",
+        "OTHER": "Autre",
+
+        "USE_STICKY_WHITENESS": "Utiliser Blancheur Persistante",
+        "USE_STICKY_WHITENESS_DESC": "Remplace le commutateur d'info-mode blanc du jeu, en utilisant un paramètre personnalisé. Bascule avec ALT+S.",
+
+        "WHITENESS_TOGGLE": "Bascule Blancheur",
+        "WHITENESS_TOGGLE_DESC": "Si 'Utiliser Blancheur Persistante' est activé, le paramètre blanc d'info-mode sera défini sur cette valeur lorsque un outil avec un info-mode est activé. Bascule avec MAJ+W.",
+
+        "USE_UNITS": "Utiliser Unités",
+        "USE_UNITS_DESC": "Lorsqu'un système d'outil avec une mesure de longueur est sélectionné, utiliser 'unités' à la place. Bascule avec ALT+U.",
+
+        "FREEZE_TIME_VISUALS": "Geler Visuels Temporels",
+        "FREEZE_TIME_VISUALS_DESC": "Lorsqu'activé, gèle le temps visuel de la journée. 'Visuels Jour/Nuit' doit être activé.",
+
+        "SET_VISUAL_TIME_OF_DAY": "Définir Temps Visuel du Jour",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Remplace le temps visuel de la journée. 'Visuels Jour/Nuit' doit être activé. Si l'heure dorée va jusqu'à minuit, la carte manque de paramètres.",
+
+        "WEATHER": "Météo",
+        "WEATHER_DESC": "Remplacer la météo",
+
+        "CUSTOM_ZONE_COLOURING": "Coloration de Zone Personnalisée",
+        "CUSTOM_ZONE_COLOURING_DESC": "Fournit des options de couleur de zone personnalisées qui peuvent être cyclées avec un raccourci clavier. Bascule avec ALT+Z.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "Utiliser Bordures de Cellules Dynamiques",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "Les bordures de cellules de zone s'ajusteront pour être plus visibles lorsqu'il y a une couverture de neige.",
+
+        "EMPTY_CELL_OPACITY": "Opacité de Cellule Vide",
+        "EMPTY_CELL_OPACITY_DESC": "Changer la transparence des cellules de zone vides.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "Opacité de Bordure de Cellule Vide",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "Changer la transparence de bordure des cellules de zone vides.",
+
+        "CELL_OPACITY": "Opacité de Cellule",
+        "CELL_OPACITY_DESC": "Changer la transparence des cellules de zone non vides.",
+
+        "CELL_BORDER_OPACITY": "Opacité de Bordure de Cellule",
+        "CELL_BORDER_OPACITY_DESC": "Changer la transparence de bordure des cellules de zone non vides.",
+
+        "COLOUR_BLINDNESS_MODE": "Mode Daltonisme",
+        "COLOUR_BLINDNESS_MODE_DESC": "Sélectionner un mode de couleur différent, vous pouvez les faire défiler avec les touches MAJ+Z.",
+
+        "RESIDENTIAL": "Résidentiel",
+        "RESIDENTIAL_DESC": "Modifier les couleurs de zone Résidentielle",
+
+        "COMMERCIAL": "Commercial",
+        "COMMERCIAL_DESC": "Modifier les couleurs de zone Commerciale",
+
+        "OFFICE": "Bureau",
+        "OFFICE_DESC": "Modifier les couleurs de zone de Bureaux",
+
+        "INDUSTRIAL": "Industriel",
+        "INDUSTRIAL_DESC": "Modifier les couleurs de zone Industrielle",
+
+        "THEME": "Thème",
+        "THEME_DESC": "Sélectionner un thème à éditer",
+
+        "GENERATE_FROM_COLOUR": "Générer à partir de couleur",
+        "GENERATE_FROM_COLOUR_DESC": "Sélectionnez un thème de base, couleur d'accent principal et générer un thème.",
+
+        "MAKE_WINDOW_TRANSPARENT": "Rendre Fenêtre Transparente",
+
+        "DEVELOPED_BY": "Ce mod a été développé par optimus-code et la communauté Cities2Modding.",
+        "ABOUT_1": "Nos mods, y compris \"Legacy Flavour\", font partie d'un effort créatif vibrant, officiellement distribués via <b>Thunderstore.io</b>&nbsp;et notre dépôt GitHub. Ils représentent non seulement notre travail mais aussi l'esprit de collaboration et d'innovation au sein de la communauté de modding de Cities Skylines.",
+        "ABOUT_2": "Un merci spécial à <b>Captain_Of_Coit</b>, <b>89pleasure</b>&nbsp;et&nbsp;<b>Rebecca</b>, ainsi qu'à l'ample communauté <b>Cities2Modding</b>&nbsp;.",
+        "ABOUT_3": "Si le modding vous intéresse, que vous soyez un créateur expérimenté ou un débutant, les portes de notre communauté sont toujours ouvertes. Nous prospérons grâce au partage des connaissances et des idées nouvelles, et nous croyons que chacun a quelque chose d'unique à apporter à notre communauté en croissance et dynamique. Bien que l'anglais soit notre langue principale, nous accueillons tout le monde !",
+
+        "GITHUB_DESC": "Vous pouvez télécharger nos mods sur GitHub, ou même vous impliquer si vous le désirez !",
+        "REDDIT_DESC": "Nous avons un sous-reddit si vous souhaitez nous rejoindre ou visiter.",
+        "DISCORD_DESC": "Si vous souhaitez vous impliquer dans notre communauté ou avez besoin d'aide ou de soutien, vous pouvez nous trouver sur Discord.",
+
+        "OFF": "Désactivé",
+        "DAY": "Jour",
+        "GOLDEN_HOUR": "Heure Dorée",
+        "NIGHT": "Nuit",
+        "SUN": "Soleil",
+        "OVERCAST": "Nuageux",
+        "RAIN": "Pluie",
+        "SNOW": "Neige",
+
+        "RESET_TO_DEFAULT": "Réinitialiser par Défaut",
+
+        "SET_TO_VANILLA_COLOURS": "Définir en Couleurs Vanille",
+        "REGENERATE_ICONS": "Régénérer Icônes",
+        "GAME_RESTART_REQUIRED": "Redémarrage du Jeu Requis",
+        "RESET": "Réinitialiser",
+
+        "DEFAULT_COLOURS": "Couleurs par Défaut",
+        "DEUTERANOPIA": "Deutéranopie",
+        "PROTANOPIA": "Protanopie",
+        "TRITANOPIA": "Tritanopie",
+
+        "USE_SELECTED_THEME": "Utiliser Thème Sélectionné",
+
+        "DEFAULT": "Par Défaut",
+        "BRIGHT_BLUE": "Bleu Vif",
+        "DARK_GREY_ORANGE": "Gris Foncé Orange",
+        "LF_DEFAULT": "LF - Par Défaut",
+        "LF_HIGH_CONTRAST": "LF - Haut Contraste",
+        "LF_HOT_PINK": "LF - Rose Vif",
+        "LF_TOXIC_GREEN": "LF - Vert Toxique",
+        "LF_MOCHA": "LF - Mocha",
+        "LF_PEACHY_OCEAN": "LF - Océan Pêche",
+        "LF_DARK_RED": "LF - Rouge Foncé",
+        "LF_COOL_BLUE": "LF - Bleu Frais",
+        "LF_DARK_TEAL": "LF - Sarcelle Foncé",
+
+        "RESIDENTIAL_LOW": "Résidentiel Bas",
+        "RESIDENTIAL_HIGH": "Résidentiel Haut",
+        "RESIDENTIAL_MEDIUM": "Résidentiel Moyen",
+        "RESIDENTIAL_MEDIUM_ROW": "Rangée Résidentielle Moyenne",
+        "RESIDENTIAL_LOWRENT": "Résidentiel Loyers Bas",
+        "RESIDENTIAL_MIXED": "Résidentiel Mixte",
+        "COMMERCIAL_LOW": "Commercial Bas",
+        "COMMERCIAL_HIGH": "Commercial Haut",
+        "OFFICE_LOW": "Bureau Bas",
+        "OFFICE_HIGH": "Bureau Haut",
+        "INDUSTRIAL_AGRICULTURE": "Industriel Agriculture",
+        "INDUSTRIAL_FORESTRY": "Industriel Sylviculture",
+        "INDUSTRIAL_MANUFACTURING": "Industriel Manufacture",
+        "INDUSTRIAL_OIL": "Industriel Pétrole",
+        "INDUSTRIAL_ORE": "Industriel Minerai",
+
+        "PRIMARY_ACCENT": "Accent Principal",
+        "BACKGROUND_ACCENT": "Accent de Fond",
+        "FOCUSED_COLOR_DARK": "Couleur Concentrée Foncée",
+        "FOCUSED_COLOR": "Couleur Concentrée",
+
+        "HOVER": "Survol",
+        "PRESSED": "Pressé",
+        "FOCUSED": "Concentré",
+
+        "BACKGROUND": "Arrière-plan",
+        "CUSTOM": "Coutume",
+        "COLOR": "Couleur",
+        "DARK": "Sombre",
+        "NORMAL": "Normale",
+        "LIGHT": "Lumière",
+        "LIGHTER": "Plus léger",
+        "DIM": "Faible",
+        "DIMMER": "Variateur",
+        "DIMMEST": "Le plus sombre",
+        "HEADER": "Entête",
+        "BORDER": "Frontière",
+        "LOCKED": "Fermé à clé",
+        "ACTIVE": "Active",
+        "CONTROL": "Contrôle",
+        "TITLE": "Titre",
+        "INVERTED": "Inversé",
+        "DISABLED": "Désactivé",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "Positif",
+        "WARNING": "Avertissement",
+        "NEGATIVE": "Négatif",
+        "TAB": "Languette",
+        "ITEM": "Article",
+        "PAUSE": "Pause",
+        "PANEL1": "Panneau1",
+        "PANEL2": "Panneau2",
+        "TEXT1": "Texte1",
+        "TEXT2": "Texte2"
+      }
+    },
+    {
+      "IDS": [ "it-IT" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "Sapore Ereditato",
+        "SETTINGS": "Impostazioni",
+        "ZONE_SETTINGS": "Impostazioni Zona",
+        "ZONE_COLOURS": "Colori Zona",
+        "UI_THEMES": "Temi UI",
+        "ABOUT": "Informazioni",
+        "ACCENT": "Accento",
+        "PANEL": "Pannello",
+        "SECTION": "Sezione",
+        "SELECTED": "Selezionato",
+        "TEXT": "Testo",
+        "MENU": "Menu",
+        "OTHER": "Altro",
+
+        "USE_STICKY_WHITENESS": "Usa Bianchezza Permanente",
+        "USE_STICKY_WHITENESS_DESC": "Sostituisce l'interruttore della modalità informativa bianca del gioco, usando un'impostazione personalizzata. Attiva con ALT+S.",
+
+        "WHITENESS_TOGGLE": "Interruttore Bianchezza",
+        "WHITENESS_TOGGLE_DESC": "Se 'Usa Bianchezza Permanente' è attivato, l'impostazione bianca della modalità informativa sarà impostata su questo valore quando viene attivato uno strumento con una modalità informativa. Attiva con MAIUSC+W.",
+
+        "USE_UNITS": "Usa Unità",
+        "USE_UNITS_DESC": "Quando viene selezionato un sistema di strumenti con misurazione della lunghezza, usa 'unità' invece. Attiva con ALT+U.",
+
+        "FREEZE_TIME_VISUALS": "Congela Visuali Temporali",
+        "FREEZE_TIME_VISUALS_DESC": "Quando attivato, congela il tempo visivo del giorno. 'Visuali Giorno/Notte' devono essere attivi.",
+
+        "SET_VISUAL_TIME_OF_DAY": "Imposta Tempo Visivo del Giorno",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Sostituisce il tempo visivo del giorno. 'Visuali Giorno/Notte' devono essere attivi. Se l'ora d'oro va a mezzanotte la mappa manca impostazioni.",
+
+        "WEATHER": "Meteo",
+        "WEATHER_DESC": "Sostituisci il meteo",
+
+        "CUSTOM_ZONE_COLOURING": "Colorazione Zona Personalizzata",
+        "CUSTOM_ZONE_COLOURING_DESC": "Fornisce opzioni di colore zona personalizzate che possono essere ciclate con una scorciatoia da tastiera. Attiva con ALT+Z.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "Usa Bordi Cellula Dinamici",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "I bordi delle cellule di zona si adatteranno per essere più visibili quando c'è copertura di neve.",
+
+        "EMPTY_CELL_OPACITY": "Opacità Cellula Vuota",
+        "EMPTY_CELL_OPACITY_DESC": "Cambia la trasparenza delle cellule di zona vuote.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "Opacità Bordo Cellula Vuota",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "Cambia la trasparenza del bordo delle cellule di zona vuote.",
+
+        "CELL_OPACITY": "Opacità Cellula",
+        "CELL_OPACITY_DESC": "Cambia la trasparenza delle cellule di zona non vuote.",
+
+        "CELL_BORDER_OPACITY": "Opacità Bordo Cellula",
+        "CELL_BORDER_OPACITY_DESC": "Cambia la trasparenza del bordo delle cellule di zona non vuote.",
+
+        "COLOUR_BLINDNESS_MODE": "Modalità Daltonismo",
+        "COLOUR_BLINDNESS_MODE_DESC": "Seleziona una diversa modalità colore, puoi ciclarle con i tasti MAIUSC+Z.",
+
+        "RESIDENTIAL": "Residenziale",
+        "RESIDENTIAL_DESC": "Modifica colori zona Residenziale",
+
+        "COMMERCIAL": "Commerciale",
+        "COMMERCIAL_DESC": "Modifica colori zona Commerciale",
+
+        "OFFICE": "Ufficio",
+        "OFFICE_DESC": "Modifica colori zona Ufficio",
+
+        "INDUSTRIAL": "Industriale",
+        "INDUSTRIAL_DESC": "Modifica colori zona Industriale",
+
+        "THEME": "Tema",
+        "THEME_DESC": "Seleziona un tema da modificare",
+
+        "GENERATE_FROM_COLOUR": "Genera dal colore",
+        "GENERATE_FROM_COLOUR_DESC": "Seleziona un tema base, colore accento principale e genera un tema.",
+
+        "MAKE_WINDOW_TRANSPARENT": "Rendi finestra trasparente",
+
+        "DEVELOPED_BY": "Questo mod è stato sviluppato da optimus-code e dalla comunità Cities2Modding.",
+        "ABOUT_1": "I nostri mod, inclusi \"Legacy Flavour\", fanno parte di uno sforzo creativo vibrante, distribuiti ufficialmente tramite <b>Thunderstore.io</b>&nbsp;e il nostro repository GitHub. Rappresentano non solo il nostro lavoro, ma anche lo spirito di collaborazione e innovazione all'interno della comunità di modding di Cities Skylines.",
+        "ABOUT_2": "Un ringraziamento speciale a <b>Captain_Of_Coit</b>, <b>89pleasure</b>&nbsp;e&nbsp;<b>Rebecca</b>, così come all'estesa comunità <b>Cities2Modding</b>&nbsp;.",
+        "ABOUT_3": "Se il modding ti interessa, sia che tu sia un creatore esperto o un principiante, le porte della nostra comunità sono sempre aperte. Prosperiamo con la conoscenza condivisa e idee fresche, e crediamo che ognuno abbia qualcosa di unico da contribuire alla nostra comunità in crescita e dinamica. Anche se l'inglese è la nostra lingua principale, diamo il benvenuto a tutti!",
+
+        "GITHUB_DESC": "Puoi scaricare le nostre mod su GitHub o anche partecipare se lo desideri!",
+        "REDDIT_DESC": "Abbiamo un sub-reddit se desideri unirti o visitare.",
+        "DISCORD_DESC": "Se desideri essere coinvolto nella nostra comunità o hai bisogno di aiuto o supporto, puoi trovarci su Discord.",
+
+        "OFF": "Spento",
+        "DAY": "Giorno",
+        "GOLDEN_HOUR": "Ora Dorata",
+        "NIGHT": "Notte",
+        "SUN": "Sole",
+        "OVERCAST": "Nuvoloso",
+        "RAIN": "Pioggia",
+        "SNOW": "Neve",
+
+        "RESET_TO_DEFAULT": "Ripristina predefinito",
+
+        "SET_TO_VANILLA_COLOURS": "Imposta a colori vaniglia",
+        "REGENERATE_ICONS": "Rigenera icone",
+        "GAME_RESTART_REQUIRED": "Riavvio del gioco richiesto",
+        "RESET": "Ripristina",
+
+        "DEFAULT_COLOURS": "Colori Predefiniti",
+        "DEUTERANOPIA": "Deuteranopia",
+        "PROTANOPIA": "Protanopia",
+        "TRITANOPIA": "Tritanopia",
+
+        "USE_SELECTED_THEME": "Usa tema selezionato",
+
+        "DEFAULT": "Predefinito",
+        "BRIGHT_BLUE": "Blu Brillante",
+        "DARK_GREY_ORANGE": "Grigio Scuro Arancione",
+        "LF_DEFAULT": "LF - Predefinito",
+        "LF_HIGH_CONTRAST": "LF - Alto Contrasto",
+        "LF_HOT_PINK": "LF - Rosa Caldo",
+        "LF_TOXIC_GREEN": "LF - Verde Tossico",
+        "LF_MOCHA": "LF - Mocha",
+        "LF_PEACHY_OCEAN": "LF - Oceano Pesca",
+        "LF_DARK_RED": "LF - Rosso Scuro",
+        "LF_COOL_BLUE": "LF - Blu Fresco",
+        "LF_DARK_TEAL": "LF - Verde Petrolio Scuro",
+
+        "RESIDENTIAL_LOW": "Residenziale Basso",
+        "RESIDENTIAL_HIGH": "Residenziale Alto",
+        "RESIDENTIAL_MEDIUM": "Residenziale Medio",
+        "RESIDENTIAL_MEDIUM_ROW": "Fila Residenziale Media",
+        "RESIDENTIAL_LOWRENT": "Residenziale Affitto Basso",
+        "RESIDENTIAL_MIXED": "Residenziale Misto",
+        "COMMERCIAL_LOW": "Commerciale Basso",
+        "COMMERCIAL_HIGH": "Commerciale Alto",
+        "OFFICE_LOW": "Ufficio Basso",
+        "OFFICE_HIGH": "Ufficio Alto",
+        "INDUSTRIAL_AGRICULTURE": "Industriale Agricoltura",
+        "INDUSTRIAL_FORESTRY": "Industriale Silvicoltura",
+        "INDUSTRIAL_MANUFACTURING": "Industriale Manifattura",
+        "INDUSTRIAL_OIL": "Industriale Petrolio",
+        "INDUSTRIAL_ORE": "Industriale Minerale",
+
+        "PRIMARY_ACCENT": "Accento Primario",
+        "BACKGROUND_ACCENT": "Accento di Sfondo",
+        "FOCUSED_COLOR_DARK": "Colore Focalizzato Scuro",
+        "FOCUSED_COLOR": "Colore Focalizzato",
+
+        "HOVER": "Passaggio del Mouse",
+        "PRESSED": "Premuto",
+        "FOCUSED": "Focalizzato",
+
+        "BACKGROUND": "Sfondo",
+        "CUSTOM": "Costume",
+        "COLOR": "Colore",
+        "DARK": "Buio",
+        "NORMAL": "Normale",
+        "LIGHT": "Leggero",
+        "LIGHTER": "Accendino",
+        "DIM": "Fioco",
+        "DIMMER": "Più debole",
+        "DIMMEST": "Molto debole",
+        "HEADER": "Intestazione",
+        "BORDER": "Confine",
+        "LOCKED": "Bloccato",
+        "ACTIVE": "Attivo",
+        "CONTROL": "Controllo",
+        "TITLE": "Titolo",
+        "INVERTED": "Invertito",
+        "DISABLED": "Disabilitato",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "Positivo",
+        "WARNING": "Avvertimento",
+        "NEGATIVE": "Negativo",
+        "TAB": "Tab",
+        "ITEM": "Articolo",
+        "PAUSE": "Pausa",
+        "PANEL1": "Pannello1",
+        "PANEL2": "Pannello2",
+        "TEXT1": "Testo1",
+        "TEXT2": "Testo2"
+      }
+    },
+    {
+      "IDS": [ "es-ES" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "Sabor Legado",
+        "SETTINGS": "Configuraciones",
+        "ZONE_SETTINGS": "Configuración de Zona",
+        "ZONE_COLOURS": "Colores de Zona",
+        "UI_THEMES": "Temas de UI",
+        "ABOUT": "Acerca de",
+        "ACCENT": "Acento",
+        "PANEL": "Panel",
+        "SECTION": "Sección",
+        "SELECTED": "Seleccionado",
+        "TEXT": "Texto",
+        "MENU": "Menú",
+        "OTHER": "Otro",
+
+        "USE_STICKY_WHITENESS": "Usar Blancura Pegajosa",
+        "USE_STICKY_WHITENESS_DESC": "Sobrescribe el interruptor del modo de información blanco del juego, usando una configuración personalizada. Cambiar con ALT+S.",
+
+        "WHITENESS_TOGGLE": "Interruptor de Blancura",
+        "WHITENESS_TOGGLE_DESC": "Si 'Usar Blancura Pegajosa' está activado, la configuración blanca del modo de información se establecerá en este valor cuando se active una herramienta con modo de información. Cambiar con SHIFT+W.",
+
+        "USE_UNITS": "Usar Unidades",
+        "USE_UNITS_DESC": "Cuando se selecciona un sistema de herramientas con medición de longitud, usar 'unidades' en su lugar. Cambiar con ALT+U.",
+
+        "FREEZE_TIME_VISUALS": "Congelar Visuales de Tiempo",
+        "FREEZE_TIME_VISUALS_DESC": "Cuando está activado, congela el tiempo visual del día. 'Visuales de Día/Noche' deben estar activados.",
+
+        "SET_VISUAL_TIME_OF_DAY": "Establecer Tiempo Visual del Día",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Sobrescribe el tiempo visual del día. 'Visuales de Día/Noche' deben estar activados. Si la hora dorada llega a medianoche, faltan configuraciones en el mapa.",
+
+        "WEATHER": "Clima",
+        "WEATHER_DESC": "Sobrescribir el clima",
+
+        "CUSTOM_ZONE_COLOURING": "Coloreado de Zona Personalizado",
+        "CUSTOM_ZONE_COLOURING_DESC": "Ofrece opciones de color de zona personalizadas que se pueden cambiar con un atajo de teclado. Cambiar con ALT+Z.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "Usar Bordes de Célula Dinámicos",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "Los bordes de célula de zona se ajustarán para ser más visibles cuando haya cobertura de nieve.",
+
+        "EMPTY_CELL_OPACITY": "Opacidad de Célula Vacía",
+        "EMPTY_CELL_OPACITY_DESC": "Cambiar la transparencia de las células de zona vacías.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "Opacidad del Borde de Célula Vacía",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "Cambiar la transparencia del borde de las células de zona vacías.",
+
+        "CELL_OPACITY": "Opacidad de Célula",
+        "CELL_OPACITY_DESC": "Cambiar la transparencia de las células de zona no vacías.",
+
+        "CELL_BORDER_OPACITY": "Opacidad del Borde de Célula",
+        "CELL_BORDER_OPACITY_DESC": "Cambiar la transparencia del borde de las células de zona no vacías.",
+
+        "COLOUR_BLINDNESS_MODE": "Modo de Daltonismo",
+        "COLOUR_BLINDNESS_MODE_DESC": "Seleccionar un modo de color diferente, puedes cambiarlos con las teclas SHIFT+Z.",
+
+        "RESIDENTIAL": "Residencial",
+        "RESIDENTIAL_DESC": "Modificar colores de zona residencial",
+
+        "COMMERCIAL": "Comercial",
+        "COMMERCIAL_DESC": "Modificar colores de zona comercial",
+
+        "OFFICE": "Oficina",
+        "OFFICE_DESC": "Modificar colores de zona de oficinas",
+
+        "INDUSTRIAL": "Industrial",
+        "INDUSTRIAL_DESC": "Modificar colores de zona industrial",
+
+        "THEME": "Tema",
+        "THEME_DESC": "Seleccionar un tema para editar",
+
+        "GENERATE_FROM_COLOUR": "Generar desde el color",
+        "GENERATE_FROM_COLOUR_DESC": "Seleccionar un tema base, color de acento principal y generar un tema.",
+
+        "MAKE_WINDOW_TRANSPARENT": "Hacer ventana transparente",
+
+        "DEVELOPED_BY": "Este mod fue desarrollado por optimus-code y la comunidad de Cities2Modding.",
+        "ABOUT_1": "Nuestros mods, incluyendo \"Legacy Flavour\", son parte de un esfuerzo creativo vibrante, distribuidos oficialmente a través de <b>Thunderstore.io</b>&nbsp;y nuestro repositorio en GitHub. Representan no solo nuestro trabajo, sino también el espíritu de colaboración e innovación dentro de la comunidad de modding de Cities Skylines.",
+        "ABOUT_2": "Un agradecimiento especial a <b>Captain_Of_Coit</b>, <b>89pleasure</b>&nbsp;y&nbsp;<b>Rebecca</b>, así como a la extensa comunidad de <b>Cities2Modding</b>&nbsp;.",
+        "ABOUT_3": "Si te interesa el modding, ya seas un creador experimentado o un recién llegado, las puertas de nuestra comunidad siempre están abiertas. Prosperamos en el conocimiento compartido y las ideas frescas, y creemos que todos tienen algo único que aportar a nuestra comunidad en crecimiento y dinámica. Aunque el inglés es nuestro idioma principal, ¡todos son bienvenidos!",
+
+        "GITHUB_DESC": "¡Puedes descargar nuestras modificaciones en GitHub o incluso participar si lo deseas!",
+        "REDDIT_DESC": "Tenemos un subreddit si desea unirse o visitarnos.",
+        "DISCORD_DESC": "Si desea participar en nuestra comunidad o necesita ayuda o apoyo, puede encontrarnos en Discord.",
+
+        "OFF": "Apagado",
+        "DAY": "Día",
+        "GOLDEN_HOUR": "Hora Dorada",
+        "NIGHT": "Noche",
+        "SUN": "Sol",
+        "OVERCAST": "Nublado",
+        "RAIN": "Lluvia",
+        "SNOW": "Nieve",
+
+        "RESET_TO_DEFAULT": "Restablecer a predeterminado",
+
+        "SET_TO_VANILLA_COLOURS": "Establecer a colores vainilla",
+        "REGENERATE_ICONS": "Regenerar iconos",
+        "GAME_RESTART_REQUIRED": "Reinicio de juego requerido",
+        "RESET": "Restablecer",
+
+        "DEFAULT_COLOURS": "Colores Predeterminados",
+        "DEUTERANOPIA": "Deuteranopía",
+        "PROTANOPIA": "Protanopía",
+        "TRITANOPIA": "Tritanopía",
+
+        "USE_SELECTED_THEME": "Usar tema seleccionado",
+
+        "DEFAULT": "Predeterminado",
+        "BRIGHT_BLUE": "Azul Brillante",
+        "DARK_GREY_ORANGE": "Gris Oscuro Naranja",
+        "LF_DEFAULT": "LF - Predeterminado",
+        "LF_HIGH_CONTRAST": "LF - Alto Contraste",
+        "LF_HOT_PINK": "LF - Rosa Intenso",
+        "LF_TOXIC_GREEN": "LF - Verde Tóxico",
+        "LF_MOCHA": "LF - Mocha",
+        "LF_PEACHY_OCEAN": "LF - Océano Melocotón",
+        "LF_DARK_RED": "LF - Rojo Oscuro",
+        "LF_COOL_BLUE": "LF - Azul Fresco",
+        "LF_DARK_TEAL": "LF - Verde Azulado Oscuro",
+
+        "RESIDENTIAL_LOW": "Residencial Bajo",
+        "RESIDENTIAL_HIGH": "Residencial Alto",
+        "RESIDENTIAL_MEDIUM": "Residencial Medio",
+        "RESIDENTIAL_MEDIUM_ROW": "Fila Residencial Media",
+        "RESIDENTIAL_LOWRENT": "Residencial Bajo Alquiler",
+        "RESIDENTIAL_MIXED": "Residencial Mixto",
+        "COMMERCIAL_LOW": "Comercial Bajo",
+        "COMMERCIAL_HIGH": "Comercial Alto",
+        "OFFICE_LOW": "Oficina Baja",
+        "OFFICE_HIGH": "Oficina Alta",
+        "INDUSTRIAL_AGRICULTURE": "Agricultura Industrial",
+        "INDUSTRIAL_FORESTRY": "Silvicultura Industrial",
+        "INDUSTRIAL_MANUFACTURING": "Manufactura Industrial",
+        "INDUSTRIAL_OIL": "Petróleo Industrial",
+        "INDUSTRIAL_ORE": "Minería Industrial",
+
+        "PRIMARY_ACCENT": "Acento Primario",
+        "BACKGROUND_ACCENT": "Acento de Fondo",
+        "FOCUSED_COLOR_DARK": "Color Oscuro Enfocado",
+        "FOCUSED_COLOR": "Color Enfocado",
+
+        "HOVER": "Sobrevolar",
+        "PRESSED": "Presionado",
+        "FOCUSED": "Enfocado",
+
+        "BACKGROUND": "Fondo",
+        "CUSTOM": "Costumbre",
+        "COLOR": "Color",
+        "DARK": "Oscuro",
+        "NORMAL": "Normal",
+        "LIGHT": "Ligero",
+        "LIGHTER": "Más ligero",
+        "DIM": "Apagado",
+        "DIMMER": "Mas silenciado",
+        "DIMMEST": "Más silenciado",
+        "HEADER": "Encabezamiento",
+        "BORDER": "Borde",
+        "LOCKED": "Bloqueado",
+        "ACTIVE": "Activo",
+        "CONTROL": "Control",
+        "TITLE": "Título",
+        "INVERTED": "Invertido",
+        "DISABLED": "Desactivado",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "Positivo",
+        "WARNING": "Advertencia",
+        "NEGATIVE": "Negativo",
+        "TAB": "Pestaña",
+        "ITEM": "Artículo",
+        "PAUSE": "Pausa",
+        "PANEL1": "Panel1",
+        "PANEL2": "Panel2",
+        "TEXT1": "Texto1",
+        "TEXT2": "Texto2"
+      }
+    },
+    {
+      "IDS": [ "ja-JP" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "レガシーフレーバー",
+        "SETTINGS": "設定",
+        "ZONE_SETTINGS": "ゾーン設定",
+        "ZONE_COLOURS": "ゾーンカラー",
+        "UI_THEMES": "UIテーマ",
+        "ABOUT": "紹介",
+        "ACCENT": "アクセント",
+        "PANEL": "パネル",
+        "SECTION": "セクション",
+        "SELECTED": "選択済み",
+        "TEXT": "テキスト",
+        "MENU": "メニュー",
+        "OTHER": "その他",
+
+        "USE_STICKY_WHITENESS": "粘着性の白さを使う",
+        "USE_STICKY_WHITENESS_DESC": "ゲームの白い情報モードスイッチをカスタム設定で上書き。ALT+Sで切り替え。",
+
+        "WHITENESS_TOGGLE": "白さの切り替え",
+        "WHITENESS_TOGGLE_DESC": "'粘着性の白さを使う'が有効な場合、ツールが情報モードで活性化されたときにこの値に設定される。SHIFT+Wで切り替え。",
+
+        "USE_UNITS": "単位を使う",
+        "USE_UNITS_DESC": "長さの測定があるツールシステムが選択された場合、'単位'を使用。ALT+Uで切り替え。",
+
+        "FREEZE_TIME_VISUALS": "時間のビジュアルを固定",
+        "FREEZE_TIME_VISUALS_DESC": "有効にすると、昼夜のビジュアル時間を固定。'昼/夜のビジュアル'が必要。",
+
+        "SET_VISUAL_TIME_OF_DAY": "ビジュアルの時間を設定",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "ビジュアルの日中の時間を上書き。'昼/夜のビジュアル'が必要。",
+
+        "WEATHER": "天気",
+        "WEATHER_DESC": "天気を上書き",
+
+        "CUSTOM_ZONE_COLOURING": "カスタムゾーンカラー",
+        "CUSTOM_ZONE_COLOURING_DESC": "キーショートカットで切り替え可能なカスタムゾーンカラーオプションを提供。ALT+Zで切り替え。",
+
+        "USE_DYNAMIC_CELL_BORDERS": "動的セルボーダーを使う",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "雪が降るとゾーンセルの境界線がより見えやすく調整される。",
+
+        "EMPTY_CELL_OPACITY": "空のセルの不透明度",
+        "EMPTY_CELL_OPACITY_DESC": "空のゾーンセルの透明度を変更。",
+
+        "EMPTY_CELL_BORDER_OPACITY": "空のセルボーダーの不透明度",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "空のゾーンセルの境界線の透明度を変更。",
+
+        "CELL_OPACITY": "セルの不透明度",
+        "CELL_OPACITY_DESC": "空でないゾーンセルの透明度を変更。",
+
+        "CELL_BORDER_OPACITY": "セルボーダーの不透明度",
+        "CELL_BORDER_OPACITY_DESC": "空でないゾーンセルの境界線の透明度を変更。",
+
+        "COLOUR_BLINDNESS_MODE": "色覚障害モード",
+        "COLOUR_BLINDNESS_MODE_DESC": "異なるカラーモードを選択、SHIFT+Zで切り替え可能。",
+
+        "RESIDENTIAL": "住宅",
+        "RESIDENTIAL_DESC": "住宅ゾーンの色を変更",
+
+        "COMMERCIAL": "商業",
+        "COMMERCIAL_DESC": "商業ゾーンの色を変更",
+
+        "OFFICE": "オフィス",
+        "OFFICE_DESC": "オフィスゾーンの色を変更",
+
+        "INDUSTRIAL": "工業",
+        "INDUSTRIAL_DESC": "工業ゾーンの色を変更",
+
+        "THEME": "テーマ",
+        "THEME_DESC": "編集するテーマを選択",
+
+        "GENERATE_FROM_COLOUR": "色から生成",
+        "GENERATE_FROM_COLOUR_DESC": "ベーステーマ、主要アクセントカラーを選択してテーマを生成。",
+
+        "MAKE_WINDOW_TRANSPARENT": "ウィンドウを透明にする",
+
+        "DEVELOPED_BY": "このモッドはoptimus-codeとCities2Moddingコミュニティによって開発されました。",
+        "ABOUT_1": "「Legacy Flavour」を含む私たちのモッドは、<b>Thunderstore.io</b>&nbsp;およびGitHubリポジトリを通じて正式に配布される、活気ある創造的な努力の一部です。これらは私たちの作業だけでなく、Cities Skylinesのモディングコミュニティ内での協力と革新の精神を代表しています。",
+        "ABOUT_2": "<b>Captain_Of_Coit</b>、<b>89pleasure</b>、<b>Rebecca</b>、そして広範な<b>Cities2Modding</b>&nbsp;コミュニティに特別な感謝を。",
+        "ABOUT_3": "モディングに興味がある方、経験豊富なクリエイターであれ、新参者であれ、私たちのコミュニティの扉は常に開かれています。私たちは共有された知識と新鮮なアイデアによって成長し、誰もが私たちの成長中でダイナミックなコミュニティにユニークなものを提供できると信じています。英語が主要言語であるとしても、すべての方を歓迎します！",
+
+        "GITHUB_DESC": "GitHub で MOD をダウンロードしたり、ご希望であれば参加することもできます。",
+        "REDDIT_DESC": "参加または訪問をご希望の場合は、サブ Reddit をご利用いただけます。",
+        "DISCORD_DESC": "私たちのコミュニティに参加したい場合、またはヘルプやサポートが必要な場合は、Discord で私たちを見つけることができます。",
+
+        "OFF": "オフ",
+        "DAY": "昼",
+        "GOLDEN_HOUR": "ゴールデンアワー",
+        "NIGHT": "夜",
+        "SUN": "太陽",
+        "OVERCAST": "曇り",
+        "RAIN": "雨",
+        "SNOW": "雪",
+
+        "RESET_TO_DEFAULT": "デフォルトにリセット",
+
+        "SET_TO_VANILLA_COLOURS": "バニラカラーに設定",
+        "REGENERATE_ICONS": "アイコンを再生成",
+        "GAME_RESTART_REQUIRED": "ゲームの再起動が必要",
+        "RESET": "リセット",
+
+        "DEFAULT_COLOURS": "デフォルトカラー",
+        "DEUTERANOPIA": "デュータノピア",
+        "PROTANOPIA": "プロタノピア",
+        "TRITANOPIA": "トリタノピア",
+
+        "USE_SELECTED_THEME": "選択したテーマを使用",
+
+        "DEFAULT": "デフォルト",
+        "BRIGHT_BLUE": "明るい青",
+        "DARK_GREY_ORANGE": "ダークグレーオレンジ",
+        "LF_DEFAULT": "LF - デフォルト",
+        "LF_HIGH_CONTRAST": "LF - ハイコントラスト",
+        "LF_HOT_PINK": "LF - ホットピンク",
+        "LF_TOXIC_GREEN": "LF - 有毒グリーン",
+        "LF_MOCHA": "LF - モカ",
+        "LF_PEACHY_OCEAN": "LF - ピーチィオーシャン",
+        "LF_DARK_RED": "LF - ダークレッド",
+        "LF_COOL_BLUE": "LF - クールブルー",
+        "LF_DARK_TEAL": "LF - ダークティール",
+
+        "RESIDENTIAL_LOW": "低層住宅",
+        "RESIDENTIAL_HIGH": "高層住宅",
+        "RESIDENTIAL_MEDIUM": "中層住宅",
+        "RESIDENTIAL_MEDIUM_ROW": "中層住宅ロー",
+        "RESIDENTIAL_LOWRENT": "低家賃住宅",
+        "RESIDENTIAL_MIXED": "混合住宅",
+        "COMMERCIAL_LOW": "低層商業",
+        "COMMERCIAL_HIGH": "高層商業",
+        "OFFICE_LOW": "低層オフィス",
+        "OFFICE_HIGH": "高層オフィス",
+        "INDUSTRIAL_AGRICULTURE": "農業工業",
+        "INDUSTRIAL_FORESTRY": "林業工業",
+        "INDUSTRIAL_MANUFACTURING": "製造工業",
+        "INDUSTRIAL_OIL": "石油工業",
+        "INDUSTRIAL_ORE": "鉱業",
+
+        "PRIMARY_ACCENT": "プライマリーアクセント",
+        "BACKGROUND_ACCENT": "背景アクセント",
+        "FOCUSED_COLOR_DARK": "フォーカス色・ダーク",
+        "FOCUSED_COLOR": "フォーカス色",
+
+        "HOVER": "ホバー",
+        "PRESSED": "押された",
+        "FOCUSED": "フォーカスされた",
+
+        "BACKGROUND": "背景",
+        "CUSTOM": "カスタム",
+        "COLOR": "色",
+        "DARK": "暗い",
+        "NORMAL": "普通",
+        "LIGHT": "ライト",
+        "LIGHTER": "ライター",
+        "DIM": "薄暗い",
+        "DIMMER": "調光器",
+        "DIMMEST": "最も暗い",
+        "HEADER": "ヘーダー",
+        "BORDER": "国境",
+        "LOCKED": "ロックされています",
+        "ACTIVE": "アクティブ",
+        "CONTROL": "コントロール",
+        "TITLE": "タイトル",
+        "INVERTED": "反転した",
+        "DISABLED": "無効",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "ポジティブ",
+        "WARNING": "警告",
+        "NEGATIVE": "ネガティブ",
+        "TAB": "タブ",
+        "ITEM": "アイテム",
+        "PAUSE": "一時停止",
+        "PANEL1": "パネル1",
+        "PANEL2": "パネル2",
+        "TEXT1": "文章1",
+        "TEXT2": "文章2"
+      }
+    },
+    {
+      "IDS": [ "ko-KR" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "레거시 향미",
+        "SETTINGS": "설정",
+        "ZONE_SETTINGS": "지역 설정",
+        "ZONE_COLOURS": "지역 색상",
+        "UI_THEMES": "UI 테마",
+        "ABOUT": "정보",
+        "ACCENT": "강조",
+        "PANEL": "패널",
+        "SECTION": "섹션",
+        "SELECTED": "선택됨",
+        "TEXT": "텍스트",
+        "MENU": "메뉴",
+        "OTHER": "기타",
+
+        "USE_STICKY_WHITENESS": "고정 백색 사용",
+        "USE_STICKY_WHITENESS_DESC": "게임의 백색 정보 모드 스위치를 사용자 설정으로 재정의합니다. ALT+S로 전환.",
+
+        "WHITENESS_TOGGLE": "백색 전환",
+        "WHITENESS_TOGGLE_DESC": "'고정 백색 사용'이 활성화되면, 정보 모드의 백색 설정이 도구가 활성화될 때 이 값으로 설정됩니다. SHIFT+W로 전환.",
+
+        "USE_UNITS": "단위 사용",
+        "USE_UNITS_DESC": "길이 측정이 있는 도구 시스템이 선택되면, '단위'를 대신 사용합니다. ALT+U로 전환.",
+
+        "FREEZE_TIME_VISUALS": "시각적 시간 고정",
+        "FREEZE_TIME_VISUALS_DESC": "활성화되면, 시각적인 하루 시간을 고정합니다. '주야간 시각'이 켜져 있어야 합니다.",
+
+        "SET_VISUAL_TIME_OF_DAY": "시각적인 하루 시간 설정",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "시각적인 하루 시간을 재정의합니다. '주야간 시각'이 켜져 있어야 합니다. 황금 시간이 자정으로 가면 맵 설정이 누락됩니다.",
+
+        "WEATHER": "날씨",
+        "WEATHER_DESC": "날씨 재정의",
+
+        "CUSTOM_ZONE_COLOURING": "맞춤 지역 색칠",
+        "CUSTOM_ZONE_COLOURING_DESC": "키 단축키로 순환할 수 있는 맞춤 지역 색상 옵션을 제공합니다. ALT+Z로 전환.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "동적 셀 경계 사용",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "눈이 쌓일 때 지역 셀 경계가 더 잘 보이도록 조정됩니다.",
+
+        "EMPTY_CELL_OPACITY": "빈 셀 불투명도",
+        "EMPTY_CELL_OPACITY_DESC": "빈 지역 셀의 투명도 변경.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "빈 셀 경계 불투명도",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "빈 지역 셀의 경계 투명도 변경.",
+
+        "CELL_OPACITY": "셀 불투명도",
+        "CELL_OPACITY_DESC": "비어 있지 않은 지역 셀의 투명도 변경.",
+
+        "CELL_BORDER_OPACITY": "셀 경계 불투명도",
+        "CELL_BORDER_OPACITY_DESC": "비어 있지 않은 지역 셀의 경계 투명도 변경.",
+
+        "COLOUR_BLINDNESS_MODE": "색맹 모드",
+        "COLOUR_BLINDNESS_MODE_DESC": "다른 색상 모드를 선택하고, SHIFT+Z 키로 이를 순환할 수 있습니다.",
+
+        "RESIDENTIAL": "주거",
+        "RESIDENTIAL_DESC": "주거 지역 색상 수정",
+
+        "COMMERCIAL": "상업",
+        "COMMERCIAL_DESC": "상업 지역 색상 수정",
+
+        "OFFICE": "사무실",
+        "OFFICE_DESC": "사무실 지역 색상 수정",
+
+        "INDUSTRIAL": "산업",
+        "INDUSTRIAL_DESC": "산업 지역 색상 수정",
+
+        "THEME": "테마",
+        "THEME_DESC": "편집할 테마 선택",
+
+        "GENERATE_FROM_COLOUR": "색상에서 생성",
+        "GENERATE_FROM_COLOUR_DESC": "기본 테마, 주요 강조 색상을 선택하고 테마를 생성합니다.",
+
+        "MAKE_WINDOW_TRANSPARENT": "창 투명하게 만들기",
+
+        "DEVELOPED_BY": "이 모드는 optimus-code와 Cities2Modding 커뮤니티에 의해 개발되었습니다.",
+        "ABOUT_1": "\"Legacy Flavour\"를 포함한 우리의 모드는 <b>Thunderstore.io</b>&nbsp;와 우리의 GitHub 저장소를 통해 공식적으로 배포되는 활기찬 창의적 노력의 일부입니다. 이들은 우리의 작업뿐만 아니라 Cities Skylines 모딩 커뮤니티 내 협력과 혁신의 정신을 대표합니다.",
+        "ABOUT_2": "<b>Captain_Of_Coit</b>, <b>89pleasure</b>,&nbsp;<b>Rebecca</b> 그리고 넓은 <b>Cities2Modding</b>&nbsp;커뮤니티에 특별한 감사를 드립니다.",
+        "ABOUT_3": "모딩에 관심이 있든, 경험이 풍부한 창작자이든 새로운 참가자이든, 우리 커뮤니티의 문은 항상 열려 있습니다. 우리는 공유된 지식과 새로운 아이디어에서 번성하며, 누구나 우리가 성장하고 역동적인 커뮤니티에 독특한 것을 기여할 수 있다고 믿습니다. 영어가 우리의 주요 언어이지만, 모든 사람을 환영합니다!",
+
+        "GITHUB_DESC": "GitHub에서 모드를 다운로드할 수도 있고 원할 경우 참여할 수도 있습니다!",
+        "REDDIT_DESC": "가입하거나 방문하고 싶다면 하위 레딧이 있습니다.",
+        "DISCORD_DESC": "우리 커뮤니티에 참여하고 싶거나 도움이나 지원이 필요하다면 Discord에서 우리를 찾을 수 있습니다.",
+
+        "OFF": "끄기",
+        "DAY": "낮",
+        "GOLDEN_HOUR": "황금 시간",
+        "NIGHT": "밤",
+        "SUN": "해",
+        "OVERCAST": "흐림",
+        "RAIN": "비",
+        "SNOW": "눈",
+
+        "RESET_TO_DEFAULT": "기본값으로 재설정",
+
+        "SET_TO_VANILLA_COLOURS": "바닐라 색상으로 설정",
+        "REGENERATE_ICONS": "아이콘 재생성",
+        "GAME_RESTART_REQUIRED": "게임 재시작 필요",
+        "RESET": "재설정",
+
+        "DEFAULT_COLOURS": "기본 색상",
+        "DEUTERANOPIA": "녹색맹",
+        "PROTANOPIA": "적색맹",
+        "TRITANOPIA": "청색맹",
+
+        "USE_SELECTED_THEME": "선택된 테마 사용",
+
+        "DEFAULT": "기본",
+        "BRIGHT_BLUE": "밝은 파랑",
+        "DARK_GREY_ORANGE": "어두운 회색 오렌지",
+        "LF_DEFAULT": "LF - 기본",
+        "LF_HIGH_CONTRAST": "LF - 고대비",
+        "LF_HOT_PINK": "LF - 핫 핑크",
+        "LF_TOXIC_GREEN": "LF - 독성 녹색",
+        "LF_MOCHA": "LF - 모카",
+        "LF_PEACHY_OCEAN": "LF - 복숭아색 오션",
+        "LF_DARK_RED": "LF - 어두운 빨강",
+        "LF_COOL_BLUE": "LF - 시원한 파랑",
+        "LF_DARK_TEAL": "LF - 어두운 청록",
+
+        "RESIDENTIAL_LOW": "저밀도 주거",
+        "RESIDENTIAL_HIGH": "고밀도 주거",
+        "RESIDENTIAL_MEDIUM": "중밀도 주거",
+        "RESIDENTIAL_MEDIUM_ROW": "중밀도 주거 로우",
+        "RESIDENTIAL_LOWRENT": "저렌트 주거",
+        "RESIDENTIAL_MIXED": "혼합 주거",
+        "COMMERCIAL_LOW": "저밀도 상업",
+        "COMMERCIAL_HIGH": "고밀도 상업",
+        "OFFICE_LOW": "저밀도 사무실",
+        "OFFICE_HIGH": "고밀도 사무실",
+        "INDUSTRIAL_AGRICULTURE": "농업 산업",
+        "INDUSTRIAL_FORESTRY": "임업 산업",
+        "INDUSTRIAL_MANUFACTURING": "제조 산업",
+        "INDUSTRIAL_OIL": "석유 산업",
+        "INDUSTRIAL_ORE": "광물 산업",
+
+        "PRIMARY_ACCENT": "주요 강조",
+        "BACKGROUND_ACCENT": "배경 강조",
+        "FOCUSED_COLOR_DARK": "집중된 어두운 색상",
+        "FOCUSED_COLOR": "집중 색상",
+
+        "HOVER": "호버",
+        "PRESSED": "눌림",
+        "FOCUSED": "집중",
+
+        "BACKGROUND": "배경",
+        "CUSTOM": "관습",
+        "COLOR": "색상",
+        "DARK": "어두운",
+        "NORMAL": "정상",
+        "LIGHT": "빛",
+        "LIGHTER": "거룻배",
+        "DIM": "어둑한",
+        "DIMMER": "주차",
+        "DIMMEST": "가장 어두운",
+        "HEADER": "머리글",
+        "BORDER": "국경",
+        "LOCKED": "잠김",
+        "ACTIVE": "활동적인",
+        "CONTROL": "제어",
+        "TITLE": "제목",
+        "INVERTED": "거꾸로",
+        "DISABLED": "장애가 있는",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "긍정적인",
+        "WARNING": "경고",
+        "NEGATIVE": "부정적인",
+        "TAB": "탭",
+        "ITEM": "안건",
+        "PAUSE": "정지시키다",
+        "PANEL1": "패널1",
+        "PANEL2": "패널2",
+        "TEXT1": "텍스트1",
+        "TEXT2": "텍스트2"
+      }
+    },
+    {
+      "IDS": [ "pl-PL" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "Smak Dziedzictwa",
+        "SETTINGS": "Ustawienia",
+        "ZONE_SETTINGS": "Ustawienia Stref",
+        "ZONE_COLOURS": "Kolory Stref",
+        "UI_THEMES": "Motywy UI",
+        "ABOUT": "O aplikacji",
+        "ACCENT": "Akcent",
+        "PANEL": "Panel",
+        "SECTION": "Sekcja",
+        "SELECTED": "Wybrany",
+        "TEXT": "Tekst",
+        "MENU": "Menu",
+        "OTHER": "Inne",
+
+        "USE_STICKY_WHITENESS": "Użyj Lepkiej Bieli",
+        "USE_STICKY_WHITENESS_DESC": "Zastąp przełącznik trybu informacyjnego białego koloru w grze, używając własnego ustawienia. Przełącz z ALT+S.",
+
+        "WHITENESS_TOGGLE": "Przełącznik Bieli",
+        "WHITENESS_TOGGLE_DESC": "Jeśli 'Użyj Lepkiej Bieli' jest włączone, ustawienie białego trybu informacyjnego zostanie ustawione na tę wartość, gdy narzędzie z trybem informacyjnym zostanie aktywowane. Przełącz z SHIFT+W.",
+
+        "USE_UNITS": "Użyj Jednostek",
+        "USE_UNITS_DESC": "Gdy wybrano system narzędzi z pomiarem długości, użyj 'jednostek' zamiast tego. Przełącz z ALT+U.",
+
+        "FREEZE_TIME_VISUALS": "Zamroź Wizualizacje Czasu",
+        "FREEZE_TIME_VISUALS_DESC": "Gdy włączone, zatrzymuje wizualny czas dnia. 'Wizualizacje Dnia/Nocy' muszą być włączone.",
+
+        "SET_VISUAL_TIME_OF_DAY": "Ustaw Wizualny Czas Dnia",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Zastąp wizualny czas dnia. 'Wizualizacje Dnia/Nocy' muszą być włączone. Jeśli złota godzina przypada na północ, mapa nie ma ustawień.",
+
+        "WEATHER": "Pogoda",
+        "WEATHER_DESC": "Zastąp pogodę",
+
+        "CUSTOM_ZONE_COLOURING": "Niestandardowe Kolorowanie Stref",
+        "CUSTOM_ZONE_COLOURING_DESC": "Zapewnia niestandardowe opcje kolorów stref, które można przewijać skrótem klawiszowym. Przełącz z ALT+Z.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "Użyj Dynamicznych Granic Komórek",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "Granice komórek strefy dostosują się, aby być bardziej widoczne, gdy jest pokrywa śnieżna.",
+
+        "EMPTY_CELL_OPACITY": "Przezroczystość Pustych Komórek",
+        "EMPTY_CELL_OPACITY_DESC": "Zmień przezroczystość pustych komórek stref.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "Przezroczystość Granic Pustych Komórek",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "Zmień przezroczystość granic pustych komórek stref.",
+
+        "CELL_OPACITY": "Przezroczystość Komórek",
+        "CELL_OPACITY_DESC": "Zmień przezroczystość niepustych komórek stref.",
+
+        "CELL_BORDER_OPACITY": "Przezroczystość Granic Komórek",
+        "CELL_BORDER_OPACITY_DESC": "Zmień przezroczystość granic niepustych komórek stref.",
+
+        "COLOUR_BLINDNESS_MODE": "Tryb Daltonizmu",
+        "COLOUR_BLINDNESS_MODE_DESC": "Wybierz inny tryb kolorów, możesz je przewijać klawiszami SHIFT+Z.",
+
+        "RESIDENTIAL": "Mieszkalny",
+        "RESIDENTIAL_DESC": "Modyfikuj kolory strefy mieszkalnej",
+
+        "COMMERCIAL": "Komercyjny",
+        "COMMERCIAL_DESC": "Modyfikuj kolory strefy komercyjnej",
+
+        "OFFICE": "Biuro",
+        "OFFICE_DESC": "Modyfikuj kolory strefy biurowej",
+
+        "INDUSTRIAL": "Przemysłowy",
+        "INDUSTRIAL_DESC": "Modyfikuj kolory strefy przemysłowej",
+
+        "THEME": "Motyw",
+        "THEME_DESC": "Wybierz motyw do edycji",
+
+        "GENERATE_FROM_COLOUR": "Generuj z Koloru",
+        "GENERATE_FROM_COLOUR_DESC": "Wybierz motyw bazowy, główny kolor akcentu i wygeneruj motyw.",
+
+        "MAKE_WINDOW_TRANSPARENT": "Uczyń Okno Przezroczystym",
+
+        "DEVELOPED_BY": "Ten mod został opracowany przez optimus-code i społeczność Cities2Modding.",
+        "ABOUT_1": "Nasze mody, w tym \"Legacy Flavour\", są częścią dynamicznego wysiłku twórczego, oficjalnie dystrybuowanego przez <b>Thunderstore.io</b>&nbsp;i nasze repozytorium na GitHubie. Reprezentują nie tylko naszą pracę, ale również ducha współpracy i innowacji w społeczności moddingowej Cities Skylines.",
+        "ABOUT_2": "Specjalne podziękowania dla <b>Captain_Of_Coit</b>, <b>89pleasure</b>&nbsp;i&nbsp;<b>Rebecca</b>, jak również dla obszernej społeczności <b>Cities2Modding</b>&nbsp;.",
+        "ABOUT_3": "Jeśli interesujesz się moddingiem, niezależnie od tego, czy jesteś doświadczonym twórcą, czy nowicjuszem, drzwi naszej społeczności są zawsze otwarte. Rozwijamy się dzięki dzieleniu się wiedzą i świeżymi pomysłami, wierzymy, że każdy może wnieść coś wyjątkowego do naszej rozwijającej się i dynamicznej społeczności. Chociaż angielski jest naszym głównym językiem, witamy wszystkich!",
+
+        "GITHUB_DESC": "Możesz pobrać nasze mody na GitHub, a nawet zaangażować się, jeśli chcesz!",
+        "REDDIT_DESC": "Mamy sub-reddit, jeśli chcesz dołączyć lub odwiedzić.",
+        "DISCORD_DESC": "Jeśli chcesz zaangażować się w naszą społeczność lub potrzebujesz pomocy lub wsparcia, możesz nas znaleźć na Discordzie.",
+
+        "OFF": "Wyłączony",
+        "DAY": "Dzień",
+        "GOLDEN_HOUR": "Złota Godzina",
+        "NIGHT": "Noc",
+        "SUN": "Słońce",
+        "OVERCAST": "Pochmurno",
+        "RAIN": "Deszcz",
+        "SNOW": "Śnieg",
+
+        "RESET_TO_DEFAULT": "Przywróć do domyślnych",
+
+        "SET_TO_VANILLA_COLOURS": "Ustaw na Kolory Waniliowe",
+        "REGENERATE_ICONS": "Regeneruj Ikony",
+        "GAME_RESTART_REQUIRED": "Wymagany Restart Gry",
+        "RESET": "Resetuj",
+
+        "DEFAULT_COLOURS": "Domyślne Kolory",
+        "DEUTERANOPIA": "Deuteranopia",
+        "PROTANOPIA": "Protanopia",
+        "TRITANOPIA": "Tritanopia",
+
+        "USE_SELECTED_THEME": "Użyj Wybranego Motywu",
+
+        "DEFAULT": "Domyślny",
+        "BRIGHT_BLUE": "Jasnoniebieski",
+        "DARK_GREY_ORANGE": "Ciemnoszary Pomarańczowy",
+        "LF_DEFAULT": "LF - Domyślny",
+        "LF_HIGH_CONTRAST": "LF - Wysoki Kontrast",
+        "LF_HOT_PINK": "LF - Gorący Róż",
+        "LF_TOXIC_GREEN": "LF - Toksyczna Zieleń",
+        "LF_MOCHA": "LF - Mocha",
+        "LF_PEACHY_OCEAN": "LF - Brzoskwiniowy Ocean",
+        "LF_DARK_RED": "LF - Ciemnoczerwony",
+        "LF_COOL_BLUE": "LF - Chłodny Niebieski",
+        "LF_DARK_TEAL": "LF - Ciemny Morski",
+
+        "RESIDENTIAL_LOW": "Niskie Mieszkalne",
+        "RESIDENTIAL_HIGH": "Wysokie Mieszkalne",
+        "RESIDENTIAL_MEDIUM": "Średnie Mieszkalne",
+        "RESIDENTIAL_MEDIUM_ROW": "Średnie Mieszkalne Rząd",
+        "RESIDENTIAL_LOWRENT": "Niskie Czynsze Mieszkalne",
+        "RESIDENTIAL_MIXED": "Mieszane Mieszkalne",
+        "COMMERCIAL_LOW": "Niskie Komercyjne",
+        "COMMERCIAL_HIGH": "Wysokie Komercyjne",
+        "OFFICE_LOW": "Niskie Biurowe",
+        "OFFICE_HIGH": "Wysokie Biurowe",
+        "INDUSTRIAL_AGRICULTURE": "Przemysłowe Rolnictwo",
+        "INDUSTRIAL_FORESTRY": "Przemysłowe Leśnictwo",
+        "INDUSTRIAL_MANUFACTURING": "Przemysłowe Wytwarzanie",
+        "INDUSTRIAL_OIL": "Przemysłowe Naftowe",
+        "INDUSTRIAL_ORE": "Przemysłowe Rudy",
+
+        "PRIMARY_ACCENT": "Podstawowy Akcent",
+        "BACKGROUND_ACCENT": "Tło Akcentu",
+        "FOCUSED_COLOR_DARK": "Skupiony Ciemny Kolor",
+        "FOCUSED_COLOR": "Skoncentrowany Kolor",
+
+        "HOVER": "Najazd",
+        "PRESSED": "Wciśnięty",
+        "FOCUSED": "Skupiony",
+
+        "BACKGROUND": "Tło",
+        "CUSTOM": "Zwyczaj",
+        "COLOR": "Kolor",
+        "DARK": "Ciemny",
+        "NORMAL": "Normalna",
+        "LIGHT": "Światło",
+        "LIGHTER": "Zapalniczka",
+        "DIM": "Wyciszony",
+        "DIMMER": "Bardziej wyciszony",
+        "DIMMEST": "Najbardziej wyciszony",
+        "HEADER": "Nagłówek",
+        "BORDER": "Granica",
+        "LOCKED": "Zablokowany",
+        "ACTIVE": "Aktywny",
+        "CONTROL": "Kontrola",
+        "TITLE": "Tytuł",
+        "INVERTED": "Odwrotny",
+        "DISABLED": "Wyłączony",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "Pozytywny",
+        "WARNING": "Ostrzeżenie",
+        "NEGATIVE": "Negatywny",
+        "TAB": "Patka",
+        "ITEM": "Przedmiot",
+        "PAUSE": "Pauza",
+        "PANEL1": "Płyta1",
+        "PANEL2": "Płyta2",
+        "TEXT1": "Tekst1",
+        "TEXT2": "Tekst2"
+      }
+    },
+    {
+      "IDS": [ "pt-BR" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "Sabor Legado",
+        "SETTINGS": "Configurações",
+        "ZONE_SETTINGS": "Configurações de Zona",
+        "ZONE_COLOURS": "Cores das Zonas",
+        "UI_THEMES": "Temas da UI",
+        "ABOUT": "Sobre",
+        "ACCENT": "Acento",
+        "PANEL": "Painel",
+        "SECTION": "Seção",
+        "SELECTED": "Selecionado",
+        "TEXT": "Texto",
+        "MENU": "Menu",
+        "OTHER": "Outros",
+
+        "USE_STICKY_WHITENESS": "Usar Brancura Pegajosa",
+        "USE_STICKY_WHITENESS_DESC": "Sobrescrever a chave do modo de informação branco do jogo, usando uma configuração personalizada. Alternar com ALT+S.",
+
+        "WHITENESS_TOGGLE": "Alternar Brancura",
+        "WHITENESS_TOGGLE_DESC": "Se 'Usar Brancura Pegajosa' estiver ativado, a configuração de branco do modo de informação será definida para este valor quando uma ferramenta com modo de informação for ativada. Alternar com SHIFT+W.",
+
+        "USE_UNITS": "Usar Unidades",
+        "USE_UNITS_DESC": "Quando um sistema de ferramentas com medição de comprimento for selecionado, use 'unidades' em vez disso. Alternar com ALT+U.",
+
+        "FREEZE_TIME_VISUALS": "Congelar Visuais de Tempo",
+        "FREEZE_TIME_VISUALS_DESC": "Quando ativado, congela o tempo visual do dia. 'Visuais Dia/Noite' devem estar ligados.",
+
+        "SET_VISUAL_TIME_OF_DAY": "Definir Tempo Visual do Dia",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Sobrescrever o tempo visual do dia. 'Visuais Dia/Noite' devem estar ligados. Se a hora dourada for até a meia-noite, faltam configurações no mapa.",
+
+        "WEATHER": "Clima",
+        "WEATHER_DESC": "Sobrescrever o clima",
+
+        "CUSTOM_ZONE_COLOURING": "Coloração de Zona Personalizada",
+        "CUSTOM_ZONE_COLOURING_DESC": "Fornece opções de cores de zona personalizadas que podem ser alternadas com um atalho de tecla. Alternar com ALT+Z.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "Usar Bordas de Célula Dinâmicas",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "As bordas das células da zona se ajustarão para serem mais visíveis quando houver cobertura de neve.",
+
+        "EMPTY_CELL_OPACITY": "Opacidade de Célula Vazia",
+        "EMPTY_CELL_OPACITY_DESC": "Alterar a transparência das células vazias da zona.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "Opacidade da Borda da Célula Vazia",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "Alterar a transparência da borda das células vazias da zona.",
+
+        "CELL_OPACITY": "Opacidade da Célula",
+        "CELL_OPACITY_DESC": "Alterar a transparência das células não vazias da zona.",
+
+        "CELL_BORDER_OPACITY": "Opacidade da Borda da Célula",
+        "CELL_BORDER_OPACITY_DESC": "Alterar a transparência da borda das células não vazias da zona.",
+
+        "COLOUR_BLINDNESS_MODE": "Modo de Daltonismo",
+        "COLOUR_BLINDNESS_MODE_DESC": "Selecionar um modo de cor diferente, que pode ser alternado com as teclas SHIFT+Z.",
+
+        "RESIDENTIAL": "Residencial",
+        "RESIDENTIAL_DESC": "Modificar cores da zona residencial",
+
+        "COMMERCIAL": "Comercial",
+        "COMMERCIAL_DESC": "Modificar cores da zona comercial",
+
+        "OFFICE": "Escritório",
+        "OFFICE_DESC": "Modificar cores da zona de escritórios",
+
+        "INDUSTRIAL": "Industrial",
+        "INDUSTRIAL_DESC": "Modificar cores da zona industrial",
+
+        "THEME": "Tema",
+        "THEME_DESC": "Selecionar um tema para editar",
+
+        "GENERATE_FROM_COLOUR": "Gerar a partir da cor",
+        "GENERATE_FROM_COLOUR_DESC": "Selecionar um tema base, cor de acento principal e gerar um tema.",
+
+        "MAKE_WINDOW_TRANSPARENT": "Tornar janela transparente",
+
+        "DEVELOPED_BY": "Este mod foi desenvolvido por optimus-code e pela comunidade Cities2Modding.",
+        "ABOUT_1": "Nossos mods, incluindo \"Legacy Flavour\", fazem parte de um vibrante esforço criativo, distribuídos oficialmente através do <b>Thunderstore.io</b>&nbsp;e nosso repositório no GitHub. Eles representam não apenas o nosso trabalho, mas também o espírito de colaboração e inovação dentro da comunidade de modding do Cities Skylines.",
+        "ABOUT_2": "Agradecimentos especiais a <b>Captain_Of_Coit</b>, <b>89pleasure</b>&nbsp;e&nbsp;<b>Rebecca</b>, assim como à extensa comunidade <b>Cities2Modding</b>&nbsp;.",
+        "ABOUT_3": "Se você se interessa por modding, seja você um criador experiente ou um novato, as portas da nossa comunidade estão sempre abertas. Prosperamos com o conhecimento compartilhado e ideias inovadoras, e acreditamos que todos têm algo único a contribuir para nossa comunidade em crescimento e dinâmica. Embora o inglês seja nossa língua principal, damos as boas-vindas a todos!",
+
+        "GITHUB_DESC": "Você pode baixar nossos mods no GitHub ou até mesmo se envolver, se desejar!",
+        "REDDIT_DESC": "Temos um sub-reddit se você quiser participar ou visitar.",
+        "DISCORD_DESC": "Se você quiser se envolver em nossa comunidade ou precisar de ajuda ou suporte, você pode nos encontrar no Discord.",
+
+        "OFF": "Desligado",
+        "DAY": "Dia",
+        "GOLDEN_HOUR": "Hora Dourada",
+        "NIGHT": "Noite",
+        "SUN": "Sol",
+        "OVERCAST": "Nublado",
+        "RAIN": "Chuva",
+        "SNOW": "Neve",
+
+        "RESET_TO_DEFAULT": "Restaurar para o padrão",
+
+        "SET_TO_VANILLA_COLOURS": "Definir para cores de baunilha",
+        "REGENERATE_ICONS": "Regenerar ícones",
+        "GAME_RESTART_REQUIRED": "Reinício do jogo necessário",
+        "RESET": "Redefinir",
+
+        "DEFAULT_COLOURS": "Cores Padrão",
+        "DEUTERANOPIA": "Deuteranopia",
+        "PROTANOPIA": "Protanopia",
+        "TRITANOPIA": "Tritanopia",
+
+        "USE_SELECTED_THEME": "Usar tema selecionado",
+
+        "DEFAULT": "Padrão",
+        "BRIGHT_BLUE": "Azul Brilhante",
+        "DARK_GREY_ORANGE": "Cinza Escuro Laranja",
+        "LF_DEFAULT": "LF - Padrão",
+        "LF_HIGH_CONTRAST": "LF - Alto Contraste",
+        "LF_HOT_PINK": "LF - Rosa Quente",
+        "LF_TOXIC_GREEN": "LF - Verde Tóxico",
+        "LF_MOCHA": "LF - Mocha",
+        "LF_PEACHY_OCEAN": "LF - Oceano Pêssego",
+        "LF_DARK_RED": "LF - Vermelho Escuro",
+        "LF_COOL_BLUE": "LF - Azul Fresco",
+        "LF_DARK_TEAL": "LF - Verde Azulado Escuro",
+
+        "RESIDENTIAL_LOW": "Residencial Baixo",
+        "RESIDENTIAL_HIGH": "Residencial Alto",
+        "RESIDENTIAL_MEDIUM": "Residencial Médio",
+        "RESIDENTIAL_MEDIUM_ROW": "Residencial Médio em Linha",
+        "RESIDENTIAL_LOWRENT": "Residencial Aluguel Baixo",
+        "RESIDENTIAL_MIXED": "Residencial Misto",
+        "COMMERCIAL_LOW": "Comercial Baixo",
+        "COMMERCIAL_HIGH": "Comercial Alto",
+        "OFFICE_LOW": "Escritório Baixo",
+        "OFFICE_HIGH": "Escritório Alto",
+        "INDUSTRIAL_AGRICULTURE": "Agricultura Industrial",
+        "INDUSTRIAL_FORESTRY": "Silvicultura Industrial",
+        "INDUSTRIAL_MANUFACTURING": "Manufatura Industrial",
+        "INDUSTRIAL_OIL": "Óleo Industrial",
+        "INDUSTRIAL_ORE": "Minério Industrial",
+
+        "PRIMARY_ACCENT": "Acento Primário",
+        "BACKGROUND_ACCENT": "Acento de Fundo",
+        "FOCUSED_COLOR_DARK": "Cor Focada Escura",
+        "FOCUSED_COLOR": "Cor Focada",
+
+        "HOVER": "Pairar",
+        "PRESSED": "Pressionado",
+        "FOCUSED": "Focado",
+
+        "BACKGROUND": "Fundo",
+        "CUSTOM": "Personalizado",
+        "COLOR": "Cor",
+        "DARK": "Escuro",
+        "NORMAL": "Normal",
+        "LIGHT": "Luz",
+        "LIGHTER": "Isqueiro",
+        "DIM": "Escurecer",
+        "DIMMER": "Obscuro",
+        "DIMMEST": "Mais escuro",
+        "HEADER": "Cabeçalho",
+        "BORDER": "Fronteira",
+        "LOCKED": "Bloqueado",
+        "ACTIVE": "Ativo",
+        "CONTROL": "Ao controle",
+        "TITLE": "Título",
+        "INVERTED": "Invertido",
+        "DISABLED": "Desabilitado",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "Positivo",
+        "WARNING": "Aviso",
+        "NEGATIVE": "Negativo",
+        "TAB": "Aba",
+        "ITEM": "Item",
+        "PAUSE": "Pausa",
+        "PANEL1": "Painel1",
+        "PANEL2": "Painel2",
+        "TEXT1": "Texto1",
+        "TEXT2": "Texto2"
+      }
+    },
+    {
+      "IDs": [ "ru-RU" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "Наследие Вкуса",
+        "SETTINGS": "Настройки",
+        "ZONE_SETTINGS": "Настройки Зоны",
+        "ZONE_COLOURS": "Цвета Зон",
+        "UI_THEMES": "Темы UI",
+        "ABOUT": "О программе",
+        "ACCENT": "Акцент",
+        "PANEL": "Панель",
+        "SECTION": "Секция",
+        "SELECTED": "Выбрано",
+        "TEXT": "Текст",
+        "MENU": "Меню",
+        "OTHER": "Другое",
+
+        "USE_STICKY_WHITENESS": "Использовать Постоянную Белизну",
+        "USE_STICKY_WHITENESS_DESC": "Переопределить белый режим информации в игре, используя настройку. Переключать с помощью ALT+S.",
+
+        "WHITENESS_TOGGLE": "Переключатель Белизны",
+        "WHITENESS_TOGGLE_DESC": "Если включен 'Использовать Постоянную Белизну', белая настройка информационного режима будет установлена на это значение при активации инструмента с информационным режимом. Переключать с помощью SHIFT+W.",
+
+        "USE_UNITS": "Использовать Единицы",
+        "USE_UNITS_DESC": "Когда выбрана система инструментов с измерением длины, использовать 'единицы'. Переключать с помощью ALT+U.",
+
+        "FREEZE_TIME_VISUALS": "Заморозить Визуальное Время",
+        "FREEZE_TIME_VISUALS_DESC": "Когда включено, замораживает визуальное время суток. 'Визуальные Эффекты Дня/Ночи' должны быть включены.",
+
+        "SET_VISUAL_TIME_OF_DAY": "Установить Визуальное Время Суток",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Переопределить визуальное время суток. 'Визуальные Эффекты Дня/Ночи' должны быть включены. Если золотой час переходит в полночь, карте не хватает настроек.",
+
+        "WEATHER": "Погода",
+        "WEATHER_DESC": "Переопределить погоду",
+
+        "CUSTOM_ZONE_COLOURING": "Пользовательская Расцветка Зон",
+        "CUSTOM_ZONE_COLOURING_DESC": "Предоставляет пользовательские варианты цвета зон, которые можно переключать с помощью горячей клавиши. Переключать с помощью ALT+Z.",
+
+        "USE_DYNAMIC_CELL_BORDERS": "Использовать Динамические Границы Ячеек",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "Границы ячеек зон будут регулироваться для повышения видимости при снежном покрытии.",
+
+        "EMPTY_CELL_OPACITY": "Прозрачность Пустых Ячеек",
+        "EMPTY_CELL_OPACITY_DESC": "Изменить прозрачность пустых ячеек зон.",
+
+        "EMPTY_CELL_BORDER_OPACITY": "Прозрачность Границ Пустых Ячеек",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "Изменить прозрачность границ пустых ячеек зон.",
+
+        "CELL_OPACITY": "Прозрачность Ячеек",
+        "CELL_OPACITY_DESC": "Изменить прозрачность заполненных ячеек зон.",
+
+        "CELL_BORDER_OPACITY": "Прозрачность Границ Ячеек",
+        "CELL_BORDER_OPACITY_DESC": "Изменить прозрачность границ заполненных ячеек зон.",
+
+        "COLOUR_BLINDNESS_MODE": "Режим Дальтонизма",
+        "COLOUR_BLINDNESS_MODE_DESC": "Выбрать другой цветовой режим, можно переключать с помощью клавиш SHIFT+Z.",
+
+        "RESIDENTIAL": "Жилой",
+        "RESIDENTIAL_DESC": "Изменить цвета жилых зон",
+
+        "COMMERCIAL": "Коммерческий",
+        "COMMERCIAL_DESC": "Изменить цвета коммерческих зон",
+
+        "OFFICE": "Офисный",
+        "OFFICE_DESC": "Изменить цвета офисных зон",
+
+        "INDUSTRIAL": "Промышленный",
+        "INDUSTRIAL_DESC": "Изменить цвета промышленных зон",
+
+        "THEME": "Тема",
+        "THEME_DESC": "Выбрать тему для редактирования",
+
+        "GENERATE_FROM_COLOUR": "Создать из Цвета",
+        "GENERATE_FROM_COLOUR_DESC": "Выбрать основную тему, главный акцентный цвет и создать тему.",
+
+        "MAKE_WINDOW_TRANSPARENT": "Сделать Окно Прозрачным",
+
+        "DEVELOPED_BY": "Этот мод был разработан optimus-code и сообществом Cities2Modding.",
+        "ABOUT_1": "Наши моды, включая \"Наследие Вкуса\", являются частью творческих усилий, официально распространяемых через <b>Thunderstore.io</b> и наш репозиторий GitHub. Они представляют не только нашу работу, но и дух сотрудничества и инноваций в сообществе моддинга Cities Skylines.",
+        "ABOUT_2": "Особая благодарность <b>Captain_Of_Coit</b>, <b>89pleasure</b>, и&nbsp;<b>Rebecca</b>, а также обширному сообществу <b>Cities2Modding</b>&nbsp;.",
+        "ABOUT_3": "Если вас интересует моддинг, будь вы опытным создателем или новичком, двери нашего сообщества всегда открыты. Мы ценим обмен знаниями и свежие идеи, и считаем, что каждый может внести уникальный вклад в наше растущее и динамичное сообщество. Хотя английский является нашим основным языком, мы приветствуем всех!",
+
+        "GITHUB_DESC": "Вы можете скачать наши моды на GitHub, или даже принять участие, если хотите!",
+        "REDDIT_DESC": "У нас есть суб-реддит, если вы хотите присоединиться или посетить.",
+        "DISCORD_DESC": "Если вы хотите принять участие в нашем сообществе или вам нужна помощь или поддержка, вы можете найти нас в Discord.",
+
+        "OFF": "Выкл",
+        "DAY": "День",
+        "GOLDEN_HOUR": "Золотой Час",
+        "NIGHT": "Ночь",
+        "SUN": "Солнце",
+        "OVERCAST": "Пасмурно",
+        "RAIN": "Дождь",
+        "SNOW": "Снег",
+
+        "RESET_TO_DEFAULT": "Сбросить на Стандартные",
+
+        "SET_TO_VANILLA_COLOURS": "Установить Стандартные Цвета",
+        "REGENERATE_ICONS": "Пересоздать Иконки",
+        "GAME_RESTART_REQUIRED": "Требуется Перезапуск Игры",
+        "RESET": "Сброс",
+
+        "DEFAULT_COLOURS": "Стандартные Цвета",
+        "DEUTERANOPIA": "Дейтеранопия",
+        "PROTANOPIA": "Протанопия",
+        "TRITANOPIA": "Тританопия",
+
+        "USE_SELECTED_THEME": "Использовать Выбранную Тему",
+
+        "DEFAULT": "Стандарт",
+        "BRIGHT_BLUE": "Ярко-Синий",
+        "DARK_GREY_ORANGE": "Темно-Серый Оранжевый",
+        "LF_DEFAULT": "LF - Стандарт",
+        "LF_HIGH_CONTRAST": "LF - Высокий Контраст",
+        "LF_HOT_PINK": "LF - Ярко-Розовый",
+        "LF_TOXIC_GREEN": "LF - Ядовито-Зеленый",
+        "LF_MOCHA": "LF - Мокко",
+        "LF_PEACHY_OCEAN": "LF - Персиково-Океанский",
+        "LF_DARK_RED": "LF - Темно-Красный",
+        "LF_COOL_BLUE": "LF - Прохладный Синий",
+        "LF_DARK_TEAL": "LF - Темный Голубой",
+
+        "RESIDENTIAL_LOW": "Жилой Низкий",
+        "RESIDENTIAL_HIGH": "Жилой Высокий",
+        "RESIDENTIAL_MEDIUM": "Жилой Средний",
+        "RESIDENTIAL_MEDIUM_ROW": "Жилой Средний Ряд",
+        "RESIDENTIAL_LOWRENT": "Жилой Недорогой",
+        "RESIDENTIAL_MIXED": "Жилой Смешанный",
+        "COMMERCIAL_LOW": "Коммерческий Низкий",
+        "COMMERCIAL_HIGH": "Коммерческий Высокий",
+        "OFFICE_LOW": "Офис Низкий",
+        "OFFICE_HIGH": "Офис Высокий",
+        "INDUSTRIAL_AGRICULTURE": "Промышленный Сельское Хозяйство",
+        "INDUSTRIAL_FORESTRY": "Промышленный Лесное Хозяйство",
+        "INDUSTRIAL_MANUFACTURING": "Промышленный Обрабатывающая Промышленность",
+        "INDUSTRIAL_OIL": "Промышленный Нефть",
+        "INDUSTRIAL_ORE": "Промышленный Руда",
+
+        "PRIMARY_ACCENT": "Основной Акцент",
+        "BACKGROUND_ACCENT": "Фоновый Акцент",
+        "FOCUSED_COLOR_DARK": "Темный Цвет Фокуса",
+        "FOCUSED_COLOR": "Цвет Фокуса",
+
+        "HOVER": "Наведение",
+        "PRESSED": "Нажатие",
+        "FOCUSED": "Фокус",
+
+        "BACKGROUND": "Фон",
+        "CUSTOM": "Пользовательский",
+        "COLOR": "Цвет",
+        "DARK": "Темный",
+        "NORMAL": "Обычный",
+        "LIGHT": "Светлый",
+        "LIGHTER": "Светлее",
+        "DIM": "Тусклый",
+        "DIMMER": "Темнее",
+        "DIMMEST": "Самый Темный",
+        "HEADER": "Заголовок",
+        "BORDER": "Граница",
+        "LOCKED": "Заблокировано",
+        "ACTIVE": "Активный",
+        "CONTROL": "Управление",
+        "TITLE": "Название",
+        "INVERTED": "Инвертированный",
+        "DISABLED": "Отключенный",
+        "CHIRPER": "Чирпер",
+        "POSITIVE": "Положительный",
+        "WARNING": "Предупреждение",
+        "NEGATIVE": "Отрицательный",
+        "TAB": "Вкладка",
+        "ITEM": "Элемент",
+        "PAUSE": "Пауза",
+        "PANEL1": "Панель1",
+        "PANEL2": "Панель2",
+        "TEXT1": "Текст1",
+        "TEXT2": "Текст2"
+      }
+    },
+    {
+      "IDs": [ "zh-HANS", "zh-HANT" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "传统风味",
+        "SETTINGS": "设置",
+        "ZONE_SETTINGS": "功能区设置",
+        "ZONE_COLOURS": "功能区颜色",
+        "UI_THEMES": "UI 主题",
+        "ABOUT": "关于",
+        "ACCENT": "强调",
+        "PANEL": "面板",
+        "SECTION": "部分",
+        "SELECTED": "已选择",
+        "TEXT": "文本",
+        "MENU": "菜单",
+        "OTHER": "其他",
+
+        "USE_STICKY_WHITENESS": "持久信息视图白色",
+        "USE_STICKY_WHITENESS_DESC": "覆盖游戏的白色信息模式切换，使用自定义设置 -快捷键: ALT+S",
+
+        "WHITENESS_TOGGLE": "信息视图白色切换",
+        "WHITENESS_TOGGLE_DESC": "如果启用了“使用持久白色”，则在启用带有信息模式的工具时，信息模式白色设置将被设置为此值 -快捷键: SHIFT+W",
+
+        "USE_UNITS": "使用 U 长度单位",
+        "USE_UNITS_DESC": "当选择具有长度测量的工具系统时，请改用“单位”代替 -快捷键: ALT+U",
+
+        "FREEZE_TIME_VISUALS": "冻结时间视觉效果",
+        "FREEZE_TIME_VISUALS_DESC": "启用后,冻结视觉时间。必须打开“日夜效果”",
+
+        "SET_VISUAL_TIME_OF_DAY": "设置视觉时间",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "覆盖视觉时间。必须打开“日夜效果”",
+
+        "WEATHER": "天气",
+        "WEATHER_DESC": "覆盖天气",
+
+        "CUSTOM_ZONE_COLOURING": "自定义区域着色",
+        "CUSTOM_ZONE_COLOURING_DESC": "提供可以使用快捷键循环的自定义区域颜色选项。",
+
+        "USE_DYNAMIC_CELL_BORDERS": "使用动态单元边界",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "当有积雪覆盖时，区域单元边界将调整为更加可见。",
+
+        "EMPTY_CELL_OPACITY": "空单元透明度",
+        "EMPTY_CELL_OPACITY_DESC": "更改空区域单元的透明度。",
+
+        "EMPTY_CELL_BORDER_OPACITY": "空单元边界透明度",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "更改空区域单元的边界透明度。",
+
+        "CELL_OPACITY": "单元透明度",
+        "CELL_OPACITY_DESC": "更改非空区域单元的透明度。",
+
+        "CELL_BORDER_OPACITY": "单元边界透明度",
+        "CELL_BORDER_OPACITY_DESC": "更改非空区域单元的边界透明度。",
+
+        "COLOUR_BLINDNESS_MODE": "色盲模式",
+        "COLOUR_BLINDNESS_MODE_DESC": "选择不同的颜色模式 -快捷键 SHIFT+Z",
+
+        "RESIDENTIAL": "住宅区",
+        "RESIDENTIAL_DESC": "修改住宅区颜色",
+
+        "COMMERCIAL": "商业区",
+        "COMMERCIAL_DESC": "修改商业区颜色",
+
+        "OFFICE": "办公区",
+        "OFFICE_DESC": "修改办公区颜色",
+
+        "INDUSTRIAL": "工业",
+        "INDUSTRIAL_DESC": "修改工业区颜色",
+
+        "THEME": "主题",
+        "THEME_DESC": "选择要编辑的主题",
+
+        "GENERATE_FROM_COLOUR": "从颜色生成",
+        "GENERATE_FROM_COLOUR_DESC": "选择基本主题、主要强调颜色并生成主题。",
+
+        "MAKE_WINDOW_TRANSPARENT": "使窗口透明",
+
+        "DEVELOPED_BY": "此模组由optimus-code和Cities2Modding社区开发。",
+        "ABOUT_1": "我们的模组，包括“Legacy Flavour”，是一个充满活力的创意努力的一部分，通过 <b>Thunderstore.io</b>&nbsp;和我们的GitHub仓库正式分发。它们不仅代表我们的工作，也代表了Cities Skylines模组社区内的合作精神和创新。",
+        "ABOUT_2": "特别感谢 <b>Captain_Of_Coit</b>、<b>89pleasure</b>&nbsp;和&nbsp;<b>Rebecca</b>，以及广泛的 <b>Cities2Modding</b>&nbsp;社区。",
+        "ABOUT_3": "无论您是经验丰富的创作者还是新手，只要对模组制作感兴趣，我们社区的大门始终敞开。我们在共享知识和新鲜想法中蓬勃发展，相信每个人都能为我们不断成长和充满活力的社区贡献独特之处。尽管英语是我们的主要语言，我们欢迎所有人！",
+
+        "GITHUB_DESC": "您可以在 GitHub 上下载我们的 mod，如果您愿意，甚至可以参与其中！",
+        "REDDIT_DESC": "如果您想加入或访问，我们有一个 Reddit 子版块。",
+        "DISCORD_DESC": "如果您想参与我们的社区或需要帮助或支持，您可以在 Discord 上找到我们。",
+
+        "OFF": "关闭",
+        "DAY": "白天",
+        "GOLDEN_HOUR": "黄金时段",
+        "NIGHT": "夜晚",
+        "SUN": "晴朗",
+        "OVERCAST": "阴天",
+        "RAIN": "雨天",
+        "SNOW": "雪天",
+
+        "RESET_TO_DEFAULT": "重置至默认",
+
+        "SET_TO_VANILLA_COLOURS": "设置到原版颜色",
+        "REGENERATE_ICONS": "重新生成图标",
+        "GAME_RESTART_REQUIRED": "需要重新启动游戏",
+        "RESET": "重置",
+
+        "DEFAULT_COLOURS": "默认颜色",
+        "DEUTERANOPIA": "绿色盲",
+        "PROTANOPIA": "红色盲",
+        "TRITANOPIA": "蓝色盲",
+
+        "USE_SELECTED_THEME": "使用选定的主题",
+
+        "DEFAULT": "默认",
+        "BRIGHT_BLUE": "亮蓝",
+        "DARK_GREY_ORANGE": "深灰橙",
+        "LF_DEFAULT": "LF - 默认",
+        "LF_HIGH_CONTRAST": "LF - 高对比",
+        "LF_HOT_PINK": "LF - 热粉",
+        "LF_TOXIC_GREEN": "LF - 有毒绿",
+        "LF_MOCHA": "LF - 摩卡",
+        "LF_PEACHY_OCEAN": "LF - 桃子海洋",
+        "LF_DARK_RED": "LF - 深红",
+        "LF_COOL_BLUE": "LF - 冷蓝",
+        "LF_DARK_TEAL": "LF - 深青",
+
+        "RESIDENTIAL_LOW": "低密度住宅",
+        "RESIDENTIAL_HIGH": "高密度住宅",
+        "RESIDENTIAL_MEDIUM": "中密度住宅",
+        "RESIDENTIAL_MEDIUM_ROW": "中密度联排住宅",
+        "RESIDENTIAL_LOWRENT": "廉租公寓",
+        "RESIDENTIAL_MIXED": "混合型住宅",
+        "COMMERCIAL_LOW": "低密度商业",
+        "COMMERCIAL_HIGH": "高密度商业",
+        "OFFICE_LOW": "低密度办公",
+        "OFFICE_HIGH": "高密度办公",
+        "INDUSTRIAL_AGRICULTURE": "工业农业",
+        "INDUSTRIAL_FORESTRY": "工业林业",
+        "INDUSTRIAL_MANUFACTURING": "工业制造",
+        "INDUSTRIAL_OIL": "工业石油",
+        "INDUSTRIAL_ORE": "工业矿石",
+
+        "PRIMARY_ACCENT": "主要强调",
+        "BACKGROUND_ACCENT": "背景强调",
+
+        "HOVER": "悬停",
+        "PRESSED": "按下",
+        "FOCUSED": "聚焦",
+
+        "BACKGROUND": "背景",
+        "CUSTOM": "风俗",
+        "COLOR": "颜色",
+        "DARK": "黑暗的",
+        "NORMAL": "普通的",
+        "LIGHT": "光",
+        "LIGHTER": "打火机",
+        "DIM": "暗淡",
+        "DIMMER": "调光器",
+        "DIMMEST": "最昏暗",
+        "HEADER": "标头",
+        "BORDER": "边界",
+        "LOCKED": "锁定",
+        "ACTIVE": "积极的",
+        "CONTROL": "控制",
+        "TITLE": "标题",
+        "INVERTED": "倒",
+        "DISABLED": "残疾人",
+        "CHIRPER": "Chirper",
+        "POSITIVE": "积极的",
+        "WARNING": "警告",
+        "NEGATIVE": "消极的",
+        "TAB": "标签",
+        "ITEM": "物品",
+        "PAUSE": "暂停",
+        "PANEL1": "控制板1",
+        "PANEL2": "控制板2",
+        "TEXT1": "文本1",
+        "TEXT2": "文本2"
+      }
+    }
+  ]
+}
