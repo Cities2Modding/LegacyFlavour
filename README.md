@@ -46,7 +46,7 @@ LegacyFlavour currently includes the following features:
 
 15. **Accent and Background Accent Customization**: Enhance your game's UI with personalized accent and background colors that change dynamically.
 
-12. **Integrated Themes in UI Options**: Newly created themes will be available for preview and selection directly in the UI options screen.
+16. **Integrated Themes in UI Options**: Newly created themes will be available for preview and selection directly in the UI options screen.
 
 ## Installation
 
