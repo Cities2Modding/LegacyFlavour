@@ -24753,7 +24753,7 @@
           }
         ]);
       }
-    }, [localeData]);
+    }, [localeData, data]);
     const title = localeData.Entries ? `Legacy Flavour (${localeData.Entries["LEGACY_FLAVOUR"]})` : "Legacy Flavour";
     return /* @__PURE__ */ import_react25.default.createElement(tab_window_default, { react, title, tabs, onClose: toggleVisibility, style: { opacity } });
   };

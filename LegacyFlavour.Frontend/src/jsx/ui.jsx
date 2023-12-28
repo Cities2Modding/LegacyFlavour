@@ -8,7 +8,6 @@ import $UIThemes from './tabs/_ui-themes';
 import $About from './tabs/_about';
 
 const $LegacyFlavour = ({ react }) => {
-
     const [data, setData] = react.useState({});
     const [defaultThemeData, setDefaultThemeData] = react.useState({});
     const [themeData, setThemeData] = react.useState({});
@@ -88,7 +87,7 @@ const $LegacyFlavour = ({ react }) => {
                 }
             ]);
         }
-    }, [localeData]);
+    }, [localeData, data]);
 
     const title = localeData.Entries ? `Legacy Flavour (${localeData.Entries["LEGACY_FLAVOUR"]})` : "Legacy Flavour";
     return <$TabWindow react={react} title={title} tabs={tabs} onClose={toggleVisibility} style={{ opacity: opacity }} />
