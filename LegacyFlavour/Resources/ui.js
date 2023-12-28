@@ -24649,7 +24649,7 @@
     function toParagraph(str) {
       return /* @__PURE__ */ import_react24.default.createElement("p", { cohinline: "cohinline", dangerouslySetInnerHTML: { __html: str } });
     }
-    const title = `${locale["LEGACY_FLAVOUR"]} v0.0.9`;
+    const title = `${locale["LEGACY_FLAVOUR"]} v1.0.0`;
     return /* @__PURE__ */ import_react24.default.createElement("div", null, /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {

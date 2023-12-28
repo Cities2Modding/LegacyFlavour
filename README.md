@@ -2,8 +2,8 @@
 
 Welcome to the GitHub repository for LegacyFlavour, a Cities Skylines 2 mod designed to blend the best of Cities Skylines 1 with the advanced features of Cities Skylines 2. Our mod aims to enhance your city-building experience by introducing nostalgic elements and improved functionalities.
 
-## Updates for v0.0.9
-- **Language support**: Introduced localisation support for: de-DE (German), es-ES (Spanish), fr-FR (French), it-IT (Italian), ja-JP (Japanese), ko-KR (Korean), pl-PL (Polish), pt-BR (Portuguese - Brazil), ru-RU (Russian), zh-HANS (Chinese - Simplified), zh-HANT (Chinese - Traditional).
+## Updates for v1.0.0
+- Bug fix for regression around data updates introduced with languages update.
 
 ## Features
 
@@ -47,6 +47,8 @@ LegacyFlavour currently includes the following features:
 15. **Accent and Background Accent Customization**: Enhance your game's UI with personalized accent and background colors that change dynamically.
 
 16. **Integrated Themes in UI Options**: Newly created themes will be available for preview and selection directly in the UI options screen.
+
+17. **Language support**: Introduced localisation support for: de-DE (German), es-ES (Spanish), fr-FR (French), it-IT (Italian), ja-JP (Japanese), ko-KR (Korean), pl-PL (Polish), pt-BR (Portuguese - Brazil), ru-RU (Russian), zh-HANS (Chinese - Simplified), zh-HANT (Chinese - Traditional).
 
 ## Installation
 
