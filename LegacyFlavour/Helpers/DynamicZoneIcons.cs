@@ -26,7 +26,7 @@ namespace LegacyFlavour.Helpers
         private static Dictionary<string, string[]> ZoneColours = new( )
         {
             {"Commercial", new string[] { "#00c1ff", "#0089cf", "#0071a9", "#73e0fc", "#3ed2ff", "#005f95", "#03243e", "#001209", "#73d0ff", "#067cb9", "#024263", "#032f47", "#021c29", "#9edeff", "#24b5ff", "#05a3f4", "#034464" } },
-            {"Industrial", new string[] { "#ffdc00", "#d6a900", "#a48700", "#fff69f", "#f29d00", "#504200" } },
+            {"Industrial", new string[] { "#ffdc00", "#d6a900", "#a48700", "#fff69f", "#f29d00", "#504200", "#8a6d00", "#f1bf00" } },
             {"Residential", new string[] { "#023b0a", "#00b41a", "#004b12", "#02ff26", "#00580d", "#00ce1e", "#9dffab", "#00ff25", "#7cff62", "#03d321", "#006117", "#008620", "#008f15", "#08961c", "#024412", "#00c1ff", "#0089cf", "#0071a9", "#03243e", "#73d0ff", "#002612", "#065b12", "#01cf1e" } },
             {"Office", new string[] { "#b400ff", "#9a0ad6", "#7902ab", "#d078f5", "#64028d", "#310146", "#660090", "#c65af3" } }
         };
@@ -83,7 +83,7 @@ namespace LegacyFlavour.Helpers
                     IconNames.Add( fileName );
             }
 
-            ModifyBasedOnColours( );
+            ModifyBasedOnColours( true );
         }
 
         /// <summary>
@@ -94,9 +94,31 @@ namespace LegacyFlavour.Helpers
         {
             ReplacedIcons.Clear( );
 
-            // Invalidate all of them
             if ( invalidateCache )
             {
+                _config.IconsID = System.Guid.NewGuid( ).ToString( ).Replace( "-", "" );
+                _config.Save( );
+
+                // Clear old icons out
+                var oldIconDirectories = Directory.GetDirectories( ModIconsPath );
+
+                if ( oldIconDirectories?.Length > 0 )
+                {
+                    foreach ( var iconDirectory in oldIconDirectories )
+                    {
+                        Directory.Delete( iconDirectory, true );
+                    }
+                }
+
+                var files = Directory.GetFiles( ModIconsPath );
+                if ( files?.Length > 0 )
+                {
+                    foreach ( var iconFile in files )
+                    {
+                        File.Delete( iconFile );
+                    }
+                }
+
                 foreach ( var colourSet in _zoneColourSystem.AllColours )
                 {
                     ProcessColours( colourSet.Item1, colourSet.Item2 );
@@ -206,7 +228,9 @@ namespace LegacyFlavour.Helpers
                 return;
 
             var colourMatch = colours[matchingKey];
-            var copyPath = ModIconsPath + "\\" + iconName + "_" + mode.ToString( ) + ".svg";
+            var copyPath = ModIconsPath + "\\" + _config.IconsID + "\\" + iconName + "_" + mode.ToString( ) + ".svg";
+
+            Directory.CreateDirectory( ModIconsPath + "\\" + _config.IconsID );
 
             if ( invalidateCache || !File.Exists( copyPath ) )
             {
@@ -214,7 +238,10 @@ namespace LegacyFlavour.Helpers
                 workingSVG[iconName] = File.ReadAllText( srcPath );
 
                 var svg = workingSVG[iconName];
-                ConvertSVG( iconName, "#" + ColorUtility.ToHtmlStringRGB( colourMatch ), ref svg );
+
+                if ( _config.OverrideIcons )
+                    ConvertSVG( iconName, "#" + ColorUtility.ToHtmlStringRGB( colourMatch ), ref svg );
+                
                 workingSVG[iconName] = svg;
                 SaveSVG( iconName, copyPath, svg );
             }
@@ -284,7 +311,7 @@ namespace LegacyFlavour.Helpers
                 if ( !_config.Enabled )
                     return true;
 
-                parsedUrl = "coui://legacyflavourui/Icons/" + iconName + "_" + mode + ".svg";
+                parsedUrl = "coui://legacyflavourui/Icons/" + _config.IconsID + "/" + iconName + "_" + mode + ".svg";
                 return true;
             }
 

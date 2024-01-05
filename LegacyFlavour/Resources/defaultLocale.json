@@ -38,6 +38,9 @@
         "CUSTOM_ZONE_COLOURING": "Custom Zone Colouring",
         "CUSTOM_ZONE_COLOURING_DESC": "Provides custom zone colour options that can be cycled with a key shortcut. Toggle with ALT+Z.",
 
+        "OVERRIDE_ZONE_ICONS": "Override zone icons",
+        "OVERRIDE_ZONE_ICONS_DESC": "With this enabled, zone icons will be changed to your colour settings. If you want vanilla icons disable this.",
+
         "USE_DYNAMIC_CELL_BORDERS": "Use Dynamic Cell Borders",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "Zone cell borders will adjust to be more visible when there is snow coverage.",
 
@@ -214,6 +217,9 @@
 
         "CUSTOM_ZONE_COLOURING": "Benutzerdefinierte Zonen-Färbung",
         "CUSTOM_ZONE_COLOURING_DESC": "Bietet benutzerdefinierte Zonenfarboptionen, die mit einer Tastenkombination durchlaufen werden können. Umschalten mit ALT+Z.",
+
+        "OVERRIDE_ZONE_ICONS": "Zonensymbole überschreiben",
+        "OVERRIDE_ZONE_ICONS_DESC": "Wenn aktiviert, werden Zonensymbole gemäß Ihren Farbeinstellungen geändert. Für Standard-Symbole, deaktivieren Sie diese Option.",
 
         "USE_DYNAMIC_CELL_BORDERS": "Dynamische Zellgrenzen verwenden",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "Zellgrenzen der Zone passen sich an, um bei Schneebedeckung sichtbarer zu sein.",
@@ -392,6 +398,9 @@
         "CUSTOM_ZONE_COLOURING": "Coloration de Zone Personnalisée",
         "CUSTOM_ZONE_COLOURING_DESC": "Fournit des options de couleur de zone personnalisées qui peuvent être cyclées avec un raccourci clavier. Bascule avec ALT+Z.",
 
+        "OVERRIDE_ZONE_ICONS": "Remplacer icônes de zone",
+        "OVERRIDE_ZONE_ICONS_DESC": "Si activé, les icônes de zone seront modifiées selon vos paramètres de couleur. Pour conserver les icônes par défaut, désactivez ceci.",
+
         "USE_DYNAMIC_CELL_BORDERS": "Utiliser Bordures de Cellules Dynamiques",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "Les bordures de cellules de zone s'ajusteront pour être plus visibles lorsqu'il y a une couverture de neige.",
 
@@ -568,6 +577,9 @@
 
         "CUSTOM_ZONE_COLOURING": "Colorazione Zona Personalizzata",
         "CUSTOM_ZONE_COLOURING_DESC": "Fornisce opzioni di colore zona personalizzate che possono essere ciclate con una scorciatoia da tastiera. Attiva con ALT+Z.",
+        
+        "OVERRIDE_ZONE_ICONS": "Sostituisci icone zona",
+        "OVERRIDE_ZONE_ICONS_DESC": "Se attivato, le icone delle zone saranno cambiate secondo le tue impostazioni di colore. Per mantenere le icone predefinite, disattiva questa opzione.",
 
         "USE_DYNAMIC_CELL_BORDERS": "Usa Bordi Cellula Dinamici",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "I bordi delle cellule di zona si adatteranno per essere più visibili quando c'è copertura di neve.",
@@ -745,6 +757,9 @@
 
         "CUSTOM_ZONE_COLOURING": "Coloreado de Zona Personalizado",
         "CUSTOM_ZONE_COLOURING_DESC": "Ofrece opciones de color de zona personalizadas que se pueden cambiar con un atajo de teclado. Cambiar con ALT+Z.",
+        
+        "OVERRIDE_ZONE_ICONS": "Sobrescribir iconos de zona",
+        "OVERRIDE_ZONE_ICONS_DESC": "Si está activado, los iconos de zona cambiarán según tu configuración de color. Si prefieres los iconos predeterminados, desactiva esta opción.",
 
         "USE_DYNAMIC_CELL_BORDERS": "Usar Bordes de Célula Dinámicos",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "Los bordes de célula de zona se ajustarán para ser más visibles cuando haya cobertura de nieve.",
@@ -922,6 +937,9 @@
 
         "CUSTOM_ZONE_COLOURING": "カスタムゾーンカラー",
         "CUSTOM_ZONE_COLOURING_DESC": "キーショートカットで切り替え可能なカスタムゾーンカラーオプションを提供。ALT+Zで切り替え。",
+        
+        "OVERRIDE_ZONE_ICONS": "ゾーンアイコンの上書き",
+        "OVERRIDE_ZONE_ICONS_DESC": "これを有効にすると、ゾーンアイコンはあなたの色設定に変更されます。標準",
 
         "USE_DYNAMIC_CELL_BORDERS": "動的セルボーダーを使う",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "雪が降るとゾーンセルの境界線がより見えやすく調整される。",
@@ -1099,6 +1117,9 @@
 
         "CUSTOM_ZONE_COLOURING": "맞춤 지역 색칠",
         "CUSTOM_ZONE_COLOURING_DESC": "키 단축키로 순환할 수 있는 맞춤 지역 색상 옵션을 제공합니다. ALT+Z로 전환.",
+        
+        "OVERRIDE_ZONE_ICONS": "구역 아이콘 변경",
+        "OVERRIDE_ZONE_ICONS_DESC": "이 기능을 활성화하면 구역 아이콘이 색상 설정에 따라 변경됩니다. 기본 아이콘을 사용하려면 이 기능을 비활성화하세요.",
 
         "USE_DYNAMIC_CELL_BORDERS": "동적 셀 경계 사용",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "눈이 쌓일 때 지역 셀 경계가 더 잘 보이도록 조정됩니다.",
@@ -1276,6 +1297,9 @@
 
         "CUSTOM_ZONE_COLOURING": "Niestandardowe Kolorowanie Stref",
         "CUSTOM_ZONE_COLOURING_DESC": "Zapewnia niestandardowe opcje kolorów stref, które można przewijać skrótem klawiszowym. Przełącz z ALT+Z.",
+        
+        "OVERRIDE_ZONE_ICONS": "Nadpisz ikony stref",
+        "OVERRIDE_ZONE_ICONS_DESC": "Po włączeniu, ikony stref zmienią się zgodnie z ustawieniami kolorów. Aby używać domyślnych ikon, wyłącz tę opcję.",
 
         "USE_DYNAMIC_CELL_BORDERS": "Użyj Dynamicznych Granic Komórek",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "Granice komórek strefy dostosują się, aby być bardziej widoczne, gdy jest pokrywa śnieżna.",
@@ -1453,6 +1477,9 @@
 
         "CUSTOM_ZONE_COLOURING": "Coloração de Zona Personalizada",
         "CUSTOM_ZONE_COLOURING_DESC": "Fornece opções de cores de zona personalizadas que podem ser alternadas com um atalho de tecla. Alternar com ALT+Z.",
+        
+        "OVERRIDE_ZONE_ICONS": "Substituir ícones de zona",
+        "OVERRIDE_ZONE_ICONS_DESC": "Quando ativado, os ícones de zona serão alterados para as suas configurações de cor. Se desejar ícones padrão, desative esta opção.",
 
         "USE_DYNAMIC_CELL_BORDERS": "Usar Bordas de Célula Dinâmicas",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "As bordas das células da zona se ajustarão para serem mais visíveis quando houver cobertura de neve.",
@@ -1630,6 +1657,9 @@
 
         "CUSTOM_ZONE_COLOURING": "Пользовательская Расцветка Зон",
         "CUSTOM_ZONE_COLOURING_DESC": "Предоставляет пользовательские варианты цвета зон, которые можно переключать с помощью горячей клавиши. Переключать с помощью ALT+Z.",
+        
+        "OVERRIDE_ZONE_ICONS": "Переопределить иконки зон",
+        "OVERRIDE_ZONE_ICONS_DESC": "Если включено, иконки зон изменятся в соответствии с вашими настройками цвета. Чтобы использовать стандартные иконки, отключите это.",
 
         "USE_DYNAMIC_CELL_BORDERS": "Использовать Динамические Границы Ячеек",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "Границы ячеек зон будут регулироваться для повышения видимости при снежном покрытии.",
@@ -1771,7 +1801,7 @@
       }
     },
     {
-      "IDs": [ "zh-HANS", "zh-HANT" ],
+      "IDs": [ "zh-HANS" ],
       "Entries": {
         "LEGACY_FLAVOUR": "传统风味",
         "SETTINGS": "设置",
@@ -1807,6 +1837,9 @@
 
         "CUSTOM_ZONE_COLOURING": "自定义区域着色",
         "CUSTOM_ZONE_COLOURING_DESC": "提供可以使用快捷键循环的自定义区域颜色选项。",
+        
+        "OVERRIDE_ZONE_ICONS": "覆盖区域图标",
+        "OVERRIDE_ZONE_ICONS_DESC": "启用后，区域图标将按照您的颜色设置进行更改。如果您想要默认图标，请禁用此功能。",
 
         "USE_DYNAMIC_CELL_BORDERS": "使用动态单元边界",
         "USE_DYNAMIC_CELL_BORDERS_DESC": "当有积雪覆盖时，区域单元边界将调整为更加可见。",
@@ -1943,6 +1976,184 @@
         "PANEL2": "控制板2",
         "TEXT1": "文本1",
         "TEXT2": "文本2"
+      }
+    },
+    {
+      "IDs": [ "zh-HANT" ],
+      "Entries": {
+        "LEGACY_FLAVOUR": "傳統風味",
+        "SETTINGS": "基本設定",
+        "ZONE_SETTINGS": "分區設定",
+        "ZONE_COLOURS": "分區顏色",
+        "UI_THEMES": "介面主題",
+        "ABOUT": "關於我們",
+        "ACCENT": "強調",
+        "PANEL": "面板",
+        "SECTION": "選擇",
+        "SELECTED": "已選擇",
+        "TEXT": "文字",
+        "MENU": "主選單",
+        "OTHER": "其他",
+
+        "USE_STICKY_WHITENESS": "資訊工具模式取消背景色",
+        "USE_STICKY_WHITENESS_DESC": "取消進入資訊工具模式時，地圖背景會變為白色的機制，改為使用自訂設定（快捷鍵：ALT+S）",
+
+        "WHITENESS_TOGGLE": "資訊工具模式暫時顯示原生背景色",
+        "WHITENESS_TOGGLE_DESC": "在啟用「資訊工具模式取消背景色」設定的狀況下，開啟此設定可以在資訊工具模式中暫時顯示原生白色背景（快捷鍵：SHIFT+W）",
+
+        "USE_UNITS": "使用Ｕ作為長度單位",
+        "USE_UNITS_DESC": "使用具有顯示長度功能的工具時，將顯示的長度單位改為「Units」（快捷鍵：ALT+U）",
+
+        "FREEZE_TIME_VISUALS": "凍結視覺時間",
+        "FREEZE_TIME_VISUALS_DESC": "凍結目前顯示的視覺時間（需要開啟遊戲玩法設定中的「日夜效果」）",
+
+        "SET_VISUAL_TIME_OF_DAY": "設定視覺時間",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "設定目前顯示的視覺時間（需要開啟遊戲玩法設定中的「日夜效果」）",
+
+        "WEATHER": "天氣",
+        "WEATHER_DESC": "設定目前的天氣狀況",
+
+        "CUSTOM_ZONE_COLOURING": "自訂分區顏色",
+        "CUSTOM_ZONE_COLOURING_DESC": "使用自訂分區顏色，可使用快捷鍵循環切換不同模式（快捷鍵：ALT+Z）",
+        
+        "OVERRIDE_ZONE_ICONS": "覆蓋區域圖示",
+        "OVERRIDE_ZONE_ICONS_DESC": "啟用後，區域圖示將根據您的顏色設定進行更改。如果您想要預設圖示，請禁用此功能。",
+
+        "USE_DYNAMIC_CELL_BORDERS": "動態調整邊界顯示",
+        "USE_DYNAMIC_CELL_BORDERS_DESC": "當地圖有積雪覆蓋時，提高區域邊界的可視性",
+
+        "EMPTY_CELL_OPACITY": "空白分區透明度",
+        "EMPTY_CELL_OPACITY_DESC": "設定空白分區的格子透明度",
+
+        "EMPTY_CELL_BORDER_OPACITY": "空白分區邊界透明度",
+        "EMPTY_CELL_BORDER_OPACITY_DESC": "設定空白分區的邊界透明度",
+
+        "CELL_OPACITY": "已規劃分區透明度",
+        "CELL_OPACITY_DESC": "設定已規劃分區的格子透明度",
+
+        "CELL_BORDER_OPACITY": "已規畫分區邊界透明度",
+        "CELL_BORDER_OPACITY_DESC": "設定已規劃分區的邊界透明度",
+
+        "COLOUR_BLINDNESS_MODE": "色盲模式",
+        "COLOUR_BLINDNESS_MODE_DESC": "選擇不同的顏色模式，可使用快捷鍵循環切換（快捷鍵：SHIFT+Z）",
+
+        "RESIDENTIAL": "住宅分區",
+        "RESIDENTIAL_DESC": "設定住宅區顏色",
+
+        "COMMERCIAL": "商業分區",
+        "COMMERCIAL_DESC": "設定商業區顏色",
+
+        "OFFICE": "辦公分區",
+        "OFFICE_DESC": "設定辦公區顏色",
+
+        "INDUSTRIAL": "工業分區",
+        "INDUSTRIAL_DESC": "設定工業區顏色",
+
+        "THEME": "主題",
+        "THEME_DESC": "選擇欲編輯的主題",
+
+        "GENERATE_FROM_COLOUR": "指定顏色主題",
+        "GENERATE_FROM_COLOUR_DESC": "手動選擇並自動產生對應的顏色主題",
+
+        "MAKE_WINDOW_TRANSPARENT": "視窗透明化",
+
+        "DEVELOPED_BY": "本模組由 optimus-code 和 Cities2Modding 社群製作",
+        "ABOUT_1": "我們所製作的模組（包含「Legacy Flavour」在內）是充滿活力的創意工作之一，經由 <b>Thunderstore.io</b> 以及我們的 Github 專案倉庫進行發佈。這不僅僅只是我們的努力工作，也代表了 Cities Skylines 模組社群的合作與創新精神。",
+        "ABOUT_2": "特別感謝 <b>Captain_Of_Coit</b>、<b>89pleasure</b>、<b>Rebecca</b>，以及廣大的 <b>Cities2Modding</b> 社群。",
+        "ABOUT_3": "無論您是經驗豐富的創作者，抑或是初踏入模組界的新人，只要對製作模組感興趣，Cities2Modding 社群的大門始終為您敞開。我們靠著共享知識與嶄新想法而蓬勃發展，相信無論是誰都能為我們不斷成長、充滿活力的社群貢獻其獨到之處。儘管社群使用英文作為主要交流語言，我們仍舊歡迎各位！",
+
+        "GITHUB_DESC": "您可以在 Github 上下載我們所製作的模組，有意願甚至能參與其中！",
+        "REDDIT_DESC": "如果您想加入討論，我們有專用的 reddit 討論區。",
+        "DISCORD_DESC": "如果您想參與我們的社群，抑或是需要任何協助，歡迎加入我們的 Discord！",
+
+        "OFF": "關閉",
+        "DAY": "白天",
+        "GOLDEN_HOUR": "金色時刻",
+        "NIGHT": "夜晚",
+        "SUN": "晴朗",
+        "OVERCAST": "陰天",
+        "RAIN": "降雨",
+        "SNOW": "降雪",
+
+        "RESET_TO_DEFAULT": "重設為原始設定",
+
+        "SET_TO_VANILLA_COLOURS": "設定為預設顏色",
+        "REGENERATE_ICONS": "重新產生圖示",
+        "GAME_RESTART_REQUIRED": "需要重新啟動遊戲",
+        "RESET": "重設",
+
+        "DEFAULT_COLOURS": "預設",
+        "DEUTERANOPIA": "綠色色盲",
+        "PROTANOPIA": "紅色色盲",
+        "TRITANOPIA": "藍色色盲",
+
+        "USE_SELECTED_THEME": "使用選擇的主題",
+
+        "DEFAULT": "預設",
+        "BRIGHT_BLUE": "亮藍色",
+        "DARK_GREY_ORANGE": "深灰橘",
+        "LF_DEFAULT": "LF－預設",
+        "LF_HIGH_CONTRAST": "LF－高對比",
+        "LF_HOT_PINK": "LF－艷粉色",
+        "LF_TOXIC_GREEN": "LF－強毒綠",
+        "LF_MOCHA": "LF－摩卡棕",
+        "LF_PEACHY_OCEAN": "LF－桃洋綠",
+        "LF_DARK_RED": "LF－深紅色",
+        "LF_COOL_BLUE": "LF－冷冽青",
+        "LF_DARK_TEAL": "LF－深鴨綠",
+
+        "RESIDENTIAL_LOW": "低密度住宅",
+        "RESIDENTIAL_HIGH": "高密度住宅",
+        "RESIDENTIAL_MEDIUM": "中密度住宅",
+        "RESIDENTIAL_MEDIUM_ROW": "中密度排屋",
+        "RESIDENTIAL_LOWRENT": "低租金住宅",
+        "RESIDENTIAL_MIXED": "混合型住宅",
+        "COMMERCIAL_LOW": "低密度商業",
+        "COMMERCIAL_HIGH": "高密度商業",
+        "OFFICE_LOW": "低密度辦公",
+        "OFFICE_HIGH": "高密度辦公",
+        "INDUSTRIAL_AGRICULTURE": "農業",
+        "INDUSTRIAL_FORESTRY": "林業",
+        "INDUSTRIAL_MANUFACTURING": "製造業",
+        "INDUSTRIAL_OIL": "石油業",
+        "INDUSTRIAL_ORE": "礦業",
+
+        "PRIMARY_ACCENT": "主要強調色",
+        "BACKGROUND_ACCENT": "背景強調色",
+
+        "HOVER": "懸停",
+        "PRESSED": "點擊",
+        "FOCUSED": "聚焦",
+
+        "BACKGROUND": "背景",
+        "CUSTOM": "自訂",
+        "COLOR": "顏色",
+        "DARK": "暗色",
+        "NORMAL": "普通",
+        "LIGHT": "亮色",
+        "LIGHTER": "亮色凸顯",
+        "DIM": "淡色",
+        "DIMMER": "黯淡",
+        "DIMMEST": "深暗",
+        "HEADER": "標題",
+        "BORDER": "邊界",
+        "LOCKED": "鎖定",
+        "ACTIVE": "啟用",
+        "CONTROL": "控制",
+        "TITLE": "標題",
+        "INVERTED": "反白",
+        "DISABLED": "禁用",
+        "CHIRPER": "小啾啾",
+        "POSITIVE": "正向",
+        "WARNING": "警告",
+        "NEGATIVE": "負向",
+        "TAB": "標籤",
+        "ITEM": "物品",
+        "PAUSE": "暫停",
+        "PANEL1": "面板１",
+        "PANEL2": "面板２",
+        "TEXT1": "文字１",
+        "TEXT2": "文字２"
       }
     }
   ]

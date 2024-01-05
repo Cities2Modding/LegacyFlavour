@@ -156,6 +156,7 @@ namespace LegacyFlavour.Systems
                     _updateSystem.EnqueueColoursUpdate( );
                     break;
 
+                case "OverrideIcons":
                 case "CellOpacity":
                 case "EmptyCellOpacity":
                 case "CellBorderOpacity":
@@ -392,7 +393,6 @@ namespace LegacyFlavour.Systems
 
                 var overrideColor = color;
                 var colors = Colours;
-
                     
                 if ( colors.ContainsKey( nameLessAreaType ) )
                     overrideColor = colors[nameLessAreaType];

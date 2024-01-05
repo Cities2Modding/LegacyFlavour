@@ -19,7 +19,7 @@ const $About = ({ react, locale }) => {
         return <p cohinline="cohinline" dangerouslySetInnerHTML={{ __html: str }} />;
     }
 
-    const title = `${locale["LEGACY_FLAVOUR"]} v1.0.0`;
+    const title = `${locale["LEGACY_FLAVOUR"]} v1.0.1`;
     return <div>
         <$IconPanel label={title} style={{ flex: 1 }}
             description={locale["DEVELOPED_BY"]}

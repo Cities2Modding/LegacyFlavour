@@ -24157,7 +24157,7 @@
       changeWindowOpacity(!visible);
     };
     const getZoneColours = (zoneGroup) => {
-      let icon = "coui://legacyflavourui/Icons/" + zoneGroup.icon + "_" + data.Mode + ".svg";
+      let icon = "coui://legacyflavourui/Icons/" + data.IconsID + "/" + zoneGroup.icon + "_" + data.Mode + ".svg";
       return /* @__PURE__ */ import_react19.default.createElement(
         icon_panel_default,
         {
@@ -24208,7 +24208,7 @@
         fitChild: "true"
       },
       /* @__PURE__ */ import_react19.default.createElement(select_default, { react, selected: modeString, options: colourModes, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onModeChanged })
-    )), /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "33.33333333333%" } }, /* @__PURE__ */ import_react19.default.createElement(button_default2, { onClick: triggerRegenerateIcons }, locale["REGENERATE_ICONS"], " (", locale["GAME_RESTART_REQUIRED"], ")"), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerSetColoursToVanilla }, locale["SET_TO_VANILLA_COLOURS"]), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetColoursToDefault }, locale["RESET"], " ", modeString), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react19.default.createElement(label_default, { style: { margin: "10rem" } }, locale["MAKE_WINDOW_TRANSPARENT"]), /* @__PURE__ */ import_react19.default.createElement(checkbox_default, { react, style: { margin: "10rem" }, checked: useTransparency, onToggle: onChangeUseTransparency })))), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%" } }, renderZoneColours(0)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem", paddingRight: "5rem" } }, renderZoneColours(1), renderZoneColours(2)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem" } }, renderZoneColours(3))));
+    )), /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "33.33333333333%" } }, /* @__PURE__ */ import_react19.default.createElement(button_default2, { onClick: triggerRegenerateIcons }, locale["REGENERATE_ICONS"]), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerSetColoursToVanilla }, locale["SET_TO_VANILLA_COLOURS"]), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetColoursToDefault }, locale["RESET"], " ", modeString), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react19.default.createElement(label_default, { style: { margin: "10rem" } }, locale["MAKE_WINDOW_TRANSPARENT"]), /* @__PURE__ */ import_react19.default.createElement(checkbox_default, { react, style: { margin: "10rem" }, checked: useTransparency, onToggle: onChangeUseTransparency })))), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%" } }, renderZoneColours(0)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem", paddingRight: "5rem" } }, renderZoneColours(1), renderZoneColours(2)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem" } }, renderZoneColours(3))));
   };
   var zone_colours_default = $ZoneColours;
 
@@ -24267,19 +24267,20 @@
       engine.trigger("cities2modding_legacyflavour.resetZoneSettingsToDefault");
     };
     const updateData = (field, val) => {
-      if (field === "Enabled") {
+      if (field === "Enabled")
         setData({ ...data, Enabled: val });
-      } else if (field === "UseDynamicCellBorders") {
+      else if (field === "UseDynamicCellBorders")
         setData({ ...data, UseDynamicCellBorders: val });
-      } else if (field === "CellOpacity") {
+      else if (field === "CellOpacity")
         setData({ ...data, CellOpacity: val });
-      } else if (field === "CellBorderOpacity") {
+      else if (field === "CellBorderOpacity")
         setData({ ...data, CellBorderOpacity: val });
-      } else if (field === "EmptyCellOpacity") {
+      else if (field === "EmptyCellOpacity")
         setData({ ...data, EmptyCellOpacity: val });
-      } else if (field === "EmptyCellBorderOpacity") {
+      else if (field === "EmptyCellBorderOpacity")
         setData({ ...data, EmptyCellBorderOpacity: val });
-      }
+      else if (field === "OverrideIcons")
+        setData({ ...data, OverrideIcons: val });
       triggerUpdate(field, val);
     };
     return /* @__PURE__ */ import_react21.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
@@ -24290,6 +24291,14 @@
         icon: "Media/Game/Icons/Zones.svg"
       },
       /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.Enabled, onToggle: (val) => updateData("Enabled", val) })
+    ), /* @__PURE__ */ import_react21.default.createElement(
+      icon_panel_default,
+      {
+        label: locale["OVERRIDE_ZONE_ICONS"],
+        description: locale["OVERRIDE_ZONE_ICONS_DESC"],
+        icon: "Media/Game/Icons/ZoneResidential.svg"
+      },
+      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.OverrideIcons, onToggle: (val) => updateData("OverrideIcons", val) })
     ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24307,7 +24316,7 @@
         fitChild: "true"
       },
       /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.CellOpacity, onValueChanged: (val) => updateData("CellOpacity", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement(
+    ))), /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
         label: locale["CELL_BORDER_OPACITY"],
@@ -24316,7 +24325,7 @@
         fitChild: "true"
       },
       /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.CellBorderOpacity, onValueChanged: (val) => updateData("CellBorderOpacity", val) })
-    ))), /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
+    ), /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
         label: locale["EMPTY_CELL_OPACITY"],
@@ -24649,7 +24658,7 @@
     function toParagraph(str) {
       return /* @__PURE__ */ import_react24.default.createElement("p", { cohinline: "cohinline", dangerouslySetInnerHTML: { __html: str } });
     }
-    const title = `${locale["LEGACY_FLAVOUR"]} v1.0.0`;
+    const title = `${locale["LEGACY_FLAVOUR"]} v1.0.1`;
     return /* @__PURE__ */ import_react24.default.createElement("div", null, /* @__PURE__ */ import_react24.default.createElement(
       icon_panel_default,
       {

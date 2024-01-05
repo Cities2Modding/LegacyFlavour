@@ -5,6 +5,7 @@
   "CellBorderOpacity": 0.9,
   "EmptyCellOpacity": 0,
   "EmptyCellBorderOpacity": 0.2,
+  "OverrideIcons": true,
   "Zones": [
     {
       "Name": "Commercial High",

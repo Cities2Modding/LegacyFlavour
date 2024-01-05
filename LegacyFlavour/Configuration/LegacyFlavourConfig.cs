@@ -1,4 +1,5 @@
 ﻿using LegacyFlavour.Configuration.Themes;
+using System;
 using System.Collections.Generic;
 
 namespace LegacyFlavour.Configuration
@@ -86,6 +87,18 @@ namespace LegacyFlavour.Configuration
         } = WeatherOverride.Off;
 
         public List<ZoneColourConfig> Zones
+        {
+            get;
+            set;
+        }
+
+        public bool OverrideIcons
+        {
+            get;
+            set;
+        } = true;
+
+        public string IconsID
         {
             get;
             set;

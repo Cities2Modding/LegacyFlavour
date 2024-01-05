@@ -91,7 +91,7 @@ namespace LegacyFlavour.MonoBehaviours
             if ( snowCoveragePercentage != lastSnowPercent )
             {
                 lastSnowPercent = snowCoveragePercentage;
-                Debug.Log( "Snow Coverage Percentage: " + snowCoveragePercentage + "%" );
+                //Debug.Log( "Snow Coverage Percentage: " + snowCoveragePercentage + "%" );
 
                 OnUpdate?.Invoke( snowCoveragePercentage );
             }
@@ -125,11 +125,11 @@ namespace LegacyFlavour.MonoBehaviours
                     return null;
                 }
 
-                var assetNames = myLoadedAssetBundle.GetAllAssetNames( );
-                foreach ( var name in assetNames )
-                {
-                    Debug.Log( name );
-                }
+                //var assetNames = myLoadedAssetBundle.GetAllAssetNames( );
+                //foreach ( var name in assetNames )
+                //{
+                //    Debug.Log( name );
+                //}
 
                 // Load an asset from the bundle
                 var loadedShader = myLoadedAssetBundle.LoadAsset<ComputeShader>( "assets/compute/calculatesnow.compute" );

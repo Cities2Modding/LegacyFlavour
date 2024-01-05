@@ -61,7 +61,7 @@ const $ZoneColours = ({ react, locale, data, setData, triggerUpdate, useTranspar
     };
 
     const getZoneColours = (zoneGroup) => {
-        let icon = "coui://legacyflavourui/Icons/" + zoneGroup.icon + "_" + data.Mode + ".svg"; // Cache busting via querystring causes flickers so meh! We need a game restart for icon changes
+        let icon = "coui://legacyflavourui/Icons/" + data.IconsID + "/" + zoneGroup.icon + "_" + data.Mode + ".svg"; // Cache busting via querystring causes flickers so meh! We need a game restart for icon changes
 
         return (<$IconPanel key={zoneGroup.name} label={zoneGroup.label} style={{ flex: 1 }}
             description={zoneGroup.desc}
@@ -120,7 +120,7 @@ const $ZoneColours = ({ react, locale, data, setData, triggerUpdate, useTranspar
                 </$IconPanel>
             </div>
             <div style={{ width: '33.33333333333%' }}>
-                <$Button onClick={triggerRegenerateIcons}>{locale["REGENERATE_ICONS"]} ({locale["GAME_RESTART_REQUIRED"]})</$Button>
+                <$Button onClick={triggerRegenerateIcons}>{locale["REGENERATE_ICONS"]}</$Button>
                 <$Button style={{ marginTop: '5rem' }} onClick={triggerSetColoursToVanilla}>{locale["SET_TO_VANILLA_COLOURS"]}</$Button>
                 <$Button style={{ marginTop: '5rem' }} onClick={triggerResetColoursToDefault}>{locale["RESET"]} {modeString}</$Button>
                 <div style={{ display: 'flex', width: '100%' }}>

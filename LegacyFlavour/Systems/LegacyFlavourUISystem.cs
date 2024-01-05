@@ -48,7 +48,8 @@ namespace LegacyFlavour.Systems
             "EmptyCellOpacity",
             "EmptyCellBorderOpacity",
             "Mode",
-            "UseDynamicCellBorders"
+            "UseDynamicCellBorders",
+            "OverrideIcons",
         };
 
         private LegacyFlavourConfig Config
