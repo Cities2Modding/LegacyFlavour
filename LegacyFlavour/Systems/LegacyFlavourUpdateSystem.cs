@@ -1,8 +1,6 @@
 ﻿using Game;
 using LegacyFlavour.Configuration;
-using LegacyFlavour.Configuration.Themes;
 using System;
-using LegacyFlavour.Helpers;
 
 namespace LegacyFlavour.Systems
 {
@@ -14,15 +12,11 @@ namespace LegacyFlavour.Systems
         private bool hasConfigUpdatePending;
         private float nextConfigUpdate;
 
-        private bool hasThemeConfigUpdatePending;
-        private float nextThemeConfigUpdate;
-
         private bool hasZoneColourUpdatePending;
         private bool forceZoneInvalidateCache;
         private float nextZoneColourUpdate;
 
         private static LegacyFlavourConfig _config = ConfigBase.Load<LegacyFlavourConfig>( );
-        private static ThemeConfig _themeConfig = ThemeConfig.Load( );
 
         public LegacyFlavourConfig Config
         {
@@ -32,30 +26,12 @@ namespace LegacyFlavour.Systems
             }
         }
 
-        public ThemeConfig ThemeConfig
-        {
-            get
-            {
-                return _themeConfig;
-            }
-        }
-
-        public ThemeGenerator ThemeGenerator
-        {
-            get
-            {
-                return _themeGenerator;
-            }
-        }
-
         private ZoneColourSystem _zoneColourSystem;
-        private ThemeGenerator _themeGenerator;
 
         protected override void OnCreate( )
         {
             base.OnCreate( );
             _zoneColourSystem = World.GetOrCreateSystemManaged<ZoneColourSystem>( );
-            _themeGenerator = new ThemeGenerator( this );
         }
 
         protected override void OnUpdate( )
@@ -74,23 +50,6 @@ namespace LegacyFlavour.Systems
                 }
             }
 
-            if ( hasThemeConfigUpdatePending && UnityEngine.Time.time >= nextThemeConfigUpdate )
-            {
-                hasThemeConfigUpdatePending = false;
-
-                try
-                {
-                    _themeGenerator.SetDefaultConfig( );
-                    _themeConfig.Save( );
-                    _themeGenerator.Export( );
-                    _themeGenerator.Inject( );
-                }
-                catch ( Exception ex )
-                {
-                    UnityEngine.Debug.LogError( "Error writing theme files!\n" + ex );
-                }
-            }
-
             if ( hasZoneColourUpdatePending && UnityEngine.Time.time >= nextZoneColourUpdate )
             {
                 hasZoneColourUpdatePending = false;
@@ -106,16 +65,6 @@ namespace LegacyFlavour.Systems
         {
             nextConfigUpdate = immediate ? 0f : UnityEngine.Time.time + 5f;
             hasConfigUpdatePending = true;
-        }
-
-        /// <summary>
-        /// Enqueue a theme config update
-        /// </summary>
-        /// <param name="immediate"></param>
-        public void EnqueueThemeConfigUpdate( bool immediate = false )
-        {
-            nextThemeConfigUpdate = immediate ? 0f : UnityEngine.Time.time + 1f;
-            hasThemeConfigUpdatePending = true;
         }
 
         /// <summary>
@@ -138,9 +87,6 @@ namespace LegacyFlavour.Systems
         public void Reload( )
         {
             _config = ConfigBase.Load<LegacyFlavourConfig>( );
-            _themeConfig = ThemeConfig.Load( );
-            _themeGenerator.Export( );
-            _themeGenerator.Inject( );
         }
     }
 }

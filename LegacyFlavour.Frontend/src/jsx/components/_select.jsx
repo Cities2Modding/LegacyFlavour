@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
+const $Select = ({ react, style, containerStyle, onSelectionChanged, selected, options }) => {
     const [active, setActive] = react.useState(false);
     const [internalValue, setInternalValue] = react.useState(selected);
     const [portalContainer, setPortalContainer] = react.useState(null);
@@ -93,7 +93,7 @@ const $Select = ({ react, style, onSelectionChanged, selected, options }) => {
         </div>
     ) : null;
 
-    return (<div style={{ width: '100%' }}>
+    return (<div style={containerStyle ? containerStyle : { width: '100%' }}>
         <div ref={pickerRef} className="dropdown-toggle_V9z dropdown-toggle_prl value-field_yJi value_PW_ dropdown_pJu item-states_QjV" onClick={onToggle} style={{ padding: '5rem', height: 'auto', ...style }}>
             <div className="label_l_4">{options[selectedIndex].label}</div>
             <div className="tinted-icon_iKo indicator_Xmj" style={{ maskImage: 'url(Media/Glyphs/StrokeArrowDown.svg)' }}></div>

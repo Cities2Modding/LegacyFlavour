@@ -3,10 +3,17 @@ import $IconPanel from '../components/_icon-panel';
 import $CheckBox from '../components/_checkbox';
 import $Slider from '../components/_slider';
 import $Button from '../components/_button';
+import $Select from '../components/_select';
 
 const $ZoneSettings = ({ react, locale, data, setData, triggerUpdate }) => {
+    const [preset, setPreset] = react.useState('');
+
     const triggerResetZoneSettingsToDefault = () => {
         engine.trigger("cities2modding_legacyflavour.resetZoneSettingsToDefault");
+    };
+
+    const triggerSetZoneSettingsPreset = () => {
+        engine.trigger("cities2modding_legacyflavour.setZoneSettingsPreset", preset);
     };
 
     const updateData = (field, val) => {
@@ -27,6 +34,11 @@ const $ZoneSettings = ({ react, locale, data, setData, triggerUpdate }) => {
 
         triggerUpdate(field, val);
     };
+
+    const presets = [
+        { label: locale["DEFAULT"], value: "" },
+        { label: locale["CITY_PLANNER_SPECIAL"], value: "CityPlannerSpecial" },
+    ];
 
     return <div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
         <div style={{ flex: 1, width: '50%' }}>
@@ -69,7 +81,10 @@ const $ZoneSettings = ({ react, locale, data, setData, triggerUpdate }) => {
                 icon="Media/Editor/Edit.svg" fitChild="true">
                 <$Slider react={react} value={data.EmptyCellBorderOpacity} onValueChanged={(val) => updateData("EmptyCellBorderOpacity", val)} />
             </$IconPanel>
-            <$Button style={{ marginTop: '5rem' }} onClick={triggerResetZoneSettingsToDefault}>{locale["RESET_TO_DEFAULT"]}</$Button>
+            <div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
+                <$Select react={react} selected={preset} containerStyle={{ flex: 1, width: 'auto', marginRight: '10rem', }} options={presets} onSelectionChanged={(val) => setPreset(val)}></$Select>
+                <$Button style={{ paddingLeft: '30rem', paddingRight: '30rem' }} onClick={triggerSetZoneSettingsPreset}>{locale["SET"]}</$Button>
+            </div>
         </div>
     </div>
 }

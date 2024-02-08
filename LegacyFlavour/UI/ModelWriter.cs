@@ -4,7 +4,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using static Game.Rendering.Debug.RenderPrefabRenderer;
 
 namespace LegacyFlavour.UI
 {

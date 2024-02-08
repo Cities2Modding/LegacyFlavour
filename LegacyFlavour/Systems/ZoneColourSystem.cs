@@ -303,6 +303,35 @@ namespace LegacyFlavour.Systems
         }
 
         /// <summary>
+        /// Set the settings profile to a preset
+        /// </summary>
+        /// <param name="name"></param>
+        public void SetToPreset( string name )
+        {
+            var defaultConfig = LegacyFlavourConfig.Default;
+            Config.Enabled = true;
+            Config.UseDynamicCellBorders = true;
+
+            if ( !string.IsNullOrEmpty( name ) && name == "CityPlannerSpecial" )
+            {
+                Config.CellOpacity = 0.1m;
+                Config.CellBorderOpacity = 0.95m;
+                Config.EmptyCellOpacity = 0m;
+                Config.EmptyCellBorderOpacity = 0.5m;
+            }
+            else
+            {
+                Config.CellOpacity = defaultConfig.CellOpacity;
+                Config.CellBorderOpacity = defaultConfig.CellBorderOpacity;
+                Config.EmptyCellOpacity = defaultConfig.EmptyCellOpacity;
+                Config.EmptyCellBorderOpacity = defaultConfig.EmptyCellBorderOpacity;
+            }
+
+            _updateSystem.EnqueueConfigUpdate( );
+            _updateSystem.EnqueueColoursUpdate( );
+        }
+
+        /// <summary>
         /// Reset the colours to default config
         /// </summary>
         public void ResetColoursToDefault( )

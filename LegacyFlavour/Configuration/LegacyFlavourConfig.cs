@@ -1,5 +1,4 @@
-﻿using LegacyFlavour.Configuration.Themes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace LegacyFlavour.Configuration

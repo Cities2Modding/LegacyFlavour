@@ -7,7 +7,6 @@ using Game.SceneFlow;
 using Game.Settings;
 using Game.UI;
 using LegacyFlavour.Configuration;
-using LegacyFlavour.Configuration.Themes;
 using LegacyFlavour.Helpers;
 using LegacyFlavour.UI;
 using Newtonsoft.Json;
@@ -25,12 +24,9 @@ namespace LegacyFlavour.Systems
     {
         private string kGroup = "cities2modding_legacyflavour";
         static GetterValueBinding<LegacyFlavourConfig> _binding;
-        static GetterValueBinding<ThemeConfig> _themeBinding;
-        static GetterValueBinding<ThemeConfig> _defaultThemesBinding;
         static GetterValueBinding<LocaleGroup> _currentLocaleBinding;
         static FieldInfo _dirtyField = typeof( GetterValueBinding<LegacyFlavourConfig> ).GetField( "m_ValueDirty", BindingFlags.Instance | BindingFlags.NonPublic );
-        static FieldInfo _themeDirtyField = typeof( GetterValueBinding<ThemeConfig> ).GetField( "m_ValueDirty", BindingFlags.Instance | BindingFlags.NonPublic );
-
+        
         static readonly string[] TRIGGER_UPDATE_PROPERTIES = new[]
         {
             "UseStickyWhiteness",
@@ -83,16 +79,6 @@ namespace LegacyFlavour.Systems
                 return Config;
             }, new ValueWriter<LegacyFlavourConfig>( ).Nullable( ) );
 
-            _themeBinding = new GetterValueBinding<ThemeConfig>( kGroup, "themeConfig", ( ) =>
-            {
-                return _updateSystem.ThemeConfig;
-            }, new ValueWriter<ThemeConfig>( ).Nullable( ) );
-
-            _defaultThemesBinding = new GetterValueBinding<ThemeConfig>( kGroup, "defaultThemeData", ( ) =>
-            {
-                return ThemeConfig.Default;
-            } );
-
             _currentLocaleBinding = new GetterValueBinding<LocaleGroup>( kGroup, "currentLocale", ( ) =>
             {
                 var localeManager = GameManager.instance.localizationManager;
@@ -112,12 +98,9 @@ namespace LegacyFlavour.Systems
             ConfigBase.OnUpdated += ( ) =>
             {
                 _dirtyField.SetValue( _binding, true );
-                _themeDirtyField.SetValue( _themeBinding, true );
             };
 
             AddUpdateBinding( _binding );
-            AddUpdateBinding( _themeBinding );
-            AddBinding( _defaultThemesBinding );
             AddUpdateBinding( _currentLocaleBinding );
 
             AddBinding( new TriggerBinding<string>( kGroup, "updateProperty", UpdateProperty ) );
@@ -128,53 +111,10 @@ namespace LegacyFlavour.Systems
             AddBinding( new TriggerBinding( kGroup, "setColoursToVanilla", _zoneColourSystem.SetCurrentToVanilla ) );
             AddBinding( new TriggerBinding( kGroup, "triggerSound", TriggerUISound ) );
             AddBinding( new TriggerBinding( kGroup, "resetZoneSettingsToDefault", _zoneColourSystem.ResetSettingsToDefault ) );
+            AddBinding( new TriggerBinding<string>( kGroup, "setZoneSettingsPreset", _zoneColourSystem.SetToPreset ) );
             AddBinding( new TriggerBinding( kGroup, "resetColoursToDefault", _zoneColourSystem.ResetColoursToDefault ) );
             AddBinding( new TriggerBinding<string>( kGroup, "launchUrl", OpenURL ) );
             AddBinding( new TriggerBinding<string, string>( kGroup, "updateZoneColour", _zoneColourSystem.UpdateZoneColour ) );
-            AddBinding( new TriggerBinding<string, string>( kGroup, "generateThemeAccent", GenerateThemeAccent ) );
-            AddBinding( new TriggerBinding<string, string>( kGroup, "updateThemeValue", UpdateThemeValue ) );
-            AddBinding( new TriggerBinding<string>( kGroup, "useSelectedTheme", UseSelectedTheme ) );
-        }
-
-        /// <summary>
-        /// Generate a theme from an accent colour
-        /// </summary>
-        /// <param name="theme"></param>
-        /// <param name="json"></param>
-        private void GenerateThemeAccent( string theme, string json )
-        {
-            var dic = JsonConvert.DeserializeObject<Dictionary<string, object>>( json );
-
-            var accent = dic["accent"] as string;
-            var backgroundAccent = dic["backgroundAccent"] as string;
-            var defaultTheme = dic["defaultTheme"] as string;
-
-            _updateSystem.ThemeGenerator.GenerateFromAccent( defaultTheme, theme, accent, backgroundAccent );
-        }
-
-        /// <summary>
-        /// Use the selected theme
-        /// </summary>
-        /// <param name="theme"></param>
-        private void UseSelectedTheme( string theme )
-        {
-            _updateSystem.ThemeGenerator.Inject( );
-            SharedSettings.instance.userInterface.interfaceStyle = theme.ToLower( ).Replace( " ", "-" );
-        }
-
-        /// <summary>
-        /// Update a theme value
-        /// </summary>
-        /// <param name="theme"></param>
-        /// <param name="json"></param>
-        private void UpdateThemeValue( string theme, string json )
-        {
-            var dic = JsonConvert.DeserializeObject<Dictionary<string, object>>( json );
-
-            var key = dic["key"] as string;
-            var value = dic["value"] as string;
-
-            _updateSystem.ThemeGenerator.UpdateSetting( theme, key, value );
         }
 
         /// <summary>

@@ -7,7 +7,6 @@
         "SETTINGS": "Settings",
         "ZONE_SETTINGS": "Zone Settings",
         "ZONE_COLOURS": "Zone Colours",
-        "UI_THEMES": "UI Themes",
         "ABOUT": "About",
         "ACCENT": "Accent",
         "PANEL": "Panel",
@@ -27,13 +26,13 @@
         "USE_UNITS_DESC": "When a tool system with a length measurement is selected, use 'units' instead. Toggle with ALT+U.",
 
         "FREEZE_TIME_VISUALS": "Freeze Time Visuals",
-        "FREEZE_TIME_VISUALS_DESC": "When enabled, freezes the visual time of day. 'Day/Night Visuals' must be on.",
+        "FREEZE_TIME_VISUALS_DESC": "When enabled, freezes the visual time of day. 'Day/Night Visuals' must be on. (Effects not visible until unpaused)",
 
         "SET_VISUAL_TIME_OF_DAY": "Set visual time of day",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "Override the visual time of day. 'Day/Night Visuals' must be on. If golden hour goes to midnight the map is missing settings.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Override the visual time of day. 'Day/Night Visuals' must be on. If golden hour goes to midnight the map is missing settings. (Effects not visible until unpaused)",
 
         "WEATHER": "Weather",
-        "WEATHER_DESC": "Override the weather",
+        "WEATHER_DESC": "Override the weather (Effects not visible until unpaused)",
 
         "CUSTOM_ZONE_COLOURING": "Custom Zone Colouring",
         "CUSTOM_ZONE_COLOURING_DESC": "Provides custom zone colour options that can be cycled with a key shortcut. Toggle with ALT+Z.",
@@ -71,12 +70,6 @@
         "INDUSTRIAL": "Industrial",
         "INDUSTRIAL_DESC": "Modify Industrial zone colours",
 
-        "THEME": "Theme",
-        "THEME_DESC": "Select a theme to edit",
-
-        "GENERATE_FROM_COLOUR": "Generate from colour",
-        "GENERATE_FROM_COLOUR_DESC": "Select a base theme, main accent colour and generate a theme.",
-
         "MAKE_WINDOW_TRANSPARENT": "Make window transparent",
 
         "DEVELOPED_BY": "This mod was developed by the optimus-code and the Cities2Modding community.",
@@ -108,21 +101,6 @@
         "DEUTERANOPIA": "Deuteranopia",
         "PROTANOPIA": "Protanopia",
         "TRITANOPIA": "Tritanopia",
-
-        "USE_SELECTED_THEME": "Use selected theme",
-
-        "DEFAULT": "Default",
-        "BRIGHT_BLUE": "Bright Blue",
-        "DARK_GREY_ORANGE": "Dark Grey Orange",
-        "LF_DEFAULT": "LF - Default",
-        "LF_HIGH_CONTRAST": "LF - High Contrast",
-        "LF_HOT_PINK": "LF - Hot Pink",
-        "LF_TOXIC_GREEN": "LF - Toxic Green",
-        "LF_MOCHA": "LF - Mocha",
-        "LF_PEACHY_OCEAN": "LF - Peachy Ocean",
-        "LF_DARK_RED": "LF - Dark Red",
-        "LF_COOL_BLUE": "LF - Cool Blue",
-        "LF_DARK_TEAL": "LF - Dark Teal",
 
         "RESIDENTIAL_LOW": "Residential Low",
         "RESIDENTIAL_HIGH": "Residential High",
@@ -177,7 +155,11 @@
         "PANEL1": "Panel1",
         "PANEL2": "Panel2",
         "TEXT1": "Text1",
-        "TEXT2": "Text2"
+        "TEXT2": "Text2",
+
+        "SET": "Set",
+        "DEFAULT": "Default",
+        "CITY_PLANNER_SPECIAL": "Bordered"
       }
     },
     {
@@ -187,7 +169,6 @@
         "SETTINGS": "Einstellungen",
         "ZONE_SETTINGS": "Zonen-Einstellungen",
         "ZONE_COLOURS": "Zonen-Farben",
-        "UI_THEMES": "UI-Themen",
         "ABOUT": "Über",
         "ACCENT": "Akzent",
         "PANEL": "Panel",
@@ -207,13 +188,13 @@
         "USE_UNITS_DESC": "Wenn ein Werkzeugsystem mit Längenmessung ausgewählt ist, 'Einheiten' stattdessen verwenden. Umschalten mit ALT+U.",
 
         "FREEZE_TIME_VISUALS": "Visuelle Zeit einfrieren",
-        "FREEZE_TIME_VISUALS_DESC": "Friert die visuelle Tageszeit ein, wenn aktiviert. 'Tag/Nacht-Visuals' müssen aktiviert sein.",
+        "FREEZE_TIME_VISUALS_DESC": "Friert die visuelle Tageszeit ein, wenn aktiviert. 'Tag/Nacht-Visuals' müssen aktiviert sein. (Effekte erst sichtbar, wenn Entpausiert)",
 
         "SET_VISUAL_TIME_OF_DAY": "Visuelle Tageszeit einstellen",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "Überschreibt die visuelle Tageszeit. 'Tag/Nacht-Visuals' müssen aktiviert sein. Wenn die goldene Stunde bis Mitternacht geht, fehlen Karten-Einstellungen.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Überschreibt die visuelle Tageszeit. 'Tag/Nacht-Visuals' müssen aktiviert sein. Wenn die goldene Stunde bis Mitternacht geht, fehlen Karten-Einstellungen. (Effekte erst sichtbar, wenn Entpausiert)",
 
         "WEATHER": "Wetter",
-        "WEATHER_DESC": "Das Wetter überschreiben",
+        "WEATHER_DESC": "Das Wetter überschreiben (Effekte erst sichtbar, wenn Entpausiert)",
 
         "CUSTOM_ZONE_COLOURING": "Benutzerdefinierte Zonen-Färbung",
         "CUSTOM_ZONE_COLOURING_DESC": "Bietet benutzerdefinierte Zonenfarboptionen, die mit einer Tastenkombination durchlaufen werden können. Umschalten mit ALT+Z.",
@@ -251,12 +232,6 @@
         "INDUSTRIAL": "Industriegebiet",
         "INDUSTRIAL_DESC": "Industriezonenfarben ändern",
 
-        "THEME": "Thema",
-        "THEME_DESC": "Ein Thema zur Bearbeitung auswählen",
-
-        "GENERATE_FROM_COLOUR": "Aus Farbe generieren",
-        "GENERATE_FROM_COLOUR_DESC": "Wählen Sie ein Basisthema, Hauptakzentfarbe und generieren Sie ein Thema.",
-
         "MAKE_WINDOW_TRANSPARENT": "Fenster transparent machen",
 
         "DEVELOPED_BY": "Dieses Mod wurde von optimus-code und der Cities2Modding-Community entwickelt.",
@@ -289,21 +264,6 @@
         "PROTANOPIA": "Protanopie",
         "TRITANOPIA": "Tritanopie",
 
-        "USE_SELECTED_THEME": "Ausgewähltes Thema verwenden",
-
-        "DEFAULT": "Standard",
-        "BRIGHT_BLUE": "Helles Blau",
-        "DARK_GREY_ORANGE": "Dunkelgrau Orange",
-        "LF_DEFAULT": "LF - Standard",
-        "LF_HIGH_CONTRAST": "LF - Hoher Kontrast",
-        "LF_HOT_PINK": "LF - Knallpink",
-        "LF_TOXIC_GREEN": "LF - Giftgrün",
-        "LF_MOCHA": "LF - Mokka",
-        "LF_PEACHY_OCEAN": "LF - Pfirsichfarbener Ozean",
-        "LF_DARK_RED": "LF - Dunkelrot",
-        "LF_COOL_BLUE": "LF - Kühles Blau",
-        "LF_DARK_TEAL": "LF - Dunkles Petrol",
-
         "RESIDENTIAL_LOW": "Wohngebiet Niedrig",
         "RESIDENTIAL_HIGH": "Wohngebiet Hoch",
         "RESIDENTIAL_MEDIUM": "Wohngebiet Mittel",
@@ -320,44 +280,9 @@
         "INDUSTRIAL_OIL": "Industrie Öl",
         "INDUSTRIAL_ORE": "Industrie Erz",
 
-        "PRIMARY_ACCENT": "Primärer Akzent",
-        "BACKGROUND_ACCENT": "Hintergrund Akzent",
-        "FOCUSED_COLOR_DARK": "Fokussierte Farbe Dunkel",
-        "FOCUSED_COLOR": "Fokussierte Farbe",
-
-        "HOVER": "Hover",
-        "PRESSED": "Gedrückt",
-        "FOCUSED": "Fokussiert",
-
-        "BACKGROUND": "Hintergrund",
-        "CUSTOM": "Brauch",
-        "COLOR": "Farbe",
-        "DARK": "Dunkel",
-        "NORMAL": "Normale",
-        "LIGHT": "Hell",
-        "LIGHTER": "Heller",
-        "DIM": "Gedämpft",
-        "DIMMER": "Gedämpfter",
-        "DIMMEST": "am gedämpftsten",
-        "HEADER": "Überschrift",
-        "BORDER": "Grenze",
-        "LOCKED": "Gesperrt",
-        "ACTIVE": "Aktiv",
-        "CONTROL": "Kontrolle",
-        "TITLE": "Titel",
-        "INVERTED": "Invertiert",
-        "DISABLED": "Deaktiviert",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "Positiv",
-        "WARNING": "Warnung",
-        "NEGATIVE": "Negativ",
-        "TAB": "Tab",
-        "ITEM": "Artikel",
-        "PAUSE": "Pause",
-        "PANEL1": "Panel1",
-        "PANEL2": "Panel2",
-        "TEXT1": "Text1",
-        "TEXT2": "Text2"
+        "SET": "Setzen",
+        "DEFAULT": "Standard",
+        "CITY_PLANNER_SPECIAL": "Umrandet"
       }
     },
     {
@@ -367,7 +292,6 @@
         "SETTINGS": "Paramètres",
         "ZONE_SETTINGS": "Paramètres de Zone",
         "ZONE_COLOURS": "Couleurs de Zone",
-        "UI_THEMES": "Thèmes IU",
         "ABOUT": "À propos",
         "ACCENT": "Accent",
         "PANEL": "Panneau",
@@ -387,13 +311,13 @@
         "USE_UNITS_DESC": "Lorsqu'un système d'outil avec une mesure de longueur est sélectionné, utiliser 'unités' à la place. Bascule avec ALT+U.",
 
         "FREEZE_TIME_VISUALS": "Geler Visuels Temporels",
-        "FREEZE_TIME_VISUALS_DESC": "Lorsqu'activé, gèle le temps visuel de la journée. 'Visuels Jour/Nuit' doit être activé.",
+        "FREEZE_TIME_VISUALS_DESC": "Lorsqu'activé, gèle le temps visuel de la journée. 'Visuels Jour/Nuit' doit être activé. (Effets non visibles jusqu'à la reprise)",
 
         "SET_VISUAL_TIME_OF_DAY": "Définir Temps Visuel du Jour",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "Remplace le temps visuel de la journée. 'Visuels Jour/Nuit' doit être activé. Si l'heure dorée va jusqu'à minuit, la carte manque de paramètres.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Remplace le temps visuel de la journée. 'Visuels Jour/Nuit' doit être activé. Si l'heure dorée va jusqu'à minuit, la carte manque de paramètres. (Effets non visibles jusqu'à la reprise)",
 
         "WEATHER": "Météo",
-        "WEATHER_DESC": "Remplacer la météo",
+        "WEATHER_DESC": "Remplacer la météo (Effets non visibles jusqu'à la reprise)",
 
         "CUSTOM_ZONE_COLOURING": "Coloration de Zone Personnalisée",
         "CUSTOM_ZONE_COLOURING_DESC": "Fournit des options de couleur de zone personnalisées qui peuvent être cyclées avec un raccourci clavier. Bascule avec ALT+Z.",
@@ -431,12 +355,6 @@
         "INDUSTRIAL": "Industriel",
         "INDUSTRIAL_DESC": "Modifier les couleurs de zone Industrielle",
 
-        "THEME": "Thème",
-        "THEME_DESC": "Sélectionner un thème à éditer",
-
-        "GENERATE_FROM_COLOUR": "Générer à partir de couleur",
-        "GENERATE_FROM_COLOUR_DESC": "Sélectionnez un thème de base, couleur d'accent principal et générer un thème.",
-
         "MAKE_WINDOW_TRANSPARENT": "Rendre Fenêtre Transparente",
 
         "DEVELOPED_BY": "Ce mod a été développé par optimus-code et la communauté Cities2Modding.",
@@ -469,21 +387,6 @@
         "PROTANOPIA": "Protanopie",
         "TRITANOPIA": "Tritanopie",
 
-        "USE_SELECTED_THEME": "Utiliser Thème Sélectionné",
-
-        "DEFAULT": "Par Défaut",
-        "BRIGHT_BLUE": "Bleu Vif",
-        "DARK_GREY_ORANGE": "Gris Foncé Orange",
-        "LF_DEFAULT": "LF - Par Défaut",
-        "LF_HIGH_CONTRAST": "LF - Haut Contraste",
-        "LF_HOT_PINK": "LF - Rose Vif",
-        "LF_TOXIC_GREEN": "LF - Vert Toxique",
-        "LF_MOCHA": "LF - Mocha",
-        "LF_PEACHY_OCEAN": "LF - Océan Pêche",
-        "LF_DARK_RED": "LF - Rouge Foncé",
-        "LF_COOL_BLUE": "LF - Bleu Frais",
-        "LF_DARK_TEAL": "LF - Sarcelle Foncé",
-
         "RESIDENTIAL_LOW": "Résidentiel Bas",
         "RESIDENTIAL_HIGH": "Résidentiel Haut",
         "RESIDENTIAL_MEDIUM": "Résidentiel Moyen",
@@ -500,44 +403,9 @@
         "INDUSTRIAL_OIL": "Industriel Pétrole",
         "INDUSTRIAL_ORE": "Industriel Minerai",
 
-        "PRIMARY_ACCENT": "Accent Principal",
-        "BACKGROUND_ACCENT": "Accent de Fond",
-        "FOCUSED_COLOR_DARK": "Couleur Concentrée Foncée",
-        "FOCUSED_COLOR": "Couleur Concentrée",
-
-        "HOVER": "Survol",
-        "PRESSED": "Pressé",
-        "FOCUSED": "Concentré",
-
-        "BACKGROUND": "Arrière-plan",
-        "CUSTOM": "Coutume",
-        "COLOR": "Couleur",
-        "DARK": "Sombre",
-        "NORMAL": "Normale",
-        "LIGHT": "Lumière",
-        "LIGHTER": "Plus léger",
-        "DIM": "Faible",
-        "DIMMER": "Variateur",
-        "DIMMEST": "Le plus sombre",
-        "HEADER": "Entête",
-        "BORDER": "Frontière",
-        "LOCKED": "Fermé à clé",
-        "ACTIVE": "Active",
-        "CONTROL": "Contrôle",
-        "TITLE": "Titre",
-        "INVERTED": "Inversé",
-        "DISABLED": "Désactivé",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "Positif",
-        "WARNING": "Avertissement",
-        "NEGATIVE": "Négatif",
-        "TAB": "Languette",
-        "ITEM": "Article",
-        "PAUSE": "Pause",
-        "PANEL1": "Panneau1",
-        "PANEL2": "Panneau2",
-        "TEXT1": "Texte1",
-        "TEXT2": "Texte2"
+        "SET": "Définir",
+        "DEFAULT": "Défaut",
+        "CITY_PLANNER_SPECIAL": "Bordé"
       }
     },
     {
@@ -547,7 +415,6 @@
         "SETTINGS": "Impostazioni",
         "ZONE_SETTINGS": "Impostazioni Zona",
         "ZONE_COLOURS": "Colori Zona",
-        "UI_THEMES": "Temi UI",
         "ABOUT": "Informazioni",
         "ACCENT": "Accento",
         "PANEL": "Pannello",
@@ -567,17 +434,17 @@
         "USE_UNITS_DESC": "Quando viene selezionato un sistema di strumenti con misurazione della lunghezza, usa 'unità' invece. Attiva con ALT+U.",
 
         "FREEZE_TIME_VISUALS": "Congela Visuali Temporali",
-        "FREEZE_TIME_VISUALS_DESC": "Quando attivato, congela il tempo visivo del giorno. 'Visuali Giorno/Notte' devono essere attivi.",
+        "FREEZE_TIME_VISUALS_DESC": "Quando attivato, congela il tempo visivo del giorno. 'Visuali Giorno/Notte' devono essere attivi. (Effetti non visibili fino alla ripresa)",
 
         "SET_VISUAL_TIME_OF_DAY": "Imposta Tempo Visivo del Giorno",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "Sostituisce il tempo visivo del giorno. 'Visuali Giorno/Notte' devono essere attivi. Se l'ora d'oro va a mezzanotte la mappa manca impostazioni.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Sostituisce il tempo visivo del giorno. 'Visuali Giorno/Notte' devono essere attivi. Se l'ora d'oro va a mezzanotte la mappa manca impostazioni. (Effetti non visibili fino alla ripresa)",
 
         "WEATHER": "Meteo",
-        "WEATHER_DESC": "Sostituisci il meteo",
+        "WEATHER_DESC": "Sostituisci il meteo (Effetti non visibili fino alla ripresa)",
 
         "CUSTOM_ZONE_COLOURING": "Colorazione Zona Personalizzata",
         "CUSTOM_ZONE_COLOURING_DESC": "Fornisce opzioni di colore zona personalizzate che possono essere ciclate con una scorciatoia da tastiera. Attiva con ALT+Z.",
-        
+
         "OVERRIDE_ZONE_ICONS": "Sostituisci icone zona",
         "OVERRIDE_ZONE_ICONS_DESC": "Se attivato, le icone delle zone saranno cambiate secondo le tue impostazioni di colore. Per mantenere le icone predefinite, disattiva questa opzione.",
 
@@ -611,12 +478,6 @@
         "INDUSTRIAL": "Industriale",
         "INDUSTRIAL_DESC": "Modifica colori zona Industriale",
 
-        "THEME": "Tema",
-        "THEME_DESC": "Seleziona un tema da modificare",
-
-        "GENERATE_FROM_COLOUR": "Genera dal colore",
-        "GENERATE_FROM_COLOUR_DESC": "Seleziona un tema base, colore accento principale e genera un tema.",
-
         "MAKE_WINDOW_TRANSPARENT": "Rendi finestra trasparente",
 
         "DEVELOPED_BY": "Questo mod è stato sviluppato da optimus-code e dalla comunità Cities2Modding.",
@@ -649,21 +510,6 @@
         "PROTANOPIA": "Protanopia",
         "TRITANOPIA": "Tritanopia",
 
-        "USE_SELECTED_THEME": "Usa tema selezionato",
-
-        "DEFAULT": "Predefinito",
-        "BRIGHT_BLUE": "Blu Brillante",
-        "DARK_GREY_ORANGE": "Grigio Scuro Arancione",
-        "LF_DEFAULT": "LF - Predefinito",
-        "LF_HIGH_CONTRAST": "LF - Alto Contrasto",
-        "LF_HOT_PINK": "LF - Rosa Caldo",
-        "LF_TOXIC_GREEN": "LF - Verde Tossico",
-        "LF_MOCHA": "LF - Mocha",
-        "LF_PEACHY_OCEAN": "LF - Oceano Pesca",
-        "LF_DARK_RED": "LF - Rosso Scuro",
-        "LF_COOL_BLUE": "LF - Blu Fresco",
-        "LF_DARK_TEAL": "LF - Verde Petrolio Scuro",
-
         "RESIDENTIAL_LOW": "Residenziale Basso",
         "RESIDENTIAL_HIGH": "Residenziale Alto",
         "RESIDENTIAL_MEDIUM": "Residenziale Medio",
@@ -680,44 +526,9 @@
         "INDUSTRIAL_OIL": "Industriale Petrolio",
         "INDUSTRIAL_ORE": "Industriale Minerale",
 
-        "PRIMARY_ACCENT": "Accento Primario",
-        "BACKGROUND_ACCENT": "Accento di Sfondo",
-        "FOCUSED_COLOR_DARK": "Colore Focalizzato Scuro",
-        "FOCUSED_COLOR": "Colore Focalizzato",
-
-        "HOVER": "Passaggio del Mouse",
-        "PRESSED": "Premuto",
-        "FOCUSED": "Focalizzato",
-
-        "BACKGROUND": "Sfondo",
-        "CUSTOM": "Costume",
-        "COLOR": "Colore",
-        "DARK": "Buio",
-        "NORMAL": "Normale",
-        "LIGHT": "Leggero",
-        "LIGHTER": "Accendino",
-        "DIM": "Fioco",
-        "DIMMER": "Più debole",
-        "DIMMEST": "Molto debole",
-        "HEADER": "Intestazione",
-        "BORDER": "Confine",
-        "LOCKED": "Bloccato",
-        "ACTIVE": "Attivo",
-        "CONTROL": "Controllo",
-        "TITLE": "Titolo",
-        "INVERTED": "Invertito",
-        "DISABLED": "Disabilitato",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "Positivo",
-        "WARNING": "Avvertimento",
-        "NEGATIVE": "Negativo",
-        "TAB": "Tab",
-        "ITEM": "Articolo",
-        "PAUSE": "Pausa",
-        "PANEL1": "Pannello1",
-        "PANEL2": "Pannello2",
-        "TEXT1": "Testo1",
-        "TEXT2": "Testo2"
+        "SET": "Imposta",
+        "DEFAULT": "Predefinito",
+        "CITY_PLANNER_SPECIAL": "Contornato"
       }
     },
     {
@@ -727,7 +538,6 @@
         "SETTINGS": "Configuraciones",
         "ZONE_SETTINGS": "Configuración de Zona",
         "ZONE_COLOURS": "Colores de Zona",
-        "UI_THEMES": "Temas de UI",
         "ABOUT": "Acerca de",
         "ACCENT": "Acento",
         "PANEL": "Panel",
@@ -747,17 +557,17 @@
         "USE_UNITS_DESC": "Cuando se selecciona un sistema de herramientas con medición de longitud, usar 'unidades' en su lugar. Cambiar con ALT+U.",
 
         "FREEZE_TIME_VISUALS": "Congelar Visuales de Tiempo",
-        "FREEZE_TIME_VISUALS_DESC": "Cuando está activado, congela el tiempo visual del día. 'Visuales de Día/Noche' deben estar activados.",
+        "FREEZE_TIME_VISUALS_DESC": "Cuando está activado, congela el tiempo visual del día. 'Visuales de Día/Noche' deben estar activados. (Efectos no visibles hasta que se reanude)",
 
         "SET_VISUAL_TIME_OF_DAY": "Establecer Tiempo Visual del Día",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "Sobrescribe el tiempo visual del día. 'Visuales de Día/Noche' deben estar activados. Si la hora dorada llega a medianoche, faltan configuraciones en el mapa.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Sobrescribe el tiempo visual del día. 'Visuales de Día/Noche' deben estar activados. Si la hora dorada llega a medianoche, faltan configuraciones en el mapa. (Efectos no visibles hasta que se reanude)",
 
         "WEATHER": "Clima",
-        "WEATHER_DESC": "Sobrescribir el clima",
+        "WEATHER_DESC": "Sobrescribir el clima (Efectos no visibles hasta que se reanude)",
 
         "CUSTOM_ZONE_COLOURING": "Coloreado de Zona Personalizado",
         "CUSTOM_ZONE_COLOURING_DESC": "Ofrece opciones de color de zona personalizadas que se pueden cambiar con un atajo de teclado. Cambiar con ALT+Z.",
-        
+
         "OVERRIDE_ZONE_ICONS": "Sobrescribir iconos de zona",
         "OVERRIDE_ZONE_ICONS_DESC": "Si está activado, los iconos de zona cambiarán según tu configuración de color. Si prefieres los iconos predeterminados, desactiva esta opción.",
 
@@ -791,12 +601,6 @@
         "INDUSTRIAL": "Industrial",
         "INDUSTRIAL_DESC": "Modificar colores de zona industrial",
 
-        "THEME": "Tema",
-        "THEME_DESC": "Seleccionar un tema para editar",
-
-        "GENERATE_FROM_COLOUR": "Generar desde el color",
-        "GENERATE_FROM_COLOUR_DESC": "Seleccionar un tema base, color de acento principal y generar un tema.",
-
         "MAKE_WINDOW_TRANSPARENT": "Hacer ventana transparente",
 
         "DEVELOPED_BY": "Este mod fue desarrollado por optimus-code y la comunidad de Cities2Modding.",
@@ -829,21 +633,6 @@
         "PROTANOPIA": "Protanopía",
         "TRITANOPIA": "Tritanopía",
 
-        "USE_SELECTED_THEME": "Usar tema seleccionado",
-
-        "DEFAULT": "Predeterminado",
-        "BRIGHT_BLUE": "Azul Brillante",
-        "DARK_GREY_ORANGE": "Gris Oscuro Naranja",
-        "LF_DEFAULT": "LF - Predeterminado",
-        "LF_HIGH_CONTRAST": "LF - Alto Contraste",
-        "LF_HOT_PINK": "LF - Rosa Intenso",
-        "LF_TOXIC_GREEN": "LF - Verde Tóxico",
-        "LF_MOCHA": "LF - Mocha",
-        "LF_PEACHY_OCEAN": "LF - Océano Melocotón",
-        "LF_DARK_RED": "LF - Rojo Oscuro",
-        "LF_COOL_BLUE": "LF - Azul Fresco",
-        "LF_DARK_TEAL": "LF - Verde Azulado Oscuro",
-
         "RESIDENTIAL_LOW": "Residencial Bajo",
         "RESIDENTIAL_HIGH": "Residencial Alto",
         "RESIDENTIAL_MEDIUM": "Residencial Medio",
@@ -860,44 +649,9 @@
         "INDUSTRIAL_OIL": "Petróleo Industrial",
         "INDUSTRIAL_ORE": "Minería Industrial",
 
-        "PRIMARY_ACCENT": "Acento Primario",
-        "BACKGROUND_ACCENT": "Acento de Fondo",
-        "FOCUSED_COLOR_DARK": "Color Oscuro Enfocado",
-        "FOCUSED_COLOR": "Color Enfocado",
-
-        "HOVER": "Sobrevolar",
-        "PRESSED": "Presionado",
-        "FOCUSED": "Enfocado",
-
-        "BACKGROUND": "Fondo",
-        "CUSTOM": "Costumbre",
-        "COLOR": "Color",
-        "DARK": "Oscuro",
-        "NORMAL": "Normal",
-        "LIGHT": "Ligero",
-        "LIGHTER": "Más ligero",
-        "DIM": "Apagado",
-        "DIMMER": "Mas silenciado",
-        "DIMMEST": "Más silenciado",
-        "HEADER": "Encabezamiento",
-        "BORDER": "Borde",
-        "LOCKED": "Bloqueado",
-        "ACTIVE": "Activo",
-        "CONTROL": "Control",
-        "TITLE": "Título",
-        "INVERTED": "Invertido",
-        "DISABLED": "Desactivado",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "Positivo",
-        "WARNING": "Advertencia",
-        "NEGATIVE": "Negativo",
-        "TAB": "Pestaña",
-        "ITEM": "Artículo",
-        "PAUSE": "Pausa",
-        "PANEL1": "Panel1",
-        "PANEL2": "Panel2",
-        "TEXT1": "Texto1",
-        "TEXT2": "Texto2"
+        "SET": "Establecer",
+        "DEFAULT": "Predeterminado",
+        "CITY_PLANNER_SPECIAL": "Bordeado"
       }
     },
     {
@@ -907,7 +661,6 @@
         "SETTINGS": "設定",
         "ZONE_SETTINGS": "ゾーン設定",
         "ZONE_COLOURS": "ゾーンカラー",
-        "UI_THEMES": "UIテーマ",
         "ABOUT": "紹介",
         "ACCENT": "アクセント",
         "PANEL": "パネル",
@@ -927,17 +680,17 @@
         "USE_UNITS_DESC": "長さの測定があるツールシステムが選択された場合、'単位'を使用。ALT+Uで切り替え。",
 
         "FREEZE_TIME_VISUALS": "時間のビジュアルを固定",
-        "FREEZE_TIME_VISUALS_DESC": "有効にすると、昼夜のビジュアル時間を固定。'昼/夜のビジュアル'が必要。",
+        "FREEZE_TIME_VISUALS_DESC": "有効にすると、昼夜のビジュアル時間を固定。'昼/夜のビジュアル'が必要。(一時停止を解除するまで効果は見えません)",
 
         "SET_VISUAL_TIME_OF_DAY": "ビジュアルの時間を設定",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "ビジュアルの日中の時間を上書き。'昼/夜のビジュアル'が必要。",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "ビジュアルの日中の時間を上書き。'昼/夜のビジュアル'が必要。(一時停止を解除するまで効果は見えません)",
 
         "WEATHER": "天気",
-        "WEATHER_DESC": "天気を上書き",
+        "WEATHER_DESC": "天気を上書き(一時停止を解除するまで効果は見えません)",
 
         "CUSTOM_ZONE_COLOURING": "カスタムゾーンカラー",
         "CUSTOM_ZONE_COLOURING_DESC": "キーショートカットで切り替え可能なカスタムゾーンカラーオプションを提供。ALT+Zで切り替え。",
-        
+
         "OVERRIDE_ZONE_ICONS": "ゾーンアイコンの上書き",
         "OVERRIDE_ZONE_ICONS_DESC": "これを有効にすると、ゾーンアイコンはあなたの色設定に変更されます。標準",
 
@@ -971,12 +724,6 @@
         "INDUSTRIAL": "工業",
         "INDUSTRIAL_DESC": "工業ゾーンの色を変更",
 
-        "THEME": "テーマ",
-        "THEME_DESC": "編集するテーマを選択",
-
-        "GENERATE_FROM_COLOUR": "色から生成",
-        "GENERATE_FROM_COLOUR_DESC": "ベーステーマ、主要アクセントカラーを選択してテーマを生成。",
-
         "MAKE_WINDOW_TRANSPARENT": "ウィンドウを透明にする",
 
         "DEVELOPED_BY": "このモッドはoptimus-codeとCities2Moddingコミュニティによって開発されました。",
@@ -1009,21 +756,6 @@
         "PROTANOPIA": "プロタノピア",
         "TRITANOPIA": "トリタノピア",
 
-        "USE_SELECTED_THEME": "選択したテーマを使用",
-
-        "DEFAULT": "デフォルト",
-        "BRIGHT_BLUE": "明るい青",
-        "DARK_GREY_ORANGE": "ダークグレーオレンジ",
-        "LF_DEFAULT": "LF - デフォルト",
-        "LF_HIGH_CONTRAST": "LF - ハイコントラスト",
-        "LF_HOT_PINK": "LF - ホットピンク",
-        "LF_TOXIC_GREEN": "LF - 有毒グリーン",
-        "LF_MOCHA": "LF - モカ",
-        "LF_PEACHY_OCEAN": "LF - ピーチィオーシャン",
-        "LF_DARK_RED": "LF - ダークレッド",
-        "LF_COOL_BLUE": "LF - クールブルー",
-        "LF_DARK_TEAL": "LF - ダークティール",
-
         "RESIDENTIAL_LOW": "低層住宅",
         "RESIDENTIAL_HIGH": "高層住宅",
         "RESIDENTIAL_MEDIUM": "中層住宅",
@@ -1040,44 +772,9 @@
         "INDUSTRIAL_OIL": "石油工業",
         "INDUSTRIAL_ORE": "鉱業",
 
-        "PRIMARY_ACCENT": "プライマリーアクセント",
-        "BACKGROUND_ACCENT": "背景アクセント",
-        "FOCUSED_COLOR_DARK": "フォーカス色・ダーク",
-        "FOCUSED_COLOR": "フォーカス色",
-
-        "HOVER": "ホバー",
-        "PRESSED": "押された",
-        "FOCUSED": "フォーカスされた",
-
-        "BACKGROUND": "背景",
-        "CUSTOM": "カスタム",
-        "COLOR": "色",
-        "DARK": "暗い",
-        "NORMAL": "普通",
-        "LIGHT": "ライト",
-        "LIGHTER": "ライター",
-        "DIM": "薄暗い",
-        "DIMMER": "調光器",
-        "DIMMEST": "最も暗い",
-        "HEADER": "ヘーダー",
-        "BORDER": "国境",
-        "LOCKED": "ロックされています",
-        "ACTIVE": "アクティブ",
-        "CONTROL": "コントロール",
-        "TITLE": "タイトル",
-        "INVERTED": "反転した",
-        "DISABLED": "無効",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "ポジティブ",
-        "WARNING": "警告",
-        "NEGATIVE": "ネガティブ",
-        "TAB": "タブ",
-        "ITEM": "アイテム",
-        "PAUSE": "一時停止",
-        "PANEL1": "パネル1",
-        "PANEL2": "パネル2",
-        "TEXT1": "文章1",
-        "TEXT2": "文章2"
+        "SET": "セット",
+        "DEFAULT": "デフォルト",
+        "CITY_PLANNER_SPECIAL": "ボーダー付き"
       }
     },
     {
@@ -1087,7 +784,6 @@
         "SETTINGS": "설정",
         "ZONE_SETTINGS": "지역 설정",
         "ZONE_COLOURS": "지역 색상",
-        "UI_THEMES": "UI 테마",
         "ABOUT": "정보",
         "ACCENT": "강조",
         "PANEL": "패널",
@@ -1107,17 +803,17 @@
         "USE_UNITS_DESC": "길이 측정이 있는 도구 시스템이 선택되면, '단위'를 대신 사용합니다. ALT+U로 전환.",
 
         "FREEZE_TIME_VISUALS": "시각적 시간 고정",
-        "FREEZE_TIME_VISUALS_DESC": "활성화되면, 시각적인 하루 시간을 고정합니다. '주야간 시각'이 켜져 있어야 합니다.",
+        "FREEZE_TIME_VISUALS_DESC": "활성화되면, 시각적인 하루 시간을 고정합니다. '주야간 시각'이 켜져 있어야 합니다. (일시 정지 해제 전까지 효과가 보이지 않음)",
 
         "SET_VISUAL_TIME_OF_DAY": "시각적인 하루 시간 설정",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "시각적인 하루 시간을 재정의합니다. '주야간 시각'이 켜져 있어야 합니다. 황금 시간이 자정으로 가면 맵 설정이 누락됩니다.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "시각적인 하루 시간을 재정의합니다. '주야간 시각'이 켜져 있어야 합니다. 황금 시간이 자정으로 가면 맵 설정이 누락됩니다. (일시 정지 해제 전까지 효과가 보이지 않음)",
 
         "WEATHER": "날씨",
-        "WEATHER_DESC": "날씨 재정의",
+        "WEATHER_DESC": "날씨 재정의 (일시 정지 해제 전까지 효과가 보이지 않음)",
 
         "CUSTOM_ZONE_COLOURING": "맞춤 지역 색칠",
         "CUSTOM_ZONE_COLOURING_DESC": "키 단축키로 순환할 수 있는 맞춤 지역 색상 옵션을 제공합니다. ALT+Z로 전환.",
-        
+
         "OVERRIDE_ZONE_ICONS": "구역 아이콘 변경",
         "OVERRIDE_ZONE_ICONS_DESC": "이 기능을 활성화하면 구역 아이콘이 색상 설정에 따라 변경됩니다. 기본 아이콘을 사용하려면 이 기능을 비활성화하세요.",
 
@@ -1151,12 +847,6 @@
         "INDUSTRIAL": "산업",
         "INDUSTRIAL_DESC": "산업 지역 색상 수정",
 
-        "THEME": "테마",
-        "THEME_DESC": "편집할 테마 선택",
-
-        "GENERATE_FROM_COLOUR": "색상에서 생성",
-        "GENERATE_FROM_COLOUR_DESC": "기본 테마, 주요 강조 색상을 선택하고 테마를 생성합니다.",
-
         "MAKE_WINDOW_TRANSPARENT": "창 투명하게 만들기",
 
         "DEVELOPED_BY": "이 모드는 optimus-code와 Cities2Modding 커뮤니티에 의해 개발되었습니다.",
@@ -1189,21 +879,6 @@
         "PROTANOPIA": "적색맹",
         "TRITANOPIA": "청색맹",
 
-        "USE_SELECTED_THEME": "선택된 테마 사용",
-
-        "DEFAULT": "기본",
-        "BRIGHT_BLUE": "밝은 파랑",
-        "DARK_GREY_ORANGE": "어두운 회색 오렌지",
-        "LF_DEFAULT": "LF - 기본",
-        "LF_HIGH_CONTRAST": "LF - 고대비",
-        "LF_HOT_PINK": "LF - 핫 핑크",
-        "LF_TOXIC_GREEN": "LF - 독성 녹색",
-        "LF_MOCHA": "LF - 모카",
-        "LF_PEACHY_OCEAN": "LF - 복숭아색 오션",
-        "LF_DARK_RED": "LF - 어두운 빨강",
-        "LF_COOL_BLUE": "LF - 시원한 파랑",
-        "LF_DARK_TEAL": "LF - 어두운 청록",
-
         "RESIDENTIAL_LOW": "저밀도 주거",
         "RESIDENTIAL_HIGH": "고밀도 주거",
         "RESIDENTIAL_MEDIUM": "중밀도 주거",
@@ -1220,44 +895,9 @@
         "INDUSTRIAL_OIL": "석유 산업",
         "INDUSTRIAL_ORE": "광물 산업",
 
-        "PRIMARY_ACCENT": "주요 강조",
-        "BACKGROUND_ACCENT": "배경 강조",
-        "FOCUSED_COLOR_DARK": "집중된 어두운 색상",
-        "FOCUSED_COLOR": "집중 색상",
-
-        "HOVER": "호버",
-        "PRESSED": "눌림",
-        "FOCUSED": "집중",
-
-        "BACKGROUND": "배경",
-        "CUSTOM": "관습",
-        "COLOR": "색상",
-        "DARK": "어두운",
-        "NORMAL": "정상",
-        "LIGHT": "빛",
-        "LIGHTER": "거룻배",
-        "DIM": "어둑한",
-        "DIMMER": "주차",
-        "DIMMEST": "가장 어두운",
-        "HEADER": "머리글",
-        "BORDER": "국경",
-        "LOCKED": "잠김",
-        "ACTIVE": "활동적인",
-        "CONTROL": "제어",
-        "TITLE": "제목",
-        "INVERTED": "거꾸로",
-        "DISABLED": "장애가 있는",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "긍정적인",
-        "WARNING": "경고",
-        "NEGATIVE": "부정적인",
-        "TAB": "탭",
-        "ITEM": "안건",
-        "PAUSE": "정지시키다",
-        "PANEL1": "패널1",
-        "PANEL2": "패널2",
-        "TEXT1": "텍스트1",
-        "TEXT2": "텍스트2"
+        "SET": "설정",
+        "DEFAULT": "기본",
+        "CITY_PLANNER_SPECIAL": "테두리가 있는"
       }
     },
     {
@@ -1267,7 +907,6 @@
         "SETTINGS": "Ustawienia",
         "ZONE_SETTINGS": "Ustawienia Stref",
         "ZONE_COLOURS": "Kolory Stref",
-        "UI_THEMES": "Motywy UI",
         "ABOUT": "O aplikacji",
         "ACCENT": "Akcent",
         "PANEL": "Panel",
@@ -1287,17 +926,17 @@
         "USE_UNITS_DESC": "Gdy wybrano system narzędzi z pomiarem długości, użyj 'jednostek' zamiast tego. Przełącz z ALT+U.",
 
         "FREEZE_TIME_VISUALS": "Zamroź Wizualizacje Czasu",
-        "FREEZE_TIME_VISUALS_DESC": "Gdy włączone, zatrzymuje wizualny czas dnia. 'Wizualizacje Dnia/Nocy' muszą być włączone.",
+        "FREEZE_TIME_VISUALS_DESC": "Gdy włączone, zatrzymuje wizualny czas dnia. 'Wizualizacje Dnia/Nocy' muszą być włączone. (Efekty niewidoczne do momentu wznowienia)",
 
         "SET_VISUAL_TIME_OF_DAY": "Ustaw Wizualny Czas Dnia",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "Zastąp wizualny czas dnia. 'Wizualizacje Dnia/Nocy' muszą być włączone. Jeśli złota godzina przypada na północ, mapa nie ma ustawień.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Zastąp wizualny czas dnia. 'Wizualizacje Dnia/Nocy' muszą być włączone. Jeśli złota godzina przypada na północ, mapa nie ma ustawień. (Efekty niewidoczne do momentu wznowienia)",
 
         "WEATHER": "Pogoda",
-        "WEATHER_DESC": "Zastąp pogodę",
+        "WEATHER_DESC": "Zastąp pogodę (Efekty niewidoczne do momentu wznowienia)",
 
         "CUSTOM_ZONE_COLOURING": "Niestandardowe Kolorowanie Stref",
         "CUSTOM_ZONE_COLOURING_DESC": "Zapewnia niestandardowe opcje kolorów stref, które można przewijać skrótem klawiszowym. Przełącz z ALT+Z.",
-        
+
         "OVERRIDE_ZONE_ICONS": "Nadpisz ikony stref",
         "OVERRIDE_ZONE_ICONS_DESC": "Po włączeniu, ikony stref zmienią się zgodnie z ustawieniami kolorów. Aby używać domyślnych ikon, wyłącz tę opcję.",
 
@@ -1331,12 +970,6 @@
         "INDUSTRIAL": "Przemysłowy",
         "INDUSTRIAL_DESC": "Modyfikuj kolory strefy przemysłowej",
 
-        "THEME": "Motyw",
-        "THEME_DESC": "Wybierz motyw do edycji",
-
-        "GENERATE_FROM_COLOUR": "Generuj z Koloru",
-        "GENERATE_FROM_COLOUR_DESC": "Wybierz motyw bazowy, główny kolor akcentu i wygeneruj motyw.",
-
         "MAKE_WINDOW_TRANSPARENT": "Uczyń Okno Przezroczystym",
 
         "DEVELOPED_BY": "Ten mod został opracowany przez optimus-code i społeczność Cities2Modding.",
@@ -1369,21 +1002,6 @@
         "PROTANOPIA": "Protanopia",
         "TRITANOPIA": "Tritanopia",
 
-        "USE_SELECTED_THEME": "Użyj Wybranego Motywu",
-
-        "DEFAULT": "Domyślny",
-        "BRIGHT_BLUE": "Jasnoniebieski",
-        "DARK_GREY_ORANGE": "Ciemnoszary Pomarańczowy",
-        "LF_DEFAULT": "LF - Domyślny",
-        "LF_HIGH_CONTRAST": "LF - Wysoki Kontrast",
-        "LF_HOT_PINK": "LF - Gorący Róż",
-        "LF_TOXIC_GREEN": "LF - Toksyczna Zieleń",
-        "LF_MOCHA": "LF - Mocha",
-        "LF_PEACHY_OCEAN": "LF - Brzoskwiniowy Ocean",
-        "LF_DARK_RED": "LF - Ciemnoczerwony",
-        "LF_COOL_BLUE": "LF - Chłodny Niebieski",
-        "LF_DARK_TEAL": "LF - Ciemny Morski",
-
         "RESIDENTIAL_LOW": "Niskie Mieszkalne",
         "RESIDENTIAL_HIGH": "Wysokie Mieszkalne",
         "RESIDENTIAL_MEDIUM": "Średnie Mieszkalne",
@@ -1400,44 +1018,9 @@
         "INDUSTRIAL_OIL": "Przemysłowe Naftowe",
         "INDUSTRIAL_ORE": "Przemysłowe Rudy",
 
-        "PRIMARY_ACCENT": "Podstawowy Akcent",
-        "BACKGROUND_ACCENT": "Tło Akcentu",
-        "FOCUSED_COLOR_DARK": "Skupiony Ciemny Kolor",
-        "FOCUSED_COLOR": "Skoncentrowany Kolor",
-
-        "HOVER": "Najazd",
-        "PRESSED": "Wciśnięty",
-        "FOCUSED": "Skupiony",
-
-        "BACKGROUND": "Tło",
-        "CUSTOM": "Zwyczaj",
-        "COLOR": "Kolor",
-        "DARK": "Ciemny",
-        "NORMAL": "Normalna",
-        "LIGHT": "Światło",
-        "LIGHTER": "Zapalniczka",
-        "DIM": "Wyciszony",
-        "DIMMER": "Bardziej wyciszony",
-        "DIMMEST": "Najbardziej wyciszony",
-        "HEADER": "Nagłówek",
-        "BORDER": "Granica",
-        "LOCKED": "Zablokowany",
-        "ACTIVE": "Aktywny",
-        "CONTROL": "Kontrola",
-        "TITLE": "Tytuł",
-        "INVERTED": "Odwrotny",
-        "DISABLED": "Wyłączony",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "Pozytywny",
-        "WARNING": "Ostrzeżenie",
-        "NEGATIVE": "Negatywny",
-        "TAB": "Patka",
-        "ITEM": "Przedmiot",
-        "PAUSE": "Pauza",
-        "PANEL1": "Płyta1",
-        "PANEL2": "Płyta2",
-        "TEXT1": "Tekst1",
-        "TEXT2": "Tekst2"
+        "SET": "Ustaw",
+        "DEFAULT": "Domyślny",
+        "CITY_PLANNER_SPECIAL": "Obramowany"
       }
     },
     {
@@ -1447,7 +1030,6 @@
         "SETTINGS": "Configurações",
         "ZONE_SETTINGS": "Configurações de Zona",
         "ZONE_COLOURS": "Cores das Zonas",
-        "UI_THEMES": "Temas da UI",
         "ABOUT": "Sobre",
         "ACCENT": "Acento",
         "PANEL": "Painel",
@@ -1467,17 +1049,17 @@
         "USE_UNITS_DESC": "Quando um sistema de ferramentas com medição de comprimento for selecionado, use 'unidades' em vez disso. Alternar com ALT+U.",
 
         "FREEZE_TIME_VISUALS": "Congelar Visuais de Tempo",
-        "FREEZE_TIME_VISUALS_DESC": "Quando ativado, congela o tempo visual do dia. 'Visuais Dia/Noite' devem estar ligados.",
+        "FREEZE_TIME_VISUALS_DESC": "Quando ativado, congela o tempo visual do dia. 'Visuais Dia/Noite' devem estar ligados. (Efeitos não visíveis até ser despausado)",
 
         "SET_VISUAL_TIME_OF_DAY": "Definir Tempo Visual do Dia",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "Sobrescrever o tempo visual do dia. 'Visuais Dia/Noite' devem estar ligados. Se a hora dourada for até a meia-noite, faltam configurações no mapa.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Sobrescrever o tempo visual do dia. 'Visuais Dia/Noite' devem estar ligados. Se a hora dourada for até a meia-noite, faltam configurações no mapa. (Efeitos não visíveis até ser despausado)",
 
         "WEATHER": "Clima",
-        "WEATHER_DESC": "Sobrescrever o clima",
+        "WEATHER_DESC": "Sobrescrever o clima (Efeitos não visíveis até ser despausado)",
 
         "CUSTOM_ZONE_COLOURING": "Coloração de Zona Personalizada",
         "CUSTOM_ZONE_COLOURING_DESC": "Fornece opções de cores de zona personalizadas que podem ser alternadas com um atalho de tecla. Alternar com ALT+Z.",
-        
+
         "OVERRIDE_ZONE_ICONS": "Substituir ícones de zona",
         "OVERRIDE_ZONE_ICONS_DESC": "Quando ativado, os ícones de zona serão alterados para as suas configurações de cor. Se desejar ícones padrão, desative esta opção.",
 
@@ -1511,12 +1093,6 @@
         "INDUSTRIAL": "Industrial",
         "INDUSTRIAL_DESC": "Modificar cores da zona industrial",
 
-        "THEME": "Tema",
-        "THEME_DESC": "Selecionar um tema para editar",
-
-        "GENERATE_FROM_COLOUR": "Gerar a partir da cor",
-        "GENERATE_FROM_COLOUR_DESC": "Selecionar um tema base, cor de acento principal e gerar um tema.",
-
         "MAKE_WINDOW_TRANSPARENT": "Tornar janela transparente",
 
         "DEVELOPED_BY": "Este mod foi desenvolvido por optimus-code e pela comunidade Cities2Modding.",
@@ -1549,21 +1125,6 @@
         "PROTANOPIA": "Protanopia",
         "TRITANOPIA": "Tritanopia",
 
-        "USE_SELECTED_THEME": "Usar tema selecionado",
-
-        "DEFAULT": "Padrão",
-        "BRIGHT_BLUE": "Azul Brilhante",
-        "DARK_GREY_ORANGE": "Cinza Escuro Laranja",
-        "LF_DEFAULT": "LF - Padrão",
-        "LF_HIGH_CONTRAST": "LF - Alto Contraste",
-        "LF_HOT_PINK": "LF - Rosa Quente",
-        "LF_TOXIC_GREEN": "LF - Verde Tóxico",
-        "LF_MOCHA": "LF - Mocha",
-        "LF_PEACHY_OCEAN": "LF - Oceano Pêssego",
-        "LF_DARK_RED": "LF - Vermelho Escuro",
-        "LF_COOL_BLUE": "LF - Azul Fresco",
-        "LF_DARK_TEAL": "LF - Verde Azulado Escuro",
-
         "RESIDENTIAL_LOW": "Residencial Baixo",
         "RESIDENTIAL_HIGH": "Residencial Alto",
         "RESIDENTIAL_MEDIUM": "Residencial Médio",
@@ -1580,44 +1141,9 @@
         "INDUSTRIAL_OIL": "Óleo Industrial",
         "INDUSTRIAL_ORE": "Minério Industrial",
 
-        "PRIMARY_ACCENT": "Acento Primário",
-        "BACKGROUND_ACCENT": "Acento de Fundo",
-        "FOCUSED_COLOR_DARK": "Cor Focada Escura",
-        "FOCUSED_COLOR": "Cor Focada",
-
-        "HOVER": "Pairar",
-        "PRESSED": "Pressionado",
-        "FOCUSED": "Focado",
-
-        "BACKGROUND": "Fundo",
-        "CUSTOM": "Personalizado",
-        "COLOR": "Cor",
-        "DARK": "Escuro",
-        "NORMAL": "Normal",
-        "LIGHT": "Luz",
-        "LIGHTER": "Isqueiro",
-        "DIM": "Escurecer",
-        "DIMMER": "Obscuro",
-        "DIMMEST": "Mais escuro",
-        "HEADER": "Cabeçalho",
-        "BORDER": "Fronteira",
-        "LOCKED": "Bloqueado",
-        "ACTIVE": "Ativo",
-        "CONTROL": "Ao controle",
-        "TITLE": "Título",
-        "INVERTED": "Invertido",
-        "DISABLED": "Desabilitado",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "Positivo",
-        "WARNING": "Aviso",
-        "NEGATIVE": "Negativo",
-        "TAB": "Aba",
-        "ITEM": "Item",
-        "PAUSE": "Pausa",
-        "PANEL1": "Painel1",
-        "PANEL2": "Painel2",
-        "TEXT1": "Texto1",
-        "TEXT2": "Texto2"
+        "SET": "Definir",
+        "DEFAULT": "Padrão",
+        "CITY_PLANNER_SPECIAL": "Com borda"
       }
     },
     {
@@ -1627,7 +1153,6 @@
         "SETTINGS": "Настройки",
         "ZONE_SETTINGS": "Настройки Зоны",
         "ZONE_COLOURS": "Цвета Зон",
-        "UI_THEMES": "Темы UI",
         "ABOUT": "О программе",
         "ACCENT": "Акцент",
         "PANEL": "Панель",
@@ -1647,17 +1172,17 @@
         "USE_UNITS_DESC": "Когда выбрана система инструментов с измерением длины, использовать 'единицы'. Переключать с помощью ALT+U.",
 
         "FREEZE_TIME_VISUALS": "Заморозить Визуальное Время",
-        "FREEZE_TIME_VISUALS_DESC": "Когда включено, замораживает визуальное время суток. 'Визуальные Эффекты Дня/Ночи' должны быть включены.",
+        "FREEZE_TIME_VISUALS_DESC": "Когда включено, замораживает визуальное время суток. 'Визуальные Эффекты Дня/Ночи' должны быть включены. (Эффекты не видны до возобновления)",
 
         "SET_VISUAL_TIME_OF_DAY": "Установить Визуальное Время Суток",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "Переопределить визуальное время суток. 'Визуальные Эффекты Дня/Ночи' должны быть включены. Если золотой час переходит в полночь, карте не хватает настроек.",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "Переопределить визуальное время суток. 'Визуальные Эффекты Дня/Ночи' должны быть включены. Если золотой час переходит в полночь, карте не хватает настроек. (Эффекты не видны до возобновления)",
 
         "WEATHER": "Погода",
-        "WEATHER_DESC": "Переопределить погоду",
+        "WEATHER_DESC": "Переопределить погоду (Эффекты не видны до возобновления)",
 
         "CUSTOM_ZONE_COLOURING": "Пользовательская Расцветка Зон",
         "CUSTOM_ZONE_COLOURING_DESC": "Предоставляет пользовательские варианты цвета зон, которые можно переключать с помощью горячей клавиши. Переключать с помощью ALT+Z.",
-        
+
         "OVERRIDE_ZONE_ICONS": "Переопределить иконки зон",
         "OVERRIDE_ZONE_ICONS_DESC": "Если включено, иконки зон изменятся в соответствии с вашими настройками цвета. Чтобы использовать стандартные иконки, отключите это.",
 
@@ -1691,12 +1216,6 @@
         "INDUSTRIAL": "Промышленный",
         "INDUSTRIAL_DESC": "Изменить цвета промышленных зон",
 
-        "THEME": "Тема",
-        "THEME_DESC": "Выбрать тему для редактирования",
-
-        "GENERATE_FROM_COLOUR": "Создать из Цвета",
-        "GENERATE_FROM_COLOUR_DESC": "Выбрать основную тему, главный акцентный цвет и создать тему.",
-
         "MAKE_WINDOW_TRANSPARENT": "Сделать Окно Прозрачным",
 
         "DEVELOPED_BY": "Этот мод был разработан optimus-code и сообществом Cities2Modding.",
@@ -1729,21 +1248,6 @@
         "PROTANOPIA": "Протанопия",
         "TRITANOPIA": "Тританопия",
 
-        "USE_SELECTED_THEME": "Использовать Выбранную Тему",
-
-        "DEFAULT": "Стандарт",
-        "BRIGHT_BLUE": "Ярко-Синий",
-        "DARK_GREY_ORANGE": "Темно-Серый Оранжевый",
-        "LF_DEFAULT": "LF - Стандарт",
-        "LF_HIGH_CONTRAST": "LF - Высокий Контраст",
-        "LF_HOT_PINK": "LF - Ярко-Розовый",
-        "LF_TOXIC_GREEN": "LF - Ядовито-Зеленый",
-        "LF_MOCHA": "LF - Мокко",
-        "LF_PEACHY_OCEAN": "LF - Персиково-Океанский",
-        "LF_DARK_RED": "LF - Темно-Красный",
-        "LF_COOL_BLUE": "LF - Прохладный Синий",
-        "LF_DARK_TEAL": "LF - Темный Голубой",
-
         "RESIDENTIAL_LOW": "Жилой Низкий",
         "RESIDENTIAL_HIGH": "Жилой Высокий",
         "RESIDENTIAL_MEDIUM": "Жилой Средний",
@@ -1760,44 +1264,9 @@
         "INDUSTRIAL_OIL": "Промышленный Нефть",
         "INDUSTRIAL_ORE": "Промышленный Руда",
 
-        "PRIMARY_ACCENT": "Основной Акцент",
-        "BACKGROUND_ACCENT": "Фоновый Акцент",
-        "FOCUSED_COLOR_DARK": "Темный Цвет Фокуса",
-        "FOCUSED_COLOR": "Цвет Фокуса",
-
-        "HOVER": "Наведение",
-        "PRESSED": "Нажатие",
-        "FOCUSED": "Фокус",
-
-        "BACKGROUND": "Фон",
-        "CUSTOM": "Пользовательский",
-        "COLOR": "Цвет",
-        "DARK": "Темный",
-        "NORMAL": "Обычный",
-        "LIGHT": "Светлый",
-        "LIGHTER": "Светлее",
-        "DIM": "Тусклый",
-        "DIMMER": "Темнее",
-        "DIMMEST": "Самый Темный",
-        "HEADER": "Заголовок",
-        "BORDER": "Граница",
-        "LOCKED": "Заблокировано",
-        "ACTIVE": "Активный",
-        "CONTROL": "Управление",
-        "TITLE": "Название",
-        "INVERTED": "Инвертированный",
-        "DISABLED": "Отключенный",
-        "CHIRPER": "Чирпер",
-        "POSITIVE": "Положительный",
-        "WARNING": "Предупреждение",
-        "NEGATIVE": "Отрицательный",
-        "TAB": "Вкладка",
-        "ITEM": "Элемент",
-        "PAUSE": "Пауза",
-        "PANEL1": "Панель1",
-        "PANEL2": "Панель2",
-        "TEXT1": "Текст1",
-        "TEXT2": "Текст2"
+        "SET": "Установить",
+        "DEFAULT": "По умолчанию",
+        "CITY_PLANNER_SPECIAL": "С границей"
       }
     },
     {
@@ -1807,7 +1276,6 @@
         "SETTINGS": "设置",
         "ZONE_SETTINGS": "功能区设置",
         "ZONE_COLOURS": "功能区颜色",
-        "UI_THEMES": "UI 主题",
         "ABOUT": "关于",
         "ACCENT": "强调",
         "PANEL": "面板",
@@ -1827,17 +1295,17 @@
         "USE_UNITS_DESC": "当选择具有长度测量的工具系统时，请改用“单位”代替 -快捷键: ALT+U",
 
         "FREEZE_TIME_VISUALS": "冻结时间视觉效果",
-        "FREEZE_TIME_VISUALS_DESC": "启用后,冻结视觉时间。必须打开“日夜效果”",
+        "FREEZE_TIME_VISUALS_DESC": "启用后,冻结视觉时间。必须打开“日夜效果” (暂停解除前效果不可见)",
 
         "SET_VISUAL_TIME_OF_DAY": "设置视觉时间",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "覆盖视觉时间。必须打开“日夜效果”",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "覆盖视觉时间。必须打开“日夜效果”(暂停解除前效果不可见)",
 
         "WEATHER": "天气",
-        "WEATHER_DESC": "覆盖天气",
+        "WEATHER_DESC": "覆盖天气(暂停解除前效果不可见)",
 
         "CUSTOM_ZONE_COLOURING": "自定义区域着色",
         "CUSTOM_ZONE_COLOURING_DESC": "提供可以使用快捷键循环的自定义区域颜色选项。",
-        
+
         "OVERRIDE_ZONE_ICONS": "覆盖区域图标",
         "OVERRIDE_ZONE_ICONS_DESC": "启用后，区域图标将按照您的颜色设置进行更改。如果您想要默认图标，请禁用此功能。",
 
@@ -1871,12 +1339,6 @@
         "INDUSTRIAL": "工业",
         "INDUSTRIAL_DESC": "修改工业区颜色",
 
-        "THEME": "主题",
-        "THEME_DESC": "选择要编辑的主题",
-
-        "GENERATE_FROM_COLOUR": "从颜色生成",
-        "GENERATE_FROM_COLOUR_DESC": "选择基本主题、主要强调颜色并生成主题。",
-
         "MAKE_WINDOW_TRANSPARENT": "使窗口透明",
 
         "DEVELOPED_BY": "此模组由optimus-code和Cities2Modding社区开发。",
@@ -1909,21 +1371,6 @@
         "PROTANOPIA": "红色盲",
         "TRITANOPIA": "蓝色盲",
 
-        "USE_SELECTED_THEME": "使用选定的主题",
-
-        "DEFAULT": "默认",
-        "BRIGHT_BLUE": "亮蓝",
-        "DARK_GREY_ORANGE": "深灰橙",
-        "LF_DEFAULT": "LF - 默认",
-        "LF_HIGH_CONTRAST": "LF - 高对比",
-        "LF_HOT_PINK": "LF - 热粉",
-        "LF_TOXIC_GREEN": "LF - 有毒绿",
-        "LF_MOCHA": "LF - 摩卡",
-        "LF_PEACHY_OCEAN": "LF - 桃子海洋",
-        "LF_DARK_RED": "LF - 深红",
-        "LF_COOL_BLUE": "LF - 冷蓝",
-        "LF_DARK_TEAL": "LF - 深青",
-
         "RESIDENTIAL_LOW": "低密度住宅",
         "RESIDENTIAL_HIGH": "高密度住宅",
         "RESIDENTIAL_MEDIUM": "中密度住宅",
@@ -1940,42 +1387,9 @@
         "INDUSTRIAL_OIL": "工业石油",
         "INDUSTRIAL_ORE": "工业矿石",
 
-        "PRIMARY_ACCENT": "主要强调",
-        "BACKGROUND_ACCENT": "背景强调",
-
-        "HOVER": "悬停",
-        "PRESSED": "按下",
-        "FOCUSED": "聚焦",
-
-        "BACKGROUND": "背景",
-        "CUSTOM": "风俗",
-        "COLOR": "颜色",
-        "DARK": "黑暗的",
-        "NORMAL": "普通的",
-        "LIGHT": "光",
-        "LIGHTER": "打火机",
-        "DIM": "暗淡",
-        "DIMMER": "调光器",
-        "DIMMEST": "最昏暗",
-        "HEADER": "标头",
-        "BORDER": "边界",
-        "LOCKED": "锁定",
-        "ACTIVE": "积极的",
-        "CONTROL": "控制",
-        "TITLE": "标题",
-        "INVERTED": "倒",
-        "DISABLED": "残疾人",
-        "CHIRPER": "Chirper",
-        "POSITIVE": "积极的",
-        "WARNING": "警告",
-        "NEGATIVE": "消极的",
-        "TAB": "标签",
-        "ITEM": "物品",
-        "PAUSE": "暂停",
-        "PANEL1": "控制板1",
-        "PANEL2": "控制板2",
-        "TEXT1": "文本1",
-        "TEXT2": "文本2"
+        "SET": "设置",
+        "DEFAULT": "默认",
+        "CITY_PLANNER_SPECIAL": "带边框"
       }
     },
     {
@@ -1985,7 +1399,6 @@
         "SETTINGS": "基本設定",
         "ZONE_SETTINGS": "分區設定",
         "ZONE_COLOURS": "分區顏色",
-        "UI_THEMES": "介面主題",
         "ABOUT": "關於我們",
         "ACCENT": "強調",
         "PANEL": "面板",
@@ -2005,17 +1418,17 @@
         "USE_UNITS_DESC": "使用具有顯示長度功能的工具時，將顯示的長度單位改為「Units」（快捷鍵：ALT+U）",
 
         "FREEZE_TIME_VISUALS": "凍結視覺時間",
-        "FREEZE_TIME_VISUALS_DESC": "凍結目前顯示的視覺時間（需要開啟遊戲玩法設定中的「日夜效果」）",
+        "FREEZE_TIME_VISUALS_DESC": "凍結目前顯示的視覺時間（需要開啟遊戲玩法設定中的「日夜效果」）(暫停解除前效果不可見)",
 
         "SET_VISUAL_TIME_OF_DAY": "設定視覺時間",
-        "SET_VISUAL_TIME_OF_DAY_DESC": "設定目前顯示的視覺時間（需要開啟遊戲玩法設定中的「日夜效果」）",
+        "SET_VISUAL_TIME_OF_DAY_DESC": "設定目前顯示的視覺時間（需要開啟遊戲玩法設定中的「日夜效果」）(暫停解除前效果不可見)",
 
         "WEATHER": "天氣",
-        "WEATHER_DESC": "設定目前的天氣狀況",
+        "WEATHER_DESC": "設定目前的天氣狀況(暫停解除前效果不可見)",
 
         "CUSTOM_ZONE_COLOURING": "自訂分區顏色",
         "CUSTOM_ZONE_COLOURING_DESC": "使用自訂分區顏色，可使用快捷鍵循環切換不同模式（快捷鍵：ALT+Z）",
-        
+
         "OVERRIDE_ZONE_ICONS": "覆蓋區域圖示",
         "OVERRIDE_ZONE_ICONS_DESC": "啟用後，區域圖示將根據您的顏色設定進行更改。如果您想要預設圖示，請禁用此功能。",
 
@@ -2049,12 +1462,6 @@
         "INDUSTRIAL": "工業分區",
         "INDUSTRIAL_DESC": "設定工業區顏色",
 
-        "THEME": "主題",
-        "THEME_DESC": "選擇欲編輯的主題",
-
-        "GENERATE_FROM_COLOUR": "指定顏色主題",
-        "GENERATE_FROM_COLOUR_DESC": "手動選擇並自動產生對應的顏色主題",
-
         "MAKE_WINDOW_TRANSPARENT": "視窗透明化",
 
         "DEVELOPED_BY": "本模組由 optimus-code 和 Cities2Modding 社群製作",
@@ -2087,21 +1494,6 @@
         "PROTANOPIA": "紅色色盲",
         "TRITANOPIA": "藍色色盲",
 
-        "USE_SELECTED_THEME": "使用選擇的主題",
-
-        "DEFAULT": "預設",
-        "BRIGHT_BLUE": "亮藍色",
-        "DARK_GREY_ORANGE": "深灰橘",
-        "LF_DEFAULT": "LF－預設",
-        "LF_HIGH_CONTRAST": "LF－高對比",
-        "LF_HOT_PINK": "LF－艷粉色",
-        "LF_TOXIC_GREEN": "LF－強毒綠",
-        "LF_MOCHA": "LF－摩卡棕",
-        "LF_PEACHY_OCEAN": "LF－桃洋綠",
-        "LF_DARK_RED": "LF－深紅色",
-        "LF_COOL_BLUE": "LF－冷冽青",
-        "LF_DARK_TEAL": "LF－深鴨綠",
-
         "RESIDENTIAL_LOW": "低密度住宅",
         "RESIDENTIAL_HIGH": "高密度住宅",
         "RESIDENTIAL_MEDIUM": "中密度住宅",
@@ -2118,42 +1510,9 @@
         "INDUSTRIAL_OIL": "石油業",
         "INDUSTRIAL_ORE": "礦業",
 
-        "PRIMARY_ACCENT": "主要強調色",
-        "BACKGROUND_ACCENT": "背景強調色",
-
-        "HOVER": "懸停",
-        "PRESSED": "點擊",
-        "FOCUSED": "聚焦",
-
-        "BACKGROUND": "背景",
-        "CUSTOM": "自訂",
-        "COLOR": "顏色",
-        "DARK": "暗色",
-        "NORMAL": "普通",
-        "LIGHT": "亮色",
-        "LIGHTER": "亮色凸顯",
-        "DIM": "淡色",
-        "DIMMER": "黯淡",
-        "DIMMEST": "深暗",
-        "HEADER": "標題",
-        "BORDER": "邊界",
-        "LOCKED": "鎖定",
-        "ACTIVE": "啟用",
-        "CONTROL": "控制",
-        "TITLE": "標題",
-        "INVERTED": "反白",
-        "DISABLED": "禁用",
-        "CHIRPER": "小啾啾",
-        "POSITIVE": "正向",
-        "WARNING": "警告",
-        "NEGATIVE": "負向",
-        "TAB": "標籤",
-        "ITEM": "物品",
-        "PAUSE": "暫停",
-        "PANEL1": "面板１",
-        "PANEL2": "面板２",
-        "TEXT1": "文字１",
-        "TEXT2": "文字２"
+        "SET": "設置",
+        "DEFAULT": "預設",
+        "CITY_PLANNER_SPECIAL": "帶邊框"
       }
     }
   ]

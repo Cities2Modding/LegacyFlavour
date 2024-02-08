@@ -29,6 +29,7 @@
 	  <None Remove="Resources\calculatesnow" />
 	  <None Remove="Resources\defaultConfig.json" />
 	  <None Remove="Resources\defaultLocale.json" />
+	  <None Remove="Resources\defaultThemes.json" />
 	  <None Remove="Resources\ui.js" />
 	</ItemGroup>
 	
@@ -36,6 +37,7 @@
 	  <EmbeddedResource Include="Resources\calculatesnow">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\defaultThemes.json" />
 	  <EmbeddedResource Include="Resources\defaultConfig.json" />
 	  <EmbeddedResource Include="Resources\defaultLocale.json" />
 	  <EmbeddedResource Include="Resources\ui.js" />

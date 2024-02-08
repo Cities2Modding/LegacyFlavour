@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React26 = require_react();
+          var React24 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React26.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React24.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React26.Children.forEach(props.children, function(child) {
+                  React24.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React26.Component().refs;
+          var emptyRefsObject = new React24.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23477,7 +23477,7 @@
   });
 
   // src/jsx/ui.jsx
-  var import_react25 = __toESM(require_react());
+  var import_react23 = __toESM(require_react());
 
   // node_modules/hookui-framework/src/components/panel.jsx
   var import_react = __toESM(require_react());
@@ -24045,7 +24045,7 @@
   // src/jsx/components/_select.jsx
   var import_react18 = __toESM(require_react());
   var import_react_dom2 = __toESM(require_react_dom());
-  var $Select = ({ react, style, onSelectionChanged, selected, options }) => {
+  var $Select = ({ react, style, containerStyle, onSelectionChanged, selected, options }) => {
     const [active, setActive] = react.useState(false);
     const [internalValue, setInternalValue] = react.useState(selected);
     const [portalContainer, setPortalContainer] = react.useState(null);
@@ -24106,7 +24106,7 @@
       ...getDropdownPosition(),
       zIndex: 9999
     } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-popup_mMv", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-menu_jf2 dropdown-menu_Swd" }, options.map((option) => /* @__PURE__ */ import_react18.default.createElement("button", { key: option.value, className: "dropdown-item_sZT selected", style: { padding: "5rem", height: "auto" }, onClick: () => changeSelection(option.value) }, option.label))))) : null;
-    return /* @__PURE__ */ import_react18.default.createElement("div", { style: { width: "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { ref: pickerRef, className: "dropdown-toggle_V9z dropdown-toggle_prl value-field_yJi value_PW_ dropdown_pJu item-states_QjV", onClick: onToggle, style: { padding: "5rem", height: "auto", ...style } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "label_l_4" }, options[selectedIndex].label), /* @__PURE__ */ import_react18.default.createElement("div", { className: "tinted-icon_iKo indicator_Xmj", style: { maskImage: "url(Media/Glyphs/StrokeArrowDown.svg)" } }), portalContainer && dropdownContent && import_react_dom2.default.createPortal(dropdownContent, portalContainer)));
+    return /* @__PURE__ */ import_react18.default.createElement("div", { style: containerStyle ? containerStyle : { width: "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { ref: pickerRef, className: "dropdown-toggle_V9z dropdown-toggle_prl value-field_yJi value_PW_ dropdown_pJu item-states_QjV", onClick: onToggle, style: { padding: "5rem", height: "auto", ...style } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "label_l_4" }, options[selectedIndex].label), /* @__PURE__ */ import_react18.default.createElement("div", { className: "tinted-icon_iKo indicator_Xmj", style: { maskImage: "url(Media/Glyphs/StrokeArrowDown.svg)" } }), portalContainer && dropdownContent && import_react_dom2.default.createPortal(dropdownContent, portalContainer)));
   };
   var select_default = $Select;
 
@@ -24263,8 +24263,12 @@
 
   // src/jsx/tabs/_zone-settings.jsx
   var $ZoneSettings = ({ react, locale, data, setData, triggerUpdate }) => {
+    const [preset, setPreset] = react.useState("");
     const triggerResetZoneSettingsToDefault = () => {
       engine.trigger("cities2modding_legacyflavour.resetZoneSettingsToDefault");
+    };
+    const triggerSetZoneSettingsPreset = () => {
+      engine.trigger("cities2modding_legacyflavour.setZoneSettingsPreset", preset);
     };
     const updateData = (field, val) => {
       if (field === "Enabled")
@@ -24283,6 +24287,10 @@
         setData({ ...data, OverrideIcons: val });
       triggerUpdate(field, val);
     };
+    const presets = [
+      { label: locale["DEFAULT"], value: "" },
+      { label: locale["CITY_PLANNER_SPECIAL"], value: "CityPlannerSpecial" }
+    ];
     return /* @__PURE__ */ import_react21.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
       icon_panel_default,
       {
@@ -24343,308 +24351,12 @@
         fitChild: "true"
       },
       /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.EmptyCellBorderOpacity, onValueChanged: (val) => updateData("EmptyCellBorderOpacity", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetZoneSettingsToDefault }, locale["RESET_TO_DEFAULT"])));
+    ), /* @__PURE__ */ import_react21.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react21.default.createElement(select_default, { react, selected: preset, containerStyle: { flex: 1, width: "auto", marginRight: "10rem" }, options: presets, onSelectionChanged: (val) => setPreset(val) }), /* @__PURE__ */ import_react21.default.createElement(button_default2, { style: { paddingLeft: "30rem", paddingRight: "30rem" }, onClick: triggerSetZoneSettingsPreset }, locale["SET"]))));
   };
   var zone_settings_default = $ZoneSettings;
 
-  // src/jsx/tabs/_ui-themes.jsx
-  var import_react23 = __toESM(require_react());
-
-  // src/jsx/components/_tab-control.jsx
-  var import_react22 = __toESM(require_react());
-  var $TabControl = ({ react, tabs, style }) => {
-    const [activeTab, setActiveTab] = react.useState(tabs.length > 0 ? tabs[0].name : "");
-    return /* @__PURE__ */ import_react22.default.createElement("div", { style }, /* @__PURE__ */ import_react22.default.createElement("div", { className: "panel_YqS", style: { marginLeft: "auto", marginRight: "auto", width: "100%" } }, /* @__PURE__ */ import_react22.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react22.default.createElement(
-      "div",
-      {
-        key: tab.name,
-        className: `tab_Hrb ${activeTab === tab.name ? "selected" : ""}`,
-        onClick: () => setActiveTab(tab.name),
-        style: { marginLeft: "2.5rem", marginRight: "2.5rem" }
-      },
-      tab.label
-    ))), /* @__PURE__ */ import_react22.default.createElement("div", null, tabs.map((tab) => /* @__PURE__ */ import_react22.default.createElement(
-      "div",
-      {
-        key: tab.name,
-        style: { display: activeTab === tab.name ? "flex" : "none", flexDirection: "row", paddingTop: "10rem" }
-      },
-      tab.content
-    )))));
-  };
-  var tab_control_default = $TabControl;
-
-  // src/jsx/tabs/_ui-themes.jsx
-  var $UIThemes = ({ react, locale, themeData, setThemeData, defaultThemeData }) => {
-    const [selectedDefaultTheme, setSelectedDefaultTheme] = react.useState("Default");
-    const [selectedTheme, setSelectedTheme] = react.useState("Custom");
-    const [accentColour, setAccentColour] = react.useState("#ff0000");
-    const [backgroundAccentColour, setBackgroundAccentColour] = react.useState("#000000");
-    const [usingSelectedTheme, setUsingSelectedTheme] = react.useState(false);
-    let defaultThemeList = [];
-    let themeList = [];
-    if (themeData.Themes) {
-      for (var i = 0; i < themeData.Themes.length; i++) {
-        const themeName = themeData.Themes[i].Name;
-        const localeName = themeName.toUpperCase().replace("LF - ", "LF_").replace(/ /g, "_");
-        themeList.push({ label: locale[localeName], value: themeName });
-      }
-    }
-    if (defaultThemeData.Themes) {
-      for (var i = 0; i < defaultThemeData.Themes.length; i++) {
-        const themeName = defaultThemeData.Themes[i].Name;
-        const localeName = themeName.toUpperCase().replace("LF - ", "LF_").replace(/ /g, "_");
-        defaultThemeList.push({ label: locale[localeName], value: themeName });
-      }
-    }
-    let selectedIndex = themeList.findIndex((o) => o.value === selectedTheme);
-    const onSelectedThemeChanged = (selected) => {
-      setSelectedTheme(selected);
-      selectedIndex = themeList.findIndex((o) => o.value === selected);
-      engine.trigger("cities2modding_legacyflavour.useSelectedTheme", selected);
-    };
-    const onDefaultSelectedThemeChanged = (selected) => {
-      setSelectedDefaultTheme(selected);
-    };
-    const chunkArray = (array, size) => {
-      const result = [];
-      for (let i2 = 0; i2 < array.length; i2 += size) {
-        result.push(array.slice(i2, i2 + size));
-      }
-      return result;
-    };
-    const formatString = (str) => {
-      let formattedStr = str.replace(/^[-]+/, "");
-      formattedStr = formattedStr.replace(/-/g, " ");
-      formattedStr = formattedStr.replace(/([A-Z])/g, " $1").trim();
-      formattedStr = formattedStr.split(" ").map(
-        (word) => locale[word.toUpperCase()] ? locale[word.toUpperCase()] : word.toUpperCase()
-      ).join(" ").trim();
-      return formattedStr;
-    };
-    const accentGroups = [
-      {
-        name: "Accent",
-        label: locale["ACCENT"],
-        keys: [
-          "--accentColorNormal",
-          "--accentColorNormal-hover",
-          "--accentColorNormal-pressed",
-          "--accentColorDark",
-          "--accentColorDark-hover",
-          "--accentColorDark-pressed",
-          "--accentColorDark-focused",
-          "--accentColorLight",
-          "--accentColorLighter",
-          "--focusedColor",
-          "--focusedColorDark"
-        ]
-      },
-      {
-        name: "Panel",
-        label: locale["PANEL"],
-        keys: [
-          "--panelColorNormal",
-          "--panelColorDark",
-          "--panelColorDark-hover",
-          "--panelColorDark-active",
-          "--pausePanelColorDark",
-          "--customPanelTextColor"
-        ]
-      },
-      {
-        name: "Section",
-        label: locale["SECTION"],
-        keys: [
-          "--sectionHeaderColor",
-          "--sectionHeaderColorLight",
-          "--sectionHeaderLockedColor",
-          "--sectionBackgroundColor",
-          "--sectionBackgroundColorLight",
-          "--sectionBorderColor",
-          "--sectionBackgroundLockedColor"
-        ]
-      },
-      {
-        name: "Selected",
-        label: locale["SELECTED"],
-        keys: [
-          "--selectedTextColor",
-          "--selectedTextColorDim",
-          "--selectedTextColorDimmer",
-          "--selectedTextColorDimmest",
-          "--selectedColor",
-          "--selectedColorDark",
-          "--selectedColor-hover",
-          "--selectedColor-active"
-        ]
-      },
-      {
-        name: "Text",
-        label: locale["TEXT"],
-        keys: [
-          "--normalTextColor",
-          "--normalTextColorDim",
-          "--normalTextColorDimmer",
-          "--normalTextColorDimmest",
-          "--normalTextColorDark",
-          "--normalTextColorDarkDim",
-          "--normalTextColorDarkDimmer",
-          "--normalTextColorDarkDimmest",
-          "--normalTextColorHighlight",
-          "--normalTextColorHighlightDim",
-          "--normalTextColorHighlightDimmer",
-          "--normalTextColorHighlightDimmest"
-        ]
-      },
-      {
-        name: "Menu",
-        label: locale["MENU"],
-        keys: [
-          "--menuText1Inverted",
-          "--menuText2Inverted",
-          "--menuPanel1",
-          "--menuPanel2",
-          "--menuTitleNormal",
-          "--menuText1Normal",
-          "--menuText2Normal",
-          "--menuText1Disabled",
-          "--menuControlBorder"
-        ]
-      },
-      {
-        name: "Other",
-        label: locale["OTHER"],
-        keys: [
-          "--positiveColor",
-          "--warningColor",
-          "--negativeColor",
-          "--customTabTextColor",
-          "--customTabSelectedTextColor",
-          "--customChirperPanelTextColor",
-          "--customChirperPanelColor",
-          "--customChirperItemTextColor",
-          "--customChirperItemColor"
-        ]
-      }
-    ];
-    const filterSettings = (settings, accentGroup) => {
-      var filteredSettings = [];
-      for (var i2 = 0; i2 < settings.length; i2++) {
-        if (accentGroup.keys.includes(settings[i2].Key))
-          filteredSettings.push(settings[i2]);
-      }
-      return filteredSettings;
-    };
-    const getTheme = (theme, accentGroup) => {
-      const filteredSettings = filterSettings(theme.Settings, accentGroup);
-      const settingChunks = chunkArray(filteredSettings, 6);
-      const filteredChunks = settingChunks.filter(
-        (chunk) => chunk.some((setting) => setting.Value.indexOf("#") !== -1 || setting.Value.indexOf("rgba(") !== -1)
-      );
-      return /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row", width: "100%" } }, filteredChunks.map((chunk, chunkIndex) => /* @__PURE__ */ import_react23.default.createElement("div", { key: chunk.name + "-container", style: { flex: 1, width: "33.33333333333%", maxWidth: "50%", paddingLeft: chunkIndex > 0 ? "5rem" : "0", paddingRight: chunkIndex < filteredChunks.length - 1 ? "5rem" : "0" } }, /* @__PURE__ */ import_react23.default.createElement(section_default, { contentStyle: { display: "flex", flexDirection: "column", width: "100%" } }, chunk.map((setting) => (setting.Value.indexOf("#") !== -1 || setting.Value.indexOf("rgba(") !== -1) && /* @__PURE__ */ import_react23.default.createElement("div", { key: chunk.name + "-" + setting.Key + "-cp-container" }, /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { key: chunk.name + "-" + setting.Key + "-cp", react, label: formatString(setting.Key), color: setting.Value, onChanged: (newColour) => {
-        doUpdateThemeValue(setting.Key, newColour);
-      } })))))));
-    };
-    const updateAccent = (colour) => {
-      setAccentColour(colour);
-    };
-    const updateBackgroundAccent = (colour) => {
-      setBackgroundAccentColour(colour);
-    };
-    const doUpdateThemeValue = (key, colour) => {
-      let json = JSON.stringify({
-        key,
-        value: colour
-      });
-      engine.trigger("cities2modding_legacyflavour.updateThemeValue", selectedTheme, json);
-    };
-    const generateAccent = (visible) => {
-      if (!visible) {
-        let json = JSON.stringify({
-          accent: accentColour,
-          backgroundAccent: backgroundAccentColour,
-          defaultTheme: selectedDefaultTheme
-        });
-        engine.trigger("cities2modding_legacyflavour.generateThemeAccent", selectedTheme, json);
-        if (usingSelectedTheme) {
-          setTimeout(function() {
-            engine.trigger("cities2modding_legacyflavour.useSelectedTheme", selectedTheme);
-          }, 250);
-        }
-      }
-    };
-    const useSelectedTheme = () => {
-      setUsingSelectedTheme(true);
-      setTimeout(function() {
-        engine.trigger("cities2modding_legacyflavour.useSelectedTheme", selectedTheme);
-      }, 150);
-    };
-    const tabs = [
-      {
-        name: "Accent",
-        label: locale["ACCENT"],
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[0]))
-      },
-      {
-        name: "Panel",
-        label: locale["PANEL"],
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[1]))
-      },
-      {
-        name: "Section",
-        label: locale["SECTION"],
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[2]))
-      },
-      {
-        name: "Selected",
-        label: locale["SELECTED"],
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[3]))
-      },
-      {
-        name: "Text",
-        label: locale["TEXT"],
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[4]))
-      },
-      {
-        name: "Menu",
-        label: locale["MENU"],
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[5]))
-      },
-      {
-        name: "Other",
-        label: locale["OTHER"],
-        content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, selectedIndex !== -1 && getTheme(themeData.Themes[selectedIndex], accentGroups[6]))
-      }
-    ];
-    return /* @__PURE__ */ import_react23.default.createElement("div", null, /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react23.default.createElement("div", { style: { width: "50%", paddingRight: "5rem" } }, /* @__PURE__ */ import_react23.default.createElement(
-      icon_panel_default,
-      {
-        label: locale["THEME"],
-        description: locale["THEME_DESC"],
-        icon: "Media/Editor/Edit.svg",
-        fitChild: "true"
-      },
-      /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(select_default, { react, selected: selectedTheme, options: themeList, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onSelectedThemeChanged }), /* @__PURE__ */ import_react23.default.createElement(button_default2, { onClick: useSelectedTheme }, locale["USE_SELECTED_THEME"]))
-    )), /* @__PURE__ */ import_react23.default.createElement("div", { style: { width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react23.default.createElement(
-      icon_panel_default,
-      {
-        label: locale["GENERATE_FROM_COLOUR"],
-        description: locale["GENERATE_FROM_COLOUR_DESC"],
-        icon: "Media/Editor/Edit.svg",
-        fitChild: "true"
-      },
-      /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(select_default, { react, selected: selectedDefaultTheme, options: defaultThemeList, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onDefaultSelectedThemeChanged }), /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", flexDirection: "row", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { style: { width: "50%" }, key: "lf-accent", react, label: locale["PRIMARY_ACCENT"], color: accentColour, onChanged: (newColour) => {
-        updateAccent(newColour);
-      }, onDropdown: generateAccent }), /* @__PURE__ */ import_react23.default.createElement(colorpicker_default, { style: { width: "50%" }, key: "lf-bg-accent", react, label: locale["BACKGROUND_ACCENT"], color: backgroundAccentColour, onChanged: (newColour) => {
-        updateBackgroundAccent(newColour);
-      }, onDropdown: generateAccent })))
-    ))), /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react23.default.createElement(tab_control_default, { react, tabs })));
-  };
-  var ui_themes_default = $UIThemes;
-
   // src/jsx/tabs/_about.jsx
-  var import_react24 = __toESM(require_react());
+  var import_react22 = __toESM(require_react());
   var $About = ({ react, locale }) => {
     const launchReddit = (url) => {
       engine.trigger("cities2modding_legacyflavour.launchUrl", "https://www.reddit.com/r/cities2modding");
@@ -24656,10 +24368,10 @@
       engine.trigger("cities2modding_legacyflavour.launchUrl", "https://discord.gg/KGRNBbm5Fh");
     };
     function toParagraph(str) {
-      return /* @__PURE__ */ import_react24.default.createElement("p", { cohinline: "cohinline", dangerouslySetInnerHTML: { __html: str } });
+      return /* @__PURE__ */ import_react22.default.createElement("p", { cohinline: "cohinline", dangerouslySetInnerHTML: { __html: str } });
     }
     const title = `${locale["LEGACY_FLAVOUR"]} v1.0.1`;
-    return /* @__PURE__ */ import_react24.default.createElement("div", null, /* @__PURE__ */ import_react24.default.createElement(
+    return /* @__PURE__ */ import_react22.default.createElement("div", null, /* @__PURE__ */ import_react22.default.createElement(
       icon_panel_default,
       {
         label: title,
@@ -24668,7 +24380,7 @@
         icon: "Media/Editor/Object.svg",
         fitChild: "true"
       }
-    ), /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react24.default.createElement(description_default, { style: { paddingTop: "0" } }, toParagraph(locale["ABOUT_1"]), toParagraph(locale["ABOUT_2"]), toParagraph(locale["ABOUT_3"]))), /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "row", flex: 1 } }, /* @__PURE__ */ import_react24.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react24.default.createElement(
+    ), /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react22.default.createElement(description_default, { style: { paddingTop: "0" } }, toParagraph(locale["ABOUT_1"]), toParagraph(locale["ABOUT_2"]), toParagraph(locale["ABOUT_3"]))), /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "row", flex: 1 } }, /* @__PURE__ */ import_react22.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react22.default.createElement(
       icon_panel_default,
       {
         label: "GitHub",
@@ -24676,8 +24388,8 @@
         icon: "https://raw.githubusercontent.com/prplx/svg-logos/master/svg/github-icon.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react24.default.createElement(button_default2, { isBlack: "true", onClick: launchGitHub }, "https://github.com/Cities2Modding"))
-    ), /* @__PURE__ */ import_react24.default.createElement(
+      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchGitHub }, "https://github.com/Cities2Modding"))
+    ), /* @__PURE__ */ import_react22.default.createElement(
       icon_panel_default,
       {
         label: "Reddit",
@@ -24685,8 +24397,8 @@
         icon: "https://www.svgrepo.com/download/14413/reddit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react24.default.createElement(button_default2, { isBlack: "true", onClick: launchReddit }, "https://www.reddit.com/r/cities2modding"))
-    )), /* @__PURE__ */ import_react24.default.createElement("div", { style: { flex: 1, marginLeft: "5rem" } }, /* @__PURE__ */ import_react24.default.createElement(
+      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchReddit }, "https://www.reddit.com/r/cities2modding"))
+    )), /* @__PURE__ */ import_react22.default.createElement("div", { style: { flex: 1, marginLeft: "5rem" } }, /* @__PURE__ */ import_react22.default.createElement(
       icon_panel_default,
       {
         label: "Discord",
@@ -24694,7 +24406,7 @@
         icon: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/653714c1f22aef3b6921d63d_636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react24.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react24.default.createElement(button_default2, { isBlack: "true", onClick: launchDiscord }, "https://discord.gg/KGRNBbm5Fh"))
+      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchDiscord }, "https://discord.gg/KGRNBbm5Fh"))
     ))));
   };
   var about_default = $About;
@@ -24702,16 +24414,12 @@
   // src/jsx/ui.jsx
   var $LegacyFlavour = ({ react }) => {
     const [data, setData] = react.useState({});
-    const [defaultThemeData, setDefaultThemeData] = react.useState({});
-    const [themeData, setThemeData] = react.useState({});
     const [localeData, setLocaleData] = react.useState({});
     const [opacity, setOpacity] = react.useState(1);
     const [useTransparency, setUseTransparency] = react.useState(false);
     const [tabs, setTabs] = react.useState([]);
     use_data_update_default(react, "cities2modding_legacyflavour.config", setData);
-    use_data_update_default(react, "cities2modding_legacyflavour.themeConfig", setThemeData);
     use_data_update_default(react, "cities2modding_legacyflavour.currentLocale", setLocaleData);
-    use_data_update_default(react, "cities2modding_legacyflavour.defaultThemeData", setDefaultThemeData);
     const triggerUpdate = (prop, val) => {
       engine.trigger("cities2modding_legacyflavour.updateProperty", JSON.stringify({ property: prop, value: val }));
     };
@@ -24738,33 +24446,28 @@
           {
             name: "SETTINGS",
             label: localeData.Entries["SETTINGS"],
-            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(settings_default, { react, locale: localeData.Entries, data, setData, triggerUpdate }))
+            content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(settings_default, { react, locale: localeData.Entries, data, setData, triggerUpdate }))
           },
           {
             name: "ZONE_SETTINGS",
             label: localeData.Entries["ZONE_SETTINGS"],
-            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(zone_settings_default, { react, locale: localeData.Entries, data, setData, triggerUpdate }))
+            content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_settings_default, { react, locale: localeData.Entries, data, setData, triggerUpdate }))
           },
           {
             name: "ZONE_COLOURS",
             label: localeData.Entries["ZONE_COLOURS"],
-            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(zone_colours_default, { react, locale: localeData.Entries, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity }))
-          },
-          {
-            name: "UI_THEMES",
-            label: localeData.Entries["UI_THEMES"],
-            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(ui_themes_default, { react, locale: localeData.Entries, themeData, setThemeData, defaultThemeData }))
+            content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_colours_default, { react, locale: localeData.Entries, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity }))
           },
           {
             name: "ABOUT",
             label: localeData.Entries["ABOUT"],
-            content: /* @__PURE__ */ import_react25.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react25.default.createElement(about_default, { react, locale: localeData.Entries }))
+            content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(about_default, { react, locale: localeData.Entries }))
           }
         ]);
       }
     }, [localeData, data]);
     const title = localeData.Entries ? `Legacy Flavour (${localeData.Entries["LEGACY_FLAVOUR"]})` : "Legacy Flavour";
-    return /* @__PURE__ */ import_react25.default.createElement(tab_window_default, { react, title, tabs, onClose: toggleVisibility, style: { opacity } });
+    return /* @__PURE__ */ import_react23.default.createElement(tab_window_default, { react, title, tabs, onClose: toggleVisibility, style: { opacity } });
   };
   window._$hookui.registerPanel({
     id: "cities2modding.legacyflavour",

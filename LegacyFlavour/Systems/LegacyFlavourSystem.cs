@@ -6,7 +6,6 @@ using Game.SceneFlow;
 using Game.Simulation;
 using Game.UI;
 using LegacyFlavour.Configuration;
-using LegacyFlavour.Configuration.Themes;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -61,11 +60,6 @@ namespace LegacyFlavour.Systems
         protected override void OnGameLoadingComplete( Purpose purpose, GameMode mode )
         {
             base.OnGameLoadingComplete( purpose, mode );
-
-            if ( mode == GameMode.MainMenu )
-            {
-                _updateSystem.EnqueueThemeConfigUpdate( true );
-            }
 
             if ( !mode.IsGameOrEditor( ) )
                 return;
@@ -227,7 +221,7 @@ namespace LegacyFlavour.Systems
             inputAction.performed += ( a ) =>
             {
                 Config.UseUnits = !Config.UseUnits;
-                _updateSystem.EnqueueConfigUpdate( );
+                _updateSystem.EnqueueConfigUpdate( true );
             };
             inputAction.Enable( );
 
@@ -239,7 +233,7 @@ namespace LegacyFlavour.Systems
             {
                 Config.UseStickyWhiteness = !Config.UseStickyWhiteness;
 
-                _updateSystem.EnqueueConfigUpdate( );
+                _updateSystem.EnqueueConfigUpdate( true );
 
                 TriggerUpdate( "UseStickyWhiteness" );
                
@@ -255,7 +249,7 @@ namespace LegacyFlavour.Systems
                 if ( Config.UseStickyWhiteness )
                 {
                     Config.WhitenessToggle = !Config.WhitenessToggle;
-                    _updateSystem.EnqueueConfigUpdate( );
+                    _updateSystem.EnqueueConfigUpdate( true );
                     TriggerUpdate( "WhitenessToggle" );
                 }
             };

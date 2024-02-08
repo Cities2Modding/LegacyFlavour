@@ -48,7 +48,6 @@
     <Content Include="src\jsx\components\_header.jsx" />
     <Content Include="src\jsx\components\_colorpicker.jsx" />
     <Content Include="src\jsx\components\_slider.jsx" />
-    <Content Include="src\jsx\tabs\_ui-themes.jsx" />
     <Content Include="src\jsx\tabs\_zone-settings.jsx" />
     <Content Include="src\jsx\tabs\_settings.jsx" />
     <Content Include="src\jsx\tabs\_about.jsx" />

@@ -7,6 +7,7 @@ using HookUILib.Core;
 using Colossal.Localization;
 using Game.SceneFlow;
 using UnityEngine;
+using System;
 
 #if BEPINEX_V6
     using BepInEx.Unity.Mono;
@@ -23,22 +24,27 @@ namespace LegacyFlavour
 
             var patchedMethods = harmony.GetPatchedMethods( ).ToArray( );
 
-            Logger.LogInfo( "=================================================================" );
-            Logger.LogInfo( MyPluginInfo.PLUGIN_NAME + " by Cities2Modding community." );
-            Logger.LogInfo( "=================================================================" );
-            Logger.LogInfo( "Reddit link: https://www.reddit.com/r/cities2modding/" );
-            Logger.LogInfo( "Discord link: https://discord.gg/KGRNBbm5Fh" );
-            Logger.LogInfo( "Our mods are officially distributed via Thunderstore.io and https://github.com/Cities2Modding" );
-            Logger.LogInfo( "Example mod repository and modding info: https://github.com/optimus-code/Cities2Modding" );
-            Logger.LogInfo( "Thanks to Captain_Of_Coit, 89pleasure, Rebecca, optimus-code and the Cites2Modding community!" );
-            Logger.LogInfo( "=================================================================" );
+            Logger.LogInfo( Environment.NewLine + @"      :::        :::::::::: ::::::::      :::      ::::::::  :::   :::         
+      :+:        :+:       :+:    :+:   :+: :+:   :+:    :+: :+:   :+:         
+      +:+        +:+       +:+         +:+   +:+  +:+         +:+ +:+          
+      +#+        +#++:++#  :#:        +#++:++#++: +#+          +#++:           
+      +#+        +#+       +#+   +#+# +#+     +#+ +#+           +#+            
+      #+#        #+#       #+#    #+# #+#     #+# #+#    #+#    #+#            
+      ########## ########## ########  ###     ###  ########     ###            
+:::::::::: :::            :::     :::     :::  ::::::::  :::    ::: :::::::::  
+:+:        :+:          :+: :+:   :+:     :+: :+:    :+: :+:    :+: :+:    :+: 
++:+        +:+         +:+   +:+  +:+     +:+ +:+    +:+ +:+    +:+ +:+    +:+ 
+:#::+::#   +#+        +#++:++#++: +#+     +:+ +#+    +:+ +#+    +:+ +#++:++#:  
++#+        +#+        +#+     +#+  +#+   +#+  +#+    +#+ +#+    +#+ +#+    +#+ 
+#+#        #+#        #+#     #+#   #+#+#+#   #+#    #+# #+#    #+# #+#    #+# 
+###        ########## ###     ###     ###      ########   ########  ###    ### " );
 
             // Plugin startup logic
-            Logger.LogInfo( $"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded! Patched methods: " + patchedMethods.Length );
+            Logger.LogDebug( $"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded! Patched methods: " + patchedMethods.Length );
 
             foreach ( var patchedMethod in patchedMethods )
             {
-                Logger.LogInfo( $"Patched method: {patchedMethod.Module.Name}:{patchedMethod.Name}" );
+                Logger.LogDebug( $"Patched method: {patchedMethod.Module.Name}:{patchedMethod.Name}" );
             }
         }
     }
