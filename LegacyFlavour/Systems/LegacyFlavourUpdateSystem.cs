@@ -7,7 +7,7 @@ namespace LegacyFlavour.Systems
     /// <summary>
     /// System to limit disk write frequency for config saving
     /// </summary>
-    public class LegacyFlavourUpdateSystem : GameSystemBase
+    public partial class LegacyFlavourUpdateSystem : GameSystemBase
     {
         private bool hasConfigUpdatePending;
         private float nextConfigUpdate;

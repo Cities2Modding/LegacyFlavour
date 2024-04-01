@@ -1,0 +1,90 @@
+﻿<Publish>
+	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
+	<ModId Value="" />
+	<!--Name of the mod to display to players-->
+	<DisplayName Value="LegacyFlavour" />
+	<!--Short description of the mod-->
+	<ShortDescription Value="Bring back units, toggleable whiteness and control zone colors!" />
+	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
+	<!--LongDescription Value="Shared dependency pack for Cities Skylines 2, includes HarmonyX 2.2.2" /-->
+	<LongDescription># LegacyFlavour
+
+Welcome to the updated version of LegacyFlavour, where we blend the charm of Cities Skylines 1 with the innovative gameplay of Cities Skylines 2. Our aim is to provide an enhanced city-building experience, combining nostalgic elements from the first game with the new features of its sequel.
+
+## Features
+
+- **Road Tool Unit Display**
+- **Transparent Zone Grid Cells**
+- **Re-worked Zone Colour Scheme**
+- **Colour-Blindness Modes (WIP)**
+- **Toggle Shortcuts**: 
+  - ALT+Z: Toggle the zone colours mod.
+  - SHIFT+Z: Cycle through colour blindness modes.
+  - ALT+S: Toggle Sticky Infomode Whiteness.
+  - SHIFT+W: Toggle Sticky Infomode Whiteness value override.
+  - ALT+R: Reload the config file.
+  - ALT+U: Toggle Units display.
+- **Configure Zone Colours via JSON**
+- **Dynamic Zone Borders** that adapt to snow coverage.
+- **Dynamic UI Icons**
+- **Sticky Infomode Whiteness**
+- **Advanced UI System via HookUI**
+- **Configurable Zoning Configuration**
+- **Enhanced Control over Weather and Time**
+- **UI Theme Editor**
+- **Custom Theme Creation**
+- **Accent and Background Accent Customization**
+- **Integrated Themes in UI Options**
+- **Language Support**: Multiple languages including German, Spanish, French, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Russian, Chinese (Simplified), and now Traditional Chinese.
+
+## Installation
+
+- **Requirements**: BepInEx v5 and HookUI.
+- **Download and Install**: Available on ThunderStore.io. Extract and copy files to the `BepInEx/plugins` folder in your Cities Skylines 2 directory.
+
+## Support and Contributions
+
+- Issues and questions can be raised on our [GitHub repository](https://github.com/Cities2Modding/LegacyFlavour).
+- Contributions and suggestions are welcome via GitHub.
+- Additional for support, questions, or feedback, feel free to reach out by joining the Cities2Modding Discord.
+
+**Please Note**: Comments on Paradox Mods are not the best place for reporting issues or getting help. Joining our discord will be the best way to get resolve any issues you may encounter.
+
+## Disclaimer
+
+This is a fan-created mod, not officially associated with the Cities Skylines franchise.
+
+## Acknowledgements
+
+Thanks to the Cities2Modding community for their ongoing support and creativity.
+
+---
+
+Enjoy the enhanced city building experience with LegacyFlavour! Rediscover the legacy with modern enhancements. 🌃🌉</LongDescription>
+	<!--Thumbnail-->
+	<Thumbnail Value="Properties/Thumbnail.png" />
+	<!--Screenshot, can be set multiple times-->
+	<Screenshot Value="" />
+	<!--Tag, can be set multiple times-->
+	<Tag Value="Code Mod" />
+	<!--Link to the forum post where the mod can be discussed-->
+	<ForumLink Value="" />
+	<!--Version of the mod-->
+	<ModVersion Value="1.1.2" />
+	<!--Recommended version of the base game to use the mod-->
+	<GameVersion Value="1.1.*" />
+	
+	<!-- Dependency Pack -->
+	<Dependency Id="77209" />
+
+	<!-- Gooee -->
+	<Dependency Id="77225" Version="1.1.*" />
+	
+	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
+	<ChangeLog Value="Github link update" />
+	<!--ChangeLog>
+	</ChangeLog-->
+	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
+	<ExternalLink Type="discord" Url="https://discord.gg/Fc6KuuBkRr" />
+	<ExternalLink Type="github" Url="https://github.com/Cities2Modding/FindStuff" />
+</Publish>

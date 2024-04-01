@@ -1,32 +1,28 @@
-﻿using Colossal.Localization;
-using Colossal.UI.Binding;
-using Game;
+﻿using Colossal.UI.Binding;
 using Game.Audio;
 using Game.Prefabs;
 using Game.SceneFlow;
-using Game.Settings;
-using Game.UI;
+using Gooee.Plugins;
 using LegacyFlavour.Configuration;
-using LegacyFlavour.Helpers;
-using LegacyFlavour.UI;
+using LegacyFlavour.Systems;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System;
 using System.Linq;
 using System.Reflection;
 using Unity.Entities;
-using static UnityEngine.InputSystem.Layouts.InputControlLayout;
+using Gooee.Plugins.Attributes;
 
-namespace LegacyFlavour.Systems
+namespace LegacyFlavour.UI
 {
-    public class LegacyFlavourUISystem : UISystemBase
+    public partial class LegacyFlavourController : Controller<LegacyFlavourViewModel>
     {
         private string kGroup = "cities2modding_legacyflavour";
         static GetterValueBinding<LegacyFlavourConfig> _binding;
         static GetterValueBinding<LocaleGroup> _currentLocaleBinding;
         static FieldInfo _dirtyField = typeof( GetterValueBinding<LegacyFlavourConfig> ).GetField( "m_ValueDirty", BindingFlags.Instance | BindingFlags.NonPublic );
-        
+
         static readonly string[] TRIGGER_UPDATE_PROPERTIES = new[]
         {
             "UseStickyWhiteness",
@@ -61,13 +57,8 @@ namespace LegacyFlavour.Systems
         private ZoneColourSystem _zoneColourSystem;
         private EntityQuery _soundQuery;
 
-        /// <summary>
-        /// Create our bindings
-        /// </summary>
-        protected override void OnCreate( )
+        public override LegacyFlavourViewModel Configure( )
         {
-            base.OnCreate( );
-
             _legacyFlavourSystem = World.GetOrCreateSystemManaged<LegacyFlavourSystem>( );
             _zoneColourSystem = World.GetOrCreateSystemManaged<ZoneColourSystem>( );
 
@@ -82,7 +73,7 @@ namespace LegacyFlavour.Systems
             _currentLocaleBinding = new GetterValueBinding<LocaleGroup>( kGroup, "currentLocale", ( ) =>
             {
                 var localeManager = GameManager.instance.localizationManager;
-                
+
                 if ( localeManager == null )
                     return LocaleConfig.Default.Locales[0];
 
@@ -115,6 +106,16 @@ namespace LegacyFlavour.Systems
             AddBinding( new TriggerBinding( kGroup, "resetColoursToDefault", _zoneColourSystem.ResetColoursToDefault ) );
             AddBinding( new TriggerBinding<string>( kGroup, "launchUrl", OpenURL ) );
             AddBinding( new TriggerBinding<string, string>( kGroup, "updateZoneColour", _zoneColourSystem.UpdateZoneColour ) );
+
+            return new LegacyFlavourViewModel( );
+        }
+
+        [OnTrigger]
+        private void OnToggleVisible( )
+        {
+            Model.IsVisible = !Model.IsVisible;
+
+            TriggerUpdate( );
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace LegacyFlavour.Systems
             }
             else if ( propertyType.IsEnum && val is string strVal )
             {
-                if ( Enum.TryParse( propertyType, strVal, out var enumValue ) )
+                if ( TryParseEnum( propertyType, strVal, out var enumValue ) )
                 {
                     result = enumValue;
                     return true;
@@ -231,5 +232,26 @@ namespace LegacyFlavour.Systems
             }
             return false;
         }
+
+        public bool TryParseEnum( Type enumType, string value, out object result )
+        {
+            if ( !enumType.IsEnum )
+            {
+                result = null;
+                return false;
+            }
+
+            try
+            {
+                result = Enum.Parse( enumType, value );
+                return true;
+            }
+            catch
+            {
+                result = null;
+                return false;
+            }
+        }
     }
+
 }

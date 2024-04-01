@@ -244,9 +244,7 @@ const $ColorPicker = ({ react, label, color, onChanged, onDropdown, style }) => 
 
     // Define the dropdown content
     const dropdownContent = active ? (
-        <div ref={dropdownRef} style={{
-            display: 'flex',
-            position: 'absolute',
+        <div className="d-flex p-absolute" ref={dropdownRef} style={{
             ...getDropdownPosition(),
             zIndex: 9999
         }}>
@@ -260,7 +258,7 @@ const $ColorPicker = ({ react, label, color, onChanged, onDropdown, style }) => 
                         </div>
                     </div>
                 </div>
-                <div style={{ width: '100%', marginTop: '10rem' }}>
+                <div className="mt-4">
                     <$Button onClick={onToggle}>Done</$Button>                    
                 </div>
             </div>
@@ -268,13 +266,13 @@ const $ColorPicker = ({ react, label, color, onChanged, onDropdown, style }) => 
     ) : null;
 
     return (
-        <div style={{ position: 'relative', ...style }}>
-            <div ref={pickerRef} className="field_amr field_cjf" style={{ display: 'flex', flexDirection: 'row' }} onClick={onToggle}>
-                <div style={{ flex: 1 }} onClick={onToggle}>
+        <div className="p-relative" style={style}>
+            <div className="p-4 d-flex flex-row" ref={pickerRef} onClick={onToggle}>
+                <div className="flex-1" onClick={onToggle}>
                     {label}
                 </div>
-                <div className="color-field_jwA color-field_due" style={{ marginLeft: 'auto' }}>
-                    <div style={{ backgroundColor: internalColor }}>
+                <div className="color-field_jwA color-field_due" style={{ width: "32rem", height: "24rem", marginLeft: 'auto' }}>
+                    <div className="w-x" style={{ backgroundColor: internalColor }}>
                     </div> 
                 </div>
             </div>

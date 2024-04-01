@@ -1,37 +1,33 @@
-import React from 'react'
-import $Section from './_section';
-import $Paragraph from './_paragraph';
-import $Description from './_description';
-import $Label from './_label';
+import React from "react";
 
 const $IconPanel = ({ label, description, icon, fitChild, children, style }) => {
     const conditionalInsert = !fitChild ?
-        <div style={{ display: 'flex', width: '75rem', justifyContent: 'center' }}>
+        <div className="d-flex justify-content-center" style={{ width: "75rem" }}>
             {children}
-        </div> : ''
+        </div> : "";
 
     const conditionalInsert2 = fitChild ?
-        <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+        <div className="d-flex justify-content-center w-100">
             {children}
-        </div> : ''
+        </div> : "";
 
-    return <$Section style={{ marginBottom: '10rem', ...style }}>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div style={{ display: 'flex', width: '75rem', justifyContent: 'center' }}>
-                <img style={{ alignSelf: 'center', margin: '10rem', maxWidth: '55rem', maxHeight: '55rem' }} src={icon} />
+    return <div className="bg-section-dark rounded-sm mb-4" style={{...style }}>
+        <div className="d-flex flex-row">
+            <div className="d-flex justify-content-center" style={{ width: "75rem" }}>
+                <img className="m-4 align-self-center" style={{ maxWidth: "55rem", maxHeight: "55rem" }} src={icon} />
             </div>
-            <div style={{ flex: 1, marginTop: '10rem', marginBottom: '10rem' }}>
-                <$Label isBold="true">{label}</$Label>
-                <$Description style={{ padding: '0' }}>
-                    <$Paragraph style={{ fontWeight: 'bold', color: 'var(--accentColorLight)' }}>
+            <div className="flex-1 mt-4 mb-4">
+                <h4 className="text-primary mb-0">{label}</h4>
+                <div>
+                    <p cohinline="cohinline" className="text-muted pr-4">
                         {description}
-                    </$Paragraph>
-                </$Description>
+                    </p>
+                </div>
             </div>
             {conditionalInsert}
         </div>
         {conditionalInsert2}
-    </$Section>
+    </div>
 }
 
 export default $IconPanel

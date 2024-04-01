@@ -2,11 +2,11 @@ import React from 'react'
 import $IconPanel from '../components/_icon-panel';
 import $ColorPicker from '../components/_colorpicker';
 import $Button from '../components/_button';
-import $Select from '../components/_select';
-import $CheckBox from '../components/_checkbox';
-import $Label from '../components/_label';
 
-const $ZoneColours = ({ react, locale, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
+const $ZoneColours = ({ locale, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
+    const { Grid, Button, CheckBox, FormCheckBox, Slider, Dropdown } = window.$_gooee.framework;
+
+    const react = window.$_gooee.react;
     const colourModes = [
         { label: locale["DEFAULT_COLOURS"], value: "None" },
         { label: locale["DEUTERANOPIA"], value: "Deuteranopia" },
@@ -66,7 +66,7 @@ const $ZoneColours = ({ react, locale, data, setData, triggerUpdate, useTranspar
         return (<$IconPanel key={zoneGroup.name} label={zoneGroup.label} style={{ flex: 1 }}
             description={zoneGroup.desc}
             icon={icon} fitChild="true">
-            <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+            <div className="d-flex flex-column">
                 {
                     zoneGroup.items.map((zone, index) => {
                         let colour = zone.Colour;
@@ -116,31 +116,30 @@ const $ZoneColours = ({ react, locale, data, setData, triggerUpdate, useTranspar
                 <$IconPanel label={locale["COLOUR_BLINDNESS_MODE"]}
                     description={locale["COLOUR_BLINDNESS_MODE_DESC"]}
                     icon="Media/Editor/Edit.svg" fitChild="true">
-                    <$Select react={react} selected={modeString} options={colourModes} style={{ margin: '10rem', flex: '1' }} onSelectionChanged={onModeChanged}></$Select>
+                    <div className="flex-1 p-4">
+                        <Dropdown selected={modeString} options={colourModes} onSelectionChanged={onModeChanged}></Dropdown>
+                    </div>
                 </$IconPanel>
             </div>
             <div style={{ width: '33.33333333333%' }}>
                 <$Button onClick={triggerRegenerateIcons}>{locale["REGENERATE_ICONS"]}</$Button>
-                <$Button style={{ marginTop: '5rem' }} onClick={triggerSetColoursToVanilla}>{locale["SET_TO_VANILLA_COLOURS"]}</$Button>
-                <$Button style={{ marginTop: '5rem' }} onClick={triggerResetColoursToDefault}>{locale["RESET"]} {modeString}</$Button>
-                <div style={{ display: 'flex', width: '100%' }}>
-                    <$Label style={{ margin: '10rem' }}>{locale["MAKE_WINDOW_TRANSPARENT"]}</$Label>
-                    <$CheckBox react={react} style={{ margin: '10rem' }} checked={useTransparency} onToggle={onChangeUseTransparency} />
-                </div>
+                <$Button className="mt-2" onClick={triggerSetColoursToVanilla}>{locale["SET_TO_VANILLA_COLOURS"]}</$Button>
+                <$Button className="mt-2" onClick={triggerResetColoursToDefault}>{locale["RESET"]} {modeString}</$Button>
+                {/*<FormCheckBox className="mt-4 mb-4" label={locale["MAKE_WINDOW_TRANSPARENT"]} checked={useTransparency} onToggle={onChangeUseTransparency} />*/}
             </div>
         </div>
-        <div style={{ display: 'flex', width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-            <div style={{ flex: 1, width: '33.33333333333%' }}>
+        <Grid className="align-items-center justify-content-center" auto>
+            <div>
                 {renderZoneColours(0)}
             </div>
-            <div style={{ flex: 1, width: '33.33333333333%', paddingLeft: '5rem', paddingRight: '5rem' }}>
+            <div>
                 {renderZoneColours(1)}
                 {renderZoneColours(2)}
             </div>
-            <div style={{ flex: 1, width: '33.33333333333%', paddingLeft: '5rem' }}>
+            <div>
                 {renderZoneColours(3)}
             </div>
-        </div>
+        </Grid>
     </div>
 }
 

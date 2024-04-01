@@ -53,12 +53,14 @@
     <Content Include="src\jsx\tabs\_about.jsx" />
     <Content Include="src\jsx\tabs\_zone-colours.jsx" />
     <Content Include="src\jsx\ui.jsx" />
+    <Content Include="src\jsx\windows\_tool-window.jsx" />
     <Content Include="src\scss\_legacy-flavour.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="src\jsx\" />
     <Folder Include="src\jsx\components\" />
+    <Folder Include="src\jsx\windows\" />
     <Folder Include="src\jsx\tabs\" />
     <Folder Include="src\scss\" />
   </ItemGroup>

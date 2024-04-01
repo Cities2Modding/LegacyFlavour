@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const esbuild = require('esbuild');
 const fs = require('fs-extra'); // fs-extra is an extended version of Node's fs module
+const path = require("path");
 
 gulp.task('build-jsx', function (done) {
     esbuild.build({
@@ -14,11 +15,10 @@ gulp.task('build-jsx', function (done) {
         }
         // Add other esbuild options as needed
     }).then(() => {
-        // After successful build, copy the file to the target directory
-        fs.copySync(
-            '../LegacyFlavour/Resources/ui.js',
-            'G:/SteamLibrary/steamapps/common/Cities Skylines II/Cities2_Data/StreamingAssets/~UI~/HookUI/Extensions/panel.cities2modding.legacyflavour.js'
-        );
+        const localLowPath = path.join(process.env.USERPROFILE, "AppData", "LocalLow");
+        const localLowDestPath = path.join(localLowPath, "Colossal Order", "Cities Skylines II", "Mods", "Gooee", "Plugins");
+        const jsFile = path.join(localLowDestPath, "LegacyFlavour.js");
+        fs.copySync("../LegacyFlavour/Resources/ui.js", jsFile, { overwrite: true });
         done();
     }).catch((error) => {
         console.error(error);

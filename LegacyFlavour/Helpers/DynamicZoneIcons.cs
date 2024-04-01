@@ -13,13 +13,13 @@ using System.Reflection;
 using System.Text;
 using Unity.Entities;
 using UnityEngine;
+using static Game.Rendering.Debug.RenderPrefabRenderer;
 
 namespace LegacyFlavour.Helpers
 {
     public class DynamicZoneIcons
     {
-        private static string AssemblyPath = Path.GetDirectoryName( typeof( DynamicZoneIcons ).Assembly.Location );
-        private static string UIPath = AssemblyPath + "\\UI\\";
+        private static string UIPath = ConfigBase.MOD_PATH + "\\UI\\";
         private static string IconsPath = Application.streamingAssetsPath.Replace( "/", "\\" ) + "\\~UI~\\GameUI\\Media\\Game\\Icons";
         private static string ModIconsPath = UIPath + "\\Icons";
 
@@ -50,17 +50,48 @@ namespace LegacyFlavour.Helpers
             set;
         } = new List<string>( );
 
+        static FieldInfo m_Prefabs = typeof( PrefabSystem ).GetField( "m_Prefabs", BindingFlags.NonPublic | BindingFlags.Instance );
+
         private readonly static string[] MANUAL_ICONS = new[] { "ZoneResidential", "ZoneCommercial", "ZoneOffice", "ZoneIndustrial" };        
 
         private readonly ZoneColourSystem _zoneColourSystem;
+        private readonly PrefabSystem _prefabSystem;
         private readonly LegacyFlavourConfig _config;
 
         public DynamicZoneIcons( )
         {
             var world = World.DefaultGameObjectInjectionWorld;
+            _prefabSystem = world.GetOrCreateSystemManaged<PrefabSystem>( );
             _zoneColourSystem = world.GetExistingSystemManaged<ZoneColourSystem>( );
             _config = world.GetExistingSystemManaged<LegacyFlavourUpdateSystem>( ).Config;
             ScanDirectory( );
+            ScanPrefabs( );
+        }
+
+        /// <summary>
+        /// Replaces an infoview prefab icon and caches it for updates
+        /// </summary>
+        private void ScanPrefabs( )
+        {
+            LegacyFlavourSystem.EnsureModUIFolder( );
+
+            var prefabs = ( ( List<PrefabBase> ) m_Prefabs.GetValue( _prefabSystem ) )?
+                .Where( p => p is InfoviewPrefab )
+                .Select( p => ( InfoviewPrefab ) p );
+
+            foreach ( var prefab in prefabs )
+            {
+                var url = prefab.m_IconPath;
+
+                if ( _zoneColourSystem == null || !url.Contains( "Media/Game/Icons/" ) )
+                    return;
+
+                if ( _zoneColourSystem.DynamicZoneIcons?.CheckForReplacement( url, out var parsedUrl ) == true )
+                {
+                    prefab.m_IconPath = parsedUrl;
+                    DynamicZoneIcons._infoViewReplacements.Add( (prefab, url) );
+                }
+            }
         }
 
         /// <summary>

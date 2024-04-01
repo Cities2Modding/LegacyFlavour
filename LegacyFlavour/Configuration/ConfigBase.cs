@@ -12,6 +12,8 @@ namespace LegacyFlavour.Configuration
     /// </summary>
     public abstract class ConfigBase : ModelWriter
     {
+        public static readonly string MOD_PATH = Path.Combine( Application.persistentDataPath, "Mods", "LegacyFlavour" );
+
         static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
         {
             NullValueHandling = NullValueHandling.Ignore,
@@ -35,7 +37,7 @@ namespace LegacyFlavour.Configuration
         public virtual void Save( )
         {
             var json = JsonConvert.SerializeObject( this, _serializerSettings );
-            var filePath = Path.Combine( GetAssemblyDirectory( ), ConfigFileName );
+            var filePath = Path.Combine( MOD_PATH, ConfigFileName );
             File.WriteAllText( filePath, json );
             OnUpdated?.Invoke( );
         }
@@ -48,7 +50,7 @@ namespace LegacyFlavour.Configuration
         public static T Load<T>( bool useDefaultAsTemplate = true ) where T : ConfigBase, new()
         {
             var instance = new T( );
-            var filePath = Path.Combine( GetAssemblyDirectory( ), instance.ConfigFileName );
+            var filePath = Path.Combine( MOD_PATH, instance.ConfigFileName );
             var json = "";
 
             if ( File.Exists( filePath ) )
@@ -85,18 +87,9 @@ namespace LegacyFlavour.Configuration
         {
             var instance = new T( );
             var json = instance.LoadDefaultJson( );
-            var filePath = Path.Combine( GetAssemblyDirectory( ), instance.ConfigFileName );
+            var filePath = Path.Combine( MOD_PATH, instance.ConfigFileName );
             File.WriteAllText( filePath, json );
             return json;
-        }
-
-        /// <summary>
-        /// Gets the directory of the currently executing assembly.
-        /// </summary>
-        /// <returns>The assembly directory path.</returns>
-        protected static string GetAssemblyDirectory( )
-        {
-            return Path.GetDirectoryName( Assembly.GetExecutingAssembly().Location );
         }
 
         /// <summary>

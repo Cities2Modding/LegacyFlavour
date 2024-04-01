@@ -1,10 +1,9 @@
 import React from 'react'
 import $IconPanel from '../components/_icon-panel';
 import $Button from '../components/_button';
-import $Paragraph from '../components/_paragraph';
-import $Description from '../components/_description';
 
-const $About = ({ react, locale }) => {
+const $About = ({ locale }) => {
+    const { Icon, Grid, Button } = window.$_gooee.framework;
     const launchReddit = (url) => {
         engine.trigger("cities2modding_legacyflavour.launchUrl", "https://www.reddit.com/r/cities2modding");
     };
@@ -16,48 +15,76 @@ const $About = ({ react, locale }) => {
     };
 
     function toParagraph(str) {
-        return <p cohinline="cohinline" dangerouslySetInnerHTML={{ __html: str }} />;
+        return <p className="mb-4 fs-l" cohinline="cohinline" dangerouslySetInnerHTML={{ __html: str }} />;
     }
 
-    const title = `${locale["LEGACY_FLAVOUR"]} v1.0.1`;
+    const title = `${locale["LEGACY_FLAVOUR"]} v1.1.1`;
     return <div>
-        <$IconPanel label={title} style={{ flex: 1 }}
-            description={locale["DEVELOPED_BY"]}
-            icon="Media/Editor/Object.svg" fitChild="true">
-        </$IconPanel>
-        <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-            <$Description style={{ paddingTop: '0' }}>
-                {toParagraph(locale["ABOUT_1"])}
-                {toParagraph(locale["ABOUT_2"])}
-                {toParagraph(locale["ABOUT_3"])}
-            </$Description>
+        <div className="bg-section-dark rounded-sm p-4 d-flex flex-row align-items-center">
+            <Icon icon="Media/Editor/Object.svg" size="xl" />
+            <div className="flex-1 ml-2">
+                <h1 className="text-primary">{title}</h1>
+                <div className="text-muted fs-xl">{locale["DEVELOPED_BY"]}</div>
+            </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-            <div style={{ flex: 1 }}>
-                <$IconPanel label="GitHub"
-                    description={locale["GITHUB_DESC"]}
-                    icon="https://raw.githubusercontent.com/prplx/svg-logos/master/svg/github-icon.svg" fitChild="true">
-                    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '10rem' }}>
-                        <$Button isBlack="true" onClick={launchGitHub}>https://github.com/Cities2Modding</$Button>
+        <div className="d-block p-4">
+            {toParagraph(locale["ABOUT_1"])}
+            {toParagraph(locale["ABOUT_2"])}
+            {toParagraph(locale["ABOUT_3"])}
+        </div>
+        <div>
+            <Grid auto>
+                <div>
+                    <div className="bg-section-dark rounded-sm d-flex flex-row align-items-start p-4 flex-1">
+                        <Icon icon="brand-github" size="xl" fa />
+                        <div className="flex-1 w-x ml-4">
+                            <div className="text-primary">
+                                GitHub
+                            </div>
+                            <p className="text-muted mb-4" cohinline="cohinline">
+                                {locale["GITHUB_DESC"]}
+                            </p>
+                        </div>
                     </div>
-                </$IconPanel>
-                <$IconPanel label="Reddit"
-                    description={locale["REDDIT_DESC"]}
-                    icon="https://www.svgrepo.com/download/14413/reddit.svg" fitChild="true">
-                    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '10rem' }}>
-                        <$Button isBlack="true" onClick={launchReddit}>https://www.reddit.com/r/cities2modding</$Button>
+                </div>
+                <div>
+                    <div className="bg-section-dark rounded-sm d-flex flex-row align-items-start p-4 flex-1">
+                        <Icon icon="brand-reddit" size="xl" fa />
+                        <div className="flex-1 w-x ml-4">
+                            <div className="text-primary">
+                                Reddit
+                            </div>
+                            <p className="text-muted mb-4" cohinline="cohinline">
+                                {locale["REDDIT_DESC"]}
+                            </p>
+                        </div>
                     </div>
-                </$IconPanel>
-            </div>
-            <div style={{ flex: 1, marginLeft: '5rem' }}>
-                <$IconPanel label="Discord"
-                    description={locale["DISCORD_DESC"]}
-                    icon="https://assets-global.website-files.com/6257adef93867e50d84d30e2/653714c1f22aef3b6921d63d_636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg" fitChild="true">
-                    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '10rem' }}>
-                        <$Button isBlack="true" onClick={launchDiscord}>https://discord.gg/KGRNBbm5Fh</$Button>
+                </div>
+                <div>
+                    <div className="bg-section-dark rounded-sm d-flex flex-row align-items-start p-4 flex-1">
+                        <Icon icon="brand-discord" size="xl" fa />
+                        <div className="flex-1 w-x ml-4">
+                            <div className="text-primary">
+                                Discord
+                            </div>
+                            <p className="text-muted mb-4" cohinline="cohinline">
+                                {locale["DISCORD_DESC"]}
+                            </p>
+                         </div>
                     </div>
-                </$IconPanel>
-            </div>
+                </div>
+            </Grid>
+            <Grid className="mt-4" auto>
+                <div>
+                    <Button className="pl-4 pr-2 text-center" isBlock color="primary" style="trans" size="sm" onClick={launchGitHub}>https://github.com/Cities2Modding</Button>
+                </div>
+                <div>
+                    <Button className="pl-2 pr-2 text-center" isBlock color="primary" style="trans" size="sm" onClick={launchReddit}>https://www.reddit.com/r/cities2modding</Button>
+                </div>
+                <div>
+                    <Button className="pl-2 pr-4 text-center" isBlock color="primary" style="trans" size="sm" onClick={launchDiscord}>https://discord.gg/KGRNBbm5Fh</Button>
+                </div>
+            </Grid>
         </div>
     </div>
 }

@@ -16,19 +16,28 @@ namespace LegacyFlavour.Systems
     /// <summary>
     /// Core Legacy Flavour system, handles time/weather and other stuff.
     /// </summary>
-    public class LegacyFlavourSystem : GameSystemBase
+    public partial class LegacyFlavourSystem : GameSystemBase
     {
-        private static string AssemblyPath = Path.GetDirectoryName( typeof( LegacyFlavourSystem ).Assembly.Location );
-        public static string UIPath = AssemblyPath + "\\UI\\";
+        public static string UIPath = ConfigBase.MOD_PATH + "\\UI\\";
+
+        private static bool hasSetupUIFolder = false;
 
         public static void EnsureModUIFolder( )
         {
-            var resourceHandler = ( GameUIResourceHandler ) GameManager.instance.userInterface.view.uiSystem.resourceHandler;
-
-            if ( resourceHandler == null || resourceHandler.HostLocationsMap.ContainsKey( "legacyflavourui" ) )
+            if ( hasSetupUIFolder )
                 return;
 
-            resourceHandler.HostLocationsMap.Add( "legacyflavourui", new List<string> { UIPath } );
+            var uiSystem = GameManager.instance.userInterface.view.uiSystem;
+
+            if ( uiSystem == null )
+            {
+                UnityEngine.Debug.LogError( "Failed to setup resource handler for LegacyFlavour." );
+                return;
+            }
+
+            UnityEngine.Debug.Log( "Setup resource handler for LegacyFlavour." );
+            uiSystem.AddHostLocation( "legacyflavourui", UIPath, false );
+            hasSetupUIFolder = true;
         }
 
         private LegacyFlavourConfig Config

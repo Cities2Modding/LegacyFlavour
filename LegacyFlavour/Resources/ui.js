@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React24 = require_react();
+          var React19 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React24.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React19.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React24.Children.forEach(props.children, function(child) {
+                  React19.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React24.Component().refs;
+          var emptyRefsObject = new React19.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23477,7 +23477,7 @@
   });
 
   // src/jsx/ui.jsx
-  var import_react23 = __toESM(require_react());
+  var import_react18 = __toESM(require_react());
 
   // node_modules/hookui-framework/src/components/panel.jsx
   var import_react = __toESM(require_react());
@@ -23511,108 +23511,35 @@
 
   // src/jsx/components/_tab-window.jsx
   var import_react5 = __toESM(require_react());
-  var $TabWindow = ({ react, tabs, style, onClose, title }) => {
-    const [activeTab, setActiveTab] = react.useState(tabs.length > 0 ? tabs[0].name : "");
-    react.useEffect(() => {
-      if (activeTab === "")
-        setActiveTab(tabs.length > 0 ? tabs[0].name : "");
-    }, [tabs]);
-    return /* @__PURE__ */ import_react5.default.createElement("div", { style: { position: "fixed", width: "100vw", height: "100vh", pointerEvents: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", ...style } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "panel_YqS economy-panel_e08", style: { marginLeft: "auto", marginRight: "auto", width: "1000rem", height: "775rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "header_H_U header_Bpo child-opacity-transition_nkS" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "title-bar_PF4" }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "icon-space_h_f" }), /* @__PURE__ */ import_react5.default.createElement("div", { className: "title_SVH title_zQN" }, title), /* @__PURE__ */ import_react5.default.createElement("button", { className: "button_bvQ button_bvQ close-button_wKK", onClick: onClose }, /* @__PURE__ */ import_react5.default.createElement("div", { className: "tinted-icon_iKo icon_PhD", style: { maskImage: "url(Media/Glyphs/Close.svg)" } }))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "tab-bar_oPw" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
-      "div",
-      {
-        key: tab.name,
-        className: `tab_Hrb ${activeTab === tab.name ? "selected" : ""}`,
-        onClick: () => setActiveTab(tab.name),
-        style: { marginLeft: "2.5rem", marginRight: "2.5rem" }
-      },
-      tab.label
-    )))), /* @__PURE__ */ import_react5.default.createElement("div", { className: "content_XD5 content_AD7 child-opacity-transition_nkS" }, tabs.map((tab) => /* @__PURE__ */ import_react5.default.createElement(
-      "div",
-      {
-        key: tab.name,
-        style: { display: activeTab === tab.name ? "flex" : "none", flexDirection: "row" }
-      },
-      tab.content
-    )))));
-  };
-  var tab_window_default = $TabWindow;
 
   // src/jsx/tabs/_settings.jsx
-  var import_react14 = __toESM(require_react());
-
-  // src/jsx/components/_icon-panel.jsx
   var import_react10 = __toESM(require_react());
 
-  // src/jsx/components/_section.jsx
-  var import_react6 = __toESM(require_react());
-  var $Section = ({ children, style, contentStyle, isList }) => {
-    const classNames = "section_sop section_gUk" + (isList ? "list-section_BJP" : "statistics-menu_y86");
-    return /* @__PURE__ */ import_react6.default.createElement("div", { className: classNames, style: { width: "auto", height: "auto", overflowY: "visible", ...style } }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "content_flM content_owQ first_l25 last_ZNw", style: contentStyle }, children));
-  };
-  var section_default = $Section;
-
-  // src/jsx/components/_paragraph.jsx
-  var import_react7 = __toESM(require_react());
-  var $Paragraph = ({ children, style }) => {
-    return /* @__PURE__ */ import_react7.default.createElement("p", { cohinline: "cohinline", style }, children);
-  };
-  var paragraph_default = $Paragraph;
-
-  // src/jsx/components/_description.jsx
-  var import_react8 = __toESM(require_react());
-  var $Description = ({ style, children }) => {
-    return /* @__PURE__ */ import_react8.default.createElement("div", { className: "description_VWf", style: { padding: "20rem", ...style } }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "paragraphs_nbD" }, children));
-  };
-  var description_default = $Description;
-
-  // src/jsx/components/_label.jsx
-  var import_react9 = __toESM(require_react());
-  var $Label = ({ children, style, isBold }) => {
-    var markup = isBold ? /* @__PURE__ */ import_react9.default.createElement("b", null, children) : children;
-    return /* @__PURE__ */ import_react9.default.createElement("div", { className: "label_VSW label_T__", style }, markup);
-  };
-  var label_default = $Label;
-
   // src/jsx/components/_icon-panel.jsx
+  var import_react6 = __toESM(require_react());
   var $IconPanel = ({ label, description, icon, fitChild, children, style }) => {
-    const conditionalInsert = !fitChild ? /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", width: "75rem", justifyContent: "center" } }, children) : "";
-    const conditionalInsert2 = fitChild ? /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", width: "100%", justifyContent: "center" } }, children) : "";
-    return /* @__PURE__ */ import_react10.default.createElement(section_default, { style: { marginBottom: "10rem", ...style } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", width: "75rem", justifyContent: "center" } }, /* @__PURE__ */ import_react10.default.createElement("img", { style: { alignSelf: "center", margin: "10rem", maxWidth: "55rem", maxHeight: "55rem" }, src: icon })), /* @__PURE__ */ import_react10.default.createElement("div", { style: { flex: 1, marginTop: "10rem", marginBottom: "10rem" } }, /* @__PURE__ */ import_react10.default.createElement(label_default, { isBold: "true" }, label), /* @__PURE__ */ import_react10.default.createElement(description_default, { style: { padding: "0" } }, /* @__PURE__ */ import_react10.default.createElement(paragraph_default, { style: { fontWeight: "bold", color: "var(--accentColorLight)" } }, description))), conditionalInsert), conditionalInsert2);
+    const conditionalInsert = !fitChild ? /* @__PURE__ */ import_react6.default.createElement("div", { className: "d-flex justify-content-center", style: { width: "75rem" } }, children) : "";
+    const conditionalInsert2 = fitChild ? /* @__PURE__ */ import_react6.default.createElement("div", { className: "d-flex justify-content-center w-100" }, children) : "";
+    return /* @__PURE__ */ import_react6.default.createElement("div", { className: "bg-section-dark rounded-sm mb-4", style: { ...style } }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "d-flex flex-row" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "d-flex justify-content-center", style: { width: "75rem" } }, /* @__PURE__ */ import_react6.default.createElement("img", { className: "m-4 align-self-center", style: { maxWidth: "55rem", maxHeight: "55rem" }, src: icon })), /* @__PURE__ */ import_react6.default.createElement("div", { className: "flex-1 mt-4 mb-4" }, /* @__PURE__ */ import_react6.default.createElement("h4", { className: "text-primary mb-0" }, label), /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement("p", { cohinline: "cohinline", className: "text-muted pr-4" }, description))), conditionalInsert), conditionalInsert2);
   };
   var icon_panel_default = $IconPanel;
 
   // src/jsx/components/_checkbox.jsx
-  var import_react11 = __toESM(require_react());
-  var $CheckBox = ({ react, style, checked, onToggle }) => {
-    const [isChecked, setIsChecked] = react.useState(checked);
-    const handleClick = () => {
-      onToggle(!checked);
-      engine.trigger("audio.playSound", "select-toggle", 1);
-    };
-    react.useEffect(() => {
-      setIsChecked(checked);
-    }, [checked]);
-    const checked_class = isChecked ? "checked" : "unchecked";
-    const many2 = (...styles) => {
-      return styles.join(" ");
-    };
-    return /* @__PURE__ */ import_react11.default.createElement("div", { className: many2("toggle_cca toggle_ATa", checked_class), style, onClick: handleClick }, /* @__PURE__ */ import_react11.default.createElement("div", { className: many2("checkmark_NXV", checked_class) }));
-  };
-  var checkbox_default = $CheckBox;
+  var import_react7 = __toESM(require_react());
 
   // src/jsx/components/_toggle-group.jsx
-  var import_react13 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
 
   // src/jsx/components/_toggle-button.jsx
-  var import_react12 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   var $ToggleButton = ({ label, icon, children, style, labelStyle, checked, onToggle, iconOnly }) => {
     const baseClassNames = "item_JFN button_ECf item_It6 item-mouse-states_Fmi item-selected_tAM item-focused_FuT";
     const checkedClassNames = checked ? " selected" : "";
     const classNames = baseClassNames + checkedClassNames;
     const checkedTextStyle = checked ? { color: "var(--textColor)" } : {};
-    const iconMarkup = icon ? /* @__PURE__ */ import_react12.default.createElement("img", { className: "icon_HoD icon_soN icon_Iwk", src: icon }) : "";
-    const body = iconOnly ? "" : /* @__PURE__ */ import_react12.default.createElement("div", { className: "title_sB9", style: { ...checkedTextStyle, ...labelStyle } }, label);
-    return /* @__PURE__ */ import_react12.default.createElement("div", { className: classNames, style, onClick: onToggle }, iconMarkup, body, children);
+    const iconMarkup = icon ? /* @__PURE__ */ import_react8.default.createElement("img", { className: "icon_HoD icon_soN icon_Iwk", src: icon }) : "";
+    const body = iconOnly ? "" : /* @__PURE__ */ import_react8.default.createElement("div", { className: "title_sB9", style: { ...checkedTextStyle, ...labelStyle } }, label);
+    return /* @__PURE__ */ import_react8.default.createElement("div", { className: classNames, style, onClick: onToggle }, iconMarkup, body, children);
   };
   var toggle_button_default = $ToggleButton;
 
@@ -23627,7 +23554,7 @@
         onChecked(option);
       setCheckedItem(option);
     };
-    return /* @__PURE__ */ import_react13.default.createElement("div", { style: { display: "flex", width: "100%", ...groupStyle, ...style } }, options.map((option, index) => {
+    return /* @__PURE__ */ import_react9.default.createElement("div", { style: { display: "flex", width: "100%", ...groupStyle, ...style } }, options.map((option, index) => {
       let optionStyle = {
         flex: 1,
         marginRight: index === options.length - 1 ? 0 : "2.5rem",
@@ -23640,7 +23567,7 @@
       let optionLabelStyle = isHorizontal ? {
         textAlign: "center"
       } : {};
-      return /* @__PURE__ */ import_react13.default.createElement(
+      return /* @__PURE__ */ import_react9.default.createElement(
         toggle_button_default,
         {
           key: option.value,
@@ -23656,7 +23583,9 @@
   var toggle_group_default = $ToggleGroup;
 
   // src/jsx/tabs/_settings.jsx
-  var $Settings = ({ react, data, setData, locale, triggerUpdate }) => {
+  var $Settings = ({ data, setData, locale, triggerUpdate }) => {
+    const react = window.$_gooee.react;
+    const { Grid, CheckBox } = window.$_gooee.framework;
     const timeOfDayOptions = [
       { label: locale["OFF"], value: "Off" },
       { label: locale["DAY"], value: "Day" },
@@ -23701,39 +23630,39 @@
       }
       triggerUpdate(field, val);
     };
-    return /* @__PURE__ */ import_react14.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react14.default.createElement(
+    return /* @__PURE__ */ import_react10.default.createElement(Grid, { auto: true }, /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react10.default.createElement(
       icon_panel_default,
       {
         label: locale["USE_STICKY_WHITENESS"],
         description: locale["USE_STICKY_WHITENESS_DESC"],
         icon: "Media/Game/Icons/Information.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseStickyWhiteness, onToggle: (val) => updateData("UseStickyWhiteness", val) })
-    ), /* @__PURE__ */ import_react14.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement(CheckBox, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseStickyWhiteness, onToggle: (val) => updateData("UseStickyWhiteness", val) })
+    ), /* @__PURE__ */ import_react10.default.createElement(
       icon_panel_default,
       {
         label: locale["WHITENESS_TOGGLE"],
         description: locale["WHITENESS_TOGGLE_DESC"],
         icon: "Media/Game/Icons/Orbit.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.WhitenessToggle, onToggle: (val) => updateData("WhitenessToggle", val) })
-    ), /* @__PURE__ */ import_react14.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement(CheckBox, { style: { alignSelf: "center", margin: "10rem" }, checked: data.WhitenessToggle, onToggle: (val) => updateData("WhitenessToggle", val) })
+    ), /* @__PURE__ */ import_react10.default.createElement(
       icon_panel_default,
       {
         label: locale["USE_UNITS"],
         description: locale["USE_UNITS_DESC"],
         icon: "Media/Game/Icons/Roads.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseUnits, onToggle: (val) => updateData("UseUnits", val) })
-    ))), /* @__PURE__ */ import_react14.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react14.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement(CheckBox, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseUnits, onToggle: (val) => updateData("UseUnits", val) })
+    ))), /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(
       icon_panel_default,
       {
         label: locale["FREEZE_TIME_VISUALS"],
         description: locale["FREEZE_TIME_VISUALS_DESC"],
         icon: "Media/PhotoMode/Pause.svg"
       },
-      /* @__PURE__ */ import_react14.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.FreezeVisualTime, onToggle: (val) => freezeTimeUpdate(val) })
-    ), /* @__PURE__ */ import_react14.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement(CheckBox, { style: { alignSelf: "center", margin: "10rem" }, checked: data.FreezeVisualTime, onToggle: (val) => freezeTimeUpdate(val) })
+    ), /* @__PURE__ */ import_react10.default.createElement(
       icon_panel_default,
       {
         label: locale["SET_VISUAL_TIME_OF_DAY"],
@@ -23741,8 +23670,8 @@
         icon: "Media/Editor/Time.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react14.default.createElement(toggle_group_default, { react, checked: data.TimeOfDay, options: timeOfDayOptions, isHorizontal: "true", onChecked: (val) => timeOfDayUpdate(val) })
-    ), /* @__PURE__ */ import_react14.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement(toggle_group_default, { react, checked: data.TimeOfDay, options: timeOfDayOptions, isHorizontal: "true", onChecked: (val) => timeOfDayUpdate(val) })
+    ), /* @__PURE__ */ import_react10.default.createElement(
       icon_panel_default,
       {
         label: locale["WEATHER"],
@@ -23750,20 +23679,20 @@
         icon: "Media/Game/Climate/Overcast.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react14.default.createElement(toggle_group_default, { react, checked: data.Weather, options: weatherOptions, isHorizontal: "true", onChecked: (val) => updateData("Weather", val) })
+      /* @__PURE__ */ import_react10.default.createElement(toggle_group_default, { react, checked: data.Weather, options: weatherOptions, isHorizontal: "true", onChecked: (val) => updateData("Weather", val) })
     )));
   };
   var settings_default = $Settings;
 
   // src/jsx/tabs/_zone-colours.jsx
-  var import_react19 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
 
   // src/jsx/components/_colorpicker.jsx
-  var import_react17 = __toESM(require_react());
+  var import_react13 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // src/jsx/components/_fancy-slider.jsx
-  var import_react15 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
   var $FancySlider = ({ react, value, fromColour, toColour, onValueChanged, isColorSpectrum, style }) => {
     const sliderRef = react.useRef(null);
     const [isMouseDown, setIsMouseDown] = react.useState(false);
@@ -23801,7 +23730,7 @@
       "--gradient": "linear-gradient(to right, " + fromColour + " 0%, " + toColour + " 100%)"
     };
     const valuePercent = value + "%";
-    return /* @__PURE__ */ import_react15.default.createElement("div", { className: "slider_xgT", style }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "slider-container_NuQ" }, /* @__PURE__ */ import_react15.default.createElement(
+    return /* @__PURE__ */ import_react11.default.createElement("div", { className: "slider_xgT", style }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "slider-container_NuQ" }, /* @__PURE__ */ import_react11.default.createElement(
       "div",
       {
         className: "slider_fer slider_pUS horizontal",
@@ -23811,19 +23740,19 @@
         onMouseMove: handleMouseMove,
         onMouseUp: handleMouseUp
       },
-      /* @__PURE__ */ import_react15.default.createElement("div", { className: "start-edge_nii edge_xBb" }),
-      /* @__PURE__ */ import_react15.default.createElement("div", { className: "end-edge_egi edge_xBb" }),
-      /* @__PURE__ */ import_react15.default.createElement("div", { className: "track-bounds_hs9 track-bounds_H8_" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "range-bounds_lNt", style: { width: valuePercent } }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "range_iUN" }), /* @__PURE__ */ import_react15.default.createElement("div", { className: "thumb-container_aso" }, /* @__PURE__ */ import_react15.default.createElement("div", { className: "thumb_z1a" }))))
+      /* @__PURE__ */ import_react11.default.createElement("div", { className: "start-edge_nii edge_xBb" }),
+      /* @__PURE__ */ import_react11.default.createElement("div", { className: "end-edge_egi edge_xBb" }),
+      /* @__PURE__ */ import_react11.default.createElement("div", { className: "track-bounds_hs9 track-bounds_H8_" }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "range-bounds_lNt", style: { width: valuePercent } }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "range_iUN" }), /* @__PURE__ */ import_react11.default.createElement("div", { className: "thumb-container_aso" }, /* @__PURE__ */ import_react11.default.createElement("div", { className: "thumb_z1a" }))))
     )));
   };
   var fancy_slider_default = $FancySlider;
 
   // src/jsx/components/_button.jsx
-  var import_react16 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
   var $Button = ({ children, style, onClick, isBlack }) => {
     const className = isBlack ? "button_KVN" : "button_WWa";
     const inlineStyle = isBlack ? { color: "var(--textColor)" } : {};
-    return /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("button", { className, style: { width: "100%", height: "auto", padding: "10rem", ...inlineStyle, ...style }, onClick }, children));
+    return /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("button", { className, style: { width: "100%", height: "auto", padding: "10rem", ...inlineStyle, ...style }, onClick }, children));
   };
   var button_default2 = $Button;
 
@@ -24032,86 +23961,18 @@
       const outputColor = !color ? "#FFFFFF" : color.startsWith("rgba") ? hexToRgba(newHex, alpha) : newHex;
       onChanged(outputColor);
     };
-    const dropdownContent = active ? /* @__PURE__ */ import_react17.default.createElement("div", { ref: dropdownRef, style: {
-      display: "flex",
-      position: "absolute",
+    const dropdownContent = active ? /* @__PURE__ */ import_react13.default.createElement("div", { className: "d-flex p-absolute", ref: dropdownRef, style: {
       ...getDropdownPosition(),
       zIndex: 9999
-    } }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-picker-container_Sj5", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-picker_aNX" }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "sliders_sCL section_cwE" }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-component-input_WeK", style: { flexDirection: "column", alignItems: "stretch", justifyContent: "stretch" } }, /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: hueVal, isColorSpectrum: "true", onValueChanged: onHueUpdated }), /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: satVal, fromColour: satFromColour, toColour: satToColour, onValueChanged: onSatUpdated, style: { marginTop: "5rem" } }), /* @__PURE__ */ import_react17.default.createElement(fancy_slider_default, { react, value: valVal, fromColour: valFromColour, toColour: valToColour, onValueChanged: onValUpdated, style: { marginTop: "5rem" } })))), /* @__PURE__ */ import_react17.default.createElement("div", { style: { width: "100%", marginTop: "10rem" } }, /* @__PURE__ */ import_react17.default.createElement(button_default2, { onClick: onToggle }, "Done")))) : null;
-    return /* @__PURE__ */ import_react17.default.createElement("div", { style: { position: "relative", ...style } }, /* @__PURE__ */ import_react17.default.createElement("div", { ref: pickerRef, className: "field_amr field_cjf", style: { display: "flex", flexDirection: "row" }, onClick: onToggle }, /* @__PURE__ */ import_react17.default.createElement("div", { style: { flex: 1 }, onClick: onToggle }, label), /* @__PURE__ */ import_react17.default.createElement("div", { className: "color-field_jwA color-field_due", style: { marginLeft: "auto" } }, /* @__PURE__ */ import_react17.default.createElement("div", { style: { backgroundColor: internalColor } }))), portalContainer && dropdownContent && import_react_dom.default.createPortal(dropdownContent, portalContainer));
+    } }, /* @__PURE__ */ import_react13.default.createElement("div", { className: "color-picker-container_Sj5", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react13.default.createElement("div", { className: "color-picker_aNX" }, /* @__PURE__ */ import_react13.default.createElement("div", { className: "sliders_sCL section_cwE" }, /* @__PURE__ */ import_react13.default.createElement("div", { className: "color-component-input_WeK", style: { flexDirection: "column", alignItems: "stretch", justifyContent: "stretch" } }, /* @__PURE__ */ import_react13.default.createElement(fancy_slider_default, { react, value: hueVal, isColorSpectrum: "true", onValueChanged: onHueUpdated }), /* @__PURE__ */ import_react13.default.createElement(fancy_slider_default, { react, value: satVal, fromColour: satFromColour, toColour: satToColour, onValueChanged: onSatUpdated, style: { marginTop: "5rem" } }), /* @__PURE__ */ import_react13.default.createElement(fancy_slider_default, { react, value: valVal, fromColour: valFromColour, toColour: valToColour, onValueChanged: onValUpdated, style: { marginTop: "5rem" } })))), /* @__PURE__ */ import_react13.default.createElement("div", { className: "mt-4" }, /* @__PURE__ */ import_react13.default.createElement(button_default2, { onClick: onToggle }, "Done")))) : null;
+    return /* @__PURE__ */ import_react13.default.createElement("div", { className: "p-relative", style }, /* @__PURE__ */ import_react13.default.createElement("div", { className: "p-4 d-flex flex-row", ref: pickerRef, onClick: onToggle }, /* @__PURE__ */ import_react13.default.createElement("div", { className: "flex-1", onClick: onToggle }, label), /* @__PURE__ */ import_react13.default.createElement("div", { className: "color-field_jwA color-field_due", style: { width: "32rem", height: "24rem", marginLeft: "auto" } }, /* @__PURE__ */ import_react13.default.createElement("div", { className: "w-x", style: { backgroundColor: internalColor } }))), portalContainer && dropdownContent && import_react_dom.default.createPortal(dropdownContent, portalContainer));
   };
   var colorpicker_default = $ColorPicker;
 
-  // src/jsx/components/_select.jsx
-  var import_react18 = __toESM(require_react());
-  var import_react_dom2 = __toESM(require_react_dom());
-  var $Select = ({ react, style, containerStyle, onSelectionChanged, selected, options }) => {
-    const [active, setActive] = react.useState(false);
-    const [internalValue, setInternalValue] = react.useState(selected);
-    const [portalContainer, setPortalContainer] = react.useState(null);
-    const pickerRef = react.useRef(null);
-    const dropdownRef = react.useRef(null);
-    const handleClickOutside = (event) => {
-      if (pickerRef.current && !pickerRef.current.contains(event.target) && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setActive(false);
-      }
-    };
-    react.useEffect(() => {
-      if (!document.getElementById("select-portal")) {
-        const container = document.createElement("div");
-        container.id = "select-portal";
-        document.body.appendChild(container);
-        setPortalContainer(container);
-      } else {
-        setPortalContainer(document.getElementById("select-portal"));
-      }
-      document.addEventListener("click", handleClickOutside, true);
-      return () => {
-        document.removeEventListener("click", handleClickOutside, true);
-      };
-    }, []);
-    react.useEffect(() => {
-      setInternalValue(selected);
-    }, [selected]);
-    react.useEffect(() => {
-      if (active) {
-        document.addEventListener("click", handleClickOutside, true);
-      } else {
-        document.removeEventListener("click", handleClickOutside, true);
-      }
-    }, [active]);
-    const getDropdownPosition = () => {
-      if (pickerRef.current) {
-        const rect = pickerRef.current.getBoundingClientRect();
-        return {
-          top: rect.bottom + window.scrollY,
-          left: rect.left + window.scrollX,
-          width: rect.width
-        };
-      }
-      return {};
-    };
-    const onToggle = () => {
-      setActive(!active);
-      engine.trigger("audio.playSound", "select-dropdown", 1);
-    };
-    const changeSelection = (value) => {
-      setInternalValue(value);
-      onSelectionChanged(value);
-    };
-    const selectedIndex = options.findIndex((o) => o.value === internalValue);
-    const dropdownContent = active ? /* @__PURE__ */ import_react18.default.createElement("div", { ref: dropdownRef, style: {
-      display: "flex",
-      position: "absolute",
-      ...getDropdownPosition(),
-      zIndex: 9999
-    } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-popup_mMv", style: { maxWidth: "inherit", "width": "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "dropdown-menu_jf2 dropdown-menu_Swd" }, options.map((option) => /* @__PURE__ */ import_react18.default.createElement("button", { key: option.value, className: "dropdown-item_sZT selected", style: { padding: "5rem", height: "auto" }, onClick: () => changeSelection(option.value) }, option.label))))) : null;
-    return /* @__PURE__ */ import_react18.default.createElement("div", { style: containerStyle ? containerStyle : { width: "100%" } }, /* @__PURE__ */ import_react18.default.createElement("div", { ref: pickerRef, className: "dropdown-toggle_V9z dropdown-toggle_prl value-field_yJi value_PW_ dropdown_pJu item-states_QjV", onClick: onToggle, style: { padding: "5rem", height: "auto", ...style } }, /* @__PURE__ */ import_react18.default.createElement("div", { className: "label_l_4" }, options[selectedIndex].label), /* @__PURE__ */ import_react18.default.createElement("div", { className: "tinted-icon_iKo indicator_Xmj", style: { maskImage: "url(Media/Glyphs/StrokeArrowDown.svg)" } }), portalContainer && dropdownContent && import_react_dom2.default.createPortal(dropdownContent, portalContainer)));
-  };
-  var select_default = $Select;
-
   // src/jsx/tabs/_zone-colours.jsx
-  var $ZoneColours = ({ react, locale, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
+  var $ZoneColours = ({ locale, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity }) => {
+    const { Grid, Button, CheckBox, FormCheckBox, Slider, Dropdown } = window.$_gooee.framework;
+    const react = window.$_gooee.react;
     const colourModes = [
       { label: locale["DEFAULT_COLOURS"], value: "None" },
       { label: locale["DEUTERANOPIA"], value: "Deuteranopia" },
@@ -24158,7 +24019,7 @@
     };
     const getZoneColours = (zoneGroup) => {
       let icon = "coui://legacyflavourui/Icons/" + data.IconsID + "/" + zoneGroup.icon + "_" + data.Mode + ".svg";
-      return /* @__PURE__ */ import_react19.default.createElement(
+      return /* @__PURE__ */ import_react14.default.createElement(
         icon_panel_default,
         {
           key: zoneGroup.name,
@@ -24168,7 +24029,7 @@
           icon,
           fitChild: "true"
         },
-        /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, zoneGroup.items.map((zone, index) => {
+        /* @__PURE__ */ import_react14.default.createElement("div", { className: "d-flex flex-column" }, zoneGroup.items.map((zone, index) => {
           let colour = zone.Colour;
           if (data.Mode == "Deuteranopia" && zone.Deuteranopia != "default")
             colour = zone.Deuteranopia;
@@ -24182,7 +24043,7 @@
             triggerZoneColourUpdate(zone.Name, newColour);
           };
           const zoneLabel = locale[zone.Name.replace(/ /g, "_").toUpperCase()];
-          return /* @__PURE__ */ import_react19.default.createElement(colorpicker_default, { key: zone.Name, react, label: zoneLabel, color: colour, onChanged, onDropdown: onColourDropdown });
+          return /* @__PURE__ */ import_react14.default.createElement(colorpicker_default, { key: zone.Name, react, label: zoneLabel, color: colour, onChanged, onDropdown: onColourDropdown });
         }))
       );
     };
@@ -24199,7 +24060,7 @@
       engine.trigger("cities2modding_legacyflavour.resetColoursToDefault");
     };
     const modeString = data.Mode;
-    return /* @__PURE__ */ import_react19.default.createElement("div", null, /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "66.666666666%", paddingRight: "5rem" } }, /* @__PURE__ */ import_react19.default.createElement(
+    return /* @__PURE__ */ import_react14.default.createElement("div", null, /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { width: "66.666666666%", paddingRight: "5rem" } }, /* @__PURE__ */ import_react14.default.createElement(
       icon_panel_default,
       {
         label: locale["COLOUR_BLINDNESS_MODE"],
@@ -24207,62 +24068,16 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react19.default.createElement(select_default, { react, selected: modeString, options: colourModes, style: { margin: "10rem", flex: "1" }, onSelectionChanged: onModeChanged })
-    )), /* @__PURE__ */ import_react19.default.createElement("div", { style: { width: "33.33333333333%" } }, /* @__PURE__ */ import_react19.default.createElement(button_default2, { onClick: triggerRegenerateIcons }, locale["REGENERATE_ICONS"]), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerSetColoursToVanilla }, locale["SET_TO_VANILLA_COLOURS"]), /* @__PURE__ */ import_react19.default.createElement(button_default2, { style: { marginTop: "5rem" }, onClick: triggerResetColoursToDefault }, locale["RESET"], " ", modeString), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react19.default.createElement(label_default, { style: { margin: "10rem" } }, locale["MAKE_WINDOW_TRANSPARENT"]), /* @__PURE__ */ import_react19.default.createElement(checkbox_default, { react, style: { margin: "10rem" }, checked: useTransparency, onToggle: onChangeUseTransparency })))), /* @__PURE__ */ import_react19.default.createElement("div", { style: { display: "flex", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%" } }, renderZoneColours(0)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem", paddingRight: "5rem" } }, renderZoneColours(1), renderZoneColours(2)), /* @__PURE__ */ import_react19.default.createElement("div", { style: { flex: 1, width: "33.33333333333%", paddingLeft: "5rem" } }, renderZoneColours(3))));
+      /* @__PURE__ */ import_react14.default.createElement("div", { className: "flex-1 p-4" }, /* @__PURE__ */ import_react14.default.createElement(Dropdown, { selected: modeString, options: colourModes, onSelectionChanged: onModeChanged }))
+    )), /* @__PURE__ */ import_react14.default.createElement("div", { style: { width: "33.33333333333%" } }, /* @__PURE__ */ import_react14.default.createElement(button_default2, { onClick: triggerRegenerateIcons }, locale["REGENERATE_ICONS"]), /* @__PURE__ */ import_react14.default.createElement(button_default2, { className: "mt-2", onClick: triggerSetColoursToVanilla }, locale["SET_TO_VANILLA_COLOURS"]), /* @__PURE__ */ import_react14.default.createElement(button_default2, { className: "mt-2", onClick: triggerResetColoursToDefault }, locale["RESET"], " ", modeString))), /* @__PURE__ */ import_react14.default.createElement(Grid, { className: "align-items-center justify-content-center", auto: true }, /* @__PURE__ */ import_react14.default.createElement("div", null, renderZoneColours(0)), /* @__PURE__ */ import_react14.default.createElement("div", null, renderZoneColours(1), renderZoneColours(2)), /* @__PURE__ */ import_react14.default.createElement("div", null, renderZoneColours(3))));
   };
   var zone_colours_default = $ZoneColours;
 
   // src/jsx/tabs/_zone-settings.jsx
-  var import_react21 = __toESM(require_react());
-
-  // src/jsx/components/_slider.jsx
-  var import_react20 = __toESM(require_react());
-  var $Slider = ({ react, value, onValueChanged, style }) => {
-    const sliderRef = react.useRef(null);
-    const [isMouseDown, setIsMouseDown] = react.useState(false);
-    const updateValue = (e) => {
-      const slider = sliderRef.current;
-      if (!slider)
-        return;
-      const rect = slider.getBoundingClientRect();
-      const position = e.clientX - rect.left;
-      let newValue = position / rect.width * 100;
-      newValue = Math.max(0, Math.min(100, Math.round(newValue)));
-      if (onValueChanged)
-        onValueChanged(newValue);
-      engine.trigger("audio.playSound", "drag-slider", 1);
-    };
-    const handleMouseDown = (e) => {
-      setIsMouseDown(true);
-      updateValue(e);
-      engine.trigger("audio.playSound", "grabSlider", 1);
-    };
-    const handleMouseMove = (e) => {
-      if (isMouseDown) {
-        updateValue(e);
-      }
-    };
-    const handleMouseUp = () => {
-      setIsMouseDown(false);
-    };
-    const valuePercent = value + "%";
-    return /* @__PURE__ */ import_react20.default.createElement("div", { style: { width: "100%", ...style } }, /* @__PURE__ */ import_react20.default.createElement("div", { style: { display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", margin: "10rem", marginTop: "0" } }, /* @__PURE__ */ import_react20.default.createElement("div", { className: "value_jjh", style: { display: "flex", width: "45rem", alignItems: "center", justifyContent: "center" } }, valuePercent), /* @__PURE__ */ import_react20.default.createElement(
-      "div",
-      {
-        className: "slider_fKm slider_pUS horizontal slider_KjX",
-        style: { flex: 1, margin: "10rem" },
-        ref: sliderRef,
-        onMouseDown: handleMouseDown,
-        onMouseMove: handleMouseMove,
-        onMouseUp: handleMouseUp
-      },
-      /* @__PURE__ */ import_react20.default.createElement("div", { className: "track-bounds_H8_" }, /* @__PURE__ */ import_react20.default.createElement("div", { className: "range-bounds_lNt", style: { width: valuePercent } }, /* @__PURE__ */ import_react20.default.createElement("div", { className: "range_KXa range_iUN" })))
-    )));
-  };
-  var slider_default = $Slider;
-
-  // src/jsx/tabs/_zone-settings.jsx
-  var $ZoneSettings = ({ react, locale, data, setData, triggerUpdate }) => {
+  var import_react15 = __toESM(require_react());
+  var $ZoneSettings = ({ locale, data, setData, triggerUpdate }) => {
+    const react = window.$_gooee.react;
+    const { Grid, Button, CheckBox, Slider, Dropdown } = window.$_gooee.framework;
     const [preset, setPreset] = react.useState("");
     const triggerResetZoneSettingsToDefault = () => {
       engine.trigger("cities2modding_legacyflavour.resetZoneSettingsToDefault");
@@ -24291,31 +24106,31 @@
       { label: locale["DEFAULT"], value: "" },
       { label: locale["CITY_PLANNER_SPECIAL"], value: "CityPlannerSpecial" }
     ];
-    return /* @__PURE__ */ import_react21.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
+    return /* @__PURE__ */ import_react15.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react15.default.createElement("div", { style: { flex: 1, width: "50%" } }, /* @__PURE__ */ import_react15.default.createElement("div", { style: { flex: 1, paddingRight: "5rem" } }, /* @__PURE__ */ import_react15.default.createElement(
       icon_panel_default,
       {
         label: locale["CUSTOM_ZONE_COLOURING"],
         description: locale["CUSTOM_ZONE_COLOURING_DESC"],
         icon: "Media/Game/Icons/Zones.svg"
       },
-      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.Enabled, onToggle: (val) => updateData("Enabled", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement(
+      /* @__PURE__ */ import_react15.default.createElement(CheckBox, { style: { alignSelf: "center", margin: "10rem" }, checked: data.Enabled, onToggle: (val) => updateData("Enabled", val) })
+    ), /* @__PURE__ */ import_react15.default.createElement(
       icon_panel_default,
       {
         label: locale["OVERRIDE_ZONE_ICONS"],
         description: locale["OVERRIDE_ZONE_ICONS_DESC"],
         icon: "Media/Game/Icons/ZoneResidential.svg"
       },
-      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.OverrideIcons, onToggle: (val) => updateData("OverrideIcons", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement(
+      /* @__PURE__ */ import_react15.default.createElement(CheckBox, { style: { alignSelf: "center", margin: "10rem" }, checked: data.OverrideIcons, onToggle: (val) => updateData("OverrideIcons", val) })
+    ), /* @__PURE__ */ import_react15.default.createElement(
       icon_panel_default,
       {
         label: locale["USE_DYNAMIC_CELL_BORDERS"],
         description: locale["USE_DYNAMIC_CELL_BORDERS_DESC"],
         icon: "Media/Game/Climate/Snow.svg"
       },
-      /* @__PURE__ */ import_react21.default.createElement(checkbox_default, { react, style: { alignSelf: "center", margin: "10rem" }, checked: data.UseDynamicCellBorders, onToggle: (val) => updateData("UseDynamicCellBorders", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement(
+      /* @__PURE__ */ import_react15.default.createElement(CheckBox, { style: { alignSelf: "center", margin: "10rem" }, checked: data.UseDynamicCellBorders, onToggle: (val) => updateData("UseDynamicCellBorders", val) })
+    ), /* @__PURE__ */ import_react15.default.createElement(
       icon_panel_default,
       {
         label: locale["CELL_OPACITY"],
@@ -24323,8 +24138,8 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.CellOpacity, onValueChanged: (val) => updateData("CellOpacity", val) })
-    ))), /* @__PURE__ */ import_react21.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react21.default.createElement(
+      /* @__PURE__ */ import_react15.default.createElement("div", { className: "pl-4 pr-4 pb-4" }, /* @__PURE__ */ import_react15.default.createElement(Slider, { value: data.CellOpacity, onValueChanged: (val) => updateData("CellOpacity", val) }))
+    ))), /* @__PURE__ */ import_react15.default.createElement("div", { style: { flex: 1, width: "50%", paddingLeft: "5rem" } }, /* @__PURE__ */ import_react15.default.createElement(
       icon_panel_default,
       {
         label: locale["CELL_BORDER_OPACITY"],
@@ -24332,8 +24147,8 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.CellBorderOpacity, onValueChanged: (val) => updateData("CellBorderOpacity", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement(
+      /* @__PURE__ */ import_react15.default.createElement("div", { className: "pl-4 pr-4 pb-4" }, /* @__PURE__ */ import_react15.default.createElement(Slider, { value: data.CellBorderOpacity, onValueChanged: (val) => updateData("CellBorderOpacity", val) }))
+    ), /* @__PURE__ */ import_react15.default.createElement(
       icon_panel_default,
       {
         label: locale["EMPTY_CELL_OPACITY"],
@@ -24341,8 +24156,8 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.EmptyCellOpacity, onValueChanged: (val) => updateData("EmptyCellOpacity", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement(
+      /* @__PURE__ */ import_react15.default.createElement("div", { className: "pl-4 pr-4 pb-4" }, /* @__PURE__ */ import_react15.default.createElement(Slider, { value: data.EmptyCellOpacity, onValueChanged: (val) => updateData("EmptyCellOpacity", val) }))
+    ), /* @__PURE__ */ import_react15.default.createElement(
       icon_panel_default,
       {
         label: locale["EMPTY_CELL_BORDER_OPACITY"],
@@ -24350,14 +24165,15 @@
         icon: "Media/Editor/Edit.svg",
         fitChild: "true"
       },
-      /* @__PURE__ */ import_react21.default.createElement(slider_default, { react, value: data.EmptyCellBorderOpacity, onValueChanged: (val) => updateData("EmptyCellBorderOpacity", val) })
-    ), /* @__PURE__ */ import_react21.default.createElement("div", { style: { width: "100%", display: "flex", flexDirection: "row" } }, /* @__PURE__ */ import_react21.default.createElement(select_default, { react, selected: preset, containerStyle: { flex: 1, width: "auto", marginRight: "10rem" }, options: presets, onSelectionChanged: (val) => setPreset(val) }), /* @__PURE__ */ import_react21.default.createElement(button_default2, { style: { paddingLeft: "30rem", paddingRight: "30rem" }, onClick: triggerSetZoneSettingsPreset }, locale["SET"]))));
+      /* @__PURE__ */ import_react15.default.createElement("div", { className: "pl-4 pr-4 pb-4" }, /* @__PURE__ */ import_react15.default.createElement(Slider, { value: data.EmptyCellBorderOpacity, onValueChanged: (val) => updateData("EmptyCellBorderOpacity", val) }))
+    ), /* @__PURE__ */ import_react15.default.createElement("div", { className: "d-flex flex-row align-items-center" }, /* @__PURE__ */ import_react15.default.createElement(Dropdown, { className: "flex-1 mr-4", selected: preset, options: presets, onSelectionChanged: (val) => setPreset(val) }), /* @__PURE__ */ import_react15.default.createElement(Button, { className: "pl-6 pr-6", color: "light", size: "sm", style: "trans", onClick: triggerSetZoneSettingsPreset }, locale["SET"]))));
   };
   var zone_settings_default = $ZoneSettings;
 
   // src/jsx/tabs/_about.jsx
-  var import_react22 = __toESM(require_react());
-  var $About = ({ react, locale }) => {
+  var import_react16 = __toESM(require_react());
+  var $About = ({ locale }) => {
+    const { Icon, Grid, Button } = window.$_gooee.framework;
     const launchReddit = (url) => {
       engine.trigger("cities2modding_legacyflavour.launchUrl", "https://www.reddit.com/r/cities2modding");
     };
@@ -24368,51 +24184,45 @@
       engine.trigger("cities2modding_legacyflavour.launchUrl", "https://discord.gg/KGRNBbm5Fh");
     };
     function toParagraph(str) {
-      return /* @__PURE__ */ import_react22.default.createElement("p", { cohinline: "cohinline", dangerouslySetInnerHTML: { __html: str } });
+      return /* @__PURE__ */ import_react16.default.createElement("p", { className: "mb-4 fs-l", cohinline: "cohinline", dangerouslySetInnerHTML: { __html: str } });
     }
-    const title = `${locale["LEGACY_FLAVOUR"]} v1.0.1`;
-    return /* @__PURE__ */ import_react22.default.createElement("div", null, /* @__PURE__ */ import_react22.default.createElement(
-      icon_panel_default,
-      {
-        label: title,
-        style: { flex: 1 },
-        description: locale["DEVELOPED_BY"],
-        icon: "Media/Editor/Object.svg",
-        fitChild: "true"
-      }
-    ), /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%" } }, /* @__PURE__ */ import_react22.default.createElement(description_default, { style: { paddingTop: "0" } }, toParagraph(locale["ABOUT_1"]), toParagraph(locale["ABOUT_2"]), toParagraph(locale["ABOUT_3"]))), /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "row", flex: 1 } }, /* @__PURE__ */ import_react22.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react22.default.createElement(
-      icon_panel_default,
-      {
-        label: "GitHub",
-        description: locale["GITHUB_DESC"],
-        icon: "https://raw.githubusercontent.com/prplx/svg-logos/master/svg/github-icon.svg",
-        fitChild: "true"
-      },
-      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchGitHub }, "https://github.com/Cities2Modding"))
-    ), /* @__PURE__ */ import_react22.default.createElement(
-      icon_panel_default,
-      {
-        label: "Reddit",
-        description: locale["REDDIT_DESC"],
-        icon: "https://www.svgrepo.com/download/14413/reddit.svg",
-        fitChild: "true"
-      },
-      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchReddit }, "https://www.reddit.com/r/cities2modding"))
-    )), /* @__PURE__ */ import_react22.default.createElement("div", { style: { flex: 1, marginLeft: "5rem" } }, /* @__PURE__ */ import_react22.default.createElement(
-      icon_panel_default,
-      {
-        label: "Discord",
-        description: locale["DISCORD_DESC"],
-        icon: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/653714c1f22aef3b6921d63d_636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg",
-        fitChild: "true"
-      },
-      /* @__PURE__ */ import_react22.default.createElement("div", { style: { display: "flex", flexDirection: "column", width: "100%", padding: "10rem" } }, /* @__PURE__ */ import_react22.default.createElement(button_default2, { isBlack: "true", onClick: launchDiscord }, "https://discord.gg/KGRNBbm5Fh"))
-    ))));
+    const title = `${locale["LEGACY_FLAVOUR"]} v1.1.1`;
+    return /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("div", { className: "bg-section-dark rounded-sm p-4 d-flex flex-row align-items-center" }, /* @__PURE__ */ import_react16.default.createElement(Icon, { icon: "Media/Editor/Object.svg", size: "xl" }), /* @__PURE__ */ import_react16.default.createElement("div", { className: "flex-1 ml-2" }, /* @__PURE__ */ import_react16.default.createElement("h1", { className: "text-primary" }, title), /* @__PURE__ */ import_react16.default.createElement("div", { className: "text-muted fs-xl" }, locale["DEVELOPED_BY"]))), /* @__PURE__ */ import_react16.default.createElement("div", { className: "d-block p-4" }, toParagraph(locale["ABOUT_1"]), toParagraph(locale["ABOUT_2"]), toParagraph(locale["ABOUT_3"])), /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement(Grid, { auto: true }, /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("div", { className: "bg-section-dark rounded-sm d-flex flex-row align-items-start p-4 flex-1" }, /* @__PURE__ */ import_react16.default.createElement(Icon, { icon: "brand-github", size: "xl", fa: true }), /* @__PURE__ */ import_react16.default.createElement("div", { className: "flex-1 w-x ml-4" }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "text-primary" }, "GitHub"), /* @__PURE__ */ import_react16.default.createElement("p", { className: "text-muted mb-4", cohinline: "cohinline" }, locale["GITHUB_DESC"])))), /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("div", { className: "bg-section-dark rounded-sm d-flex flex-row align-items-start p-4 flex-1" }, /* @__PURE__ */ import_react16.default.createElement(Icon, { icon: "brand-reddit", size: "xl", fa: true }), /* @__PURE__ */ import_react16.default.createElement("div", { className: "flex-1 w-x ml-4" }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "text-primary" }, "Reddit"), /* @__PURE__ */ import_react16.default.createElement("p", { className: "text-muted mb-4", cohinline: "cohinline" }, locale["REDDIT_DESC"])))), /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("div", { className: "bg-section-dark rounded-sm d-flex flex-row align-items-start p-4 flex-1" }, /* @__PURE__ */ import_react16.default.createElement(Icon, { icon: "brand-discord", size: "xl", fa: true }), /* @__PURE__ */ import_react16.default.createElement("div", { className: "flex-1 w-x ml-4" }, /* @__PURE__ */ import_react16.default.createElement("div", { className: "text-primary" }, "Discord"), /* @__PURE__ */ import_react16.default.createElement("p", { className: "text-muted mb-4", cohinline: "cohinline" }, locale["DISCORD_DESC"]))))), /* @__PURE__ */ import_react16.default.createElement(Grid, { className: "mt-4", auto: true }, /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement(Button, { className: "pl-4 pr-2 text-center", isBlock: true, color: "primary", style: "trans", size: "sm", onClick: launchGitHub }, "https://github.com/Cities2Modding")), /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement(Button, { className: "pl-2 pr-2 text-center", isBlock: true, color: "primary", style: "trans", size: "sm", onClick: launchReddit }, "https://www.reddit.com/r/cities2modding")), /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement(Button, { className: "pl-2 pr-4 text-center", isBlock: true, color: "primary", style: "trans", size: "sm", onClick: launchDiscord }, "https://discord.gg/KGRNBbm5Fh")))));
   };
   var about_default = $About;
 
+  // src/jsx/windows/_tool-window.jsx
+  var import_react17 = __toESM(require_react());
+  var ToolWindow = ({ model, update, trigger, _L }) => {
+    const react = window.$_gooee.react;
+    const { Button, Icon, Modal } = window.$_gooee.framework;
+    const onSelectTool = (tool) => {
+      const isZoneTool = tool.id === "Zone Tool";
+      if (!isZoneTool) {
+        update("IsToolVisible", false);
+      } else {
+        update("IsToolVisible", true);
+      }
+    };
+    react.useEffect(() => {
+      const selectToolHandle = engine.on("tool.activeTool.update", onSelectTool);
+      return () => {
+        selectToolHandle.clear();
+      };
+    }, [model.IsVisible]);
+    const closeModal = () => {
+      trigger("OnToggleVisible");
+      engine.trigger("audio.playSound", "close-panel", 1);
+    };
+    const isVisibleClass = "tool-layout";
+    return model.IsToolVisible ? /* @__PURE__ */ import_react17.default.createElement("div", { className: isVisibleClass }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "col" }), /* @__PURE__ */ import_react17.default.createElement("div", { className: "col" }), /* @__PURE__ */ import_react17.default.createElement("div", { className: "col" }, /* @__PURE__ */ import_react17.default.createElement("div", { className: "bg-panel text-light rounded-sm p-4" }, "Zone settings"))) : null;
+  };
+  var tool_window_default = ToolWindow;
+
   // src/jsx/ui.jsx
-  var $LegacyFlavour = ({ react }) => {
+  var LegacyFlavourWindow = ({ react, setupController }) => {
+    const { Button, Icon, TabModal } = window.$_gooee.framework;
+    const { model, update, trigger, _L } = setupController();
     const [data, setData] = react.useState({});
     const [localeData, setLocaleData] = react.useState({});
     const [opacity, setOpacity] = react.useState(1);
@@ -24423,10 +24233,8 @@
     const triggerUpdate = (prop, val) => {
       engine.trigger("cities2modding_legacyflavour.updateProperty", JSON.stringify({ property: prop, value: val }));
     };
-    const toggleVisibility = () => {
-      const visData = { type: "toggle_visibility", id: "cities2modding.legacyflavour" };
-      const event = new CustomEvent("hookui", { detail: visData });
-      window.dispatchEvent(event);
+    const closeModal = () => {
+      trigger("OnToggleVisible");
       engine.trigger("audio.playSound", "close-panel", 1);
     };
     const onChangeOpacity = (val) => {
@@ -24446,35 +24254,30 @@
           {
             name: "SETTINGS",
             label: localeData.Entries["SETTINGS"],
-            content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { display: "flex", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(settings_default, { react, locale: localeData.Entries, data, setData, triggerUpdate }))
+            content: /* @__PURE__ */ import_react18.default.createElement(settings_default, { locale: localeData.Entries, data, setData, triggerUpdate })
           },
           {
             name: "ZONE_SETTINGS",
             label: localeData.Entries["ZONE_SETTINGS"],
-            content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_settings_default, { react, locale: localeData.Entries, data, setData, triggerUpdate }))
+            content: /* @__PURE__ */ import_react18.default.createElement(zone_settings_default, { locale: localeData.Entries, data, setData, triggerUpdate })
           },
           {
             name: "ZONE_COLOURS",
             label: localeData.Entries["ZONE_COLOURS"],
-            content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(zone_colours_default, { react, locale: localeData.Entries, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity }))
+            content: /* @__PURE__ */ import_react18.default.createElement(zone_colours_default, { react, locale: localeData.Entries, data, setData, triggerUpdate, useTransparency, onChangeUseTransparency, onChangeWindowOpacity: onChangeOpacity })
           },
           {
             name: "ABOUT",
             label: localeData.Entries["ABOUT"],
-            content: /* @__PURE__ */ import_react23.default.createElement("div", { style: { height: "100%", width: "100%" } }, /* @__PURE__ */ import_react23.default.createElement(about_default, { react, locale: localeData.Entries }))
+            content: /* @__PURE__ */ import_react18.default.createElement(about_default, { react, locale: localeData.Entries })
           }
         ]);
       }
     }, [localeData, data]);
     const title = localeData.Entries ? `Legacy Flavour (${localeData.Entries["LEGACY_FLAVOUR"]})` : "Legacy Flavour";
-    return /* @__PURE__ */ import_react23.default.createElement(tab_window_default, { react, title, tabs, onClose: toggleVisibility, style: { opacity } });
+    return /* @__PURE__ */ import_react18.default.createElement(import_react18.default.Fragment, null, "/* ", /* @__PURE__ */ import_react18.default.createElement(tool_window_default, { model, trigger, update, _L }), "*/", model.IsVisible ? /* @__PURE__ */ import_react18.default.createElement(TabModal, { fixed: true, size: "lg", title, tabs, onClose: closeModal, style: { opacity } }) : null);
   };
-  window._$hookui.registerPanel({
-    id: "cities2modding.legacyflavour",
-    name: "Legacy Flavour",
-    icon: "Media/Game/Icons/GenericVehicle.svg",
-    component: $LegacyFlavour
-  });
+  window.$_gooee.register("legacyflavour", "LegacyFlavourWindow", LegacyFlavourWindow, "main-container", "legacyflavour");
 })();
 /*! Bundled license information:
 

@@ -15,7 +15,7 @@ namespace LegacyFlavour.Systems
     /// <summary>
     /// Handles updating zone colours
     /// </summary>
-    public class ZoneColourSystem : GameSystemBase
+    public partial class ZoneColourSystem : GameSystemBase
     {
         static FieldInfo m_FillColorArray = typeof( ZoneSystem ).GetFields( BindingFlags.Instance | BindingFlags.NonPublic )
             .FirstOrDefault( m => m.Name == "m_FillColorArray" );
@@ -415,7 +415,7 @@ namespace LegacyFlavour.Systems
                 var nameLessAreaType = zonePrefab.name;
 
                 if ( nameLessAreaType.StartsWith( "EU " ) || nameLessAreaType.StartsWith( "NA " ) )
-                    nameLessAreaType = nameLessAreaType[3..];
+                    nameLessAreaType = nameLessAreaType.Substring( 0, 3 );
 
                 if ( !_vanillaColours.ContainsKey( nameLessAreaType ) )
                     _vanillaColours[nameLessAreaType] = ColourHelpers.ColorToHex( color );
