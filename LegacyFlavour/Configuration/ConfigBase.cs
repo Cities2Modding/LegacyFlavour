@@ -12,7 +12,7 @@ namespace LegacyFlavour.Configuration
     /// </summary>
     public abstract class ConfigBase : ModelWriter
     {
-        public static readonly string MOD_PATH = Path.Combine( Application.persistentDataPath, "Mods", "LegacyFlavour" );
+        public static readonly string MOD_PATH = Path.Combine( Application.persistentDataPath, "ModsData", "LegacyFlavour" );
 
         static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
         {
@@ -88,6 +88,8 @@ namespace LegacyFlavour.Configuration
             var instance = new T( );
             var json = instance.LoadDefaultJson( );
             var filePath = Path.Combine( MOD_PATH, instance.ConfigFileName );
+            if (!Directory.Exists( MOD_PATH ))
+                Directory.CreateDirectory( MOD_PATH );
             File.WriteAllText( filePath, json );
             return json;
         }
