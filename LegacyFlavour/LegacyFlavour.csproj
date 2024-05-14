@@ -55,9 +55,13 @@
 	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
 
 	<ItemGroup>
-		<Reference Include="Gooee">
-			<HintPath>$(PDXMods_Location)\77225_2\Gooee.dll</HintPath>
+		<!--<Reference Include="Gooee">
+			<HintPath>$(PDXMods_Location)\77225_9\Gooee.dll</HintPath>
 			<Private>False</Private>
+		</Reference>-->
+		<Reference Include="Gooee">
+    		<HintPath>$(LocalMods_Location)\Gooee\Gooee.dll</HintPath>
+    		<Private>False</Private>
 		</Reference>
 		<Reference Include="Game">
 			<Private>false</Private>
