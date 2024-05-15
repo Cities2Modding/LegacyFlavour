@@ -56,7 +56,7 @@ This is a fan-created mod, not officially associated with the Cities Skylines fr
 
 ## Acknowledgements
 
-Thanks to the Cities2Modding community for their ongoing support and creativity.
+Thanks to the Konsi and Cities2Modding community for their ongoing support and creativity.
 
 ---
 
@@ -70,7 +70,7 @@ Enjoy the enhanced city building experience with LegacyFlavour! Rediscover the l
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.1.2" />
+	<ModVersion Value="1.1.3" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	
@@ -81,7 +81,7 @@ Enjoy the enhanced city building experience with LegacyFlavour! Rediscover the l
 	<Dependency Id="77225" Version="1.1.*" />
 	
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="Github link update" />
+	<ChangeLog Value="Update with changes from Konsi" />
 	<!--ChangeLog>
 	</ChangeLog-->
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
