@@ -1,6 +1,6 @@
 ﻿<Publish>
 	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
-	<ModId Value="" />
+	<ModId Value="77319" />
 	<!--Name of the mod to display to players-->
 	<DisplayName Value="LegacyFlavour" />
 	<!--Short description of the mod-->
@@ -70,7 +70,7 @@ Enjoy the enhanced city building experience with LegacyFlavour! Rediscover the l
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.1.3" />
+	<ModVersion Value="1.1.9" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	

@@ -11,7 +11,7 @@
 		<LangVersion>latest</LangVersion>
 		<RootNamespace>LegacyFlavour</RootNamespace>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-		<Version>1.1.2</Version>
+		<Version>1.1.9</Version>
 		<RestoreAdditionalProjectSources>
 			https://api.nuget.org/v3/index.json;
 			https://nuget.samboy.dev/v3/index.json
@@ -27,7 +27,7 @@
 		<!--The file should contain 2 lines:-->
 		<!--Your.PDX@Account.login-->
 		<!--Your-PDX-Account-Pa$$word-->
-		<PDXAccountDataPath>$(USERPROFILE)\Some\AccountFile.txt</PDXAccountDataPath>
+		<PDXAccountDataPath>$(USERPROFILE)\SomePath\Somewhere.txt</PDXAccountDataPath>
 
 		<!--The file where mod information which is required for publishing mod on PDX mods are stored-->
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
