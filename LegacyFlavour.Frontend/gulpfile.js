@@ -16,7 +16,7 @@ gulp.task('build-jsx', function (done) {
         // Add other esbuild options as needed
     }).then(() => {
         const localLowPath = path.join(process.env.USERPROFILE, "AppData", "LocalLow");
-        const localLowDestPath = path.join(localLowPath, "Colossal Order", "Cities Skylines II", "Mods", "Gooee", "Plugins");
+        const localLowDestPath = path.join(localLowPath, "Colossal Order", "Cities Skylines II", "ModsData", "Gooee", "Plugins");
         const jsFile = path.join(localLowDestPath, "LegacyFlavour.js");
         fs.copySync("../LegacyFlavour/Resources/ui.js", jsFile, { overwrite: true });
         done();
