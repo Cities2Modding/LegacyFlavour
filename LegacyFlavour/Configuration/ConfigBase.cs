@@ -12,7 +12,9 @@ namespace LegacyFlavour.Configuration
     /// </summary>
     public abstract class ConfigBase : ModelWriter
     {
-        public static readonly string MOD_PATH = Path.Combine( Application.persistentDataPath, "ModsData", "LegacyFlavour" );
+        const string DATA_FOLDER = "Cities2Modding";
+
+        public static readonly string MOD_PATH = Path.Combine( Application.persistentDataPath, DATA_FOLDER, "LegacyFlavour" );
 
         static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
         {

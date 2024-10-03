@@ -70,7 +70,7 @@ Enjoy the enhanced city building experience with LegacyFlavour! Rediscover the l
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.1.9" />
+	<ModVersion Value="1.2.0" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	
@@ -81,7 +81,7 @@ Enjoy the enhanced city building experience with LegacyFlavour! Rediscover the l
 	<Dependency Id="77225" Version="1.1.*" />
 	
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="Update with changes from Konsi" />
+	<ChangeLog Value="Compatibility fixes" />
 	<!--ChangeLog>
 	</ChangeLog-->
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->

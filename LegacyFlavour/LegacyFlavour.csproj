@@ -11,7 +11,7 @@
 		<LangVersion>latest</LangVersion>
 		<RootNamespace>LegacyFlavour</RootNamespace>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-		<Version>1.1.9</Version>
+		<Version>1.2.0</Version>
 		<RestoreAdditionalProjectSources>
 			https://api.nuget.org/v3/index.json;
 			https://nuget.samboy.dev/v3/index.json
