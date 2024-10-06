@@ -26,7 +26,7 @@ namespace LegacyFlavour.Patches
 
             var url = __instance.m_Icon;
 
-            if ( _zoneColourSystem == null || !url.Contains( "Media/Game/Icons/" ) )
+            if ( _zoneColourSystem == null || string.IsNullOrEmpty(url) || !url.Contains( "Media/Game/Icons/" ) )
                 return;
 
             if ( _zoneColourSystem.DynamicZoneIcons?.CheckForReplacement( url, out var parsedUrl ) == true )
